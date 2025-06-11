@@ -87,16 +87,19 @@ function App() {
       <div className="max-w-4xl mx-auto">
         
         {/* Header */}
-        <div className="text-center mb-8">
-          <RotatingProfile />
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">
-            Hand-Coded <span className="text-blue-600">Foundations</span>, AI-Enhanced <span className="text-purple-600">Velocity</span>
-          </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            React Developer who bridges pre-AI mastery with AI fluency—shipping products 40% faster 
-            with psychology insights and proven delivery track record
-          </p>
-        </div>
+<div className="text-center mb-8">
+ <RotatingProfile />
+ <div className="mb-4">
+    <h1 className="text-8xl font-bold text-gray-900">
+     I speak <span className="text-blue-600">fluent AI</span>. 
+     Yet still know what's <span className="text-purple-600">under the hood</span>.
+   </h1>
+ </div>
+ <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+    Sander Bell, a React Developer trained on fundamentals, fluent in modern tools—shipping lightning fast with both worlds
+
+ </p>
+</div>
 
         {/* Tech Stack Cloud */}
         <div className="mb-8">
@@ -175,7 +178,7 @@ function App() {
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Beyond the Code</h2>
           <div className="grid md:grid-cols-2 gap-4">
             <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
-              <h3 className="font-semibold text-gray-900 mb-2">🧠 Psychology → Tech Pivot</h3>
+              <h3 className="font-semibold text-gray-900 mb-2">🧠 Psychology → Communications → Tech Pivot</h3>
               <p className="text-sm text-gray-700">Master's in Psychology applied to creating user-centered digital experiences. Career pivot during global upheaval led to unique intersection of human behavior and technology.</p>
             </div>
             <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
