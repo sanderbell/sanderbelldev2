@@ -96,7 +96,7 @@ function App() {
             </h1>
           </div>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Sander Bell, a React Developer trained on fundamentals, fluent in modern tools—shipping lightning fast with both worlds
+            Sander Bell, a React Developer trained on fundamentals, fluent in modern tools—shipping lightning fast with both worlds.
 
           </p>
         </div>
