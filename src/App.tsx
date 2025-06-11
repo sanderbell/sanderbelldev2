@@ -13,7 +13,7 @@ const RotatingProfile = () => {
 
   return (
     <div className="relative w-32 h-32 mx-auto mb-6">
-      <div 
+      <div
         className="w-full h-full rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 flex items-center justify-center shadow-2xl"
         style={{ transform: `rotate(${rotation}deg)` }}
       >
@@ -83,23 +83,23 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ quote, context, ratin
 
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 p-4">
-      <div className="max-w-4xl mx-auto">
-        
-        {/* Header */}
-<div className="text-center mb-8">
- <RotatingProfile />
- <div className="mb-4">
-    <h1 className="text-8xl font-bold text-gray-900">
-     I speak <span className="text-blue-600">fluent AI</span>. 
-     Yet still know what's <span className="text-purple-600">under the hood</span>.
-   </h1>
- </div>
- <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-    Sander Bell, a React Developer trained on fundamentals, fluent in modern tools—shipping lightning fast with both worlds
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-purple-100 p-6">
+      <div className="max-w-5xl mx-auto">
 
- </p>
-</div>
+        {/* Header */}
+        <div className="text-center mb-8">
+          <RotatingProfile />
+          <div className="mb-4">
+            <h1 className="text-8xl font-bold text-gray-900">
+              I speak <span className="text-blue-600">fluent AI</span>.<br></br>
+              Yet know what's <span className="text-purple-600">under the hood</span>.
+            </h1>
+          </div>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Sander Bell, a React Developer trained on fundamentals, fluent in modern tools—shipping lightning fast with both worlds
+
+          </p>
+        </div>
 
         {/* Tech Stack Cloud */}
         <div className="mb-8">
@@ -113,6 +113,7 @@ function App() {
             <TechTag name="GitHub Copilot" size="lg" />
             <TechTag name="Redux Toolkit" size="base" />
             <TechTag name="Node.js" size="base" />
+
             <TechTag name="AWS" size="base" />
             <TechTag name="iOS Development" size="base" />
             <TechTag name="Android" size="base" />
@@ -121,7 +122,11 @@ function App() {
             <TechTag name="Zustand" size="sm" />
             <TechTag name="Jest" size="sm" />
             <TechTag name="Figma" size="sm" />
+            <TechTag name="Tailwind CSS" size="sm" />
             <TechTag name="Git" size="sm" />
+            <TechTag name="CI/CD" size="sm" />
+            <TechTag name="Agile" size="sm" />
+
           </div>
         </div>
 
@@ -129,28 +134,12 @@ function App() {
         <div className="mb-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Proven Track Record</h2>
           <div className="space-y-4">
-            
-            <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
-              <div className="flex justify-between items-start mb-3">
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900">Mobile & Web Developer</h3>
-                  <p className="text-blue-600 font-medium">Ling App • 2023–Present</p>
-                </div>
-                <span className="text-sm text-green-600 bg-green-100 px-2 py-1 rounded-full">8M+ Users</span>
-              </div>
-              <ul className="text-sm text-gray-700 space-y-1">
-                <li>• Delivered 120+ features with &lt;1% bug rate across 17 months</li>
-                <li>• Led Review Tab system serving 8M+ language learners globally</li>
-                <li>• Achieved 40% faster delivery using AI-enhanced workflows</li>
-                <li>• Built cross-platform features for iOS/Android + web platforms</li>
-              </ul>
-            </div>
 
             <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
               <div className="flex justify-between items-start mb-3">
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900">Founder & Developer</h3>
-                  <p className="text-purple-600 font-medium">100K31D (Wellness Tech) • 2024–Present</p>
+                  <p className="text-purple-600 font-medium">100K31D (Wellness Tech) • 2024 – Present</p>
                 </div>
                 <span className="text-sm text-purple-600 bg-purple-100 px-2 py-1 rounded-full">2 Apps Launched</span>
               </div>
@@ -162,6 +151,24 @@ function App() {
               </ul>
             </div>
 
+            <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+              <div className="flex justify-between items-start mb-3">
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900">Mobile & Web Developer</h3>
+                  <p className="text-blue-600 font-medium">Ling App • 2023 – Present</p>
+                </div>
+                <span className="text-sm text-green-600 bg-green-100 px-2 py-1 rounded-full">8M+ Users</span>
+              </div>
+              <ul className="text-sm text-gray-700 space-y-1">
+                <li>• Delivered 120+ features with &lt;1% bug rate across 17 months</li>
+                <li>• Led Review Tab system serving 8M+ language learners globally</li>
+                <li>• Achieved 40% faster delivery using AI-enhanced workflows</li>
+                <li>• Built cross-platform features for iOS/Android + web platforms</li>
+              </ul>
+            </div>
+
+            
+
           </div>
         </div>
 
@@ -171,6 +178,31 @@ function App() {
           <StatCard icon={Code} value="532" label="Code Pushes" color="blue" />
           <StatCard icon={Rocket} value="2" label="Apps Launched" color="purple" />
           <StatCard icon={Users} value="15+" label="Years Leadership" color="orange" />
+        </div>
+
+
+
+        {/* Testimonials */}
+        <div className="mb-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">What Colleagues Say</h2>
+          <div className="grid md:grid-cols-2 gap-4">
+            <TestimonialCard
+              quote="Only bug from his cards last sprint (16) was from main (pre-existing). User-centered approach - doesn't just follow specs but understands their purpose."
+              context="Ling App Team Lead"
+            />
+            <TestimonialCard
+              quote="Once you set clear requirements, he just gets stuff done. Much needed orange in a sea of apples."
+              context="Ling App Colleague"
+            />
+            <TestimonialCard
+              quote="Quick at getting features done and fixing bugs. Always catches small cases others might miss."
+              context="Ling App Team Member"
+            />
+            <TestimonialCard
+              quote="Helped show the team how AI can save time with creating/updating specs. Data-driven approach to documentation."
+              context="Ling App Developer"
+            />
+          </div>
         </div>
 
         {/* Personal Facts */}
@@ -196,28 +228,6 @@ function App() {
           </div>
         </div>
 
-        {/* Testimonials */}
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">What Colleagues Say</h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            <TestimonialCard 
-              quote="Only bug from his cards last sprint (16) was from main (pre-existing). User-centered approach - doesn't just follow specs but understands their purpose."
-              context="Ling App Team Lead"
-            />
-            <TestimonialCard 
-              quote="Once you set clear requirements, he just gets stuff done. Much needed orange in a sea of apples."
-              context="Ling App Colleague"
-            />
-            <TestimonialCard 
-              quote="Quick at getting features done and fixing bugs. Always catches small cases others might miss."
-              context="Ling App Team Member"
-            />
-            <TestimonialCard 
-              quote="Helped show the team how AI can save time with creating/updating specs. Data-driven approach to documentation."
-              context="Ling App Developer"
-            />
-          </div>
-        </div>
 
         {/* Contact */}
         <div className="text-center bg-white rounded-lg p-6 shadow-sm border border-gray-200">
