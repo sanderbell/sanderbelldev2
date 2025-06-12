@@ -1,29 +1,36 @@
 import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, Mail, Globe, Star, Code, Zap, Users, Brain, Rocket } from 'lucide-react';
 
+ 
 const RotatingProfile = () => {
   const [rotation, setRotation] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setRotation(prev => (prev + 1) % 360);
-    }, 50);
+    }, 30);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="relative w-32 h-32 mx-auto mb-6">
-      <div
-        className="w-full h-full rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 flex items-center justify-center shadow-2xl"
-        style={{ transform: `rotate(${rotation}deg)` }}
-      >
-        <div className="w-28 h-28 rounded-full bg-gray-800 flex items-center justify-center text-4xl font-bold text-white">
-          SB
-        </div>
-      </div>
+    <div className="relative w-[20rem] h-[20rem] mx-auto mb-6">
+      <img
+        src="/src/assets/react.svg"
+        alt="React Logo"
+        className="w-full h-full absolute top-0 left-0"
+        style={{ transform: `rotate(${rotation}deg)`, zIndex: 5 }}
+      />
+      <img
+        src="/src/assets/photo.jpeg"
+        alt="Profile Portrait"
+        className="w-[8rem] h-[8rem] rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 object-cover"
+        style={{ zIndex: 10 }}
+      />
     </div>
   );
 };
+
+ 
 
 interface TechTagProps {
   name: string;
