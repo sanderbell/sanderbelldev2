@@ -7,12 +7,12 @@ const RotatingProfile = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setRotation(prev => (prev + 1) % 360);
-    }, 20);
+    }, 38);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="relative w-[20rem] h-[20rem] mx-auto mb-6">
+    <div className="relative w-[15rem] h-[15rem] mx-auto mb-6">
       <img
         src="/src/assets/react.svg"
         alt="React Logo"
@@ -22,7 +22,7 @@ const RotatingProfile = () => {
       <img
         src="/src/assets/photo.jpeg"
         alt="Profile Portrait"
-        className="w-[8rem] h-[8rem] rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 object-cover"
+        className="w-[3rem] h-[3rem] rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 object-cover"
         style={{ zIndex: 10 }}
       />
     </div>
@@ -200,22 +200,21 @@ function App() {
       <style>{globalStyles}</style>
       <div className="max-w-5xl mx-auto fade-in">
         {/* Header */}
-        <div className="text-center mb-12">
-          {/* <RotatingProfile /> */}
-          <div className="mb-4">
-            <h1 className="text-8xl font-bold text-gray-900">
-              I speak <span className="text-blue-600">fluent AI</span>.<br></br>
-              Yet know what's <span className="text-purple-600">under the hood</span>.
+        <div className="text-center my-12">
+          <RotatingProfile />
+          <div className="p-6 mb-6">
+            <h1 className="text-8xl font-bold bg-gradient-to-r from-blue-700 to-purple-700 text-transparent bg-clip-text">
+              AI-fluent. <br/>Old-school trained.
             </h1>
           </div>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Sander Bell, a React Developer trained on fundamentals, fluent in modern tools—shipping lightning fast with both worlds.
-          </p>
+         <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+  Sander Bell, React Developer who mastered fundamentals when Stack Overflow was our only assistant. Now wielding modern tools to ship lightning fast with both worlds.
+</p>
         </div>
 
         {/* Tech Stack Cloud */}
         <div className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">My Focus</h2>
+          {/* <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">My Focus</h2> */}
           <div className="flex flex-wrap justify-center gap-2">
             <TechTag name="React" size="xl"  />
             <TechTag name="React Native" size="xl" />
@@ -240,15 +239,15 @@ function App() {
            </div>
         </div>
         <div className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Proven Track Record</h2>
+          {/* <h2 className="text-2xl font-bold text-gray-900 mb-4">Proven Track Record</h2> */}
           <div className="space-y-4">
             <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
               <div className="flex justify-between items-start mb-3">
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900">Founder & Developer</h3>
-                  <p className="text-purple-600 font-medium">100K31D (Wellness Tech) • 2025 – Present</p>
+                  <h3 className="text-lg font-semibold text-gray-900">Founder</h3>
+                  <p className="text-purple-600 font-medium">100K31D (Wellness Tech) • 2025–Present</p>
                 </div>
-                <span className="text-sm text-purple-600 bg-purple-100 px-2 py-1 rounded-full">2 Apps Launched</span>
+                <span className="text-sm text-purple-600 bg-purple-100 px-2 py-1 rounded-full">2 Apps</span>
               </div>
               <ul className="text-sm text-gray-700 space-y-1">
                     <li>•  <strong><a href="https://oneatati.me" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-800 underline">One at a Time β :</a></strong> Typing meditation app with advanced animations</li>
@@ -262,7 +261,7 @@ function App() {
               <div className="flex justify-between items-start mb-3">
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900">Mobile & Web Developer</h3>
-                  <p className="text-blue-600 font-medium">Ling App • 2023 – Present</p>
+                  <p className="text-blue-600 font-medium">Ling App • 2023–Present</p>
                 </div>
                 <span className="text-sm text-green-600 bg-green-100 px-2 py-1 rounded-full">8M+ Users</span>
               </div>
