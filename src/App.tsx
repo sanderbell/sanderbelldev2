@@ -2,20 +2,20 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Github, Linkedin, Mail, Star, Code, Zap, Users, Rocket } from 'lucide-react';
 
 const RotatingProfile = () => {
-  const [isHovered, setIsHovered] = useState(false);
+  const [rotate, setRotate] = useState(false);
+
+  useEffect(() => {
+    setRotate(true);
+  }, []);
 
   return (
-    <div 
-      className="relative w-[10rem] h-[10rem] sm:w-[15rem] sm:h-[15rem] mx-auto mb-6"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
+    <div className="relative w-[10rem] h-[10rem] sm:w-[15rem] sm:h-[15rem] mx-auto mb-6">
       <img
         src="react.svg"
         alt="React Logo"
-        className="w-full h-full absolute top-0 left-0 transition-transform duration-1700 ease-in-out"
+        className="w-full h-full absolute top-0 left-0 transition-transform duration-1900 ease-in-out"
         style={{ 
-          transform: `rotate(${isHovered ? '360deg' : '0deg'})`,
+          transform: `rotate(${rotate ? '360deg' : '0deg'})`,
           zIndex: 5 
         }}
       />
@@ -28,7 +28,6 @@ const RotatingProfile = () => {
     </div>
   );
 };
-
 interface TechTagProps {
   name: string;
   size?: 'sm' | 'base' | 'lg' | 'xl' | '2xl';
