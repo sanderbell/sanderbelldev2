@@ -145,7 +145,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ quote, context, ratin
         <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
       ))}
     </div>
-    <p className="text-gray-700 text-sm mb-2 italic">"{quote}"</p>
+    <p className="text-gray-800 text-sm mb-2 italic">"{quote}"</p>
     <p className="text-xs text-gray-500">{context}</p>
   </div>
 );
@@ -282,22 +282,23 @@ function App() {
       <div className="flex justify-between items-start mb-3">
         <div>
           <h3 className="text-lg font-semibold text-gray-900">Founder</h3>
-          <p className="text-purple-600 font-medium">100K31D (Wellness Tech) → Jan 2025–Present</p>
+          <p className="text-purple-600 font-medium">100k31d (Wellness Tech) · Jan 2025–Present</p>
         </div>
         <span className="text-xs text-purple-600 bg-purple-100 px-2 py-1 rounded-full flex items-center justify-center h-10 w-20">2 Apps</span>
       </div>
       <ul className="text-sm text-gray-700 space-y-1">
-        <li>→ <strong><a href="https://oneatati.me" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-800 underline">One at a Time</a></strong> β: Typing meditation app with advanced animations</li>
-        <li>→ <strong><span className="blur-sm">Nice try! :-)</span></strong> ⍺: Social mindfulness app with complex algorithms & privacy-first design</li>
+                <li>→ <strong><span className="opacity-40 blur-xs">Nice try! :-)</span></strong> ⍺: Social mindfulness app with complex algorithms & privacy-first design (details on-demand)</li>
+
+        <li>→ <strong><a href="https://oneatati.me" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-800 underline">One at a Time</a></strong> β: Adorable typing meditation app with advanced animations and haptics</li>
         <li>→ Applied psychology insights to create behavior-changing digital experiences</li>
-        <li>→ Full ownership: concept → development → App Store → monetization strategy</li>
+        <li>→ Full ownership: concept → design → development → App Store → monetization</li>
       </ul>
     </div>
     <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
       <div className="flex justify-between items-start mb-3">
         <div>
           <h3 className="text-lg font-semibold text-gray-900">React / Next.js Developer</h3>
-          <p className="text-blue-600 font-medium">Ling App → Dec 2023–Present</p>
+          <p className="text-blue-600 font-medium">Ling App · Dec 2023–Present</p>
         </div>
         <span className="text-xs text-blue-600 bg-blue-100 px-2 py-1 rounded-full flex items-center justify-center h-10 w-20">2M+ Users</span>
       </div>
@@ -311,7 +312,7 @@ function App() {
       <div className="flex justify-between items-start mb-3">
         <div>
           <h3 className="text-lg font-semibold text-gray-900">Web Developer</h3>
-          <p className="text-gray-600 font-medium">Freelance → May 2022–Present</p>
+          <p className="text-gray-600 font-medium">Freelance · May 2022–Present</p>
         </div>
         <span className="text-sm text-gray-600 bg-gray-100 px-2 py-1 rounded-full flex items-center justify-center h-10 w-20">3+ Years</span>
       </div>
@@ -346,27 +347,27 @@ function App() {
   <div className="grid md:grid-cols-2 gap-4">
     <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
       <h3 className="font-semibold text-gray-900 mb-2">🧠 Psychology → Communications → Tech Pivot</h3>
-      <p className="text-sm text-gray-700">Master's in Psychology applied to creating empathetic user-centered digital experiences. Career pivot during global upheaval led to unique intersection of human behavior and technology.</p>
+      <p className="text-sm text-gray-600">Master's in Psychology applied to creating empathetic user-centered digital experiences. Career pivot during global upheaval led to unique intersection of human behavior and technology.</p>
     </div>
     <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
   <h3 className="font-semibold text-gray-900 mb-2">🌍 Global Remote Expertise</h3>
-  <p className="text-sm text-gray-700">Based in Thailand, speaks English and Russian fluently, learning Thai. Proven track record of building products for international markets across different time zones.</p>
+  <p className="text-sm text-gray-600">Based in Thailand, speaks English and Russian fluently, learning Thai. Proven track record of building products for international markets across different time zones.</p>
 </div>
     <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
       <h3 className="font-semibold text-gray-900 mb-2">🚀 Product-Minded Development</h3>
-      <p className="text-sm text-gray-700">Focuses on shipping complete products, not just features. From initial concept through development to App Store deployment and user acquisition strategies.</p>
+      <p className="text-sm text-gray-600">Focuses on shipping complete products, not just features. From initial concept through development to App Store deployment and user acquisition strategies.</p>
     </div>
     <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
       <h3 className="font-semibold text-gray-900 mb-2">🎯 Results-Driven Approach</h3>
-      <p className="text-sm text-gray-700">Thrives in outcome-focused environments with clear goals and autonomy. Prefers delivering results over process overhead while building apps that genuinely improve mental health and mindfulness.</p>
+      <p className="text-sm text-gray-600">Thrives in outcome-focused environments with clear goals and autonomy. 
+      </p>
     </div>
   </div>
 </div>
 
         {/* Contact */}
         <div className="text-center bg-white rounded-lg p-6 shadow-sm border border-gray-200">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Let's Build Something Great</h2>
-          <div className="flex flex-wrap justify-center gap-6">
+           <div className="flex flex-wrap justify-center gap-6">
             <a href="mailto:thesanderbell@gmail.com" className="contact-link flex items-center gap-2 text-blue-600 hover:text-blue-800">
               <Mail size={20} />
               <span>thesanderbell@gmail.com</span>
