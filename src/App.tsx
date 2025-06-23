@@ -11,7 +11,7 @@ const RotatingProfile = () => {
       onMouseLeave={() => setIsHovered(false)}
     >
       <img
-        src="/src/assets/react.svg"
+        src="react.svg"
         alt="React Logo"
         className="w-full h-full absolute top-0 left-0 transition-transform duration-1700 ease-in-out"
         style={{ 
@@ -20,7 +20,7 @@ const RotatingProfile = () => {
         }}
       />
       <img
-        src="/src/assets/photo.jpeg"
+        src="photo.jpeg"
         alt="Profile Portrait"
         className="w-[3rem] h-[3rem] rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 object-cover"
         style={{ zIndex: 10 }}
