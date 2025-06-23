@@ -63,6 +63,41 @@ const StatCard: React.FC<StatCardProps> = ({ icon: Icon, value, label, color = "
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
 
+  // Define color classes for each possible color value
+  const colorClasses = {
+    green: {
+      bg: 'bg-green-50',
+      border: 'border-green-200',
+      icon: 'text-green-600',
+      value: 'text-green-700',
+      label: 'text-green-600'
+    },
+    blue: {
+      bg: 'bg-blue-50',
+      border: 'border-blue-200',
+      icon: 'text-blue-600',
+      value: 'text-blue-700',
+      label: 'text-blue-600'
+    },
+    purple: {
+      bg: 'bg-purple-50',
+      border: 'border-purple-200',
+      icon: 'text-purple-600',
+      value: 'text-purple-700',
+      label: 'text-purple-600'
+    },
+    orange: {
+      bg: 'bg-orange-50',
+      border: 'border-orange-200',
+      icon: 'text-orange-600',
+      value: 'text-orange-700',
+      label: 'text-orange-600'
+    }
+  };
+
+  // Default to blue if the color is not found
+  const selectedColor = colorClasses[color as keyof typeof colorClasses] || colorClasses.blue;
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -90,10 +125,10 @@ const StatCard: React.FC<StatCardProps> = ({ icon: Icon, value, label, color = "
   }, [value]);
 
   return (
-    <div ref={ref} className={`bg-${color}-50 border border-${color}-200 rounded-lg p-4 text-center card-enter`}>
-      <Icon className={`w-6 h-6 text-${color}-600 mx-auto mb-2`} />
-      <div className={`text-2xl font-bold text-${color}-700`}>{count}{value.replace(/[0-9]/g, '')}</div>
-      <div className={`text-sm text-${color}-600`}>{label}</div>
+    <div ref={ref} className={`${selectedColor.bg} ${selectedColor.border} rounded-lg p-4 text-center card-enter`}>
+      <Icon className={`w-6 h-6 ${selectedColor.icon} mx-auto mb-2`} />
+      <div className={`text-2xl font-bold ${selectedColor.value}`}>{count}{value.replace(/[0-9]/g, '')}</div>
+      <div className={`text-sm ${selectedColor.label}`}>{label}</div>
     </div>
   );
 };
@@ -196,7 +231,7 @@ function App() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-purple-100 p-6">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-yellow-50 p-6">
       <style>{globalStyles}</style>
       <div className="max-w-5xl mx-auto fade-in">
         {/* Header */}
@@ -208,36 +243,43 @@ function App() {
             </h1>
           </div>
          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-  Sander Bell, React Developer who mastered fundamentals when Stack Overflow was our only assistant. Now wielding modern AI tools to ship lightning fast with both worlds.
+  Sander Bell, React Developer who mastered fundamentals when Stack Overflow was our only assistant. Now wieldingಸ
+
+ wielding modern AI tools to ship lightning fast with both worlds.
 </p>
         </div>
 
         {/* Tech Stack Cloud */}
         <div className="mb-12">
           {/* <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">My Focus</h2> */}
-          <div className="flex flex-wrap justify-center gap-2">
-            <TechTag name="React" size="xl"  />
-            <TechTag name="React Native" size="xl" />
-            <TechTag name="AI Tools" size="xl" />
-            <TechTag name="TypeScript" size="lg" />
-            <TechTag name="Next.js 14+" size="lg" />
-            <TechTag name="Gitlab" size="lg" />
-            <TechTag name="Redux" size="base" />
-            <TechTag name="Node.js" size="base" />
-             <TechTag name="iOS Development" size="base" />
-            <TechTag name="Android" size="base" />
-            <TechTag name="Performance Optimization" size="base" />
-            <TechTag name="Jotai" size="sm" />
-            <TechTag name="Zustand" size="sm" />
-            <TechTag name="Jest" size="sm" />
-            <TechTag name="Figma" size="sm" />
-            <TechTag name="Tailwind CSS" size="sm" />
-            <TechTag name="Xcode" size="sm" />
-            <TechTag name="Python" size="sm" />
-            <TechTag name="Git" size="sm" />
-            <TechTag name="CI/CD" size="sm" />
-           </div>
-        </div>
+        <div className="flex flex-wrap justify-center gap-2">
+  <TechTag name="⭐️ React" size="xl" />
+  <TechTag name="⭐️ React Native" size="xl" />
+  <TechTag name="AI Tools" size="xl" />
+  <TechTag name="TypeScript" size="lg" />
+  <TechTag name="⭐️ Next.js 14+" size="lg" />
+  <TechTag name="JavaScript ES6+" size="lg" />
+  <TechTag name="Git" size="lg" />
+  <TechTag name="Redux" size="base" />
+  <TechTag name="iOS Development" size="base" />
+  <TechTag name="Android" size="base" />
+   <TechTag name="Node.js" size="base" />
+  <TechTag name="DynamoDB" size="base" />
+  <TechTag name="Performance Optimization" size="base" />
+  <TechTag name="Jotai" size="sm" />
+  <TechTag name="Zustand" size="sm" />
+  <TechTag name="Jest" size="sm" />
+  <TechTag name="Figma" size="sm" />
+  <TechTag name="Tailwind CSS" size="sm" />
+  <TechTag name="Xcode" size="sm" />
+  <TechTag name="Vue.js" size="sm" />
+  <TechTag name="PWAs" size="sm" />
+  <TechTag name="CI/CD" size="sm" />
+  <TechTag name="Browser Extensions" size="sm" />
+  <TechTag name="Python" size="sm" />
+  <TechTag name="HTML5" size="sm" />
+  <TechTag name="CSS3" size="sm" />
+</div>     </div>
         <div className="mb-12">
           {/* <h2 className="text-2xl font-bold text-gray-900 mb-4">Proven Track Record</h2> */}
           <div className="space-y-4">
@@ -267,7 +309,7 @@ function App() {
               <ul className="text-sm text-gray-700 space-y-1">
                 <li>• Maintained React Native application serving 2+ million language learners</li>
                 <li>• Developed and maintained Next.js web application, delivering 40+ major features</li>
-                <li>• Delivered 120+ features with &lt;1% bug rate across 17 months</li>
+                <li>• Delivered 120+ features with bug rate across 17 months</li>
                 <li>• Built cross-platform features for iOS/Android/Web</li>
               </ul>
             </div>
