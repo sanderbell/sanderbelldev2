@@ -123,7 +123,7 @@ const StatCard: React.FC<StatCardProps> = ({ icon: Icon, value, label, color = "
   }, [value]);
 
   return (
-    <div ref={ref} className={`${selectedColor.bg} ${selectedColor.border} rounded-lg p-4 text-center card-enter`}>
+    <div ref={ref} className={`${selectedColor.bg} ${selectedColor.border} border rounded-lg p-4 text-center card-enter`}>
       <Icon className={`w-6 h-6 ${selectedColor.icon} mx-auto mb-2`} />
       <div className={`text-2xl font-bold ${selectedColor.value}`}>{count}{value.replace(/[0-9]/g, '')}</div>
       <div className={`text-sm ${selectedColor.label}`}>{label}</div>
