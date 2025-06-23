@@ -205,10 +205,10 @@ function App() {
   `;
 
   const stats = [
-    { icon: Zap, value: "40%", label: "Faster Delivery", color: "green" },
-    { icon: Code, value: "532", label: "Code Pushes", color: "blue" },
+    { icon: Zap, value: "60%", label: "Faster Delivery", color: "green" },
+    { icon: Code, value: "500+", label: "Code Pushes", color: "blue" },
     { icon: Rocket, value: "5", label: "Projects Launched", color: "purple" },
-    { icon: Users, value: "15+", label: "Years Leadership", color: "orange" },
+    { icon: Users, value: "15+", label: "Years of Leadership", color: "orange" },
   ];
 
   const testimonials = [
@@ -345,27 +345,27 @@ function App() {
         </div>
 
         {/* Personal Facts */}
-        <div className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Beyond the Code</h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
-              <h3 className="font-semibold text-gray-900 mb-2">🧠 Psychology → Communications → Tech Pivot</h3>
-              <p className="text-sm text-gray-700">Master's in Psychology applied to creating user-centered digital experiences. Career pivot during global upheaval led to unique intersection of human behavior and technology.</p>
-            </div>
-            <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
-              <h3 className="font-semibold text-gray-900 mb-2">🌍 Global Perspective</h3>
-              <p className="text-sm text-gray-700">Based in Thailand, speaks 4 languages (English, Russian, Thai, Hebrew). Building location-based London app remotely after visa denial.</p>
-            </div>
-            <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
-              <h3 className="font-semibold text-gray-900 mb-2">🎯 $100K Vision</h3>
-              <p className="text-sm text-gray-700">Company name "100K31D" encodes ambitious revenue goal by Dec 31, blending numeric precision with symbolic drive for meaningful products.</p>
-            </div>
-            <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
-              <h3 className="font-semibold text-gray-900 mb-2">🧘 Wellness Tech Focus</h3>
-              <p className="text-sm text-gray-700">Building apps that genuinely improve mental health and mindfulness, combining technical excellence with psychological insights.</p>
-            </div>
-          </div>
-        </div>
+     <div className="mb-12">
+ <h2 className="text-2xl font-bold text-gray-900 mb-4">Beyond the Code</h2>
+ <div className="grid md:grid-cols-2 gap-4">
+ <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
+   <h3 className="font-semibold text-gray-900 mb-2">🧠 Psychology → Communications → Tech Pivot</h3>
+   <p className="text-sm text-gray-700">Master's in Psychology applied to creating empathic user-centered digital experiences. Career pivot during global upheaval led to unique intersection of human behavior and technology.</p>
+ </div>
+ <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
+   <h3 className="font-semibold text-gray-900 mb-2">🌍 Global Remote Expertise</h3>
+   <p className="text-sm text-gray-700">Based in Thailand, speaks English, Russian, a bit of Thai, Hebrew. Proven track record of building products for international markets across different time zones.</p>
+ </div>
+ <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
+   <h3 className="font-semibold text-gray-900 mb-2">🚀 Product-Minded Development</h3>
+   <p className="text-sm text-gray-700">Focus on shipping complete products, not just features. From initial concept through development to App Store deployment and user acquisition strategies.</p>
+ </div>
+ <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
+   <h3 className="font-semibold text-gray-900 mb-2">🎯 Results-Driven Approach</h3>
+   <p className="text-sm text-gray-700">Thrives in outcome-focused environments with clear goals and autonomy. Prefers delivering results over process overhead, building apps that genuinely improve mental health and mindfulness.</p>
+ </div>
+</div>
+</div>
 
         {/* Contact */}
         <div className="text-center bg-white rounded-lg p-6 shadow-sm border border-gray-200">
@@ -383,10 +383,7 @@ function App() {
               <Github size={20} />
               <span>GitHub</span>
             </a>
-            <a href="https://sanderbell.dev" className="contact-link flex items-center gap-2 text-blue-600 hover:text-blue-800">
-              <Globe size={20} />
-              <span>Portfolio</span>
-            </a>
+            
           </div>
           <p className="text-sm text-gray-600 mt-4">
             📍 Based in Thailand • Remote-friendly • Available for full-time or contract work
