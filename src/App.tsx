@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Github, Linkedin, Mail, Globe, Star, Code, Zap, Users, Brain, Rocket } from 'lucide-react';
+import { Github, Linkedin, Mail, Globe, Star, Code, Zap, Users, Rocket } from 'lucide-react';
 
 const RotatingProfile = () => {
   const [rotation, setRotation] = useState(0);
@@ -170,7 +170,7 @@ function App() {
   `;
 
   const stats = [
-    { icon: Zap, value: "70%", label: "Faster Delivery", color: "green" },
+    { icon: Zap, value: "40%", label: "Faster Delivery", color: "green" },
     { icon: Code, value: "532", label: "Code Pushes", color: "blue" },
     { icon: Rocket, value: "5", label: "Projects Launched", color: "purple" },
     { icon: Users, value: "15+", label: "Years Leadership", color: "orange" },
@@ -208,7 +208,7 @@ function App() {
             </h1>
           </div>
          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-  Sander Bell, React Developer who mastered fundamentals when Stack Overflow was our only assistant. Now wielding modern tools to ship lightning fast with both worlds.
+  Sander Bell, React Developer who mastered fundamentals when Stack Overflow was our only assistant. Now wielding modern AI tools to ship lightning fast with both worlds.
 </p>
         </div>
 
@@ -245,31 +245,44 @@ function App() {
               <div className="flex justify-between items-start mb-3">
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900">Founder</h3>
-                  <p className="text-purple-600 font-medium">100K31D (Wellness Tech) • 2025–Present</p>
+                  <p className="text-purple-600 font-medium">100K31D (Wellness Tech) • Jan 2025–Present</p>
                 </div>
                 <span className="text-sm text-purple-600 bg-purple-100 px-2 py-1 rounded-full">2 Apps</span>
               </div>
               <ul className="text-sm text-gray-700 space-y-1">
-                    <li>•  <strong><a href="https://oneatati.me" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-800 underline">One at a Time β :</a></strong> Typing meditation app with advanced animations</li>
-
+                    <li>• <strong><a href="https://oneatati.me" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-800 underline">One at a Time β :</a></strong> Typing meditation app with advanced animations</li>
                 <li>• <strong>Nocturna:</strong> Social mindfulness app with complex algorithms & privacy-first design</li>
                 <li>• Applied psychology insights to create behavior-changing digital experiences</li>
-                <li>• Full ownership: concept → development → App Store → revenue</li>
+                <li>• Full ownership: concept → development → App Store → monetization strategy</li>
               </ul>
             </div>
             <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
               <div className="flex justify-between items-start mb-3">
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900">Mobile & Web Developer</h3>
-                  <p className="text-blue-600 font-medium">Ling App • 2023–Present</p>
+                  <h3 className="text-lg font-semibold text-gray-900">React / Next.js Developer</h3>
+                  <p className="text-blue-600 font-medium">Ling App • Dec 2023–Present</p>
                 </div>
                 <span className="text-sm text-green-600 bg-green-100 px-2 py-1 rounded-full">8M+ Users</span>
               </div>
               <ul className="text-sm text-gray-700 space-y-1">
-                <li>• Delivered 120+ bug fixes or features with 10% bug rate</li>
-                <li>• Implemented the entire lesson review system</li>
-                <li>• Achieved 70% faster delivery using AI-enhanced workflows</li>
+                <li>• Maintained React Native application serving 2+ million language learners</li>
+                <li>• Developed and maintained Next.js web application, delivering 40+ major features</li>
+                <li>• Delivered 120+ features with &lt;1% bug rate across 17 months</li>
                 <li>• Built cross-platform features for iOS/Android/Web</li>
+              </ul>
+            </div>
+            <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+              <div className="flex justify-between items-start mb-3">
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900">Web Developer</h3>
+                  <p className="text-gray-600 font-medium">Freelance • May 2022–Present</p>
+                </div>
+                <span className="text-sm text-gray-600 bg-gray-100 px-2 py-1 rounded-full">3+ Years</span>
+              </div>
+              <ul className="text-sm text-gray-700 space-y-1">
+                <li>• Developed Vue.js application for text analysis (somany.ch)</li>
+                <li>• Built React/Next.js applications, PWAs, and browser extensions</li>
+                <li>• Focus on responsive design and user experience optimization</li>
               </ul>
             </div>
           </div>
