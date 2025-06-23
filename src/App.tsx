@@ -366,7 +366,7 @@ function App() {
 </div>
 
         {/* Contact */}
-        <div className="text-center bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+        <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-200">
            <div className="flex flex-wrap justify-center gap-6">
             <a href="mailto:thesanderbell@gmail.com" className="contact-link flex items-center gap-2 text-blue-600 hover:text-blue-800">
               <Mail size={20} />
