@@ -293,8 +293,7 @@ function App() {
               </div>
               <ul className="text-sm text-gray-700 space-y-1">
                     <li>• <strong><a href="https://oneatati.me" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-800 underline">One at a Time β :</a></strong> Typing meditation app with advanced animations</li>
-                <li>• <strong>Nocturna:</strong> Social mindfulness app with complex algorithms & privacy-first design</li>
-                <li>• Applied psychology insights to create behavior-changing digital experiences</li>
+<li>• <strong><span className="blur-xs">Nice try!</span>:</strong> Social mindfulness app with complex algorithms & privacy-first design</li>                <li>• Applied psychology insights to create behavior-changing digital experiences</li>
                 <li>• Full ownership: concept → development → App Store → monetization strategy</li>
               </ul>
             </div>
@@ -309,7 +308,6 @@ function App() {
               <ul className="text-sm text-gray-700 space-y-1">
                 <li>• Maintained React Native application serving 2+ million language learners</li>
                 <li>• Developed and maintained Next.js web application, delivering 40+ major features</li>
-                <li>• Delivered 120+ features with bug rate across 17 months</li>
                 <li>• Built cross-platform features for iOS/Android/Web</li>
               </ul>
             </div>
@@ -322,8 +320,8 @@ function App() {
                 <span className="text-sm text-gray-600 bg-gray-100 px-2 py-1 rounded-full">3+ Years</span>
               </div>
               <ul className="text-sm text-gray-700 space-y-1">
-                <li>• Developed Vue.js application for text analysis (somany.ch)</li>
-                <li>• Built React/Next.js applications, PWAs, and browser extensions</li>
+                <li>• Developed Vue.js application for text analysis (<a href="https://somany.ch" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-800 underline">somany.ch</a>)</li>
+                <li>• Built React/Next.js applications, PWAs, and browser extensions (<a href="https://should.today" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-800 underline">should.today</a>, <a href="https://rewords.app" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-800 underline">rewords.app</a>)</li>
                 <li>• Focus on responsive design and user experience optimization</li>
               </ul>
             </div>
