@@ -314,7 +314,7 @@ function App() {
           <h3 className="text-lg font-semibold text-gray-900">Web Developer</h3>
           <p className="text-gray-600 font-medium">Freelance · May 2022–Present</p>
         </div>
-        <span className="text-sm text-gray-600 bg-gray-100 px-2 py-1 rounded-full flex items-center justify-center h-10 w-20">3+ Years</span>
+        <span className="text-xs text-gray-600 bg-gray-100 px-2 py-1 rounded-full flex items-center justify-center h-10 w-20">3+ Years</span>
       </div>
       <ul className="text-sm text-gray-700 space-y-1">
         <li>→ Developed Vue.js application for text analysis (<a href="https://somany.ch" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-800 underline">somany.ch</a>)</li>
