@@ -210,23 +210,23 @@ function App() {
   ];
 
   const testimonials = [
-    {
-      quote: "Only bug from his cards last sprint (16) was from main (pre-existing). User-centered approach - doesn't just follow specs but understands their purpose.",
-      context: "Ling App Team Lead",
-    },
-    {
-      quote: "Once you set clear requirements, he just gets stuff done. Much needed orange in a sea of apples.",
-      context: "Ling App Colleague",
-    },
-    {
-      quote: "Quick at getting features done and fixing bugs. Always catches small cases others might miss.",
-      context: "Ling App Team Member",
-    },
-    {
-      quote: "Helped show the team how AI can save time with creating/updating specs. Data-driven approach to documentation.",
-      context: "Ling App Developer",
-    },
-  ];
+  {
+    quote: "User-centered approach - doesn't simply focus on what the designs or specs say, but their purpose and intention. Made suggestions that were more elegant or user friendly.",
+    context: "Ling App Team Lead",
+  },
+  {
+    quote: "Once you set clear requirements, he just gets stuff done. Much needed orange in a sea of apples.",
+    context: "Ling App Colleague",
+  },
+  {
+    quote: "Quick at getting features done and fixing bugs. Always catches small cases others might miss.",
+    context: "Ling App Team Member",
+  },
+  {
+    quote: "Helped show the team how AI can save time with creating/updating specs. Data-driven approach to documentation.",
+    context: "Ling App Developer",
+  },
+];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-yellow-50 p-4 sm:p-6">
@@ -341,27 +341,27 @@ function App() {
         </div>
 
         {/* Personal Facts */}
-        <div className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Beyond the Code</h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
-              <h3 className="font-semibold text-gray-900 mb-2">🧠 Psychology → Communications → Tech Pivot</h3>
-              <p className="text-sm text-gray-700">Master's in Psychology applied to creating empathic user-centered digital experiences. Career pivot during global upheaval led to unique intersection of human behavior and technology.</p>
-            </div>
-            <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
-              <h3 className="font-semibold text-gray-900 mb-2">🌍 Global Remote Expertise</h3>
-              <p className="text-sm text-gray-700">Based in Thailand, speaks English, Russian, a bit of Thai, Hebrew. Proven track record of building products for international markets across different time zones.</p>
-            </div>
-            <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
-              <h3 className="font-semibold text-gray-900 mb-2">🚀 Product-Minded Development</h3>
-              <p className="text-sm text-gray-700">Focus on shipping complete products, not just features. From initial concept through development to App Store deployment and user acquisition strategies.</p>
-            </div>
-            <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
-              <h3 className="font-semibold text-gray-900 mb-2">🎯 Results-Driven Approach</h3>
-              <p className="text-sm text-gray-700">Thrives in outcome-focused environments with clear goals and autonomy. Prefers delivering results over process overhead, building apps that genuinely improve mental health and mindfulness.</p>
-            </div>
-          </div>
-        </div>
+<div className="mb-12">
+  <h2 className="text-2xl font-bold text-gray-900 mb-4">Beyond the Code</h2>
+  <div className="grid md:grid-cols-2 gap-4">
+    <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
+      <h3 className="font-semibold text-gray-900 mb-2">🧠 Psychology → Communications → Tech Pivot</h3>
+      <p className="text-sm text-gray-700">Master's in Psychology applied to creating empathetic user-centered digital experiences. Career pivot during global upheaval led to unique intersection of human behavior and technology.</p>
+    </div>
+    <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
+  <h3 className="font-semibold text-gray-900 mb-2">🌍 Global Remote Expertise</h3>
+  <p className="text-sm text-gray-700">Based in Thailand, speaks English and Russian fluently, learning Thai. Proven track record of building products for international markets across different time zones.</p>
+</div>
+    <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
+      <h3 className="font-semibold text-gray-900 mb-2">🚀 Product-Minded Development</h3>
+      <p className="text-sm text-gray-700">Focuses on shipping complete products, not just features. From initial concept through development to App Store deployment and user acquisition strategies.</p>
+    </div>
+    <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
+      <h3 className="font-semibold text-gray-900 mb-2">🎯 Results-Driven Approach</h3>
+      <p className="text-sm text-gray-700">Thrives in outcome-focused environments with clear goals and autonomy. Prefers delivering results over process overhead while building apps that genuinely improve mental health and mindfulness.</p>
+    </div>
+  </div>
+</div>
 
         {/* Contact */}
         <div className="text-center bg-white rounded-lg p-6 shadow-sm border border-gray-200">
