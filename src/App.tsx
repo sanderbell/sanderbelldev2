@@ -2,22 +2,22 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Github, Linkedin, Mail, Star, Code, Zap, Users, Rocket } from 'lucide-react';
 
 const RotatingProfile = () => {
-  const [rotation, setRotation] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setRotation(prev => (prev + 1) % 360);
-    }, 20);
-    return () => clearInterval(interval);
-  }, []);
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="relative w-[10rem] h-[10rem] sm:w-[15rem] sm:h-[15rem] mx-auto mb-6">
+    <div 
+      className="relative w-[10rem] h-[10rem] sm:w-[15rem] sm:h-[15rem] mx-auto mb-6"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <img
         src="/src/assets/react.svg"
         alt="React Logo"
-        className="w-full h-full absolute top-0 left-0"
-        style={{ transform: `rotate(${rotation}deg)`, zIndex: 5 }}
+        className="w-full h-full absolute top-0 left-0 transition-transform duration-1700 ease-in-out"
+        style={{ 
+          transform: `rotate(${isHovered ? '360deg' : '0deg'})`,
+          zIndex: 5 
+        }}
       />
       <img
         src="/src/assets/photo.jpeg"
