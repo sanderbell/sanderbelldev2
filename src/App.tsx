@@ -139,7 +139,7 @@ interface TestimonialCardProps {
 }
 
 const TestimonialCard: React.FC<TestimonialCardProps> = ({ quote, context, rating = 5, delay = 0 }) => (
-  <div className="bg-white border border-gray-200 rounded-lg p-4 card-enter" style={{ animationDelay: `${delay}s` }}>
+  <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200" style={{ animationDelay: `${delay}s` }}>
     <div className="flex mb-2">
       {[...Array(rating)].map((_, i) => (
         <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
