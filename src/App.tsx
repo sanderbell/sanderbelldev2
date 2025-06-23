@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Github, Linkedin, Mail, Globe, Star, Code, Zap, Users, Rocket } from 'lucide-react';
+import { Github, Linkedin, Mail, Star, Code, Zap, Users, Rocket } from 'lucide-react';
 
 const RotatingProfile = () => {
   const [rotation, setRotation] = useState(0);
@@ -7,12 +7,12 @@ const RotatingProfile = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setRotation(prev => (prev + 1) % 360);
-    }, 38);
+    }, 20);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="relative w-[15rem] h-[15rem] mx-auto mb-6">
+    <div className="relative w-[10rem] h-[10rem] sm:w-[15rem] sm:h-[15rem] mx-auto mb-6">
       <img
         src="/src/assets/react.svg"
         alt="React Logo"
@@ -63,7 +63,6 @@ const StatCard: React.FC<StatCardProps> = ({ icon: Icon, value, label, color = "
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
 
-  // Define color classes for each possible color value
   const colorClasses = {
     green: {
       bg: 'bg-green-50',
@@ -95,7 +94,6 @@ const StatCard: React.FC<StatCardProps> = ({ icon: Icon, value, label, color = "
     }
   };
 
-  // Default to blue if the color is not found
   const selectedColor = colorClasses[color as keyof typeof colorClasses] || colorClasses.blue;
 
   useEffect(() => {
@@ -141,7 +139,7 @@ interface TestimonialCardProps {
 }
 
 const TestimonialCard: React.FC<TestimonialCardProps> = ({ quote, context, rating = 5, delay = 0 }) => (
-  <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 card-enter" style={{ animationDelay: `${delay}s` }}>
+  <div className="bg-white border border-gray-200 rounded-lg p-4 card-enter" style={{ animationDelay: `${delay}s` }}>
     <div className="flex mb-2">
       {[...Array(rating)].map((_, i) => (
         <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
@@ -207,7 +205,7 @@ function App() {
   const stats = [
     { icon: Zap, value: "60%", label: "Faster Delivery", color: "green" },
     { icon: Code, value: "500+", label: "Code Pushes", color: "blue" },
-    { icon: Rocket, value: "5", label: "Projects Launched", color: "purple" },
+    { icon: Rocket, value: "7", label: "Projects Launched", color: "purple" },
     { icon: Users, value: "15+", label: "Years of Leadership", color: "orange" },
   ];
 
@@ -231,104 +229,102 @@ function App() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-yellow-50 p-6">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-yellow-50 p-4 sm:p-6">
       <style>{globalStyles}</style>
       <div className="max-w-5xl mx-auto fade-in">
         {/* Header */}
         <div className="text-center my-12">
           <RotatingProfile />
           <div className="p-6 mb-6">
-            <h1 className="text-8xl font-bold bg-gradient-to-r from-blue-700 to-purple-700 text-transparent bg-clip-text">
+            <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold bg-gradient-to-r from-blue-700 to-purple-700 text-transparent bg-clip-text">
               AI-fluent. <br/>Old-school trained.
             </h1>
           </div>
-         <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-  Sander Bell, React Developer who mastered fundamentals when Stack Overflow was our only assistant. Now wieldingಸ
-
- wielding modern AI tools to ship lightning fast with both worlds.
-</p>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Sander Bell, React Developer who mastered fundamentals when Stack Overflow was our only assistant. Now wielding modern AI tools to ship lightning fast with both worlds.
+          </p>
         </div>
 
         {/* Tech Stack Cloud */}
         <div className="mb-12">
-          {/* <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">My Focus</h2> */}
-        <div className="flex flex-wrap justify-center gap-2">
-  <TechTag name="⭐️ React" size="xl" />
-  <TechTag name="⭐️ React Native" size="xl" />
-  <TechTag name="AI Tools" size="xl" />
-  <TechTag name="TypeScript" size="lg" />
-  <TechTag name="⭐️ Next.js 14+" size="lg" />
-  <TechTag name="JavaScript ES6+" size="lg" />
-  <TechTag name="Git" size="lg" />
-  <TechTag name="Redux" size="base" />
-  <TechTag name="iOS Development" size="base" />
-  <TechTag name="Android" size="base" />
-   <TechTag name="Node.js" size="base" />
-  <TechTag name="DynamoDB" size="base" />
-  <TechTag name="Performance Optimization" size="base" />
-  <TechTag name="Jotai" size="sm" />
-  <TechTag name="Zustand" size="sm" />
-  <TechTag name="Jest" size="sm" />
-  <TechTag name="Figma" size="sm" />
-  <TechTag name="Tailwind CSS" size="sm" />
-  <TechTag name="Xcode" size="sm" />
-  <TechTag name="Vue.js" size="sm" />
-  <TechTag name="PWAs" size="sm" />
-  <TechTag name="CI/CD" size="sm" />
-  <TechTag name="Browser Extensions" size="sm" />
-  <TechTag name="Python" size="sm" />
-  <TechTag name="HTML5" size="sm" />
-  <TechTag name="CSS3" size="sm" />
-</div>     </div>
-        <div className="mb-12">
-          {/* <h2 className="text-2xl font-bold text-gray-900 mb-4">Proven Track Record</h2> */}
-          <div className="space-y-4">
-            <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
-              <div className="flex justify-between items-start mb-3">
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900">Founder</h3>
-                  <p className="text-purple-600 font-medium">100K31D (Wellness Tech) • Jan 2025–Present</p>
-                </div>
-                <span className="text-sm text-purple-600 bg-purple-100 px-2 py-1 rounded-full">2 Apps</span>
-              </div>
-              <ul className="text-sm text-gray-700 space-y-1">
-                    <li>• <strong><a href="https://oneatati.me" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-800 underline">One at a Time β :</a></strong> Typing meditation app with advanced animations</li>
-<li>• <strong><span className="blur-xs">Nice try!</span>:</strong> Social mindfulness app with complex algorithms & privacy-first design</li>                <li>• Applied psychology insights to create behavior-changing digital experiences</li>
-                <li>• Full ownership: concept → development → App Store → monetization strategy</li>
-              </ul>
-            </div>
-            <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
-              <div className="flex justify-between items-start mb-3">
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900">React / Next.js Developer</h3>
-                  <p className="text-blue-600 font-medium">Ling App • Dec 2023–Present</p>
-                </div>
-                <span className="text-sm text-green-600 bg-green-100 px-2 py-1 rounded-full">8M+ Users</span>
-              </div>
-              <ul className="text-sm text-gray-700 space-y-1">
-                <li>• Maintained React Native application serving 2+ million language learners</li>
-                <li>• Developed and maintained Next.js web application, delivering 40+ major features</li>
-                <li>• Built cross-platform features for iOS/Android/Web</li>
-              </ul>
-            </div>
-            <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
-              <div className="flex justify-between items-start mb-3">
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900">Web Developer</h3>
-                  <p className="text-gray-600 font-medium">Freelance • May 2022–Present</p>
-                </div>
-                <span className="text-sm text-gray-600 bg-gray-100 px-2 py-1 rounded-full">3+ Years</span>
-              </div>
-              <ul className="text-sm text-gray-700 space-y-1">
-                <li>• Developed Vue.js application for text analysis (<a href="https://somany.ch" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-800 underline">somany.ch</a>)</li>
-                <li>• Built React/Next.js applications, PWAs, and browser extensions (<a href="https://should.today" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-800 underline">should.today</a>, <a href="https://rewords.app" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-800 underline">rewords.app</a>)</li>
-                <li>• Focus on responsive design and user experience optimization</li>
-              </ul>
-            </div>
+          <div className="flex flex-wrap justify-center gap-2">
+            <TechTag name="React" size="xl" />
+            <TechTag name="React Native" size="xl" />
+            <TechTag name="AI Tools" size="xl" />
+            <TechTag name="TypeScript" size="lg" />
+            <TechTag name="Next.js 14+" size="lg" />
+            <TechTag name="JavaScript ES6+" size="lg" />
+            <TechTag name="Git" size="lg" />
+            <TechTag name="Redux" size="base" />
+            <TechTag name="iOS Development" size="base" />
+            <TechTag name="Android" size="base" />
+            <TechTag name="Node.js" size="base" />
+            <TechTag name="Performance Optimization" size="base" />
+            <TechTag name="Jotai" size="sm" />
+            <TechTag name="Zustand" size="sm" />
+            <TechTag name="Jest" size="sm" />
+            <TechTag name="Figma" size="sm" />
+            <TechTag name="Tailwind CSS" size="sm" />
+            <TechTag name="Xcode" size="sm" />
+            <TechTag name="Vue.js" size="sm" />
+            <TechTag name="PWAs" size="sm" />
+            <TechTag name="CI/CD" size="sm" />
+            <TechTag name="Browser Extensions" size="sm" />
+            <TechTag name="Python" size="sm" />
+            <TechTag name="HTML5" size="sm" />
+            <TechTag name="CSS3" size="sm" />
           </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+<div className="mb-12">
+  <div className="space-y-4">
+    <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+      <div className="flex justify-between items-start mb-3">
+        <div>
+          <h3 className="text-lg font-semibold text-gray-900">Founder</h3>
+          <p className="text-purple-600 font-medium">100K31D (Wellness Tech) → Jan 2025–Present</p>
+        </div>
+        <span className="text-xs text-purple-600 bg-purple-100 px-2 py-1 rounded-full flex items-center justify-center h-10 w-20">2 Apps</span>
+      </div>
+      <ul className="text-sm text-gray-700 space-y-1">
+        <li>→ <strong><a href="https://oneatati.me" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-800 underline">One at a Time</a></strong> β: Typing meditation app with advanced animations</li>
+        <li>→ <strong><span className="blur-sm">Nice try! :-)</span></strong> ⍺: Social mindfulness app with complex algorithms & privacy-first design</li>
+        <li>→ Applied psychology insights to create behavior-changing digital experiences</li>
+        <li>→ Full ownership: concept → development → App Store → monetization strategy</li>
+      </ul>
+    </div>
+    <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+      <div className="flex justify-between items-start mb-3">
+        <div>
+          <h3 className="text-lg font-semibold text-gray-900">React / Next.js Developer</h3>
+          <p className="text-blue-600 font-medium">Ling App → Dec 2023–Present</p>
+        </div>
+        <span className="text-xs text-blue-600 bg-blue-100 px-2 py-1 rounded-full flex items-center justify-center h-10 w-20">2M+ Users</span>
+      </div>
+      <ul className="text-sm text-gray-700 space-y-1">
+        <li>→ Maintained React Native application serving 2+ million language learners</li>
+        <li>→ Developed and maintained Next.js web application, delivering 40+ major features</li>
+        <li>→ Built cross-platform features for iOS/Android/Web</li>
+      </ul>
+    </div>
+    <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+      <div className="flex justify-between items-start mb-3">
+        <div>
+          <h3 className="text-lg font-semibold text-gray-900">Web Developer</h3>
+          <p className="text-gray-600 font-medium">Freelance → May 2022–Present</p>
+        </div>
+        <span className="text-sm text-gray-600 bg-gray-100 px-2 py-1 rounded-full flex items-center justify-center h-10 w-20">3+ Years</span>
+      </div>
+      <ul className="text-sm text-gray-700 space-y-1">
+        <li>→ Developed Vue.js application for text analysis (<a href="https://somany.ch" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-800 underline">somany.ch</a>)</li>
+        <li>→ Built React/Next.js applications, PWAs, and browser extensions (<a href="https://should.today" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-800 underline">should.today</a>, <a href="https://rewords.app" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-800 underline">rewords.app</a>)</li>
+        <li>→ Focus on responsive design and user experience optimization</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-12">
           {stats.map((stat, index) => (
             <StatCard key={index} {...stat} />
           ))}
@@ -345,27 +341,27 @@ function App() {
         </div>
 
         {/* Personal Facts */}
-     <div className="mb-12">
- <h2 className="text-2xl font-bold text-gray-900 mb-4">Beyond the Code</h2>
- <div className="grid md:grid-cols-2 gap-4">
- <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
-   <h3 className="font-semibold text-gray-900 mb-2">🧠 Psychology → Communications → Tech Pivot</h3>
-   <p className="text-sm text-gray-700">Master's in Psychology applied to creating empathic user-centered digital experiences. Career pivot during global upheaval led to unique intersection of human behavior and technology.</p>
- </div>
- <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
-   <h3 className="font-semibold text-gray-900 mb-2">🌍 Global Remote Expertise</h3>
-   <p className="text-sm text-gray-700">Based in Thailand, speaks English, Russian, a bit of Thai, Hebrew. Proven track record of building products for international markets across different time zones.</p>
- </div>
- <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
-   <h3 className="font-semibold text-gray-900 mb-2">🚀 Product-Minded Development</h3>
-   <p className="text-sm text-gray-700">Focus on shipping complete products, not just features. From initial concept through development to App Store deployment and user acquisition strategies.</p>
- </div>
- <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
-   <h3 className="font-semibold text-gray-900 mb-2">🎯 Results-Driven Approach</h3>
-   <p className="text-sm text-gray-700">Thrives in outcome-focused environments with clear goals and autonomy. Prefers delivering results over process overhead, building apps that genuinely improve mental health and mindfulness.</p>
- </div>
-</div>
-</div>
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Beyond the Code</h2>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
+              <h3 className="font-semibold text-gray-900 mb-2">🧠 Psychology → Communications → Tech Pivot</h3>
+              <p className="text-sm text-gray-700">Master's in Psychology applied to creating empathic user-centered digital experiences. Career pivot during global upheaval led to unique intersection of human behavior and technology.</p>
+            </div>
+            <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
+              <h3 className="font-semibold text-gray-900 mb-2">🌍 Global Remote Expertise</h3>
+              <p className="text-sm text-gray-700">Based in Thailand, speaks English, Russian, a bit of Thai, Hebrew. Proven track record of building products for international markets across different time zones.</p>
+            </div>
+            <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
+              <h3 className="font-semibold text-gray-900 mb-2">🚀 Product-Minded Development</h3>
+              <p className="text-sm text-gray-700">Focus on shipping complete products, not just features. From initial concept through development to App Store deployment and user acquisition strategies.</p>
+            </div>
+            <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
+              <h3 className="font-semibold text-gray-900 mb-2">🎯 Results-Driven Approach</h3>
+              <p className="text-sm text-gray-700">Thrives in outcome-focused environments with clear goals and autonomy. Prefers delivering results over process overhead, building apps that genuinely improve mental health and mindfulness.</p>
+            </div>
+          </div>
+        </div>
 
         {/* Contact */}
         <div className="text-center bg-white rounded-lg p-6 shadow-sm border border-gray-200">
@@ -383,10 +379,9 @@ function App() {
               <Github size={20} />
               <span>GitHub</span>
             </a>
-            
           </div>
           <p className="text-sm text-gray-600 mt-4">
-            📍 Based in Thailand • Remote-friendly • Available for full-time or contract work
+            📍 Based in Thailand → Remote-friendly → Available for full-time or contract work
           </p>
         </div>
       </div>
