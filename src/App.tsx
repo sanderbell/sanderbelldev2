@@ -28,14 +28,12 @@ const RotatingProfile = () => {
         zIndex: 5,
       }}
       />
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-blue-600 to-purple-500" style={{ zIndex: 10 }}>
-      <img
+       <img
         src="photo.jpeg"
         alt="Profile Portrait"
         className="w-[3rem] h-[3rem] rounded-full opacity-90"
       />
-      </div>
-    </div>
+     </div>
   );
 };
 interface TechTagProps {
