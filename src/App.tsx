@@ -529,27 +529,27 @@ function App() {
 
         {/* Contact */}
         <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-200">
-          <p className="text-md text-gray-600 mb-2">
+          <p className="text-sm text-gray-600 mb-2">
             📍 Based in Thailand → Remote-Friendly → Open to New Opportunities
           </p>
           <div className="flex flex-wrap justify-center gap-6">
             <a
               href="mailto:thesanderbell@gmail.com"
-              className="contact-link flex items-center gap-2 text-blue-600 hover:text-blue-800"
+              className="contact-link text-sm flex items-center gap-2 text-blue-600 hover:text-blue-800"
             >
               <Mail size={20} />
               <span>thesanderbell@gmail.com</span>
             </a>
             <a
               href="https://linkedin.com/in/sanderbell"
-              className="contact-link flex items-center gap-2 text-blue-600 hover:text-blue-800"
+              className="contact-link text-sm flex items-center gap-2 text-blue-600 hover:text-blue-800"
             >
               <Linkedin size={20} />
               <span>LinkedIn</span>
             </a>
             <a
               href="https://github.com/sanderbell"
-              className="contact-link flex items-center gap-2 text-blue-600 hover:text-blue-800"
+              className="contact-link text-sm flex items-center gap-2 text-blue-600 hover:text-blue-800"
             >
               <Github size={20} />
               <span>GitHub</span>
