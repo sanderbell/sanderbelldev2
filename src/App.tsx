@@ -433,7 +433,7 @@ function App() {
                   )
                 </li>
                 <li>
-                  → Built React/Next.js applications, PWAs, and browser
+                  → Built React/Next.js applications, and browser
                   extensions (
                   <a
                     href="https://should.today"
