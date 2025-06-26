@@ -506,7 +506,7 @@ function App() {
                 Global Remote Expertise
               </h3>
               <p className="text-sm text-gray-600">
-                Live in Chiang Mai, speaks English and Russian fluently,
+                Lives in Chiang Mai, speaks English and Russian fluently,
                 learning Thai. Proven track record of building products for
                 international markets across different time zones.
               </p>
