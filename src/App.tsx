@@ -32,7 +32,7 @@ const RotatingProfile = () => {
       <img
         src="photo.jpeg"
         alt="Profile Portrait"
-        className="w-[3rem] h-[3rem] rounded-full opacity-80"
+        className="w-[3rem] h-[3rem] rounded-full opacity-90"
       />
       </div>
     </div>
