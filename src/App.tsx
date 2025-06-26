@@ -20,20 +20,21 @@ const RotatingProfile = () => {
   return (
     <div className="relative w-[10rem] h-[10rem] sm:w-[15rem] sm:h-[15rem] mx-auto mb-6">
       <img
-        src="react.svg"
-        alt="React Logo"
-        className="w-full h-full absolute top-0 left-0 transition-transform duration-1900 ease-in-out"
-        style={{
-          transform: `rotate(${rotate ? '360deg' : '0deg'})`,
-          zIndex: 5,
-        }}
+      src="react.svg"
+      alt="React Logo"
+      className="w-full h-full absolute top-0 left-0 transition-transform duration-1900 ease-in-out"
+      style={{
+        transform: `rotate(${rotate ? '360deg' : '0deg'})`,
+        zIndex: 5,
+      }}
       />
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-blue-600 to-purple-500" style={{ zIndex: 10 }}>
       <img
-        src="photo.png"
+        src="photo.jpeg"
         alt="Profile Portrait"
-        className="w-[3rem] h-[3rem] rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 object-cover"
-        style={{ zIndex: 10 }}
+        className="w-[3rem] h-[3rem] rounded-full opacity-80"
       />
+      </div>
     </div>
   );
 };
