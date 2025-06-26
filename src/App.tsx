@@ -201,7 +201,7 @@ function App() {
       transition: transform 0.2s ease, background-color 0.2s ease;
     }
     .tech-tag:hover {
-      transform: scale(1.05);
+      transform: scale(1.03);
       background-color: #bfdbfe;
     }
     .card-enter {
@@ -219,7 +219,7 @@ function App() {
       }
     }
     .fade-in {
-      animation: fadeIn 1s ease-in;
+      animation: fadeIn 0.7s ease-in;
     }
     @keyframes fadeIn {
       from { opacity: 0; }
@@ -232,7 +232,7 @@ function App() {
       transition: color 0.2s ease, transform 0.2s ease;
     }
     .contact-link:hover {
-      transform: scale(1.05);
+      transform: scale(1.03);
     }
   `;
 
@@ -252,22 +252,22 @@ function App() {
     {
       quote:
         "User-centered approach - doesn't simply focus on what the designs or specs say, but their purpose and intention. Made suggestions that were more elegant or user friendly.",
-      context: 'Ling App Team Lead',
+      context: 'Ling Team Lead',
     },
     {
       quote:
         'Once you set clear requirements, he just gets stuff done. Much needed orange in a sea of apples.',
-      context: 'Ling App Colleague',
+      context: 'Ling Colleague',
     },
     {
       quote:
         'Quick at getting features done and fixing bugs. Always catches small cases others might miss.',
-      context: 'Ling App Team Member',
+      context: 'Ling Team Member',
     },
     {
       quote:
         'Helped show the team how AI can save time with creating/updating specs. Data-driven approach to documentation.',
-      context: 'Ling App Developer',
+      context: 'Ling Developer',
     },
   ];
 
@@ -486,7 +486,7 @@ function App() {
           <div className="grid md:grid-cols-2 gap-4">
             <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
               <h3 className="font-semibold text-gray-900 mb-2">
-                🧠 Psychology → Communications → Tech Pivot
+                Psychology → Communications → Tech Pivot
               </h3>
               <p className="text-sm text-gray-600">
                 Master's in Psychology applied to creating empathetic
@@ -497,17 +497,17 @@ function App() {
             </div>
             <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
               <h3 className="font-semibold text-gray-900 mb-2">
-                🌍 Global Remote Expertise
+                Global Remote Expertise
               </h3>
               <p className="text-sm text-gray-600">
-                Based in Thailand, speaks English and Russian fluently, learning
-                Thai. Proven track record of building products for international
-                markets across different time zones.
+                Based in Chiang Mai, speaks English and Russian fluently,
+                learning Thai. Proven track record of building products for
+                international markets across different time zones.
               </p>
             </div>
             <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
               <h3 className="font-semibold text-gray-900 mb-2">
-                🚀 Product-Minded Development
+                Product-Minded Development
               </h3>
               <p className="text-sm text-gray-600">
                 Focuses on shipping complete products, not just features. From
@@ -517,11 +517,11 @@ function App() {
             </div>
             <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
               <h3 className="font-semibold text-gray-900 mb-2">
-                🎯 Results-Driven Approach
+                Results-Driven Approach
               </h3>
               <p className="text-sm text-gray-600">
-                Thrives in outcome-focused environments with clear goals and
-                autonomy.
+                Thrives in outcome-focused environments with clear communication
+                and autonomy.
               </p>
             </div>
           </div>
@@ -529,7 +529,7 @@ function App() {
 
         {/* Contact */}
         <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-200">
-          <p className="text-sm text-gray-600 mb-4">
+          <p className="text-md text-gray-600 mb-2">
             📍 Based in Thailand → Remote-Friendly → Open to New Opportunities
           </p>
           <div className="flex flex-wrap justify-center gap-6">
