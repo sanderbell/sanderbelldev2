@@ -285,7 +285,7 @@ function App() {
         <div className="text-center my-12">
           <RotatingProfile />
           <div className="p-6 mb-6">
-            <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold bg-gradient-to-r from-blue-700 to-purple-700 text-transparent bg-clip-text">
+            <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold bg-gradient-to-r from-blue-600 to-purple-500 text-transparent bg-clip-text">
               AI-fluent. <br />
               Old-school trained.
             </h1>
