@@ -149,6 +149,7 @@ const StatCard: React.FC<StatCardProps> = ({
     >
       <Icon className={`w-6 h-6 ${selectedColor.icon} mx-auto mb-2`} />
       <div className={`text-2xl font-bold ${selectedColor.value}`}>
+        {count.toString() === '60' ? '~' : ''}
         {count}
         {value.replace(/[0-9]/g, '')}
       </div>
@@ -238,11 +239,16 @@ function App() {
 
   const stats = [
     { icon: Zap, value: '60%', label: 'Faster Delivery', color: 'green' },
-    { icon: Code, value: '500+', label: 'Code Pushes', color: 'blue' },
-    { icon: Rocket, value: '7', label: 'Projects Launched', color: 'purple' },
+    { icon: Code, value: '120+', label: 'Features Merged', color: 'blue' },
+    {
+      icon: Rocket,
+      value: '7',
+      label: 'Own Projects Launched',
+      color: 'purple',
+    },
     {
       icon: Users,
-      value: '15+',
+      value: '16+',
       label: 'Years of Leadership',
       color: 'orange',
     },
@@ -285,9 +291,9 @@ function App() {
             </h1>
           </div>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Sander Bell, React Developer who mastered fundamentals when Stack
-            Overflow was our only assistant. Now wielding modern AI tools to
-            ship lightning fast with both worlds.
+            React Developer who mastered fundamentals when Stack Overflow was
+            our only assistant. Now wielding modern AI tools to ship lightning
+            fast with both worlds.
           </p>
         </div>
 
@@ -490,9 +496,9 @@ function App() {
               </h3>
               <p className="text-sm text-gray-600">
                 Master's in Psychology applied to creating empathetic
-                user-centered digital experiences. Career pivot during global
-                upheaval led to unique intersection of human behavior and
-                technology.
+                user-centered digital experiences. Switched careers during
+                global upheaval, bringing a fresh take on where human behavior
+                meets tech.
               </p>
             </div>
             <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
@@ -500,7 +506,7 @@ function App() {
                 Global Remote Expertise
               </h3>
               <p className="text-sm text-gray-600">
-                Based in Chiang Mai, speaks English and Russian fluently,
+                Live in Chiang Mai, speaks English and Russian fluently,
                 learning Thai. Proven track record of building products for
                 international markets across different time zones.
               </p>
