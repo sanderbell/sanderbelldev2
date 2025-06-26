@@ -290,7 +290,7 @@ function App() {
               Old-school trained.
             </h1>
           </div>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto">
             React Developer who mastered fundamentals when Stack Overflow was
             our only assistant. Now wielding modern AI tools to ship lightning
             fast with both worlds.
