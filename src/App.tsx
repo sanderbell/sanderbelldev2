@@ -177,7 +177,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
   >
     <div className="flex mb-2">
       {[...Array(rating)].map((_, i) => (
-        <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+        <Star key={i} className="w-4 h-4 text-yellow-500 fill-current" />
       ))}
     </div>
     <p className="text-gray-800 text-sm mb-2 italic">"{quote}"</p>
@@ -433,7 +433,7 @@ function App() {
                   )
                 </li>
                 <li>
-                  → Built React/Next.js applications, and browser extensions (
+                  → Built React applications, and browser extensions (
                   <a
                     href="https://should.today"
                     target="_blank"
@@ -452,9 +452,6 @@ function App() {
                     rewords.app
                   </a>
                   )
-                </li>
-                <li>
-                  → Focus on responsive design and user experience optimization
                 </li>
               </ul>
             </div>
@@ -537,24 +534,24 @@ function App() {
           <p className="text-sm text-gray-600 mb-2">
             📍 Based in Thailand → Remote-Friendly → Open to New Opportunities
           </p>
-          <div className="flex flex-wrap justify-center gap-6">
+          <div className="flex flex-wrap justify-center gap-3">
             <a
               href="mailto:thesanderbell@gmail.com"
-              className="contact-link text-sm flex items-center gap-2 text-blue-600 hover:text-blue-800"
+              className="contact-link text-sm flex items-center gap-1 text-blue-600 hover:text-blue-800"
             >
               <Mail size={20} />
               <span>thesanderbell@gmail.com</span>
             </a>
             <a
               href="https://linkedin.com/in/sanderbell"
-              className="contact-link text-sm flex items-center gap-2 text-blue-600 hover:text-blue-800"
+              className="contact-link text-sm flex items-center gap-1 text-blue-600 hover:text-blue-800"
             >
               <Linkedin size={20} />
               <span>LinkedIn</span>
             </a>
             <a
               href="https://github.com/sanderbell"
-              className="contact-link text-sm flex items-center gap-2 text-blue-600 hover:text-blue-800"
+              className="contact-link text-sm flex items-center gap- text-blue-600 hover:text-blue-800"
             >
               <Github size={20} />
               <span>GitHub</span>
