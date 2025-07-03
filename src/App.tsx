@@ -290,13 +290,19 @@ function App() {
               Old-school trained.
             </h1>
           </div>
+
           <p className="text-xl text-gray-600 max-w-4xl mx-auto">
             React Developer who mastered fundamentals when Stack Overflow was
             our only assistant. Now wielding modern AI tools to ship lightning
             fast with both worlds.
           </p>
         </div>
-
+        <div className="opacity-95 relative w-full max-w-6xl mx-auto my-14 aspect-video">
+          <iframe
+            className="absolute top-0 left-0 w-full h-full rounded-4xl shadow-2xl"
+            src="https://www.youtube.com/embed/q3JRGnD-ckE"
+          />
+        </div>
         {/* Tech Stack Cloud */}
         <div className="mb-12">
           <div className="flex flex-wrap justify-center gap-2">
