@@ -291,7 +291,7 @@ function App() {
             </h1>
           </div>
 
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto py-6">
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto my-2 p-0">
             React Developer who mastered fundamentals when Stack Overflow was
             our only assistant. Now wielding modern AI tools to ship lightning
             fast with both worlds.
