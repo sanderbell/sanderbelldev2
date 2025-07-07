@@ -439,7 +439,7 @@ function App() {
                   )
                 </li>
                 <li>
-                  → Built React applications, and browser extensions (
+                  → Built React applications and browser extensions (
                   <a
                     href="https://should.today"
                     target="_blank"
