@@ -456,8 +456,8 @@ function App() {
                     className="text-gray-600 hover:text-blue-800 underline"
                   >
                     rewords.app
-                  </a>
-                  )
+                  </a>{' '}
+                  (800+ users))
                 </li>
               </ul>
             </div>
