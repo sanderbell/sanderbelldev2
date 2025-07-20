@@ -362,7 +362,7 @@ function App() {
                     >
                       One at a Time
                     </a>
-                  </strong>{' '}
+                  </strong>{': '}
                   Adorable typing meditation app with advanced animations and
                   haptics
                 </li>
