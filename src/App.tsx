@@ -354,15 +354,6 @@ function App() {
                 <li>
                   →{' '}
                   <strong>
-                    <span className="opacity-40 blur-xs">Nice try! :-)</span>
-                  </strong>{' '}
-                  ⍺: Social mindfulness app with complex algorithms &
-                  privacy-first design (details on-demand)
-                </li>
-
-                <li>
-                  →{' '}
-                  <strong>
                     <a
                       href="https://oneatati.me"
                       target="_blank"
@@ -372,9 +363,18 @@ function App() {
                       One at a Time
                     </a>
                   </strong>{' '}
-                  β: Adorable typing meditation app with advanced animations and
+                  Adorable typing meditation app with advanced animations and
                   haptics
                 </li>
+                <li>
+                  →{' '}
+                  <strong>
+                    <span className="opacity-40 blur-xs">Nice try! :-)</span>
+                  </strong>{' '}
+                  ⍺: Social mindfulness app with complex algorithms &
+                  privacy-first design (details on-demand)
+                </li>
+
                 <li>
                   → Applied psychology insights to create behavior-changing
                   digital experiences
