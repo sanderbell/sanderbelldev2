@@ -457,7 +457,7 @@ function App() {
                   >
                     rewords.app
                   </a>{' '}
-                  (800+ users))
+                  (1000+ users))
                 </li>
               </ul>
             </div>
