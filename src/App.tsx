@@ -368,15 +368,17 @@ function App() {
                   haptics
                 </li>
                 <li>
-                  →
-                  <a
-                    href="https://oneatati.me"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-blue-800 underline"
-                  >
-                    Esse
-                  </a>
+                  →{' '}
+                  <strong>
+                    <a
+                      href="https://esse.today"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-600 hover:text-blue-800 underline"
+                    >
+                      Esse
+                    </a>{' '}
+                  </strong>
                   Minimalist, super-tidy AI video summarizer loved worldwide
                 </li>
 
