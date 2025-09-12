@@ -355,7 +355,7 @@ function App() {
                   →{' '}
                   <strong>
                     <a
-                      href="https://esse.today"
+                      href="https://apps.apple.com/us/app/esse-ai-video-summarizer/id6751778111"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-gray-600 hover:text-blue-800 underline"
@@ -364,13 +364,14 @@ function App() {
                     </a>
                   </strong>
                   {': '}
-                  Minimalist, super-tidy AI video summarizer loved by thousands worldwide
+                  Minimalist, super-tidy AI video summarizer loved by thousands
+                  worldwide
                 </li>{' '}
                 <li>
                   →{' '}
                   <strong>
                     <a
-                      href="https://oneatati.me"
+                      href="https://apps.apple.com/us/app/one-at-a-time-mindful-typing/id6748601899"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-gray-600 hover:text-blue-800 underline"
