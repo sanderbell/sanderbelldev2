@@ -362,17 +362,22 @@ function App() {
                     >
                       One at a Time
                     </a>
-                  </strong>{': '}
+                  </strong>
+                  {': '}
                   Adorable typing meditation app with advanced animations and
                   haptics
                 </li>
                 <li>
-                  →{' '}
-                  <strong>
-                    <span className="opacity-40 blur-xs">Nice try! :-)</span>
-                  </strong>{' '}
-                  ⍺: Social mindfulness app with complex algorithms &
-                  privacy-first design (details on-demand)
+                  →
+                  <a
+                    href="https://oneatati.me"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-blue-800 underline"
+                  >
+                    Esse
+                  </a>
+                  Minimalist, super-tidy AI video summarizer loved worldwide
                 </li>
 
                 <li>
@@ -380,8 +385,8 @@ function App() {
                   digital experiences
                 </li>
                 <li>
-                  → Full ownership: concept → design → development → App Store →
-                  monetization
+                  → Full ownership: concept → design → development → App Store
+                  top charts → instant monetization
                 </li>
               </ul>
             </div>
