@@ -355,6 +355,21 @@ function App() {
                   →{' '}
                   <strong>
                     <a
+                      href="https://esse.today"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-600 hover:text-blue-800 underline"
+                    >
+                      Esse
+                    </a>
+                  </strong>
+                  {': '}
+                  Minimalist, super-tidy AI video summarizer loved by thousands worldwide
+                </li>{' '}
+                <li>
+                  →{' '}
+                  <strong>
+                    <a
                       href="https://oneatati.me"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -367,21 +382,6 @@ function App() {
                   Adorable typing meditation app with advanced animations and
                   haptics
                 </li>
-                <li>
-                  →{' '}
-                  <strong>
-                    <a
-                      href="https://esse.today"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-600 hover:text-blue-800 underline"
-                    >
-                      Esse
-                    </a>{' '}
-                  </strong>
-                  Minimalist, super-tidy AI video summarizer loved worldwide
-                </li>
-
                 <li>
                   → Applied psychology insights to create behavior-changing
                   digital experiences
