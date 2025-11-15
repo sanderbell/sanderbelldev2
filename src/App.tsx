@@ -286,15 +286,15 @@ function App() {
           <RotatingProfile />
           <div className="p-6 mb-6">
             <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold bg-gradient-to-r from-blue-600 to-purple-500 text-transparent bg-clip-text">
-              AI-fluent. <br />
-              Old-school trained.
+              Product-Minded. <br />
+              Founder & Builder.
             </h1>
           </div>
 
           <p className="text-xl text-gray-600 max-w-4xl mx-auto my-4 p-0">
-            React Developer who mastered fundamentals when Stack Overflow was
-            our only assistant. Now wielding modern AI tools to ship lightning
-            fast with both worlds.
+            Transitioning to Product Management after shipping at scale as a
+            React dev and solo-founding apps. Continuing to grow my products
+            while seeking PM/PO roles in mobile-focused teams.
           </p>
         </div>
         <div className="opacity-95 relative w-full max-w-6xl mx-auto mb-14 aspect-video">
@@ -400,7 +400,7 @@ function App() {
                     React / Next.js Developer
                   </h3>
                   <p className="text-blue-600 font-medium">
-                    Ling App · Dec 2023–Present
+                    Ling App · Dec 2023–Nov 2025
                   </p>
                 </div>
                 <span className="text-xs text-blue-600 bg-blue-100 px-2 py-1 rounded-full flex items-center justify-center h-10 w-20">
@@ -528,7 +528,8 @@ function App() {
               <p className="text-sm text-gray-600">
                 Focuses on shipping complete products, not just features. From
                 initial concept through development to App Store deployment and
-                user acquisition strategies.
+                user acquisition strategies—now transitioning to full Product
+                Management.
               </p>
             </div>
             <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
