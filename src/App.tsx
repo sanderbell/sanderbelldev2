@@ -239,11 +239,16 @@ function App() {
 
   const stats = [
     { icon: Zap, value: '60%', label: 'Faster Delivery', color: 'green' },
-    { icon: Code, value: '120+', label: 'Features Merged', color: 'blue' },
+    {
+      icon: Code,
+      value: '120+',
+      label: 'Features Scoped & Shipped',
+      color: 'blue',
+    },
     {
       icon: Rocket,
       value: '7',
-      label: 'Own Projects Launched',
+      label: 'Own Products Launched',
       color: 'purple',
     },
     {
@@ -293,8 +298,11 @@ function App() {
 
           <p className="text-xl text-gray-600 max-w-4xl mx-auto my-4 p-0">
             Transitioning to Product Management after shipping at scale as a
-            React dev and solo-founding apps. Continuing to grow my products
-            while seeking PM/PO roles in mobile-focused teams.
+            React dev and solo-founding apps with full ownership of ideation,
+            scoping, UX, engineering, launch, and iteration. Continuing to grow
+            my products while seeking PM/PO roles in mobile-focused
+            teams—leveraging technical depth, psych-informed user empathy, and
+            battle-tested founder scars.
           </p>
         </div>
         <div className="opacity-95 relative w-full max-w-6xl mx-auto mb-14 aspect-video">
@@ -340,7 +348,7 @@ function App() {
               <div className="flex justify-between items-start mb-3">
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900">
-                    Founder
+                    Founder & Solo Product Lead
                   </h3>
                   <p className="text-purple-600 font-medium">
                     100k31d (Wellness Tech) · Jan 2025–Present
@@ -385,11 +393,17 @@ function App() {
                 </li>
                 <li>
                   → Applied psychology insights to create behavior-changing
-                  digital experiences
+                  digital experiences, prioritizing retention and user delight
                 </li>
                 <li>
-                  → Full ownership: concept → design → development → App Store
-                  top charts → instant monetization
+                  → Full product ownership: ideation → scoping/user stories → UX
+                  design → development → App Store deployment → metrics-driven
+                  iteration → organic growth & monetization
+                </li>
+                <li>
+                  → Navigated full mobile pipeline solo: Apple reviews,
+                  subscription models, ASO, and real-user feedback loops to
+                  achieve 4K+ installs and early revenue
                 </li>
               </ul>
             </div>
@@ -417,6 +431,16 @@ function App() {
                   40+ major features
                 </li>
                 <li>→ Built cross-platform features for iOS/Android/Web</li>
+                <li>
+                  → Gravitated to product thinking: Provided input on UX flows,
+                  scope trade-offs, risk assessment, and edge cases—incorporated
+                  into releases
+                </li>
+                <li>
+                  → Psych-informed contributions to wellness modules, blending
+                  behavioral science with tech to boost user retention and
+                  engagement
+                </li>
               </ul>
             </div>
             <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
@@ -508,7 +532,8 @@ function App() {
                 Master's in Psychology applied to creating empathetic
                 user-centered digital experiences. Switched careers during
                 global upheaval, bringing a fresh take on where human behavior
-                meets tech.
+                meets tech—now fueling product decisions with cognitive and
+                emotional insights.
               </p>
             </div>
             <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
@@ -518,7 +543,8 @@ function App() {
               <p className="text-sm text-gray-600">
                 Lives in Chiang Mai, speaks English and Russian fluently,
                 learning Thai. Proven track record of building products for
-                international markets across different time zones.
+                international markets across different time zones, with a focus
+                on scalable, culturally attuned features.
               </p>
             </div>
             <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
@@ -529,7 +555,8 @@ function App() {
                 Focuses on shipping complete products, not just features. From
                 initial concept through development to App Store deployment and
                 user acquisition strategies—now transitioning to full Product
-                Management.
+                Management, where I can lead teams through end-to-end loops at
+                scale.
               </p>
             </div>
             <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
@@ -538,7 +565,9 @@ function App() {
               </h3>
               <p className="text-sm text-gray-600">
                 Thrives in outcome-focused environments with clear communication
-                and autonomy.
+                and autonomy. Balances ruthless prioritization (activation,
+                retention, revenue) with technical realism to ship faster and
+                smarter.
               </p>
             </div>
           </div>
@@ -547,7 +576,8 @@ function App() {
         {/* Contact */}
         <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-200">
           <p className="text-sm text-gray-600 mb-2">
-            📍 Based in Thailand → Remote-Friendly → Open to New Opportunities
+            📍 Based in Thailand → Remote-Friendly → Open to PM/PO Opportunities
+            in Mobile/EdTech
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <a
