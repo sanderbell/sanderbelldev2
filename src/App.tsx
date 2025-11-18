@@ -519,13 +519,6 @@ function App() {
           ))}
         </div>
 
-        {/* Manager Recommendations */}
-        <div className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">
-            Leadership Recommendations
-          </h2>
-        </div>
-
         {/* Testimonials */}
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">
