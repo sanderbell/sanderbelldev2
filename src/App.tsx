@@ -297,13 +297,9 @@ function App() {
             </h1>
           </div>
 
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto my-4 p-0">
-            Transitioning to Product Management after shipping at scale as a
-            React dev and solo-founding apps with full ownership of ideation,
-            scoping, UX, engineering, launch, and iteration. Continuing to grow
-            my products while seeking PM/PO roles in mobile-focused
-            teams—leveraging technical depth, psych-informed user empathy, and
-            battle-tested founder scars.
+          <p className="text-lg text-gray-600 max-w-4xl mx-auto my-4 p-0">
+            Shipping at scale and solo-founding apps with full product
+            ownership. Seeking PM/PO roles in mobile-focused teams.
           </p>
         </div>
 
