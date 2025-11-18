@@ -241,7 +241,7 @@ function App() {
     { icon: Target, value: '7%', label: 'Freemium Conversion', color: 'green' },
     {
       icon: TrendingUp,
-      value: '5K+',
+      value: '4.5K+',
       label: 'Organic App Installs',
       color: 'blue',
     },
@@ -372,7 +372,7 @@ function App() {
                     </a>
                   </strong>
                   {': '}
-                  AI video summarizer that achieved 5,000+ installs, $200+ MRR,
+                  AI video summarizer that achieved 4,500+ installs, $200+ MRR,
                   7% freemium conversion, and Top 3 US App Store paid
                   productivity ranking—all with zero marketing spend
                 </li>
