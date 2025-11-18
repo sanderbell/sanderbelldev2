@@ -284,7 +284,7 @@ function App() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-yellow-50 p-4 sm:p-6">
+    <div className="min-h-screen bg-gradient-to-br from-yellow-50 to-slate-50 p-4 sm:p-6">
       <style>{globalStyles}</style>
       <div className="max-w-6xl mx-auto fade-in">
         {/* Header */}
