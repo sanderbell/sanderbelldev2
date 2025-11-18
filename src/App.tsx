@@ -4,7 +4,6 @@ import {
   Mail,
   Rocket,
   Star,
-  Users,
   Target,
   TrendingUp,
 } from 'lucide-react';
@@ -253,9 +252,9 @@ function App() {
       color: 'purple',
     },
     {
-      icon: Users,
-      value: '~60',
-      label: 'Languages Supported',
+      icon: Star,
+      value: '4.9',
+      label: 'App Store Rating',
       color: 'orange',
     },
   ];
