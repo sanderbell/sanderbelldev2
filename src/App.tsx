@@ -297,7 +297,7 @@ function App() {
             </h1>
           </div>
 
-          <p className="text-lg text-gray-600 max-w-4xl mx-auto my-4 p-0">
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto my-4 p-0">
             Shipping at scale and solo-founding apps with full product
             ownership. Seeking PM/PO roles in mobile-focused teams.
           </p>
