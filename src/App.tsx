@@ -1,12 +1,12 @@
 import {
-  Code,
   Github,
   Linkedin,
   Mail,
   Rocket,
   Star,
   Users,
-  Zap,
+  Target,
+  TrendingUp,
 } from 'lucide-react';
 import React, { useEffect, useRef, useState } from 'react';
 
@@ -29,7 +29,7 @@ const RotatingProfile = () => {
         }}
       />
       <img
-        src="photo.jpeg"
+        src="/photo.jpeg"
         alt="Profile Portrait"
         className="w-[3rem] h-[3rem] rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 object-cover"
         style={{ zIndex: 10 }}
@@ -37,6 +37,7 @@ const RotatingProfile = () => {
     </div>
   );
 };
+
 interface TechTagProps {
   name: string;
   size?: 'sm' | 'base' | 'lg' | 'xl' | '2xl';
@@ -121,13 +122,13 @@ const StatCard: React.FC<StatCardProps> = ({
       ([entry]) => {
         if (entry.isIntersecting) {
           let start = 0;
-          const end = parseInt(value.replace(/[^0-9]/g, ''));
+          const end = parseInt(value.replace(/[^0-9]/g, '') || '0', 10);
           const duration = 1000;
-          const stepTime = Math.abs(Math.floor(duration / end));
+          const stepTime = end === 0 ? 0 : Math.abs(Math.floor(duration / end));
           const timer = setInterval(() => {
             start += 1;
             setCount(start);
-            if (start === end) {
+            if (start >= end) {
               clearInterval(timer);
             }
           }, stepTime);
@@ -149,9 +150,9 @@ const StatCard: React.FC<StatCardProps> = ({
     >
       <Icon className={`w-6 h-6 ${selectedColor.icon} mx-auto mb-2`} />
       <div className={`text-2xl font-bold ${selectedColor.value}`}>
-        {count.toString() === '60' ? '~' : ''}
+        {value.includes('~') ? '~' : ''}
         {count}
-        {value.replace(/[0-9]/g, '')}
+        {value.replace(/[~0-9]/g, '')}
       </div>
       <div className={`text-sm ${selectedColor.label}`}>{label}</div>
     </div>
@@ -238,23 +239,23 @@ function App() {
   `;
 
   const stats = [
-    { icon: Zap, value: '60%', label: 'Faster Delivery', color: 'green' },
+    { icon: Target, value: '7%', label: 'Freemium Conversion', color: 'green' },
     {
-      icon: Code,
-      value: '120+',
-      label: 'Features Scoped & Shipped',
+      icon: TrendingUp,
+      value: '4.2K+',
+      label: 'Organic App Installs',
       color: 'blue',
     },
     {
       icon: Rocket,
       value: '7',
-      label: 'Own Products Launched',
+      label: 'Products Launched 0→1',
       color: 'purple',
     },
     {
       icon: Users,
-      value: '16+',
-      label: 'Years of Leadership',
+      value: '~60',
+      label: 'Languages Supported',
       color: 'orange',
     },
   ];
@@ -305,40 +306,44 @@ function App() {
             battle-tested founder scars.
           </p>
         </div>
-        <div className="opacity-95 relative w-full max-w-6xl mx-auto mb-14 aspect-video">
+
+        <div className="opacity-95 relative w-full max-w-6xl mx-auto mb-14 aspect-video rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
           <iframe
-            className="absolute top-0 left-0 w-full h-full rounded-4xl shadow-xl"
             src="https://www.youtube.com/embed/q3JRGnD-ckE"
-          />
+            title="Esse AI Video Summarizer Demo"
+            allowFullScreen
+            loading="lazy"
+            className="absolute top-0 left-0 w-full h-full"
+          ></iframe>
         </div>
-        {/* Tech Stack Cloud */}
+
+        {/* Product & Tech Skills Cloud */}
         <div className="mb-12">
           <div className="flex flex-wrap justify-center gap-2">
-            <TechTag name="React" size="xl" />
-            <TechTag name="React Native" size="xl" />
-            <TechTag name="AI Tools" size="xl" />
-            <TechTag name="TypeScript" size="lg" />
-            <TechTag name="Next.js 14+" size="lg" />
-            <TechTag name="JavaScript ES6+" size="lg" />
-            <TechTag name="Git" size="lg" />
-            <TechTag name="Redux" size="base" />
-            <TechTag name="iOS Development" size="base" />
-            <TechTag name="Android" size="base" />
-            <TechTag name="Node.js" size="base" />
-            <TechTag name="Performance Optimization" size="base" />
-            <TechTag name="Jotai" size="sm" />
-            <TechTag name="Zustand" size="sm" />
-            <TechTag name="Jest" size="sm" />
+            <TechTag name="Product Strategy" size="xl" />
+            <TechTag name="0→1 Product Launch" size="xl" />
+            <TechTag name="User Research" size="xl" />
+            <TechTag name="React Native" size="lg" />
+            <TechTag name="React" size="lg" />
+            <TechTag name="Mobile Product" size="lg" />
+            <TechTag name="AI/ML Integration" size="lg" />
+            <TechTag name="Monetization Strategy" size="base" />
+            <TechTag name="Feature Prioritization" size="base" />
+            <TechTag name="A/B Testing" size="base" />
+            <TechTag name="App Store Optimization" size="base" />
+            <TechTag name="TypeScript" size="base" />
+            <TechTag name="Next.js 14+" size="base" />
+            <TechTag name="User Retention" size="sm" />
+            <TechTag name="Product Metrics" size="sm" />
+            <TechTag name="Conversion Optimization" size="sm" />
+            <TechTag name="Go-to-Market" size="sm" />
+            <TechTag name="iOS Development" size="sm" />
+            <TechTag name="Android" size="sm" />
+            <TechTag name="Git" size="sm" />
             <TechTag name="Figma" size="sm" />
-            <TechTag name="Tailwind CSS" size="sm" />
-            <TechTag name="Xcode" size="sm" />
-            <TechTag name="Vue.js" size="sm" />
-            <TechTag name="PWAs" size="sm" />
-            <TechTag name="CI/CD" size="sm" />
-            <TechTag name="Browser Extensions" size="sm" />
-            <TechTag name="Python" size="sm" />
-            <TechTag name="HTML5" size="sm" />
-            <TechTag name="CSS3" size="sm" />
+            <TechTag name="Redux" size="sm" />
+            <TechTag name="Node.js" size="sm" />
+            <TechTag name="Performance Optimization" size="sm" />
           </div>
         </div>
 
@@ -372,9 +377,10 @@ function App() {
                     </a>
                   </strong>
                   {': '}
-                  Minimalist, super-tidy AI video summarizer loved by thousands
-                  worldwide
-                </li>{' '}
+                  AI video summarizer that achieved 4,200+ installs, $200+ MRR,
+                  7% freemium conversion, and Top 5 productivity app ranking—all
+                  with zero marketing spend
+                </li>
                 <li>
                   →{' '}
                   <strong>
@@ -388,22 +394,32 @@ function App() {
                     </a>
                   </strong>
                   {': '}
-                  Adorable typing meditation app with advanced animations and
-                  haptics
+                  Typing meditation app with advanced animations and haptics,
+                  built from psychological insights into behavior change
                 </li>
                 <li>
-                  → Applied psychology insights to create behavior-changing
-                  digital experiences, prioritizing retention and user delight
+                  → <strong>Full product ownership A→Z:</strong> Market
+                  research, competitive analysis, user persona development,
+                  feature roadmapping, UX wireframes, development, App Store
+                  deployment, pricing strategy, subscription setup, user
+                  analytics, retention optimization, viral marketing loops
                 </li>
                 <li>
-                  → Full product ownership: ideation → scoping/user stories → UX
-                  design → development → App Store deployment → metrics-driven
-                  iteration → organic growth & monetization
+                  → <strong>PMF validation:</strong> Viral Reddit launch for
+                  Esse, 36 five-star reviews, sustained organic growth, and
+                  active university partnership inquiries—proving strong
+                  product-market fit
                 </li>
                 <li>
-                  → Navigated full mobile pipeline solo: Apple reviews,
-                  subscription models, ASO, and real-user feedback loops to
-                  achieve 4K+ installs and early revenue
+                  → <strong>Monetization expertise:</strong> Designed and
+                  implemented freemium model with tiered subscriptions
+                  ($1.99/week, $4.99/month, $39.99/year, $59.99 lifetime) to
+                  maximize conversion and LTV
+                </li>
+                <li>
+                  → <strong>Data-driven iteration:</strong> Analyzed user
+                  behavior, drop-off points, and feature usage to inform product
+                  roadmap; shipped updates based on real metrics and feedback
                 </li>
               </ul>
             </div>
@@ -424,22 +440,27 @@ function App() {
               <ul className="text-sm text-gray-700 space-y-1">
                 <li>
                   → Maintained React Native application serving 2+ million
-                  language learners
+                  language learners across iOS and Android
                 </li>
                 <li>
                   → Developed and maintained Next.js web application, delivering
-                  40+ major features
-                </li>
-                <li>→ Built cross-platform features for iOS/Android/Web</li>
-                <li>
-                  → Gravitated to product thinking: Provided input on UX flows,
-                  scope trade-offs, risk assessment, and edge cases—incorporated
-                  into releases
+                  40+ major features with focus on cross-platform consistency
                 </li>
                 <li>
-                  → Psych-informed contributions to wellness modules, blending
-                  behavioral science with tech to boost user retention and
-                  engagement
+                  → <strong>Product thinking in practice:</strong> Provided
+                  input on UX flows, feature scope trade-offs, technical risk
+                  assessment, and edge case handling—incorporated into product
+                  decisions and releases
+                </li>
+                <li>
+                  → <strong>User-centered development:</strong> Applied
+                  psychology background to wellness modules, using behavioral
+                  science principles to boost retention and engagement metrics
+                </li>
+                <li>
+                  → Proactively identified and solved user pain points, going
+                  beyond implementation specs to improve overall product
+                  experience
                 </li>
               </ul>
             </div>
@@ -510,7 +531,7 @@ function App() {
           <div className="grid md:grid-cols-2 gap-4">
             {testimonials.map((testimonial, index) => (
               <TestimonialCard
-                key={index}
+                key={testimonial.quote.slice(0, 20)}
                 {...testimonial}
                 delay={index * 0.2}
               />
@@ -526,14 +547,14 @@ function App() {
           <div className="grid md:grid-cols-2 gap-4">
             <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
               <h3 className="font-semibold text-gray-900 mb-2">
-                Psychology → Communications → Tech Pivot
+                Psychology → Communications → Tech → Product
               </h3>
               <p className="text-sm text-gray-600">
                 Master's in Psychology applied to creating empathetic
-                user-centered digital experiences. Switched careers during
-                global upheaval, bringing a fresh take on where human behavior
-                meets tech—now fueling product decisions with cognitive and
-                emotional insights.
+                user-centered digital experiences. Career pivot during global
+                upheaval brought fresh perspective on where human behavior meets
+                tech—now fueling product decisions with cognitive, emotional,
+                and behavioral insights to drive retention and engagement.
               </p>
             </div>
             <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
@@ -543,31 +564,33 @@ function App() {
               <p className="text-sm text-gray-600">
                 Lives in Chiang Mai, speaks English and Russian fluently,
                 learning Thai. Proven track record of building products for
-                international markets across different time zones, with a focus
-                on scalable, culturally attuned features.
+                international markets across different time zones, with focus on
+                scalable, culturally attuned features and multilingual support
+                (Esse supports 60+ languages).
               </p>
             </div>
             <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
               <h3 className="font-semibold text-gray-900 mb-2">
-                Product-Minded Development
+                End-to-End Product Ownership
               </h3>
               <p className="text-sm text-gray-600">
                 Focuses on shipping complete products, not just features. From
-                initial concept through development to App Store deployment and
-                user acquisition strategies—now transitioning to full Product
-                Management, where I can lead teams through end-to-end loops at
-                scale.
+                initial market research and user interviews through development,
+                App Store optimization, pricing strategy, to user acquisition
+                and retention metrics—transitioning to full Product Management
+                to lead cross-functional teams through these loops at scale.
               </p>
             </div>
             <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
               <h3 className="font-semibold text-gray-900 mb-2">
-                Results-Driven Approach
+                Results-Driven, Metrics-Focused
               </h3>
               <p className="text-sm text-gray-600">
                 Thrives in outcome-focused environments with clear communication
                 and autonomy. Balances ruthless prioritization (activation,
-                retention, revenue) with technical realism to ship faster and
-                smarter.
+                retention, revenue, PMF validation) with technical realism and
+                user empathy to ship faster and smarter. Tracks what matters:
+                conversion rates, LTV, retention curves, viral coefficients.
               </p>
             </div>
           </div>
@@ -596,7 +619,7 @@ function App() {
             </a>
             <a
               href="https://github.com/sanderbell"
-              className="contact-link text-sm flex items-center gap- text-blue-600 hover:text-blue-800"
+              className="contact-link text-sm flex items-center gap-1 text-blue-600 hover:text-blue-800"
             >
               <Github size={20} />
               <span>GitHub</span>
