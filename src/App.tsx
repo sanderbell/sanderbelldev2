@@ -242,7 +242,7 @@ function App() {
     { icon: Target, value: '7%', label: 'Freemium Conversion', color: 'green' },
     {
       icon: TrendingUp,
-      value: '4.2K+',
+      value: '5K+',
       label: 'Organic App Installs',
       color: 'blue',
     },
@@ -322,7 +322,7 @@ function App() {
             <TechTag name="React Native" size="lg" />
             <TechTag name="React" size="lg" />
             <TechTag name="Mobile Product" size="lg" />
-            <TechTag name="AI/ML Integration" size="lg" />
+            <TechTag name="AI Integration" size="lg" />
             <TechTag name="Monetization Strategy" size="base" />
             <TechTag name="Feature Prioritization" size="base" />
             <TechTag name="A/B Testing" size="base" />
@@ -373,9 +373,9 @@ function App() {
                     </a>
                   </strong>
                   {': '}
-                  AI video summarizer that achieved 4,200+ installs, $200+ MRR,
-                  7% freemium conversion, and Top 5 productivity app ranking—all
-                  with zero marketing spend
+                  AI video summarizer that achieved 5,000+ installs, $200+ MRR,
+                  7% freemium conversion, and Top 5 US App Store paid
+                  productivity ranking—all with zero marketing spend
                 </li>
                 <li>
                   →{' '}
