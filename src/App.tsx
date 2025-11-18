@@ -115,43 +115,13 @@ const StatCard: React.FC<StatCardProps> = ({
   const selectedColor =
     colorClasses[color as keyof typeof colorClasses] || colorClasses.blue;
 
-  // Instantly show the final value when the card is in view
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && ref.current) {
-          ref.current.dataset.visible = 'true';
-          observer.unobserve(ref.current);
-        }
-      },
-      { threshold: 0.5 },
-    );
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-    return () => observer.disconnect();
-  }, []);
-
-  const finalValue = value.replace(/[^0-9]/g, '');
-  const prefix = value.includes('~') ? '~' : '';
-  const suffix = value.replace(/[~0-9]/g, '');
-
   return (
     <div
       ref={ref}
       className={`${selectedColor.bg} ${selectedColor.border} border rounded-lg p-4 text-center card-enter`}
-      data-visible={false}
     >
       <Icon className={`w-6 h-6 ${selectedColor.icon} mx-auto mb-2`} />
-      <div className={`text-2xl font-bold ${selectedColor.value}`}>
-        {prefix}
-        <span
-          style={{ opacity: ref.current?.dataset.visible === 'true' ? 1 : 0 }}
-        >
-          {finalValue}
-        </span>
-        {suffix}
-      </div>
+      <div className={`text-2xl font-bold ${selectedColor.value}`}>{value}</div>
       <div className={`text-sm ${selectedColor.label}`}>{label}</div>
     </div>
   );
@@ -176,7 +146,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
   >
     <div className="flex mb-2">
       {[...Array(rating)].map((_, i) => (
-        <Star key={i} className="w-4 h-4 text-yellow- 500 fill-current" />
+        <Star key={i} className="w-4 h-4 text-yellow-500 fill-current" />
       ))}
     </div>
     <p className="text-gray-800 text-sm mb-2 italic">"{quote}"</p>
