@@ -260,19 +260,6 @@ function App() {
     },
   ];
 
-  const managerRecommendations = [
-    {
-      quote:
-        "Sander is a high-impact builder. Self-taught and consistently a top performer, he ships stable, thoughtful features in both React Native and Next.js. He cares deeply about UX and isn't afraid to flag when complexity outweighs value. Clear and professional communicator. Inside the team, he's a go-to for critical initiatives and internal collaboration. Glad to have him on the team.",
-      context: 'Tech Lead',
-    },
-    {
-      quote:
-        'Sander is an excellent person to work with. Even in a junior position, he showed many traits and practices not commonly found with new developers. He was able to work through many issues on his own, ask clear and terse questions when wanting to understand an issue, and practiced due diligence. In addition, Sander was quite easy to communicate with, and quite outgoing. I would recommend him for any future position, as I was quite happy to have him in my own team.',
-      context: 'CTO',
-    },
-  ];
-
   const testimonials = [
     {
       quote:
@@ -537,15 +524,6 @@ function App() {
           <h2 className="text-2xl font-bold text-gray-900 mb-4">
             Leadership Recommendations
           </h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            {managerRecommendations.map((testimonial, index) => (
-              <TestimonialCard
-                key={testimonial.context}
-                {...testimonial}
-                delay={index * 0.2}
-              />
-            ))}
-          </div>
         </div>
 
         {/* Testimonials */}
