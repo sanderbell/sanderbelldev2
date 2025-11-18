@@ -260,26 +260,39 @@ function App() {
     },
   ];
 
+  const managerRecommendations = [
+    {
+      quote:
+        "Sander is a high-impact builder. Self-taught and consistently a top performer, he ships stable, thoughtful features in both React Native and Next.js. He cares deeply about UX and isn't afraid to flag when complexity outweighs value. Clear and professional communicator. Inside the team, he's a go-to for critical initiatives and internal collaboration. Glad to have him on the team.",
+      context: 'Tech Lead',
+    },
+    {
+      quote:
+        'Sander is an excellent person to work with. Even in a junior position, he showed many traits and practices not commonly found with new developers. He was able to work through many issues on his own, ask clear and terse questions when wanting to understand an issue, and practiced due diligence. In addition, Sander was quite easy to communicate with, and quite outgoing. I would recommend him for any future position, as I was quite happy to have him in my own team.',
+      context: 'CTO',
+    },
+  ];
+
   const testimonials = [
     {
       quote:
         "User-centered approach - doesn't simply focus on what the designs or specs say, but their purpose and intention. Made suggestions that were more elegant or user friendly.",
-      context: 'Ling Team Lead',
+      context: 'Team Lead',
     },
     {
       quote:
         'Once you set clear requirements, he just gets stuff done. Much needed orange in a sea of apples.',
-      context: 'Ling Colleague',
+      context: 'Colleague',
     },
     {
       quote:
         'Quick at getting features done and fixing bugs. Always catches small cases others might miss.',
-      context: 'Ling Team Member',
+      context: 'Team Member',
     },
     {
       quote:
         'Helped show the team how AI can save time with creating/updating specs. Data-driven approach to documentation.',
-      context: 'Ling Developer',
+      context: 'Developer',
     },
   ];
 
@@ -374,7 +387,7 @@ function App() {
                   </strong>
                   {': '}
                   AI video summarizer that achieved 5,000+ installs, $200+ MRR,
-                  7% freemium conversion, and Top 5 US App Store paid
+                  7% freemium conversion, and Top 3 US App Store paid
                   productivity ranking—all with zero marketing spend
                 </li>
                 <li>
@@ -402,9 +415,9 @@ function App() {
                 </li>
                 <li>
                   → <strong>PMF validation:</strong> Viral Reddit launch for
-                  Esse, 36 five-star reviews, sustained organic growth, and
-                  active university partnership inquiries—proving strong
-                  product-market fit
+                  Esse (#1 post, 2K downloads in 12 hours), 40+ five-star
+                  reviews, sustained organic growth, and university partnership
+                  inquiries—proving strong product-market fit
                 </li>
                 <li>
                   → <strong>Monetization expertise:</strong> Designed and
@@ -517,6 +530,22 @@ function App() {
           {stats.map((stat, index) => (
             <StatCard key={index} {...stat} />
           ))}
+        </div>
+
+        {/* Manager Recommendations */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">
+            Leadership Recommendations
+          </h2>
+          <div className="grid md:grid-cols-2 gap-4">
+            {managerRecommendations.map((testimonial, index) => (
+              <TestimonialCard
+                key={testimonial.context}
+                {...testimonial}
+                delay={index * 0.2}
+              />
+            ))}
+          </div>
         </div>
 
         {/* Testimonials */}
