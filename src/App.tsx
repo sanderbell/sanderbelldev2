@@ -543,7 +543,7 @@ function App() {
           <div className="grid md:grid-cols-2 gap-4">
             <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
               <h3 className="font-semibold text-gray-900 mb-2">
-                Psychology → Communications → Tech → Product
+                Psychology → Communications → Product
               </h3>
               <p className="text-sm text-gray-600">
                 Master's in Psychology applied to creating empathetic
@@ -558,11 +558,11 @@ function App() {
                 Global Remote Expertise
               </h3>
               <p className="text-sm text-gray-600">
-                Lives in Chiang Mai, speaks English and Russian fluently,
-                learning Thai. Proven track record of building products for
-                international markets across different time zones, with focus on
-                scalable, culturally attuned features and multilingual support
-                (Esse supports 60+ languages).
+                Lives in Thailand, speaks English and Russian fluently, learning
+                Thai. Proven track record of building products for international
+                markets across different time zones, with focus on scalable,
+                culturally attuned features and multilingual support (Esse
+                supports 60+ languages).
               </p>
             </div>
             <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
