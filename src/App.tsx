@@ -6,6 +6,7 @@ import {
   Star,
   Target,
   TrendingUp,
+  Download,
 } from 'lucide-react';
 import React, { useEffect, useRef, useState } from 'react';
 
@@ -269,6 +270,15 @@ function App() {
             Shipping at scale and solo-founding apps with full product
             ownership. Seeking PM/PO roles in mobile-focused teams.
           </p>
+
+          <a
+            href="./cv.pdf"
+            download
+            className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors mt-4"
+          >
+            <Download size={20} />
+            <span>Download CV</span>
+          </a>
         </div>
 
         <div className="opacity-95 relative w-full max-w-6xl mx-auto mb-14 aspect-video rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
