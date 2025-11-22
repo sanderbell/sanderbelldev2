@@ -211,7 +211,7 @@ function App() {
     { icon: Target, value: '7%', label: 'Freemium Conversion', color: 'green' },
     {
       icon: TrendingUp,
-      value: '4.5K+',
+      value: '5.7K+',
       label: 'Organic App Installs',
       color: 'blue',
     },
@@ -327,10 +327,10 @@ function App() {
               <div className="flex justify-between items-start mb-3">
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900">
-                    Founder & Solo Product Lead
+                    Founder & Product Lead
                   </h3>
                   <p className="text-purple-600 font-medium">
-                    100k31d (Wellness Tech) · Jan 2025–Present
+                    100k31d LLC · Jan 2025–Present
                   </p>
                 </div>
                 <span className="text-xs text-purple-600 bg-purple-100 px-2 py-1 rounded-full flex items-center justify-center h-10 w-20">
@@ -351,8 +351,8 @@ function App() {
                     </a>
                   </strong>
                   {': '}
-                  AI video summarizer that achieved 4,500+ installs, $200+ MRR,
-                  7% freemium conversion, and Top 3 US App Store paid
+                  AI video summarizer that achieved 5,700+ installs, $200+
+                  revenue, 7% freemium conversion, and Top US App Store paid
                   productivity ranking—all with zero marketing spend
                 </li>
                 <li>
@@ -401,7 +401,7 @@ function App() {
               <div className="flex justify-between items-start mb-3">
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900">
-                    React / Next.js Developer
+                    Product Engineer (React/Next.js)
                   </h3>
                   <p className="text-blue-600 font-medium">
                     Ling App · Dec 2023–Nov 2025
@@ -445,7 +445,7 @@ function App() {
                     Web Developer
                   </h3>
                   <p className="text-gray-600 font-medium">
-                    Freelance · May 2022–Present
+                    Freelance · May 2022–Dec 2023
                   </p>
                 </div>
                 <span className="text-xs text-gray-600 bg-gray-100 px-2 py-1 rounded-full flex items-center justify-center h-10 w-20">
