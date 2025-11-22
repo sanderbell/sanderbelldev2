@@ -8,35 +8,7 @@ import {
   TrendingUp,
   Download,
 } from 'lucide-react';
-import React, { useEffect, useRef, useState } from 'react';
-
-const RotatingProfile = () => {
-  const [rotate, setRotate] = useState(false);
-
-  useEffect(() => {
-    setRotate(true);
-  }, []);
-
-  return (
-    <div className="relative w-[10rem] h-[10rem] sm:w-[15rem] sm:h-[15rem] mx-auto mb-6">
-      <img
-        src="react.svg"
-        alt="React Logo"
-        className="w-full h-full absolute top-0 left-0 transition-transform duration-1900 ease-in-out"
-        style={{
-          transform: `rotate(${rotate ? '360deg' : '0deg'})`,
-          zIndex: 5,
-        }}
-      />
-      <img
-        src="/photo.jpeg"
-        alt="Profile Portrait"
-        className="w-[3rem] h-[3rem] rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 object-cover"
-        style={{ zIndex: 10 }}
-      />
-    </div>
-  );
-};
+import React, { useRef } from 'react';
 
 interface TechTagProps {
   name: string;
@@ -258,7 +230,6 @@ function App() {
       <div className="max-w-6xl mx-auto fade-in">
         {/* Header */}
         <div className="text-center my-12">
-          <RotatingProfile />
           <div className="p-6 mb-6">
             <h1 className="text-4xl sm:text-6xl md:text-8xl font-black bg-gradient-to-r from-blue-600 to-purple-500 text-transparent bg-clip-text">
               Product-Minded. <br />
@@ -315,8 +286,7 @@ function App() {
             <TechTag name="Android" size="sm" />
             <TechTag name="Git" size="sm" />
             <TechTag name="Figma" size="sm" />
-            <TechTag name="Redux" size="sm" />
-            <TechTag name="Node.js" size="sm" />
+
             <TechTag name="Performance Optimization" size="sm" />
           </div>
         </div>
@@ -577,8 +547,8 @@ function App() {
                 Focuses on shipping complete products, not just features. From
                 initial market research and user interviews through development,
                 App Store optimization, pricing strategy, to user acquisition
-                and retention metrics—transitioning to full Product Management
-                to lead cross-functional teams through these loops at scale.
+                and retention metrics—leveraging end-to-end product ownership
+                experience to lead cross-functional teams.
               </p>
             </div>
             <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
