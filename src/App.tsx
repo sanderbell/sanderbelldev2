@@ -448,9 +448,6 @@ function App() {
                     Freelance · May 2022–Dec 2023
                   </p>
                 </div>
-                <span className="text-xs text-gray-600 bg-gray-100 px-2 py-1 rounded-full flex items-center justify-center h-10 w-20">
-                  3+ Years
-                </span>
               </div>
               <ul className="text-sm text-gray-700 space-y-1">
                 <li>
