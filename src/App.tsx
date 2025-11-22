@@ -488,6 +488,35 @@ function App() {
                 </li>
               </ul>
             </div>
+
+            <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+              <div className="flex justify-between items-start mb-3">
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900">
+                    Editorial Team Lead
+                  </h3>
+                  <p className="text-gray-600 font-medium">
+                    Various media organizations · Feb 2008–May 2022
+                  </p>
+                </div>
+              </div>
+              <ul className="text-sm text-gray-700 space-y-1">
+                <li>
+                  → <strong>Leadership:</strong> Built and managed
+                  cross-functional teams of copywriters and editors, defining
+                  editorial roadmaps.
+                </li>
+                <li>
+                  → <strong>Entrepreneurship:</strong> Co-founded independent
+                  online media, achieving rapid audience growth via organic
+                  strategy.
+                </li>
+                <li>
+                  → <strong>Communication:</strong> Developed communication
+                  strategies and secured editorial placements (PR/Brand).
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 
