@@ -274,7 +274,7 @@ function App() {
           <a
             href="cv.pdf"
             download
-            className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors mt-4"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-500 text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity mt-4"
           >
             <Download size={20} />
             <span>Download CV</span>
