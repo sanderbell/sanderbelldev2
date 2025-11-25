@@ -396,11 +396,6 @@ function App() {
                   decisions and releases
                 </li>
                 <li>
-                  → <strong>User-centered development:</strong> Applied
-                  psychology background to wellness modules, using behavioral
-                  science principles to boost retention and engagement metrics
-                </li>
-                <li>
                   → Proactively identified and solved user pain points, going
                   beyond implementation specs to improve overall product
                   experience
