@@ -349,8 +349,8 @@ function App() {
                 </li>
                 <li>
                   → <strong>PMF validation:</strong> Viral Reddit launch for
-                  Esse (#1 post, 2K downloads in 12 hours), 40+ five-star
-                  reviews, sustained organic growth, and university partnership
+                  Esse (#1 post, 2K downloads in 12 hours), 40+ 5★ reviews,
+                  sustained organic growth, and university partnership
                   inquiries—proving strong product-market fit
                 </li>
                 <li>
