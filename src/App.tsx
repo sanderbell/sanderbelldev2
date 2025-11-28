@@ -251,7 +251,7 @@ function App() {
           </a>
         </div>
 
-        <div className="opacity-95 relative w-full max-w-6xl mx-auto mb-14 aspect-video rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
+        {/* <div className="opacity-95 relative w-full max-w-6xl mx-auto mb-14 aspect-video rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
           <iframe
             src="https://www.youtube.com/embed/q3JRGnD-ckE"
             title="Esse AI Video Summarizer Demo"
@@ -259,7 +259,7 @@ function App() {
             loading="lazy"
             className="absolute top-0 left-0 w-full h-full"
           ></iframe>
-        </div>
+        </div> */}
 
         {/* Product & Tech Skills Cloud */}
         <div className="mb-12">
