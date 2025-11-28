@@ -436,16 +436,6 @@ function App() {
                   >
                     should.today
                   </a>
-                  ,{' '}
-                  <a
-                    href="https://rewords.app"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-blue-800 underline"
-                  >
-                    rewords.app
-                  </a>{' '}
-                  (1000+ users))
                 </li>
               </ul>
             </div>
