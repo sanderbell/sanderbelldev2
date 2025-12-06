@@ -345,7 +345,7 @@ function App() {
                   research, competitive analysis, user persona development,
                   feature roadmapping, UX wireframes, development, App Store
                   deployment, pricing strategy, subscription setup, user
-                  analytics, retention optimization, viral marketing loops
+                  analytics, retention optimization, viral marketing strategies
                 </li>
                 <li>
                   → <strong>PMF validation:</strong> Viral Reddit launch for
