@@ -554,7 +554,7 @@ function App() {
                 and autonomy. Balances ruthless prioritization (activation,
                 retention, revenue, PMF validation) with technical realism and
                 user empathy to ship faster and smarter. Tracks what matters:
-                conversion rates, LTV, retention curves, viral coefficients.
+                conversion rates, LTV, retention curves.
               </p>
             </div>
           </div>
