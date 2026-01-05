@@ -287,7 +287,7 @@ function App() {
               <div className="flex justify-between items-start mb-3">
                 <div>
                   <h3 className="text-xl font-bold text-gray-900">
-                    Co-Founder & Head of Product
+                    Head of Product
                   </h3>
                   <p className="text-purple-600 font-medium text-lg">
                     100K31D Studio · Dec 2024–Present
