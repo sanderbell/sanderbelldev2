@@ -7,6 +7,7 @@ import {
   Target,
   TrendingUp,
   Download,
+  MapPin,
 } from 'lucide-react';
 import React, { useRef } from 'react';
 
@@ -189,8 +190,8 @@ function App() {
     },
     {
       icon: Rocket,
-      value: '7',
-      label: 'Products Launched 0→1',
+      value: '15+',
+      label: 'Years Leadership',
       color: 'purple',
     },
     {
@@ -231,250 +232,166 @@ function App() {
         {/* Header */}
         <div className="text-center my-12">
           <div className="p-6 mb-6">
-            <h1 className="text-4xl sm:text-6xl md:text-8xl font-black bg-gradient-to-r from-blue-600 to-purple-500 text-transparent bg-clip-text">
-              Product-Minded. <br />
-              Founder & Builder.
+            <h1 className="text-4xl sm:text-6xl md:text-8xl font-black bg-gradient-to-r from-blue-600 to-purple-500 text-transparent bg-clip-text leading-tight">
+              Technical Product Manager.
+              <br />
+              Mobile & Growth.
             </h1>
           </div>
 
           <p className="text-xl text-gray-600 max-w-4xl mx-auto my-4 p-0">
-            Shipping at scale and solo-founding apps with full product
-            ownership. Seeking PM/PO roles in mobile-focused teams.
+            Bridging engineering constraints with business goals.{' '}
+            <br className="hidden sm:block" />
+            15+ years of experience in product leadership, content strategy, and
+            technical execution.
           </p>
 
           <a
             href="cv.pdf"
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-500 text-white px-4 py-2 rounded-lg font-medium hover:opacity-90 transition-opacity mt-4"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-500 text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity mt-6 shadow-lg hover:shadow-xl"
           >
             <Download size={20} />
-            <span>Download CV</span>
+            <span>Download Resume</span>
           </a>
         </div>
-
-        {/* <div className="opacity-95 relative w-full max-w-6xl mx-auto mb-14 aspect-video rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
-          <iframe
-            src="https://www.youtube.com/embed/q3JRGnD-ckE"
-            title="Esse AI Video Summarizer Demo"
-            allowFullScreen
-            loading="lazy"
-            className="absolute top-0 left-0 w-full h-full"
-          ></iframe>
-        </div> */}
 
         {/* Product & Tech Skills Cloud */}
         <div className="mb-12">
           <div className="flex flex-wrap justify-center gap-2">
             <TechTag name="Product Strategy" size="xl" />
-            <TechTag name="0→1 Product Launch" size="xl" />
-            <TechTag name="User Research" size="xl" />
+            <TechTag name="Technical PM" size="xl" />
+            <TechTag name="Mobile Architecture" size="xl" />
+            <TechTag name="Roadmap Ownership" size="lg" />
+            <TechTag name="Stakeholder Management" size="lg" />
+            <TechTag name="User Psychology" size="lg" />
             <TechTag name="React Native" size="lg" />
-            <TechTag name="React" size="lg" />
-            <TechTag name="Mobile Product" size="lg" />
-            <TechTag name="AI Integration" size="lg" />
-            <TechTag name="Monetization Strategy" size="base" />
+            <TechTag name="Unit Economics (LTV/CAC)" size="base" />
             <TechTag name="Feature Prioritization" size="base" />
             <TechTag name="A/B Testing" size="base" />
             <TechTag name="App Store Optimization" size="base" />
             <TechTag name="TypeScript" size="base" />
             <TechTag name="Next.js 14+" size="base" />
-            <TechTag name="User Retention" size="sm" />
-            <TechTag name="Product Metrics" size="sm" />
+            <TechTag name="Retention Loops" size="sm" />
+            <TechTag name="Data Analysis" size="sm" />
             <TechTag name="Conversion Optimization" size="sm" />
-            <TechTag name="Go-to-Market" size="sm" />
-            <TechTag name="iOS Development" size="sm" />
+            <TechTag name="Agile/Scrum" size="sm" />
+            <TechTag name="CI/CD Pipelines" size="sm" />
             <TechTag name="Android" size="sm" />
             <TechTag name="Git" size="sm" />
             <TechTag name="Figma" size="sm" />
-
-            <TechTag name="Performance Optimization" size="sm" />
+            <TechTag name="AI Integration" size="sm" />
           </div>
         </div>
 
         <div className="mb-12">
           <div className="space-y-4">
-            <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+            {/* 100K31D Section - Rebranded as Job */}
+            <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:border-blue-300 transition-colors">
               <div className="flex justify-between items-start mb-3">
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900">
-                    Founder & Product Lead
+                  <h3 className="text-xl font-bold text-gray-900">
+                    Head of Product
                   </h3>
-                  <p className="text-purple-600 font-medium">
-                    100k31d LLC · Jan 2025–Present
+                  <p className="text-purple-600 font-medium text-lg">
+                    100K31D Labs · Jan 2025–Present
                   </p>
                 </div>
-                <span className="text-xs text-purple-600 bg-purple-100 px-2 py-1 rounded-full flex items-center justify-center h-10 w-20">
-                  2 Apps
+                <span className="text-xs text-purple-600 bg-purple-100 px-3 py-1 rounded-full flex items-center justify-center font-bold">
+                  HealthTech Portfolio
                 </span>
               </div>
-              <ul className="text-sm text-gray-700 space-y-1">
+              <ul className="text-base text-gray-700 space-y-2">
                 <li>
-                  →{' '}
-                  <strong>
-                    <a
-                      href="https://apps.apple.com/us/app/esse-ai-video-summarizer/id6751778111"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-600 hover:text-blue-800 underline"
-                    >
-                      Esse
-                    </a>
-                  </strong>
-                  {': '}
-                  AI video summarizer that achieved 5,700+ installs, $200+
-                  revenue, 7% freemium conversion, and Top US App Store paid
-                  productivity ranking—all with zero marketing spend
+                  → <strong>Strategic Leadership:</strong> Directed the full
+                  product lifecycle for a suite of wellness apps (Esse, OAAT),
+                  driving 5,700+ organic users through SEO and viral mechanics
+                  (zero paid acquisition).
                 </li>
                 <li>
-                  →{' '}
-                  <strong>
-                    <a
-                      href="https://apps.apple.com/us/app/one-at-a-time-mindful-typing/id6748601899"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-600 hover:text-blue-800 underline"
-                    >
-                      One at a Time
-                    </a>
-                  </strong>
-                  {': '}
-                  Typing meditation app with advanced animations and haptics,
-                  built from psychological insights into behavior change
+                  → <strong>Monetization & Economics:</strong> Designed a tiered
+                  subscription model grounded in behavioral psychology,
+                  achieving a <strong>7% freemium conversion rate</strong>{' '}
+                  (industry avg 2-3%) and sustainable unit economics.
                 </li>
                 <li>
-                  → <strong>Full product ownership A→Z:</strong> Market
-                  research, competitive analysis, user persona development,
-                  feature roadmapping, UX wireframes, development, App Store
-                  deployment, pricing strategy, subscription setup, user
-                  analytics, retention optimization, viral marketing strategies
+                  → <strong>Technical Execution:</strong> Led the architecture
+                  and development of high-fidelity React Native mobile apps,
+                  managing the complete release pipeline across iOS and Android.
                 </li>
                 <li>
-                  → <strong>PMF validation:</strong> Viral Reddit launch for
-                  Esse (#1 post, 2K downloads in 12 hours), 40+ 5★ reviews,
-                  sustained organic growth, and university partnership
-                  inquiries—proving strong product-market fit
-                </li>
-                <li>
-                  → <strong>Monetization expertise:</strong> Designed and
-                  implemented freemium model with tiered subscriptions
-                  ($1.99/week, $4.99/month, $39.99/year, $59.99 lifetime) to
-                  maximize conversion and LTV
-                </li>
-                <li>
-                  → <strong>Data-driven iteration:</strong> Analyzed user
-                  behavior, drop-off points, and feature usage to inform product
-                  roadmap; shipped updates based on real metrics and feedback
-                </li>
-              </ul>
-            </div>
-            <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
-              <div className="flex justify-between items-start mb-3">
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900">
-                    Product Engineer (React/Next.js)
-                  </h3>
-                  <p className="text-blue-600 font-medium">
-                    Ling App · Dec 2023–Nov 2025
-                  </p>
-                </div>
-                <span className="text-xs text-blue-600 bg-blue-100 px-2 py-1 rounded-full flex items-center justify-center h-10 w-20">
-                  2M+ Users
-                </span>
-              </div>
-              <ul className="text-sm text-gray-700 space-y-1">
-                <li>
-                  → Maintained React Native application serving 2+ million
-                  language learners across iOS and Android
-                </li>
-                <li>
-                  → Developed and maintained Next.js web application, delivering
-                  40+ major features with focus on cross-platform consistency
-                </li>
-                <li>
-                  → <strong>Product thinking in practice:</strong> Provided
-                  input on UX flows, feature scope trade-offs, technical risk
-                  assessment, and edge case handling—incorporated into product
-                  decisions and releases
-                </li>
-                <li>
-                  → Proactively identified and solved user pain points, going
-                  beyond implementation specs to improve overall product
-                  experience
-                </li>
-              </ul>
-            </div>
-            <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
-              <div className="flex justify-between items-start mb-3">
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900">
-                    Web Developer
-                  </h3>
-                  <p className="text-gray-600 font-medium">
-                    Freelance · May 2022–Dec 2023
-                  </p>
-                </div>
-              </div>
-              <ul className="text-sm text-gray-700 space-y-1">
-                <li>
-                  → Developed Vue.js application for text analysis (
-                  <a
-                    href="https://somany.ch"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-blue-800 underline"
-                  >
-                    somany.ch
-                  </a>
-                  )
-                </li>
-                <li>
-                  → Built React applications and browser extensions (
-                  <a
-                    href="https://should.today"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-blue-800 underline"
-                  >
-                    should.today
-                  </a>
-                  ,{' '}
-                  <a
-                    href="https://rewords.app"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-blue-800 underline"
-                  >
-                    rewords.app
-                  </a>{' '}
-                  (1000+ users))
+                  → <strong>Market Validation:</strong> Executed low-cost MVP
+                  testing strategies, including a Reddit launch that secured #1
+                  ranking and instant feedback loops for rapid iteration.
                 </li>
               </ul>
             </div>
 
-            <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+            <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:border-blue-300 transition-colors">
               <div className="flex justify-between items-start mb-3">
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900">
-                    Editorial Team Lead
+                  <h3 className="text-xl font-bold text-gray-900">
+                    Product Engineer
                   </h3>
-                  <p className="text-gray-600 font-medium">
-                    Various media organizations · Feb 2008–May 2022
+                  <p className="text-blue-600 font-medium text-lg">
+                    Ling App · Dec 2023–Nov 2025
+                  </p>
+                </div>
+                <span className="text-xs text-blue-600 bg-blue-100 px-3 py-1 rounded-full flex items-center justify-center font-bold">
+                  2M+ Users
+                </span>
+              </div>
+              <ul className="text-base text-gray-700 space-y-2">
+                <li>
+                  → <strong>Product-Led Engineering:</strong> Functioned as a
+                  technical point of contact for product delivery, bridging the
+                  gap between business requirements and engineering execution.
+                </li>
+                <li>
+                  → <strong>Feature Ownership:</strong> Co-led scoping and
+                  delivery of 40+ major features, managing trade-offs between
+                  technical debt and user value delivery.
+                </li>
+                <li>
+                  → <strong>UX Optimization:</strong> Proactively identified
+                  friction in user flows and implemented technical solutions
+                  that directly improved retention and reduced support tickets.
+                </li>
+                <li>
+                  → <strong>Stakeholder Communication:</strong> Translated
+                  technical constraints for non-technical leadership, enabling
+                  more accurate roadmap planning and risk assessment.
+                </li>
+              </ul>
+            </div>
+
+            {/* Journalism Section - Rebranded as Product */}
+            <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:border-blue-300 transition-colors">
+              <div className="flex justify-between items-start mb-3">
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900">
+                    Content Product Lead
+                  </h3>
+                  <p className="text-gray-600 font-medium text-lg">
+                    Various Media Orgs · Feb 2008–May 2022
                   </p>
                 </div>
               </div>
-              <ul className="text-sm text-gray-700 space-y-1">
+              <ul className="text-base text-gray-700 space-y-2">
                 <li>
-                  → <strong>Leadership:</strong> Built and managed
-                  cross-functional teams of copywriters and editors, defining
-                  editorial roadmaps.
+                  → <strong>Product Operations:</strong> Managed content supply
+                  chains and cross-functional teams of copywriters and editors
+                  for 15 years, defining editorial roadmaps aligned with
+                  audience growth metrics.
                 </li>
                 <li>
-                  → <strong>Entrepreneurship:</strong> Co-founded independent
-                  online media, achieving rapid audience growth via organic
-                  strategy.
+                  → <strong>Growth Strategy:</strong> Launched 0→1 media
+                  verticals, achieving rapid audience scaling through organic
+                  search strategy and brand positioning.
                 </li>
                 <li>
-                  → <strong>Communication:</strong> Developed communication
-                  strategies and secured editorial placements (PR/Brand).
+                  → <strong>Crisis Management:</strong> Led communication
+                  strategies during high-pressure cycles, maintaining brand
+                  integrity and stakeholder trust.
                 </li>
               </ul>
             </div>
@@ -489,8 +406,8 @@ function App() {
 
         {/* Testimonials */}
         <div className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">
-            What Colleagues Say
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">
+            Peer Feedback
           </h2>
           <div className="grid md:grid-cols-2 gap-4">
             {testimonials.map((testimonial, index) => (
@@ -505,90 +422,96 @@ function App() {
 
         {/* Personal Facts */}
         <div className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">
-            Beyond the Code
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">
+            The "Why" Behind The Tech
           </h2>
           <div className="grid md:grid-cols-2 gap-4">
-            <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
-              <h3 className="font-semibold text-gray-900 mb-2">
-                Psychology → Communications → Product
+            <div className="bg-white rounded-lg p-5 shadow-sm border border-gray-200">
+              <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                Psychology 🤝 Product
               </h3>
-              <p className="text-sm text-gray-600">
-                Master's in Psychology applied to creating empathetic
-                user-centered digital experiences. Career pivot during global
-                upheaval brought fresh perspective on where human behavior meets
-                tech—now fueling product decisions with cognitive, emotional,
-                and behavioral insights to drive retention and engagement.
+              <p className="text-sm text-gray-600 leading-relaxed">
+                My Master's in Psychology isn't just a degree—it's my
+                competitive advantage. I don't just build features; I design{' '}
+                <strong>habit loops</strong>. I use cognitive behavioral
+                insights to reduce friction, improve onboarding retention, and
+                create "sticky" user experiences that drive LTV.
               </p>
             </div>
-            <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
-              <h3 className="font-semibold text-gray-900 mb-2">
-                Global Remote Expertise
+            <div className="bg-white rounded-lg p-5 shadow-sm border border-gray-200">
+              <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                Bangkok Based, Global Mindset
               </h3>
-              <p className="text-sm text-gray-600">
-                Lives in Thailand, speaks English and Russian fluently, learning
-                Thai. Proven track record of building products for international
-                markets across different time zones, with focus on scalable,
-                culturally attuned features and multilingual support (Esse
-                supports 60+ languages).
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Based in <strong>Bangkok, Thailand</strong>. Fluent in English
+                and Russian, learning Thai. I bring a global perspective to
+                product localization and have a proven track record of managing
+                asynchronous workflows across time zones.
               </p>
             </div>
-            <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
-              <h3 className="font-semibold text-gray-900 mb-2">
-                End-to-End Product Ownership
+            <div className="bg-white rounded-lg p-5 shadow-sm border border-gray-200">
+              <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                Technical Authority
               </h3>
-              <p className="text-sm text-gray-600">
-                Focuses on shipping complete products, not just features. From
-                initial market research and user interviews through development,
-                App Store optimization, pricing strategy, to user acquisition
-                and retention metrics—leveraging end-to-end product ownership
-                experience to lead cross-functional teams.
+              <p className="text-sm text-gray-600 leading-relaxed">
+                I speak "Engineer" fluently. Because I can audit code and build
+                RN architectures myself, I can accurately estimate feasibility,
+                challenge over-engineering, and earn the respect of dev teams
+                instantly.
               </p>
             </div>
-            <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
-              <h3 className="font-semibold text-gray-900 mb-2">
-                Results-Driven, Metrics-Focused
+            <div className="bg-white rounded-lg p-5 shadow-sm border border-gray-200">
+              <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                Outcome Over Output
               </h3>
-              <p className="text-sm text-gray-600">
-                Thrives in outcome-focused environments with clear communication
-                and autonomy. Balances ruthless prioritization (activation,
-                retention, revenue, PMF validation) with technical realism and
-                user empathy to ship faster and smarter. Tracks what matters:
-                conversion rates, LTV, retention curves.
+              <p className="text-sm text-gray-600 leading-relaxed">
+                I don't measure success by lines of code or tickets closed. I
+                measure it by{' '}
+                <strong>conversion rates, retention curves, and revenue</strong>
+                . My goal is always to maximize business impact with the leanest
+                possible technical scope.
               </p>
             </div>
           </div>
         </div>
 
         {/* Contact */}
-        <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-200">
-          <p className="text-sm text-gray-600 mb-2">
-            📍 Based in Thailand → Remote-Friendly → Open to PM/PO Opportunities
-            in Mobile/EdTech
+        <div className="text-center bg-white rounded-lg p-6 shadow-sm border border-gray-200 mb-12">
+          <div className="flex items-center justify-center gap-2 mb-4 text-gray-900 font-semibold">
+            <MapPin className="text-blue-600" size={20} />
+            <span>Bangkok, Thailand</span>
+          </div>
+          <p className="text-sm text-gray-600 mb-6 max-w-2xl mx-auto">
+            Ready to lead Mobile Product initiatives. Open to hybrid/onsite
+            roles in Bangkok or remote global roles.
           </p>
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="flex flex-wrap justify-center gap-4">
             <a
               href="mailto:thesanderbell@gmail.com"
-              className="contact-link text-sm flex items-center gap-1 text-blue-600 hover:text-blue-800"
+              className="contact-link text-base flex items-center gap-2 text-gray-700 hover:text-blue-600 font-medium bg-gray-50 px-4 py-2 rounded-full border border-gray-200"
             >
-              <Mail size={20} />
+              <Mail size={18} />
               <span>thesanderbell@gmail.com</span>
             </a>
             <a
               href="https://linkedin.com/in/sanderbell"
-              className="contact-link text-sm flex items-center gap-1 text-blue-600 hover:text-blue-800"
+              className="contact-link text-base flex items-center gap-2 text-gray-700 hover:text-blue-600 font-medium bg-gray-50 px-4 py-2 rounded-full border border-gray-200"
             >
-              <Linkedin size={20} />
+              <Linkedin size={18} />
               <span>LinkedIn</span>
             </a>
             <a
               href="https://github.com/sanderbell"
-              className="contact-link text-sm flex items-center gap-1 text-blue-600 hover:text-blue-800"
+              className="contact-link text-base flex items-center gap-2 text-gray-700 hover:text-blue-600 font-medium bg-gray-50 px-4 py-2 rounded-full border border-gray-200"
             >
-              <Github size={20} />
+              <Github size={18} />
               <span>GitHub</span>
             </a>
           </div>
+        </div>
+
+        <div className="text-center text-gray-400 text-xs pb-8">
+          © 2026 Sander Bell
         </div>
       </div>
     </div>
