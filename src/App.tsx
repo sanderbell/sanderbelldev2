@@ -287,10 +287,10 @@ function App() {
               <div className="flex justify-between items-start mb-3">
                 <div>
                   <h3 className="text-xl font-bold text-gray-900">
-                    Product Lead & Co-Founder
+                    Co-Founder & Head of Product
                   </h3>
                   <p className="text-purple-600 font-medium text-lg">
-                    100K31D LLC · Jan 2025–Present
+                    100K31D Studio · Dec 2024–Present
                   </p>
                 </div>
                 <span className="text-xs text-purple-600 bg-purple-100 px-3 py-1 rounded-full flex items-center justify-center font-bold">
@@ -360,6 +360,7 @@ function App() {
                 </li>
               </ul>
             </div>
+
             <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:border-blue-300 transition-colors">
               <div className="flex justify-between items-start mb-3">
                 <div>
@@ -379,20 +380,20 @@ function App() {
                   roadmaps.
                 </li>
                 <li>
-                  [cite_start]→ <strong>Product Growth:</strong> Developed and
-                  launched the <em>Rewords</em> browser extension[cite: 31],
-                  growing it to <strong>1,000+ active users</strong> and earning
-                  a "Featured" badge on the Chrome Web Store through iterative
-                  user feedback loops.
+                  → <strong>Product Growth:</strong> Developed and launched the{' '}
+                  <em>Rewords</em> browser extension, growing it to{' '}
+                  <strong>1,000+ active users</strong> and earning a "Featured"
+                  badge on the Chrome Web Store through iterative user feedback
+                  loops.
                 </li>
                 <li>
-                  [cite_start]→ <strong>Rapid Prototyping:</strong> Built and
-                  deployed multiple web applications using Vue.js and React,
-                  focusing on speed-to-market and core feature validation[cite:
-                  32].
+                  → <strong>Rapid Prototyping:</strong> Built and deployed
+                  multiple web applications using Vue.js and React, focusing on
+                  speed-to-market and core feature validation.
                 </li>
               </ul>
             </div>
+
             <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:border-blue-300 transition-colors">
               <div className="flex justify-between items-start mb-3">
                 <div>
