@@ -229,7 +229,6 @@ function App() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-yellow-50 p-4 sm:p-6">
       <style>{globalStyles}</style>
       <div className="max-w-6xl mx-auto fade-in">
-        {/* Header */}
         <div className="text-center my-12">
           <div className="p-6 mb-6">
             <h1 className="text-4xl sm:text-6xl md:text-8xl font-black bg-gradient-to-r from-blue-600 to-purple-500 text-transparent bg-clip-text leading-tight">
@@ -255,7 +254,6 @@ function App() {
           </a>
         </div>
 
-        {/* Product & Tech Skills Cloud */}
         <div className="mb-12">
           <div className="flex flex-wrap justify-center gap-2">
             <TechTag name="Product Strategy" size="xl" />
@@ -285,12 +283,11 @@ function App() {
 
         <div className="mb-12">
           <div className="space-y-4">
-            {/* 100K31D Section - Rebranded as Job */}
             <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:border-blue-300 transition-colors">
               <div className="flex justify-between items-start mb-3">
                 <div>
                   <h3 className="text-xl font-bold text-gray-900">
-                    Head of Product
+                    Head of Product & Co-Founder
                   </h3>
                   <p className="text-purple-600 font-medium text-lg">
                     100K31D Labs · Jan 2025–Present
@@ -302,26 +299,25 @@ function App() {
               </div>
               <ul className="text-base text-gray-700 space-y-2">
                 <li>
-                  → <strong>Strategic Leadership:</strong> Directed the full
-                  product lifecycle for a suite of wellness apps (Esse, OAAT),
-                  driving 5,700+ organic users through SEO and viral mechanics
-                  (zero paid acquisition).
+                  → <strong>Strategic Leadership:</strong> Lead product roadmap
+                  and technical direction for a co-founded studio, aligning 3
+                  partners on feature prioritization and delivery timelines.
                 </li>
                 <li>
-                  → <strong>Monetization & Economics:</strong> Designed a tiered
+                  → <strong>Execution & Growth:</strong> Directed the full
+                  product lifecycle for Esse and OAAT, driving 5,700+ organic
+                  users through SEO and viral mechanics (zero paid acquisition).
+                </li>
+                <li>
+                  → <strong>Monetization Engine:</strong> Designed a tiered
                   subscription model grounded in behavioral psychology,
                   achieving a <strong>7% freemium conversion rate</strong>{' '}
                   (industry avg 2-3%) and sustainable unit economics.
                 </li>
                 <li>
-                  → <strong>Technical Execution:</strong> Led the architecture
-                  and development of high-fidelity React Native mobile apps,
-                  managing the complete release pipeline across iOS and Android.
-                </li>
-                <li>
-                  → <strong>Market Validation:</strong> Executed low-cost MVP
-                  testing strategies, including a Reddit launch that secured #1
-                  ranking and instant feedback loops for rapid iteration.
+                  → <strong>Technical Ownership:</strong> Architected
+                  high-fidelity React Native mobile apps, managing the CI/CD
+                  pipeline and release cycles across iOS and Android.
                 </li>
               </ul>
             </div>
@@ -342,12 +338,13 @@ function App() {
               </div>
               <ul className="text-base text-gray-700 space-y-2">
                 <li>
-                  → <strong>Product-Led Engineering:</strong> Functioned as a
-                  technical point of contact for product delivery, bridging the
-                  gap between business requirements and engineering execution.
+                  → <strong>Product-Led Engineering:</strong> Functioned as the
+                  technical bridge between product managers and engineering,
+                  translating business requirements into feasible technical
+                  specs.
                 </li>
                 <li>
-                  → <strong>Feature Ownership:</strong> Co-led scoping and
+                  → <strong>Feature Ownership:</strong> Co-led the scoping and
                   delivery of 40+ major features, managing trade-offs between
                   technical debt and user value delivery.
                 </li>
@@ -364,7 +361,6 @@ function App() {
               </ul>
             </div>
 
-            {/* Journalism Section - Rebranded as Product */}
             <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:border-blue-300 transition-colors">
               <div className="flex justify-between items-start mb-3">
                 <div>
@@ -404,7 +400,6 @@ function App() {
           ))}
         </div>
 
-        {/* Testimonials */}
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">
             Peer Feedback
@@ -420,7 +415,6 @@ function App() {
           </div>
         </div>
 
-        {/* Personal Facts */}
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">
             The "Why" Behind The Tech
