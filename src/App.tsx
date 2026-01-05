@@ -360,7 +360,39 @@ function App() {
                 </li>
               </ul>
             </div>
-
+            <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:border-blue-300 transition-colors">
+              <div className="flex justify-between items-start mb-3">
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900">
+                    Technical Product Consultant
+                  </h3>
+                  <p className="text-gray-600 font-medium text-lg">
+                    Freelance / Remote · May 2022–Dec 2023
+                  </p>
+                </div>
+              </div>
+              <ul className="text-base text-gray-700 space-y-2">
+                <li>
+                  → <strong>Stakeholder Management:</strong> Partnered with
+                  clients to define MVP requirements and technical scope,
+                  translating loose business goals into actionable product
+                  roadmaps.
+                </li>
+                <li>
+                  [cite_start]→ <strong>Product Growth:</strong> Developed and
+                  launched the <em>Rewords</em> browser extension[cite: 31],
+                  growing it to <strong>1,000+ active users</strong> and earning
+                  a "Featured" badge on the Chrome Web Store through iterative
+                  user feedback loops.
+                </li>
+                <li>
+                  [cite_start]→ <strong>Rapid Prototyping:</strong> Built and
+                  deployed multiple web applications using Vue.js and React,
+                  focusing on speed-to-market and core feature validation[cite:
+                  32].
+                </li>
+              </ul>
+            </div>
             <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:border-blue-300 transition-colors">
               <div className="flex justify-between items-start mb-3">
                 <div>
