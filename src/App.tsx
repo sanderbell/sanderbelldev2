@@ -287,10 +287,10 @@ function App() {
               <div className="flex justify-between items-start mb-3">
                 <div>
                   <h3 className="text-xl font-bold text-gray-900">
-                    Head of Product & Co-Founder
+                    Product Lead & Co-Founder
                   </h3>
                   <p className="text-purple-600 font-medium text-lg">
-                    100K31D Labs · Jan 2025–Present
+                    100K31D LLC · Jan 2025–Present
                   </p>
                 </div>
                 <span className="text-xs text-purple-600 bg-purple-100 px-3 py-1 rounded-full flex items-center justify-center font-bold">
