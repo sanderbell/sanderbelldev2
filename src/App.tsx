@@ -233,10 +233,12 @@ function App() {
         <div className="text-center my-12">
           <div className="p-6 mb-6">
             <h1 className="text-4xl sm:text-6xl md:text-8xl font-black bg-gradient-to-r from-blue-600 to-purple-500 text-transparent bg-clip-text">
-              Technical Product Manager.
-              <br />
-              Mobile & Growth.
+              Technical Product Manager.{' '}
             </h1>
+            <br />
+            <h2 className="text-3xl sm:text-5xl md:text-7xl font-black bg-gradient-to-r from-blue-600 to-purple-500 text-transparent bg-clip-text">
+              Mobile & Growth.{' '}
+            </h2>
           </div>
 
           <p className="text-xl text-gray-600 max-w-4xl mx-auto my-4 p-0">
