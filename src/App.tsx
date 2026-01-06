@@ -130,54 +130,23 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
 
 function App() {
   const globalStyles = `
-      .glow-effect {
-        animation: glow 2s infinite alternate;
-      }
+      .glow-effect { animation: glow 2s infinite alternate; }
       @keyframes glow {
-        0% {
-          filter: drop-shadow(0 0 5px rgba(0, 123, 255, 0.5));
-        }
-        100% {
-          filter: drop-shadow(0 0 10px rgba(0, 123, 255, 0.8));
-        }
+        0% { filter: drop-shadow(0 0 5px rgba(0, 123, 255, 0.5)); }
+        100% { filter: drop-shadow(0 0 10px rgba(0, 123, 255, 0.8)); }
       }
-      .tech-tag {
-        transition: transform 0.2s ease, background-color 0.2s ease;
-      }
-      .tech-tag:hover {
-        transform: scale(1.03);
-        background-color: #bfdbfe;
-      }
-      .card-enter {
-        animation: cardEnter 0.5s ease-out;
-        animation-fill-mode: backwards;
-      }
+      .tech-tag { transition: transform 0.2s ease, background-color 0.2s ease; }
+      .tech-tag:hover { transform: scale(1.03); background-color: #bfdbfe; }
+      .card-enter { animation: cardEnter 0.5s ease-out; animation-fill-mode: backwards; }
       @keyframes cardEnter {
-        from {
-          opacity: 0;
-          transform: translateY(10px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
       }
-      .fade-in {
-        animation: fadeIn 0.7s ease-in;
-      }
-      @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-      }
-      html {
-        scroll-behavior: smooth;
-      }
-      .contact-link {
-        transition: color 0.2s ease, transform 0.2s ease;
-      }
-      .contact-link:hover {
-        transform: scale(1.03);
-      }
+      .fade-in { animation: fadeIn 0.7s ease-in; }
+      @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+      html { scroll-behavior: smooth; }
+      .contact-link { transition: color 0.2s ease, transform 0.2s ease; }
+      .contact-link:hover { transform: scale(1.03); }
     `;
 
   const stats = [
@@ -190,11 +159,10 @@ function App() {
     { icon: Target, value: '7%', label: 'Freemium Conversion', color: 'green' },
     {
       icon: TrendingUp,
-      value: '5.7K+',
-      label: 'Organic App Installs',
+      value: '10K+',
+      label: 'Organic Users',
       color: 'blue',
     },
-
     {
       icon: Star,
       value: '4.9',
@@ -233,11 +201,11 @@ function App() {
         <div className="text-center my-12">
           <div className="p-6 mb-6">
             <h1 className="text-4xl sm:text-6xl md:text-8xl font-black bg-gradient-to-r from-blue-600 to-purple-500 text-transparent bg-clip-text leading-tight">
-              Technical Product Manager.{' '}
+              Product Manager .{' '}
             </h1>
             <br />
             <h2 className="text-3xl sm:text-5xl md:text-7xl font-black bg-gradient-to-r from-blue-600 to-purple-500 text-transparent bg-clip-text">
-              Mobile & Growth.{' '}
+              Mobile & Technical.{' '}
             </h2>
           </div>
 
@@ -261,24 +229,24 @@ function App() {
           <div className="flex flex-wrap justify-center gap-2">
             <TechTag name="Product Strategy" size="xl" />
             <TechTag name="Technical PM" size="xl" />
-            <TechTag name="Mobile Architecture" size="xl" />
+            <TechTag name="React Native" size="xl" />
             <TechTag name="Roadmap Ownership" size="lg" />
             <TechTag name="Stakeholder Management" size="lg" />
-            <TechTag name="User Psychology" size="lg" />
-            <TechTag name="React Native" size="lg" />
+            <TechTag name="Psychology & UX" size="lg" />
+            <TechTag name="Mobile Architecture" size="lg" />
             <TechTag name="Unit Economics (LTV/CAC)" size="base" />
-            <TechTag name="Feature Prioritization" size="base" />
+            <TechTag name="GTM Strategy" size="base" />
             <TechTag name="A/B Testing" size="base" />
             <TechTag name="App Store Optimization" size="base" />
             <TechTag name="TypeScript" size="base" />
             <TechTag name="Next.js 14+" size="base" />
             <TechTag name="Retention Loops" size="sm" />
-            <TechTag name="Data Analysis" size="sm" />
+            <TechTag name="Data Analytics" size="sm" />
             <TechTag name="Conversion Optimization" size="sm" />
             <TechTag name="Agile/Scrum" size="sm" />
             <TechTag name="CI/CD Pipelines" size="sm" />
-            <TechTag name="Android" size="sm" />
-            <TechTag name="Git" size="sm" />
+            <TechTag name="Android/iOS" size="sm" />
+            <TechTag name="Git/Linear/Jira" size="sm" />
             <TechTag name="Figma" size="sm" />
             <TechTag name="AI Integration" size="sm" />
           </div>
@@ -297,7 +265,7 @@ function App() {
                   </p>
                 </div>
                 <span className="text-xs text-purple-600 bg-purple-100 px-3 py-1 rounded-full flex items-center justify-center font-bold">
-                  Lifestyle Tech Portfolio
+                  2 Products Shipped
                 </span>
               </div>
               <ul className="text-base text-gray-700 space-y-2">
@@ -326,8 +294,8 @@ function App() {
                   >
                     One at a Time
                   </a>
-                  , driving 10,000+ organic users through ASO and viral
-                  mechanics (zero paid acquisition).
+                  , driving <strong>10,000+ organic users</strong> through ASO
+                  and viral mechanics (zero paid acquisition).
                 </li>
                 <li>
                   → <strong>Monetization Engine:</strong> Designed a tiered
@@ -374,9 +342,10 @@ function App() {
                   that directly improved retention and reduced support tickets.
                 </li>
                 <li>
-                  → <strong>Stakeholder Communication:</strong> Translated
-                  technical constraints for non-technical leadership, enabling
-                  more accurate roadmap planning and risk assessment.
+                  → <strong>Stakeholder Communication:</strong> Served as the
+                  primary technical point of contact for non-technical
+                  leadership, providing accurate feasibility assessments and
+                  risk mitigation strategies.
                 </li>
               </ul>
             </div>
@@ -385,13 +354,21 @@ function App() {
               <div className="flex justify-between items-start mb-3">
                 <div>
                   <h3 className="text-xl font-bold text-gray-900">
-                    Technical Product Consultant
+                    Product Solutions Consultant
                   </h3>
                   <p className="text-gray-600 font-medium text-lg">
                     Freelance / Remote · May 2022–Dec 2023
                   </p>
                 </div>
+                <span className="text-xs text-gray-600 bg-gray-100 px-3 py-1 rounded-full flex items-center justify-center font-bold">
+                  Strategic Partner
+                </span>
               </div>
+              <p className="text-sm text-gray-500 italic mb-2">
+                Operating as a technical partner for early-stage founders,
+                translating loose business requirements into shipped MVPs and
+                scalable code.
+              </p>
               <ul className="text-base text-gray-700 space-y-2">
                 <li>
                   → <strong>Stakeholder Management:</strong> Partnered with
@@ -427,20 +404,22 @@ function App() {
               </div>
               <ul className="text-base text-gray-700 space-y-2">
                 <li>
-                  → <strong>Product Operations:</strong> Managed content supply
-                  chains and cross-functional teams of copywriters and editors
-                  for 15 years, defining editorial roadmaps aligned with
+                  → <strong>Startup Leadership & Operations:</strong> Co-founded
+                  and managed media startups, assessing resources and
+                  operational capacity to launch content products aligned with
                   audience growth metrics.
                 </li>
                 <li>
-                  → <strong>Growth Strategy:</strong> Launched 0→1 media
-                  verticals, achieving rapid audience scaling through organic
-                  search strategy and brand positioning.
+                  → <strong>Stakeholder Management:</strong> Managed complex{' '}
+                  <strong>internal stakeholder</strong> relationships and
+                  cross-functional teams, utilizing conflict resolution
+                  techniques to unblock pipelines and align business goals.
                 </li>
                 <li>
-                  → <strong>Crisis Management:</strong> Led communication
-                  strategies during high-pressure cycles, maintaining brand
-                  integrity and stakeholder trust.
+                  → <strong>Product Quality & UX:</strong> Guaranteed the
+                  quality of content-related products through rigorous editorial
+                  standards, while using user research to pinpoint frictions and
+                  optimize retention.
                 </li>
               </ul>
             </div>
