@@ -459,11 +459,11 @@ function App() {
                 Psychology 🤝 Product
               </h3>
               <p className="text-sm text-gray-600 leading-relaxed">
-                My Master's in Psychology isn't just a degree—it's my
-                competitive advantage. I don't just build features; I design{' '}
-                <strong>habit loops</strong>. I use cognitive behavioral
-                insights to reduce friction, improve onboarding retention, and
-                create "sticky" user experiences that drive LTV.
+                My Master's in Psychology isn't just a degree — it's my
+                competitive advantage. I don't just build stuff; I design{' '}
+                <strong>habit loops</strong> using cognitive behavioral insights
+                to reduce friction, improve onboarding retention, and create
+                "sticky" UX that drives LTV.
               </p>
             </div>
             <div className="bg-white rounded-lg p-5 shadow-sm border border-gray-200">
