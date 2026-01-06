@@ -288,7 +288,7 @@ function App() {
               <div className="flex justify-between items-start mb-3">
                 <div>
                   <h3 className="text-xl font-bold text-gray-900">
-                    Head of Product
+                    Product Lead, Co-Founder
                   </h3>
                   <p className="text-purple-600 font-medium text-lg">
                     100K31D Studio · Dec 2024–Present
@@ -306,8 +306,9 @@ function App() {
                 </li>
                 <li>
                   → <strong>Execution & Growth:</strong> Directed the full
-                  product lifecycle for Esse and OAAT, driving 5,700+ organic
-                  users through SEO and viral mechanics (zero paid acquisition).
+                  product lifecycle for Esse and One at a Time, driving 10,000+
+                  organic users through ASO and viral mechanics (zero paid
+                  acquisition).
                 </li>
                 <li>
                   → <strong>Monetization Engine:</strong> Designed a tiered
@@ -317,8 +318,8 @@ function App() {
                 </li>
                 <li>
                   → <strong>Technical Ownership:</strong> Architected
-                  high-fidelity React Native mobile apps, managing the CI/CD
-                  pipeline and release cycles across iOS and Android.
+                  high-fidelity React Native mobile apps, managing release
+                  cycles.
                 </li>
               </ul>
             </div>
@@ -340,9 +341,8 @@ function App() {
               <ul className="text-base text-gray-700 space-y-2">
                 <li>
                   → <strong>Product-Led Engineering:</strong> Functioned as the
-                  technical bridge between product managers and engineering,
-                  translating business requirements into feasible technical
-                  specs.
+                  technical bridge between PMs and engineering, translating
+                  business requirements into feasible technical specs.
                 </li>
                 <li>
                   → <strong>Feature Ownership:</strong> Co-led the scoping and
