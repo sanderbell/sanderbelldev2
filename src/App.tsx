@@ -311,7 +311,7 @@ function App() {
                     href="https://esse.today"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-purple-600 underline hover:text-purple-800 transition-colors"
+                    className="text-purple-700 underline hover:text-purple-800 transition-colors"
                   >
                     Esse
                   </a>{' '}
@@ -320,7 +320,7 @@ function App() {
                     href="https://oneatati.me"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-purple-600 underline hover:text-purple-800 transition-colors"
+                    className="text-purple-700 underline hover:text-purple-800 transition-colors"
                   >
                     One at a Time
                   </a>
