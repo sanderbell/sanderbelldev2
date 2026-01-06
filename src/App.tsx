@@ -206,13 +206,18 @@ function App() {
   const testimonials = [
     {
       quote:
-        "User-centered approach - doesn't simply focus on what the designs or specs say, but their purpose and intention. Made suggestions that were more elegant or user friendly.",
-      context: 'Team Lead',
+        "A high-impact builder. Consistently a top performer, he ships stable, thoughtful features and isn't afraid to flag when complexity outweighs value. A go-to for critical initiatives.",
+      context: 'Senior Software Engineer',
     },
     {
       quote:
-        'Once you set clear requirements, he just gets stuff done. Much needed orange in a sea of apples.',
-      context: 'Colleague',
+        'Showed traits not commonly found with developers. Practiced due diligence, asked clear questions to understand core issues, and was easy to communicate with.',
+      context: 'Network Operations Analyst',
+    },
+    {
+      quote:
+        "User-centered approach - doesn't simply focus on what the designs or specs say, but their purpose and intention. Made suggestions that were more elegant or user friendly.",
+      context: 'Team Lead',
     },
     {
       quote:
