@@ -221,11 +221,6 @@ function App() {
     },
     {
       quote:
-        'Quick at getting features done and fixing bugs. Always catches small cases others might miss.',
-      context: 'Team Member',
-    },
-    {
-      quote:
         'Helped show the team how AI can save time with creating/updating specs. Data-driven approach to documentation.',
       context: 'Developer',
     },
