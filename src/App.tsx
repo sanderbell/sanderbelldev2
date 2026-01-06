@@ -181,6 +181,12 @@ function App() {
     `;
 
   const stats = [
+    {
+      icon: Rocket,
+      value: '15+',
+      label: 'Years Leadership',
+      color: 'purple',
+    },
     { icon: Target, value: '7%', label: 'Freemium Conversion', color: 'green' },
     {
       icon: TrendingUp,
@@ -188,12 +194,7 @@ function App() {
       label: 'Organic App Installs',
       color: 'blue',
     },
-    {
-      icon: Rocket,
-      value: '15+',
-      label: 'Years Leadership',
-      color: 'purple',
-    },
+
     {
       icon: Star,
       value: '4.9',
