@@ -306,9 +306,26 @@ function App() {
                 </li>
                 <li>
                   → <strong>Execution & Growth:</strong> Directed the full
-                  product lifecycle for Esse and One at a Time, driving 10,000+
-                  organic users through ASO and viral mechanics (zero paid
-                  acquisition).
+                  product lifecycle for the apps{' '}
+                  <a
+                    href="https://esse.today"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-purple-600 underline hover:text-purple-800 transition-colors"
+                  >
+                    Esse
+                  </a>{' '}
+                  and{' '}
+                  <a
+                    href="https://oneatati.me"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-purple-600 underline hover:text-purple-800 transition-colors"
+                  >
+                    One at a Time
+                  </a>
+                  , driving 10,000+ organic users through ASO and viral
+                  mechanics (zero paid acquisition).
                 </li>
                 <li>
                   → <strong>Monetization Engine:</strong> Designed a tiered
