@@ -130,55 +130,55 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
 
 function App() {
   const globalStyles = `
-    .glow-effect {
-      animation: glow 2s infinite alternate;
-    }
-    @keyframes glow {
-      0% {
-        filter: drop-shadow(0 0 5px rgba(0, 123, 255, 0.5));
+      .glow-effect {
+        animation: glow 2s infinite alternate;
       }
-      100% {
-        filter: drop-shadow(0 0 10px rgba(0, 123, 255, 0.8));
+      @keyframes glow {
+        0% {
+          filter: drop-shadow(0 0 5px rgba(0, 123, 255, 0.5));
+        }
+        100% {
+          filter: drop-shadow(0 0 10px rgba(0, 123, 255, 0.8));
+        }
       }
-    }
-    .tech-tag {
-      transition: transform 0.2s ease, background-color 0.2s ease;
-    }
-    .tech-tag:hover {
-      transform: scale(1.03);
-      background-color: #bfdbfe;
-    }
-    .card-enter {
-      animation: cardEnter 0.5s ease-out;
-      animation-fill-mode: backwards;
-    }
-    @keyframes cardEnter {
-      from {
-        opacity: 0;
-        transform: translateY(10px);
+      .tech-tag {
+        transition: transform 0.2s ease, background-color 0.2s ease;
       }
-      to {
-        opacity: 1;
-        transform: translateY(0);
+      .tech-tag:hover {
+        transform: scale(1.03);
+        background-color: #bfdbfe;
       }
-    }
-    .fade-in {
-      animation: fadeIn 0.7s ease-in;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    html {
-      scroll-behavior: smooth;
-    }
-    .contact-link {
-      transition: color 0.2s ease, transform 0.2s ease;
-    }
-    .contact-link:hover {
-      transform: scale(1.03);
-    }
-  `;
+      .card-enter {
+        animation: cardEnter 0.5s ease-out;
+        animation-fill-mode: backwards;
+      }
+      @keyframes cardEnter {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .fade-in {
+        animation: fadeIn 0.7s ease-in;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      .contact-link {
+        transition: color 0.2s ease, transform 0.2s ease;
+      }
+      .contact-link:hover {
+        transform: scale(1.03);
+      }
+    `;
 
   const stats = [
     { icon: Target, value: '7%', label: 'Freemium Conversion', color: 'green' },
@@ -241,7 +241,7 @@ function App() {
           <p className="text-xl text-gray-600 max-w-4xl mx-auto my-4 p-0">
             Bridging engineering constraints with business goals.{' '}
             <br className="hidden sm:block" />
-            15+ years of experience in product leadership, content strategy, and
+            15+ years of experience in leadership, content strategy, and
             technical execution.
           </p>
 
