@@ -265,7 +265,7 @@ function App() {
                   </p>
                 </div>
                 <span className="text-xs text-purple-600 bg-purple-100 px-3 py-1 rounded-full flex items-center justify-center font-bold">
-                  2 Products Shipped
+                  2 Products
                 </span>
               </div>
               <ul className="text-base text-gray-700 space-y-2">
