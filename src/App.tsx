@@ -217,7 +217,7 @@ function App() {
           </p>
 
           <a
-            href="cv.pdf"
+            href="resume.pdf"
             className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-500 text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity mt-6 shadow-lg hover:shadow-xl"
           >
             <Download size={20} />
