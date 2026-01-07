@@ -200,12 +200,12 @@ function App() {
       <div className="max-w-6xl mx-auto fade-in">
         <div className="text-center my-12">
           <div className="p-6 mb-6">
-            <h1 className="text-4xl sm:text-6xl md:text-8xl font-black bg-gradient-to-r from-blue-600 to-purple-500 text-transparent bg-clip-text">
-              Product Manager.
+            <h1 className="text-4xl sm:text-6xl md:text-8xl font-black bg-gradient-to-r from-blue-600 to-purple-500 text-transparent bg-clip-text leading-tight">
+              Product Manager.{' '}
             </h1>
             <br />
             <h2 className="text-3xl sm:text-5xl md:text-7xl font-black bg-gradient-to-r from-blue-600 to-purple-500 text-transparent bg-clip-text">
-              Mobile & Technical.
+              Technical. Mobile & Web.{' '}
             </h2>
           </div>
 
@@ -228,26 +228,24 @@ function App() {
         <div className="mb-12">
           <div className="flex flex-wrap justify-center gap-2">
             <TechTag name="Product Strategy" size="xl" />
-            <TechTag name="Technical PM" size="xl" />
-            <TechTag name="React Native" size="xl" />
-            <TechTag name="Roadmap Ownership" size="lg" />
+            <TechTag name="User Empathy" size="xl" />
+            <TechTag name="Tech Stack" size="xl" />
+            <TechTag name="Roadmapping" size="lg" />
             <TechTag name="Stakeholder Management" size="lg" />
-            <TechTag name="Psychology & UX" size="lg" />
-            <TechTag name="Mobile Architecture" size="lg" />
+            <TechTag name="Psychology-Backed UX" size="lg" />
+            <TechTag name="React Native" size="lg" />
             <TechTag name="Unit Economics (LTV/CAC)" size="base" />
             <TechTag name="GTM Strategy" size="base" />
             <TechTag name="A/B Testing" size="base" />
-            <TechTag name="App Store Optimization" size="base" />
+            <TechTag name="ASO" size="base" />
+            <TechTag name="CRO" size="base" />
             <TechTag name="TypeScript" size="base" />
-            <TechTag name="Next.js 14+" size="base" />
-            <TechTag name="Retention Loops" size="sm" />
-            <TechTag name="Data Analytics" size="sm" />
-            <TechTag name="Conversion Optimization" size="sm" />
+            <TechTag name="Mobile Architecture" size="base" />
+            <TechTag name="RICE/MoSCoW" size="sm" />
+            <TechTag name="Risk Mitigation" size="sm" />
             <TechTag name="Agile/Scrum" size="sm" />
-            <TechTag name="CI/CD Pipelines" size="sm" />
-            <TechTag name="Android/iOS" size="sm" />
-            <TechTag name="Git/Linear/Jira" size="sm" />
-            <TechTag name="Figma" size="sm" />
+            <TechTag name="User Journey Analysis" size="sm" />
+            <TechTag name="User Research (JTBD)" size="sm" />
             <TechTag name="AI Integration" size="sm" />
           </div>
         </div>
@@ -261,7 +259,7 @@ function App() {
                     Product Lead, Co-Founder
                   </h3>
                   <p className="text-purple-600 font-medium text-lg">
-                    100K31D Studio · Dec 2024–Present
+                    100K31D · Dec 2024–Present
                   </p>
                 </div>
                 <span className="text-xs text-purple-600 bg-purple-100 px-3 py-1 rounded-full flex items-center justify-center font-bold">
@@ -270,43 +268,42 @@ function App() {
               </div>
               <ul className="text-base text-gray-700 space-y-2">
                 <li>
-                  → <strong>Strategic Leadership:</strong> Lead product roadmap
-                  and technical direction for a co-founded studio, aligning 3
-                  partners on feature prioritization and delivery timelines.
-                </li>
-                <li>
-                  → <strong>Execution & Growth:</strong> Directed the full
-                  product lifecycle for the apps{' '}
+                  → <strong>Strategic Leadership:</strong> Created product
+                  roadmap, successfully launched two mobile products (
                   <a
                     href="https://esse.today"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-purple-700 underline hover:text-purple-800 transition-colors"
+                    className="text-purple-700 hover:text-purple-800 transition-colors"
                   >
                     Esse
-                  </a>{' '}
-                  and{' '}
+                  </a>
+                  ,{' '}
                   <a
                     href="https://oneatati.me"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-purple-700 underline hover:text-purple-800 transition-colors"
+                    className="text-purple-700 hover:text-purple-800 transition-colors"
                   >
                     One at a Time
                   </a>
-                  , driving <strong>10,000+ organic users</strong> through ASO
-                  and viral mechanics (zero paid acquisition).
+                  ) 0 → 1.
                 </li>
                 <li>
-                  → <strong>Monetization Engine:</strong> Designed a tiered
-                  subscription model grounded in behavioral psychology,
-                  achieving a <strong>7% freemium conversion rate</strong>{' '}
-                  (industry avg 2-3%) and sustainable unit economics.
+                  → <strong>Growth & Impact:</strong> Achieved 10,000+ organic
+                  users and a <strong>7% freemium conversion rate</strong> (vs
+                  industry avg 2%) by implementing A/B testing and
+                  psychology-backed onboarding flows.
                 </li>
                 <li>
-                  → <strong>Technical Ownership:</strong> Architected
-                  high-fidelity React Native mobile apps, managing release
-                  cycles.
+                  → <strong>Technical Execution:</strong> Architected and
+                  implemented production-ready React Native apps.
+                </li>
+                <li>
+                  → <strong>Market Validation:</strong> Validated PMF via
+                  low-cost MVP testing on Reddit, achieving a #1 subreddit
+                  ranking and establishing immediate feedback loops for rapid
+                  iteration.
                 </li>
               </ul>
             </div>
@@ -315,7 +312,7 @@ function App() {
               <div className="flex justify-between items-start mb-3">
                 <div>
                   <h3 className="text-xl font-bold text-gray-900">
-                    Product Engineer
+                    Product Engineer (React/Next.js)
                   </h3>
                   <p className="text-blue-600 font-medium text-lg">
                     Ling App · Dec 2023–Nov 2025
@@ -325,27 +322,34 @@ function App() {
                   2M+ Users
                 </span>
               </div>
+              <p className="text-sm text-gray-500 italic mb-2">
+                Functioning as the bridge between Product and Engineering for an
+                app with 2M+ users (
+                <a
+                  href="https://ling-app.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:underline"
+                >
+                  Ling-App.com
+                </a>
+                )
+              </p>
               <ul className="text-base text-gray-700 space-y-2">
                 <li>
-                  → <strong>Product-Led Engineering:</strong> Functioned as the
-                  technical bridge between PMs and engineering, translating
-                  business requirements into feasible technical specs.
+                  → <strong>Product Engineering:</strong> Translated business
+                  requirements into feasible tech specs and vice versa, reducing
+                  dev rework by <strong>~15%</strong>.
                 </li>
                 <li>
-                  → <strong>Feature Ownership:</strong> Co-led the scoping and
+                  → <strong>Feature Ownership:</strong> Co-led scoping and
                   delivery of 40+ major features, managing trade-offs between
-                  technical debt and user value delivery.
+                  technical debt reduction and new user value.
                 </li>
                 <li>
-                  → <strong>UX Optimization:</strong> Proactively identified
-                  friction in user flows and implemented technical solutions
-                  that directly improved retention and reduced support tickets.
-                </li>
-                <li>
-                  → <strong>Stakeholder Communication:</strong> Served as the
-                  primary technical point of contact for non-technical
-                  leadership, providing accurate feasibility assessments and
-                  risk mitigation strategies.
+                  → <strong>Retention Optimization:</strong> Proactively
+                  identified friction points in the user journey and implemented
+                  UI/UX fixes that directly improved session time and retention.
                 </li>
               </ul>
             </div>
@@ -354,10 +358,10 @@ function App() {
               <div className="flex justify-between items-start mb-3">
                 <div>
                   <h3 className="text-xl font-bold text-gray-900">
-                    Product Solutions Consultant
+                    Product Consultant / Freelance Engineer
                   </h3>
                   <p className="text-gray-600 font-medium text-lg">
-                    Freelance / Remote · May 2022–Dec 2023
+                    Remote · May 2022–Dec 2023
                   </p>
                 </div>
                 <span className="text-xs text-gray-600 bg-gray-100 px-3 py-1 rounded-full flex items-center justify-center font-bold">
@@ -365,9 +369,8 @@ function App() {
                 </span>
               </div>
               <p className="text-sm text-gray-500 italic mb-2">
-                Operating as a technical partner for early-stage founders,
-                translating loose business requirements into shipped MVPs and
-                scalable code.
+                Operating as a technical partner for clients, translating
+                business requirements into MVPs and complete solutions.
               </p>
               <ul className="text-base text-gray-700 space-y-2">
                 <li>
@@ -377,16 +380,16 @@ function App() {
                   roadmaps.
                 </li>
                 <li>
-                  → <strong>Product Growth:</strong> Developed and launched the{' '}
-                  <em>Rewords</em> browser extension, growing it to{' '}
-                  <strong>1,000+ active users</strong> and earning a "Featured"
-                  badge on the Chrome Web Store through iterative user feedback
-                  loops.
+                  → <strong>Rapid Prototyping:</strong> Built and deployed web
+                  apps (<em>So Many Characters, Should Today, etc.</em>) using
+                  Vue.js and React, focusing on speed-to-market and core feature
+                  validation.
                 </li>
                 <li>
-                  → <strong>Rapid Prototyping:</strong> Built and deployed
-                  multiple web applications using Vue.js and React, focusing on
-                  speed-to-market and core feature validation.
+                  → <strong>Product Growth:</strong> Developed and launched a
+                  browser extension (<em>Rewords</em>), growing it to{' '}
+                  <strong>1,000+ active users</strong> within months and earning
+                  a "Featured" badge on the Chrome Web Store.
                 </li>
               </ul>
             </div>
@@ -395,31 +398,33 @@ function App() {
               <div className="flex justify-between items-start mb-3">
                 <div>
                   <h3 className="text-xl font-bold text-gray-900">
-                    Content Product Lead
+                    Content Lead
                   </h3>
                   <p className="text-gray-600 font-medium text-lg">
-                    Various Media Orgs · Feb 2008–May 2022
+                    Various Media & Editorial Teams · Feb 2008–May 2022
                   </p>
                 </div>
               </div>
               <ul className="text-base text-gray-700 space-y-2">
                 <li>
-                  → <strong>Startup Leadership & Operations:</strong> Co-founded
-                  and managed media startups, assessing resources and
-                  operational capacity to launch content products aligned with
-                  audience growth metrics.
+                  → <strong>Startup Operations:</strong> Co-founded and managed
+                  independent news outlets, hired and led teams of 15+; managed
+                  agency relations and budgets.
                 </li>
                 <li>
-                  → <strong>Stakeholder Management:</strong> Managed complex{' '}
-                  <strong>internal stakeholder</strong> relationships and
-                  cross-functional teams, utilizing conflict resolution
-                  techniques to unblock pipelines and align business goals.
+                  → <strong>Retention & Metrics:</strong> Tracked session depth,
+                  reader retention, visitor growth. Adjusted content
+                  distribution strategy based on behavioral data.
                 </li>
                 <li>
-                  → <strong>Product Quality & UX:</strong> Guaranteed the
-                  quality of content-related products through rigorous editorial
-                  standards, while using user research to pinpoint frictions and
-                  optimize retention.
+                  → <strong>Product Quality:</strong> Enforced editorial
+                  standards and content QA pipelines, used user research to
+                  identify friction points and improve reader retention.
+                </li>
+                <li>
+                  → <strong>System Design:</strong> Developed internal roadmaps
+                  and editorial policies to standardize team output and
+                  operations.
                 </li>
               </ul>
             </div>
