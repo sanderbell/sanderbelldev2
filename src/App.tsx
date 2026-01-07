@@ -201,11 +201,11 @@ function App() {
         <div className="text-center my-12">
           <div className="p-6 mb-6">
             <h1 className="text-5xl sm:text-7xl md:text-9xl font-black bg-gradient-to-r from-blue-600 to-purple-500 text-transparent bg-clip-text leading-tight">
-              Product Manager.{' '}
+              Product Manager
             </h1>
             <br />
             <h2 className="text-3xl sm:text-5xl md:text-7xl font-black bg-gradient-to-r from-blue-600 to-purple-500 text-transparent bg-clip-text">
-              Technical. Mobile & Web.{' '}
+              Technical. Mobile & Web
             </h2>
           </div>
 
@@ -262,8 +262,8 @@ function App() {
                     100K31D · Dec 2024–Present
                   </p>
                 </div>
-                <span className="text-xs text-purple-600 bg-purple-100 px-3 py-1 rounded-full flex items-center justify-center font-bold">
-                  2 Products
+                <span className="text-xs text-purple-600 bg-purple-100 px-4 py-1 rounded-full flex items-center justify-center font-bold">
+                  2 apps
                 </span>
               </div>
               <ul className="text-base text-gray-700 space-y-2">
@@ -318,7 +318,7 @@ function App() {
                     Ling App · Dec 2023–Nov 2025
                   </p>
                 </div>
-                <span className="text-xs text-blue-600 bg-blue-100 px-3 py-1 rounded-full flex items-center justify-center font-bold">
+                <span className="text-xs text-blue-600 bg-blue-100 px-4 py-1 rounded-full flex items-center justify-center font-bold">
                   2M+ Users
                 </span>
               </div>
@@ -364,7 +364,7 @@ function App() {
                     Remote · May 2022–Dec 2023
                   </p>
                 </div>
-                <span className="text-xs text-gray-600 bg-gray-100 px-3 py-1 rounded-full flex items-center justify-center font-bold">
+                <span className="text-xs text-gray-600 bg-gray-100 px-4 py-1 rounded-full flex items-center justify-center font-bold">
                   Strategic Partner
                 </span>
               </div>
