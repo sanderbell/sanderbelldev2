@@ -73,9 +73,9 @@ const StatCard: React.FC<StatCardProps> = ({
     purple: {
       bg: 'bg-purple-50',
       border: 'border-purple-200',
-      icon: 'text-purple-600',
+      icon: 'text-purple-700',
       value: 'text-purple-700',
-      label: 'text-purple-600',
+      label: 'text-purple-700',
     },
     orange: {
       bg: 'bg-orange-50',
@@ -258,11 +258,11 @@ function App() {
                   <h3 className="text-xl font-bold text-gray-900">
                     Product Lead, Co-Founder
                   </h3>
-                  <p className="text-purple-600 font-medium text-lg">
+                  <p className="text-purple-700 font-medium text-lg">
                     100K31D · Dec 2024–Present
                   </p>
                 </div>
-                <span className="text-[10px] text-center text-purple-600 bg-purple-100 px-6 py-1 rounded-full flex items-center justify-center font-bold">
+                <span className="text-[10px] text-center text-purple-700 bg-purple-100 px-6 py-1 rounded-full flex items-center justify-center font-bold">
                   2 apps
                 </span>
               </div>
