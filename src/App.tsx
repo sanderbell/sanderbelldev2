@@ -386,7 +386,7 @@ function App() {
                     href="https://somany.ch"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-700 hover:text-gray-800 transition-colors"
+                    className="text-purple-700 hover:text-purple-800 transition-colors"
                   >
                     <em>So Many Characters</em>
                   </a>
@@ -395,7 +395,7 @@ function App() {
                     href="https://should.today"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-700 hover:text-gray-800 transition-colors"
+                    className="text-purple-700 hover:text-purple-800 transition-colors"
                   >
                     <em>Should Today</em>
                   </a>
@@ -403,12 +403,12 @@ function App() {
                   and core feature validation.
                 </li>
                 <li>
-                  → <strong>Product Growth:</strong> Developed and launched a
+                  → <strong>Product Growth:</strong> Developed and launched
                   <a
                     href="https://rewords.app"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-700 hover:text-gray-800 transition-colors"
+                    className="text-purple-700 hover:text-purple-800 transition-colors"
                   >
                     <em>Rewords</em>
                   </a>
