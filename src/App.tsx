@@ -175,12 +175,12 @@ function App() {
     {
       quote:
         "A high-impact builder. Consistently a top performer, he ships stable, thoughtful features and isn't afraid to flag when complexity outweighs value. A go-to for critical initiatives.",
-      context: 'Senior Software Engineer',
+      context: 'Piyawasin Pikror-ngarn, Senior Software Engineer',
     },
     {
       quote:
         'Showed traits not commonly found with developers. Practiced due diligence, asked clear questions to understand core issues, and was easy to communicate with.',
-      context: 'Network Operations Analyst',
+      context: 'Dennis Brown, Dev Lead',
     },
     {
       quote:
