@@ -276,7 +276,7 @@ function App() {
                     rel="noopener noreferrer"
                     className="text-purple-700 hover:text-purple-800 transition-colors"
                   >
-                    Esse
+                    <em>Esse </em>
                   </a>
                   ,{' '}
                   <a
@@ -285,7 +285,7 @@ function App() {
                     rel="noopener noreferrer"
                     className="text-purple-700 hover:text-purple-800 transition-colors"
                   >
-                    One at a Time
+                    <em> One at a Time </em>
                   </a>
                   ) 0 → 1.
                 </li>
@@ -381,15 +381,39 @@ function App() {
                 </li>
                 <li>
                   → <strong>Rapid Prototyping:</strong> Built and deployed web
-                  apps (<em>So Many Characters, Should Today, etc.</em>) using
-                  Vue.js and React, focusing on speed-to-market and core feature
-                  validation.
+                  apps (
+                  <a
+                    href="https://somany.ch"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-700 hover:text-gray-800 transition-colors"
+                  >
+                    <em>So Many Characters</em>
+                  </a>
+                  ,{' '}
+                  <a
+                    href="https://should.today"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-700 hover:text-gray-800 transition-colors"
+                  >
+                    <em>Should Today</em>
+                  </a>
+                  , etc.) using Vue.js and React, focusing on speed-to-market
+                  and core feature validation.
                 </li>
                 <li>
                   → <strong>Product Growth:</strong> Developed and launched a
-                  browser extension (<em>Rewords</em>), growing it to{' '}
-                  <strong>1,000+ active users</strong> within months and earning
-                  a "Featured" badge on the Chrome Web Store.
+                  <a
+                    href="https://rewords.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-700 hover:text-gray-800 transition-colors"
+                  >
+                    <em>Rewords</em>
+                  </a>
+                  ), growing it to <strong>1,000+ active users</strong> within
+                  months and earning a "Featured" badge on the Chrome Web Store.
                 </li>
               </ul>
             </div>
