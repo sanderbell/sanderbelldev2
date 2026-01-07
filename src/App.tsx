@@ -200,11 +200,11 @@ function App() {
       <div className="max-w-6xl mx-auto fade-in">
         <div className="text-center my-12">
           <div className="p-6 mb-6">
-            <h1 className="text-5xl sm:text-7xl md:text-9xl font-black bg-gradient-to-r from-blue-600 to-purple-500 text-transparent bg-clip-text leading-tight">
+            <h1 className="text-5xl sm:text-7xl md:text-9xl font-black bg-gradient-to-r from-blue-600 to-purple-700 text-transparent bg-clip-text leading-tight">
               Product Manager
             </h1>
             <br />
-            <h2 className="text-3xl sm:text-5xl md:text-7xl font-black bg-gradient-to-r from-blue-600 to-purple-500 text-transparent bg-clip-text">
+            <h2 className="text-3xl sm:text-5xl md:text-7xl font-black bg-gradient-to-r from-blue-600 to-purple-700 text-transparent bg-clip-text">
               Technical. Mobile & Web
             </h2>
           </div>
@@ -218,7 +218,7 @@ function App() {
 
           <a
             href="resume.pdf"
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-500 text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity mt-6 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-700 text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity mt-6 shadow-lg hover:shadow-xl"
           >
             <Download size={20} />
             <span>Download Resume</span>
