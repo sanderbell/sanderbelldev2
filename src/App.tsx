@@ -412,7 +412,7 @@ function App() {
                   >
                     <em>Rewords</em>
                   </a>
-                  ), growing it to <strong>1,000+ active users</strong> within
+                  , growing it to <strong>1,000+ active users</strong> within
                   months and earning a "Featured" badge on the Chrome Web Store.
                 </li>
               </ul>
