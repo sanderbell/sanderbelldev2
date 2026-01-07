@@ -174,23 +174,23 @@ function App() {
   const testimonials = [
     {
       quote:
-        "A high-impact builder. Consistently a top performer, he ships stable, thoughtful features and isn't afraid to flag when complexity outweighs value. A go-to for critical initiatives.",
-      context: 'Piyawasin Pikror-ngarn, Senior Software Engineer',
+        'A high-impact builder. Consistently a top performer, he ships stable, thoughtful features and isn’t afraid to flag when complexity outweighs value. A go-to for critical initiatives.',
+      context: 'Piyawasin P., Senior Software Engineer, Ling',
     },
     {
       quote:
-        'Showed traits not commonly found with developers. Practiced due diligence, asked clear questions to understand core issues, and was easy to communicate with.',
-      context: 'Dennis Brown, Dev Lead',
+        'Showed traits not commonly found in developers. Practiced due diligence, asked clear questions to understand core issues, and was easy to communicate with.',
+      context: 'Dennis B., Engineering Lead, Ling',
     },
     {
       quote:
-        "User-centered approach - doesn't simply focus on what the designs or specs say, but their purpose and intention. Made suggestions that were more elegant or user friendly.",
-      context: 'Team Lead',
+        'User-centered approach — doesn’t simply focus on what the designs or specs say, but on their purpose and intention. Made suggestions that were more elegant and user-friendly.',
+      context: 'Product Manager, Ling',
     },
     {
       quote:
-        'Helped show the team how AI can save time with creating/updating specs. Data-driven approach to documentation.',
-      context: 'Developer',
+        'Kept teams aligned and effectively managed, presented a company-wide editorial policy that solidified our brand voice.',
+      context: 'Anna Artukh, PR Director, Uchi',
     },
   ];
 
