@@ -403,7 +403,7 @@ function App() {
                   and core feature validation.
                 </li>
                 <li>
-                  → <strong>Product Growth:</strong> Developed and launched
+                  → <strong>Product Growth:</strong> Developed and launched{' '}
                   <a
                     href="https://rewords.app"
                     target="_blank"
