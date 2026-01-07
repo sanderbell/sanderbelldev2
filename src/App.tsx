@@ -262,7 +262,7 @@ function App() {
                     100K31D · Dec 2024–Present
                   </p>
                 </div>
-                <span className="text-[10px] text-purple-600 bg-purple-100 px-4 py-1 rounded-full flex items-center justify-center font-bold">
+                <span className="text-[10px] text-center text-purple-600 bg-purple-100 px-6 py-1 rounded-full flex items-center justify-center font-bold">
                   2 apps
                 </span>
               </div>
@@ -318,7 +318,7 @@ function App() {
                     Ling App · Dec 2023–Nov 2025
                   </p>
                 </div>
-                <span className="text-[10px] text-blue-600 bg-blue-100 px-4 py-1 rounded-full flex items-center justify-center font-bold">
+                <span className="text-[10px] text-center text-blue-600 bg-blue-100 px-6 py-1 rounded-full flex items-center justify-center font-bold">
                   2M+ Users
                 </span>
               </div>
@@ -364,7 +364,7 @@ function App() {
                     Remote · May 2022–Dec 2023
                   </p>
                 </div>
-                <span className="text-[10px] text-gray-600 bg-gray-100 px-4 py-1 rounded-full flex items-center justify-center font-bold">
+                <span className="text-[10px] text-center text-gray-600 bg-gray-100 px-6 py-1 rounded-full flex items-center justify-center font-bold">
                   Strategic Partner
                 </span>
               </div>
