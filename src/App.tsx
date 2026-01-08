@@ -268,15 +268,15 @@ function App() {
               </div>
               <ul className="text-base text-gray-700 space-y-2">
                 <li>
-                  → <strong>Strategic Leadership:</strong> Created product
-                  roadmap, successfully launched two mobile products (
+                  → <strong>Leadership:</strong> Created product roadmap,
+                  launched two products (
                   <a
                     href="https://esse.today"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-purple-700 hover:text-purple-800 transition-colors"
                   >
-                    <em>Esse </em>
+                    <em>Esse</em>
                   </a>
                   ,{' '}
                   <a
@@ -285,25 +285,24 @@ function App() {
                     rel="noopener noreferrer"
                     className="text-purple-700 hover:text-purple-800 transition-colors"
                   >
-                    <em> One at a Time </em>
+                    <em>One at a Time</em>
                   </a>
-                  ) 0 → 1.
+                  ).
                 </li>
                 <li>
                   → <strong>Growth & Impact:</strong> Achieved 10,000+ organic
                   users and a <strong>7% freemium conversion rate</strong> (vs
-                  industry avg 2%) by implementing A/B testing and
-                  psychology-backed onboarding flows.
+                  industry avg 2%) by implementing A/B testing and onboarding
+                  flows informed by behavioral psychology.
                 </li>
                 <li>
-                  → <strong>Technical Execution:</strong> Architected and
-                  implemented production-ready React Native apps.
+                  → <strong>Technical Execution:</strong> Shipped and maintained
+                  React Native apps in production.
                 </li>
                 <li>
                   → <strong>Market Validation:</strong> Validated PMF via
                   low-cost MVP testing on Reddit, achieving a #1 subreddit
-                  ranking and establishing immediate feedback loops for rapid
-                  iteration.
+                  ranking and using direct user feedback to iterate quickly.
                 </li>
               </ul>
             </div>
@@ -322,34 +321,21 @@ function App() {
                   2M+ Users
                 </span>
               </div>
-              <p className="text-sm text-gray-500 italic mb-2">
-                Functioning as the bridge between Product and Engineering for an
-                app with 2M+ users (
-                <a
-                  href="https://ling-app.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:underline"
-                >
-                  Ling-App.com
-                </a>
-                )
-              </p>
               <ul className="text-base text-gray-700 space-y-2">
                 <li>
                   → <strong>Product Engineering:</strong> Translated business
-                  requirements into feasible tech specs and vice versa, reducing
-                  dev rework by <strong>~15%</strong>.
+                  requirements into tech specs and vice versa, reducing dev
+                  rework by <strong>~15%</strong>.
                 </li>
                 <li>
                   → <strong>Feature Ownership:</strong> Co-led scoping and
                   delivery of 40+ major features, managing trade-offs between
-                  technical debt reduction and new user value.
+                  tech debt reduction and new user value.
                 </li>
                 <li>
-                  → <strong>Retention Optimization:</strong> Proactively
-                  identified friction points in the user journey and implemented
-                  UI/UX fixes that directly improved session time and retention.
+                  → <strong>Retention Optimization:</strong> Found drop-off
+                  points in the user flow and implemented UI/UX fixes that
+                  improved session time and retention.
                 </li>
               </ul>
             </div>
@@ -358,7 +344,7 @@ function App() {
               <div className="flex justify-between items-start mb-3">
                 <div>
                   <h3 className="text-xl font-bold text-gray-900">
-                    Product Consultant / Freelance Engineer
+                    Product Consultant & Freelance Engineer
                   </h3>
                   <p className="text-gray-600 font-medium text-lg">
                     Remote · May 2022–Dec 2023
@@ -368,20 +354,14 @@ function App() {
                   Strategic Partner
                 </span>
               </div>
-              <p className="text-sm text-gray-500 italic mb-2">
-                Operating as a technical partner for clients, translating
-                business requirements into MVPs and complete solutions.
-              </p>
               <ul className="text-base text-gray-700 space-y-2">
                 <li>
                   → <strong>Stakeholder Management:</strong> Partnered with
-                  clients to define MVP requirements and technical scope,
-                  translating loose business goals into actionable product
-                  roadmaps.
+                  clients to define MVP requirements and tech scope, translating
+                  business goals into product roadmaps.
                 </li>
                 <li>
-                  → <strong>Rapid Prototyping:</strong> Built and deployed web
-                  apps (
+                  → <strong>Prototyping:</strong> Built and deployed web apps (
                   <a
                     href="https://somany.ch"
                     target="_blank"
@@ -403,7 +383,8 @@ function App() {
                   and core feature validation.
                 </li>
                 <li>
-                  → <strong>Product Growth:</strong> Developed and launched{' '}
+                  → <strong>Product Growth:</strong> Developed a browser
+                  extension (
                   <a
                     href="https://rewords.app"
                     target="_blank"
@@ -412,8 +393,8 @@ function App() {
                   >
                     <em>Rewords</em>
                   </a>
-                  , growing it to <strong>1,000+ active users</strong> within
-                  months and earning a "Featured" badge on the Chrome Web Store.
+                  ), growing it to <strong>1,000+ users</strong> within months
+                  and earning a "Featured" badge on the Chrome Web Store.
                 </li>
               </ul>
             </div>
@@ -429,6 +410,7 @@ function App() {
                   </p>
                 </div>
               </div>
+
               <ul className="text-base text-gray-700 space-y-2">
                 <li>
                   → <strong>Startup Operations:</strong> Co-founded and managed
@@ -442,8 +424,8 @@ function App() {
                 </li>
                 <li>
                   → <strong>Product Quality:</strong> Enforced editorial
-                  standards and content QA pipelines, used user research to
-                  identify friction points and improve reader retention.
+                  standards and content QA pipelines, ran user studies to
+                  improve reader retention.
                 </li>
                 <li>
                   → <strong>System Design:</strong> Developed internal roadmaps
@@ -530,7 +512,6 @@ function App() {
           </div>
         </div>
 
-        {/* Contact */}
         <div className="text-center bg-white rounded-lg p-6 shadow-sm border border-gray-200 mb-12">
           <div className="flex items-center justify-center gap-2 mb-4 text-gray-900 font-semibold">
             <MapPin className="text-blue-600" size={20} />
