@@ -20,7 +20,7 @@ Specific deliverables are confirmed in writing at the start of each engagement.
 - The Sprint: $1,490, paid in full upfront. No installments.
 - Retainers: invoiced monthly in advance.
 - Payment is processed in USD via Stripe, Paddle, or direct bank invoice from 100K31D D.O.O.
-- Refund window: A full refund is available at the end of the Paid Discovery stage and before the Client has approved the blueprint if either party concludes the project is not viable.
+- Refund window: A full refund is available within 24 hours of the discovery session and before the Client has approved the blueprint, if either party concludes the project is not viable.
 - After the Client approves the blueprint, the engagement is non-refundable. This reflects the substantive work already delivered and the schedule commitment made on the Client's behalf.
 - Retainer cancellations require 14 days written notice. No refunds for partial months.
 
