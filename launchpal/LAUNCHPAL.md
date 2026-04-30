@@ -4,7 +4,7 @@
 
 Launchpal is a one-person productized consulting practice. It turns non-technical professionals' product ideas into working digital products in two weeks, for $1,490 flat.
 
-Three revenue streams: The Launchpad (one-time), Store Management Retainer (recurring), Ongoing Product Retainer (recurring).
+Three revenue streams: The Sprint (one-time), The Caretaker (recurring), The Co-Pilot (recurring).
 
 ---
 
@@ -45,7 +45,7 @@ Not a startup founder. Doesn't know what "MVP" means and doesn't care.
 
 ## 5. Service Model
 
-### The Launchpad — $1,490 · 2 Weeks
+### The Sprint — $1,490 · 2 Weeks
 
 | Step                 | Deliverable                        | Outcome                                    |
 | -------------------- | ---------------------------------- | ------------------------------------------ |
@@ -62,7 +62,7 @@ Week 1: blueprint and build. Week 2: feedback, revision, handoff.
 
 ---
 
-### Infrastructure & Store Management Retainer
+### Infrastructure & The Caretaker
 
 For clients who want their product live and maintained but prefer not to manage app store and database bureaucracy.
 
@@ -80,20 +80,20 @@ Most clients start at App Store + Google Play ($198/month).
 
 ---
 
-### Ongoing Product Retainer
+### The Co-Pilot
 
-Post-Launchpad only. Never sold cold. Strictly no alien codebases. From $990/month depending on scope. Covers new features, bug fixes, store updates, and maintenance.
+Post-Sprint only. Never sold cold. Strictly no alien codebases. From $990/month depending on scope. Covers new features, bug fixes, store updates, and maintenance.
 
 ---
 
 ### Revenue Model (Stabilized)
 
-| Stream           | Unit                 | Monthly     |
-| ---------------- | -------------------- | ----------- |
-| Launchpad        | 2/month × $1,490     | $2,980      |
-| Store retainer   | 2 clients × $198 avg | $396        |
-| Product retainer | 1 client × $2,000    | $2,000      |
-| **Total**        |                      | **~$5,376** |
+| Stream        | Unit                 | Monthly     |
+| ------------- | -------------------- | ----------- |
+| The Sprint    | 2/month × $1,490     | $2,980      |
+| The Caretaker | 2 clients × $198 avg | $396        |
+| The Co-Pilot  | 1 client × $2,000    | $2,000      |
+| **Total**     |                      | **~$5,376** |
 
 ---
 

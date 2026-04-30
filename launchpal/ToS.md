@@ -3,32 +3,32 @@
 **Effective Date:** April 30, 2026
 **Service Provider:** 100K31D D.O.O. Beograd, Republic of Serbia ("Launchpal," "we," "us")
 
-By paying for The Launchpad, the Store Management Retainer, or the Ongoing Product Retainer, you ("Client") agree to these Terms of Service in full. If you do not agree, do not proceed with payment.
+By paying for The Sprint, the Caretaker, or the Co-Pilot, you ("Client") agree to these Terms of Service in full. If you do not agree, do not proceed with payment.
 
 ## 1. Services
 
 Launchpal offers three services:
 
-- **The Launchpad** — a fixed-scope, two-week engagement to turn an idea into a working digital product. Deliverables: discovery session, product blueprint, working beta, landing page, testable link (TestFlight or APK), handoff playbook, one feedback revision cycle, and async support throughout the engagement.
-- **Store Management Retainer** — monthly management of App Store, Google Play, and/or backend infrastructure under the Client's own developer accounts.
-- **Ongoing Product Retainer** — monthly product development and maintenance, available only for products originally built by Launchpal.
+- **The Sprint** — a fixed-scope, two-week engagement to turn an idea into a working digital product. Deliverables: discovery session, product blueprint, working beta, landing page, testable link (TestFlight or APK), handoff playbook, one feedback revision cycle, and async support throughout the engagement.
+- **The Caretaker** — monthly management of App Store, Google Play, and/or backend infrastructure under the Client's own developer accounts.
+- **The Co-Pilot** — monthly product development and maintenance, available only for products originally built by Launchpal.
 
 Specific deliverables are confirmed in writing at the start of each engagement.
 
 ## 2. Payment & Refund Policy
 
-- The Launchpad: $1,490, paid in full upfront. No installments.
+- The Sprint: $1,490, paid in full upfront. No installments.
 - Retainers: invoiced monthly in advance.
 - Payment is processed in USD via Stripe, Paddle, or direct bank invoice from 100K31D D.O.O.
-- **Refund window:** A full refund is available at the end of Day 1 (Paid Discovery) if either party concludes the project is not viable.
-- After the Client approves the Blueprint (typically Day 3), the engagement is non-refundable. This reflects the substantive work already delivered and the schedule commitment made on the Client's behalf.
+- Refund window: A full refund is available at the end of the Paid Discovery stage and before the Client has approved the blueprint if either party concludes the project is not viable.
+- After the Client approves the blueprint, the engagement is non-refundable. This reflects the substantive work already delivered and the schedule commitment made on the Client's behalf.
 - Retainer cancellations require 14 days written notice. No refunds for partial months.
 
 ## 3. Scope (Blueprint Rule)
 
-The approved Blueprint is the complete and exhaustive description of work for The Launchpad engagement. Approval is given by Client's written confirmation (email "Approve" or equivalent).
+The approved blueprint is the complete and exhaustive description of work for The Sprint engagement. Approval is given by Client's written confirmation (email "Approve" or equivalent).
 
-Any features, ideas, or changes proposed after Blueprint approval are documented as v2 backlog items and are not part of the current engagement. Additional scope can be addressed via a follow-up retainer or a new engagement.
+Any features, ideas, or changes proposed after blueprint approval are documented as v2 backlog items and are not part of the current engagement. Additional scope can be addressed via a follow-up retainer or a new engagement.
 
 ## 4. Intellectual Property
 
@@ -67,7 +67,7 @@ The Client agrees to:
 
 - Provide accurate information about the product, target users, and intended use during discovery
 - Respond to questions and feedback requests within 48 hours during the engagement
-- Approve or reject the Blueprint in writing
+- Approve or reject the blueprint in writing
 - Provide content, brand assets, or domain-specific input where required
 - Pay developer account fees ($99 Apple, $25 Google) and third-party service costs in their own name when applicable
 
@@ -97,7 +97,7 @@ These Terms are governed by the laws of the Republic of Serbia. Any dispute aris
 
 ## 12. Termination
 
-Either party may terminate the engagement before Blueprint approval. After Blueprint approval, the engagement runs to completion unless both parties agree in writing to terminate earlier.
+Either party may terminate the engagement before blueprint approval. After blueprint approval, the engagement runs to completion unless both parties agree in writing to terminate earlier.
 
 Retainers may be cancelled with 14 days written notice.
 
