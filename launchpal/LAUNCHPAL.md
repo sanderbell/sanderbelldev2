@@ -1,45 +1,50 @@
-# Launchpal
+# Launchpal — White Paper
+
+---
 
 ## 1. What It Is
 
-Launchpal is a one-person productized consulting practice. It turns non-technical professionals' product ideas into working digital products in two weeks, for $1,490 flat.
+One-person productized consulting practice. Turns non-technical professionals' product ideas into working digital products in two weeks, for $1,490 flat.
 
-Three revenue streams: The Sprint (one-time), The Caretaker (recurring), The Co-Pilot (recurring).
+**Three revenue streams:** The Sprint (one-time) · The Caretaker (recurring) · The Co-Pilot (recurring).
 
 ---
 
 ## 2. The Problem
 
-Non-technical professionals — therapists, influencers, coaches, designers, teachers, business owners — often have viable product ideas but hit one of three walls:
+Non-technical professionals hit one of three walls:
 
 1. **Blank page paralysis.** No framework for where to start, what to cut, or how to scope v1.
-2. **The vibe coding trap.** They try AI tools (Cursor, Lovable, Replit). The first hour feels like magic. Within days: unexplained bugs, screens that don't connect, code they can't fix. They close the laptop. Structure failure, not discipline failure.
-3. **The agency black box.** They hire a dev shop, wait three months, and receive the easiest interpretation of what they asked for.
+2. **The vibe coding trap.** AI tools feel like magic for an hour. Within days: bugs, broken screens, code they can't fix. They close the laptop. Structure failure, not discipline failure.
+3. **The agency black box.** Dev shop hired, three months pass, easiest interpretation of the brief delivered.
 
-The root problem is never the code. It's the judgment layer: knowing what to build, in what order, and why — before anything gets written.
+The root problem is never the code. It's knowing what to build, in what order, and why — before anything gets written.
 
 ---
 
-## 3. Market
+## 3. Market Signal
 
-In 2026, 80% of low-code platform users come from non-IT backgrounds. 85.2% of fractional hires are made directly by founders. Rapid prototyping market growing at ~24% annually. The vibe coding phenomenon is generating a warm, fast-closing customer cohort.
+- 80% of low-code platform users come from non-IT backgrounds (2026)
+- 85.2% of fractional hires made directly by founders
+- Rapid prototyping market growing at ~24% annually
+- 49.6% of users would cancel AI-only support; 66% trust human-generated content
 
-49.6% of users would cancel a service with AI-only support. 66% trust brands with human-generated content. Human judgment is becoming a competitive advantage, not a baseline.
+Human judgment is a competitive advantage, not a baseline.
 
 ---
 
 ## 4. Target Customer
 
-Not a startup founder. Doesn't know what "MVP" means and doesn't care.
+Not a startup founder. Doesn't know what "MVP" means.
 
-- A domain expert (doctor, coach, therapist, designer, teacher, operator) with a specific idea stuck in their head for months
-- Financially comfortable — $1,490 is accessible without deliberation
-- Burned by vibe coding or paralyzed by not knowing where to start
+- Domain expert (doctor, coach, therapist, designer, teacher, operator) with a specific idea stuck in their head for months
+- Financially comfortable — $1,490 accessible without deliberation
+- Burned by vibe coding or stuck at blank page
 - Buying trust and confidence, not a cheap build
 
 **Two cohorts:** Pre-attempt (blank page) and post-attempt (tried AI, hit the wall). Post-attempt closes faster.
 
-**Acquisition pool:** Ex-colleagues from 15 years in journalism. Expat professional communities in Southeast Asia. Content-driven inbound via Reddit, LinkedIn.
+**Acquisition pool:** 15 years of journalism contacts. Expat professional communities in Southeast Asia. Content-driven inbound via Reddit, LinkedIn.
 
 ---
 
@@ -47,25 +52,23 @@ Not a startup founder. Doesn't know what "MVP" means and doesn't care.
 
 ### The Sprint — $1,490 · 2 Weeks
 
-| Step                 | Deliverable                                          | Emotional Outcome                                               |
-| -------------------- | ---------------------------------------------------- | --------------------------------------------------------------- |
-| 1. Discovery         | Structured conversation                              | The fog lifts — you know exactly what you're building and why   |
-| 2. Blueprint         | Plain-English product document                       | Your idea on paper, in language you actually understand         |
-| 3. Build             | Working beta                                         | Something real exists. Your idea is no longer just in your head |
-| 4. Repo              | Link with admin rights for a complete MVP repository | It's yours. Fully. Nobody can take it away or hold it hostage   |
-| 5. Landing page      | Presentation for external audience                   | You can show the world what you're building — today             |
-| 6. Testable link     | TestFlight link / Android APK                        | Your app. On your phone. That moment when it becomes real       |
-| 7. Handoff playbook  | Next-step guide                                      | You know exactly what to do tomorrow morning                    |
-| 8. Feedback revision | Updated beta                                         | It feels like yours now, not like a stranger built it           |
-| 9. Async support     | Q&A throughout both weeks                            | You're never stuck, never alone, never confused                 |
+| Step                 | Deliverable                             | Emotional Outcome                                               |
+| -------------------- | --------------------------------------- | --------------------------------------------------------------- |
+| 1. Discovery         | Structured conversation                 | The fog lifts — you know exactly what you're building and why   |
+| 2. Blueprint         | Plain-English product document          | Your idea on paper, in language you actually understand         |
+| 3. Build             | Working beta                            | Something real exists. Your idea is no longer just in your head |
+| 4. Repo              | Admin rights to complete MVP repository | It's yours. Fully. Nobody can take it away or hold it hostage   |
+| 5. Landing page      | Presentation for external audience      | You can show the world what you're building — today             |
+| 6. Testable link     | TestFlight link / Android APK           | Your app. On your phone. That moment when it becomes real       |
+| 7. Handoff playbook  | Next-step guide                         | You know exactly what to do tomorrow morning                    |
+| 8. Feedback revision | Updated beta                            | It feels like yours now, not like a stranger built it           |
+| 9. Async support     | Q&A throughout both weeks               | You're never stuck, never alone, never confused                 |
 
 Week 1: blueprint and build. Week 2: feedback, revision, handoff.
 
----
+### The Caretaker — Store & Infrastructure Retainer
 
-### Infrastructure & The Caretaker
-
-For clients who want their product live and maintained but prefer not to manage app store and database bureaucracy.
+For clients who want the product live but won't manage app store bureaucracy themselves.
 
 | Service                  | Monthly |
 | ------------------------ | ------- |
@@ -75,165 +78,132 @@ For clients who want their product live and maintained but prefer not to manage 
 
 Most clients start at App Store + Google Play ($198/month).
 
-**Standard Model (Zero IP Friction):** Client registers their own Apple/Google Developer accounts and grants Launchpal Admin access. 100K31D handles certificates, compliance, submissions, backend, rejection resolution. Client owns account, metrics, and IP.
+**Standard Model:** Client registers their own developer accounts, grants Launchpal Admin access. 100K31D handles certificates, compliance, submissions, backend, rejections. Client owns account and IP.
 
-**Fast-Track Model (Managed Publishing):** In strictly vetted cases, unbranded utility or productivity apps may be published under 100K31D for a $490 setup fee. Reserved for products aligned with the studio's portfolio. Not available for personal brands, coaching services, or medical apps. Transfer available at any time.
+**Fast-Track Model:** Unbranded utility apps may be published under 100K31D for a $490 setup fee. Strictly vetted. Not available for personal brands, coaching, or medical apps. Transfer available at any time.
 
----
+### The Co-Pilot — Ongoing Product Retainer
 
-### The Co-Pilot
-
-Post-Sprint only. Never sold cold. Strictly no alien codebases. From $990/month depending on scope. Covers new features, bug fixes, store updates, and maintenance.
-
----
+Post-Sprint only. Never sold cold. No alien codebases. From $990/month. Covers features, bug fixes, store updates, maintenance.
 
 ### Revenue Model (Stabilized)
 
-| Stream        | Unit                 | Monthly     |
-| ------------- | -------------------- | ----------- |
-| The Sprint    | 2/month × $1,490     | $2,980      |
-| The Caretaker | 2 clients × $198 avg | $396        |
-| The Co-Pilot  | 1 client × $2,000    | $2,000      |
-| **Total**     |                      | **~$5,376** |
+| Stream        | Unit              | Monthly     |
+| ------------- | ----------------- | ----------- |
+| The Sprint    | 2/month × $1,490  | $2,980      |
+| The Caretaker | 2 clients × $198  | $396        |
+| The Co-Pilot  | 1 client × $2,000 | $2,000      |
+| **Total**     |                   | **~$5,376** |
 
 ---
 
 ## 6. Pricing
 
-$1,490 entry price. Defensible as a scoped product — blueprint and judgment are the primary value; the build is proof of concept.
+$1,490 entry. Blueprint and judgment are the primary value; the build is proof of concept.
 
-Roadmap: $1,990 after first case study. $2,490+ after two or more. Price increases gated on documented outcomes.
+**Roadmap:** $1,990 after first case study · $2,490+ after two or more. Increases gated on documented outcomes only.
 
 ---
 
 ## 7. Why AI Is Not Enough
 
-1. **UX intuition.** AI pattern-matches from existing products. It doesn't understand the emotional context of a specific user in a specific situation.
+1. **UX intuition.** AI pattern-matches. It doesn't read the emotional context of a specific user in a specific situation.
 2. **Multi-version perspective.** AI optimizes for the current prompt. A product builder makes v1 decisions with v3 in mind.
-3. **Platform judgment.** Mobile vs web, iOS vs Android, native vs PWA — these determine distribution, cost, and maintenance. AI doesn't flag the consequences.
-4. **Scope discipline.** AI accommodates every new idea. A human kills the ones that sink the timeline.
-5. **Trust.** AI cannot be trusted with something that matters.
-6. **Error diagnosis.** Architectural bugs require pattern recognition from lived shipping — not training data.
-7. **The mobile infrastructure maze.** Getting AI to generate screens is one thing. Getting an app to actually run on a phone — through Apple's and Google's technical requirements — is another universe. AI can suggest fixes but cannot reliably navigate the sequence. This is where most non-technical vibe-coding attempts die.
-8. **Translation.** "I want it to feel safe." "I want it to feel like a conversation." AI takes these literally. A human builds them into the product.
+3. **Platform judgment.** Mobile vs web, iOS vs Android, native vs PWA — consequential choices AI won't flag.
+4. **Scope discipline.** AI accommodates every idea. A human kills the ones that sink the timeline.
+5. **Trust.** The client is handing over something they've protected privately. AI can't hold that.
+6. **Error diagnosis.** Architectural bugs need pattern recognition from lived shipping, not training data.
+7. **Mobile infrastructure maze.** Screens are the easy part. Getting an app to run on a real device — certificates, provisioning, build tools, platform bureaucracy — is where most vibe-coding attempts die. AI cannot reliably navigate the sequence.
+8. **Translation.** "I want it to feel safe." AI takes this literally. A human builds it into the product.
 
 ---
 
-## 8. Unique Value Proposition
+## 8. Moat & Credentials
 
-1. Understanding what clients mean, not just what they say.
-2. Judgment under uncertainty — knowing what to cut. Earned from shipping.
-3. One person, one client, two weeks. Never handed off to a junior.
+**What competitors can't replicate together:**
 
-**Credential stack:** MSc Psychology · 15 years leadership · Esse (10,000+ users, 7% paid conversion) · Burn Before Reading (viral, Google Featured) · Rewords (1,500+ users, Chrome Featured) · React Native Dev at Ling App (2M+ users).
+- Understanding what clients mean, not just what they say
+- Judgment under uncertainty — knowing what to cut
+- One person, one client, two weeks. Never handed to a junior.
+
+**Credential stack:** MSc Psychology · 15 years leadership · Esse (10,000+ users, 7% paid conversion) · Burn Before Reading (viral, Google Featured) · Rewords (1,500+ users, Chrome Featured) · React Native at Ling (2M+ users)
 
 ---
 
 ## 9. Acquisition
 
-1. Promo in personal social media.
-2. Launchpal social media presence (Threads, X, Instagram): storytelling and case studies, not how-to guides.
-3. Guerrilla commenting on Reddit, LinkedIn, product forums. Value-adding insights, not self-promotion.
-4. Word of mouth from first clients. First clients sourced from personal network for case studies and testimonials.
+1. Personal social media promo
+2. Launchpal presence on Threads, X, Instagram — storytelling and case studies, not how-to content
+3. Guerrilla commenting on Reddit, LinkedIn, product forums — value only, no self-promotion
+4. Word of mouth. First clients from personal network to seed testimonials and case studies.
 
 ---
 
-## 10. Client Filtering & SOPs
-
-The biggest operational risk is wasting time on dreamers and structurally broken ideas. Every layer below filters the next so live calls only see pre-qualified candidates.
+## 10. Client Filtering
 
 ### Stage Zero (First 3–5 Clients)
 
-Priority is generating momentum, testimonials, and case studies. Without those, $1,490 has no social proof to stand on.
+Goal: momentum, testimonials, case studies. Without them, $1,490 has no social proof.
 
-- Personal network gets warm treatment — skip formal intake, jump to a 30–45 min conversation. Goal is closing, not filtering.
-- Two filters always apply: idea must be buildable in two weeks, and client must commit to full $1,490.
-- Slightly broader scope tolerance for stories worth telling.
-- Document everything obsessively — every stage-zero engagement becomes a case study.
-- Stage zero ends at 3 testimonials, 1 published case study, and inbound arriving without active outreach.
+- Personal network: skip formal intake, go straight to 30–45 min conversation
+- Two non-negotiable filters: buildable in two weeks + full $1,490 committed
+- Broader scope tolerance if the story is worth telling
+- Document everything — every engagement is a future case study
+- Stage zero ends: 3 testimonials + 1 published case study + inbound without outreach
 
-### Steady-State Filtering
+### Steady-State Layers
 
-**Layer 1 — Inbound Form (self-serve).** Required: idea description, specific user (not "everyone"), why now, what they've tried, $1,490 budget confirmation. Auto-disqualify: vague answers, no budget, marketplaces, social networks, dating, crypto, gambling, regulated industries.
+**L1 — Inbound Form.** Idea, specific user, why now, what they've tried, $1,490 budget checkbox. Auto-disqualify: vague answers, no budget, marketplaces, social networks, dating, crypto, gambling, regulated industries.
 
-**Layer 2 — Async Qualification (10 min review).** Three outcomes:
+**L2 — Async Review (10 min).** 🔴 decline · 🟡 3 clarifying questions, 72hr deadline · 🟢 move to L3. Red flags: "disrupt X industry," marketplace scope, AI training, vague monetization, equity asks.
 
-- 🔴 — structurally broken or scope too large. Polite decline.
-- 🟡 — promising but missing info. Send 3 questions, 72hr deadline.
-- 🟢 — clear idea, real user, viable scope. Move to Layer 3.
+**L3 — Free 20-Min Call.** Calendar only. Any two of these = decline: scope drift, no urgency, wants co-founder not service, defensive about the idea, hesitates on price.
 
-Red flags: "disrupt [massive industry]," marketplaces or AI training in scope, vague monetization, conflicting goals, equity asks.
+**L4 — Paid Discovery.** First deliverable, not sales. Escape clause: full refund if major red flag surfaces that wasn't visible earlier.
 
-**Layer 3 — Free 20-Min Discovery Call.** Calendar booking only. Confirms idea is buildable in two weeks and both parties want to engage.
+### Hard Rules (Always)
 
-Five disqualifying signals — any two = decline:
+No equity · Full payment upfront · One client at a time · No alien codebases
 
-1. Scope drift mid-conversation
-2. No urgency ("maybe sometime")
-3. Wants co-founder, not service provider
-4. Defensive about the idea
-5. Hesitates on the $1,490 question
+### Negotiable at Stage Zero
 
-**Layer 4 — Paid Discovery (Day 1).** First deliverable, not sales call. Single escape clause: full refund if a major red flag emerges that wasn't visible earlier.
+Friend rates (10–20% off for public testimonial) · broader scope · looser intake
 
-### Hard Rules (Apply Always)
+### Funnel Math
 
-- No equity deals. Ever.
-- Full payment upfront.
-- One client at a time.
-- No alien codebases.
-
-### Negotiable at Stage Zero, Locked After
-
-- Friend rates (10–20% off for first 2–3 personal network clients in exchange for public testimonial)
-- Slightly broader scope flexibility
-- Looser intake process
-
-### Steady-State Funnel Math
-
-80% filtered before Layer 3. 50% of Layer 3 calls don't convert. Two paid clients/month from ~20–30 qualified top-of-funnel leads. This is the design, not a flaw.
+~80% filtered before L3 · ~50% of L3 calls don't convert · 2 paid clients/month from ~20–30 top-of-funnel leads
 
 ---
 
-## 11. Delivery
+## 11. Delivery SOPs
 
-- **Day 1 — Discovery:** 60–90 min structured conversation. Problem, user, scope, what's out of v1. **Pre-Flight Risk Assessment:** explicitly define "Done" as a TestFlight/APK beta, not a live App Store page, and flag high-rejection app categories. Discovery summary doc sent same day — this document confirms shared scope; client acknowledgement is required before build begins.
-- **Days 2–3 — Blueprint:** User flows, feature tiers, screen logic, technical approach in plain language. **Anti-Scope Matrix:** explicitly list what is excluded from v1 (e.g., social logins, push notifications). One feedback round. Blueprint approval triggers build start and closes the refund window.
-- **Days 3–7 — Build:** Blueprint sign-off is the contract. New ideas from client are acknowledged with a templated response ("Logged for v2 — added to your backlog doc") and never incorporated mid-build.
-- **Days 8–10 — Feedback:** Client tests beta. One revision cycle. **Timeline Freeze:** if client goes silent beyond 48hrs, clock pauses. If silence exceeds 14 days, project is abandoned per ToS — no refund, $350 restart fee.
-- **Days 11–14 — Handoff:** Final delivery, store submission, handoff playbook (includes **Infrastructure Reality Check** detailing third-party API dependencies and TestFlight 90-day expiry notice), 48hr Q&A, retainer offered naturally.
+- **Day 1 — Discovery:** 60–90 min. Problem, user, scope, explicit v1 exclusions, high-rejection category flag. Summary doc sent same day — client acknowledgement required before build starts.
+- **Days 2–3 — Blueprint:** Flows, feature tiers, screen logic, plain-language tech approach. Anti-Scope Matrix (explicit v1 exclusions listed). One feedback round. Approval closes refund window and starts build.
+- **Days 3–7 — Build:** Blueprint is the contract. Every post-approval idea gets: _"Logged for v2 — added to your backlog doc."_ Nothing incorporated mid-build.
+- **Days 8–10 — Feedback:** Client tests beta. One revision cycle. If client silent 48hrs+ → clock pauses. 14 days silence → project abandoned, no refund, $350 restart fee.
+- **Days 11–14 — Handoff:** Final delivery, store submission, handoff playbook (includes API dependency map + TestFlight 90-day expiry notice), 48hr Q&A window, retainer offered naturally.
 
-### Scope Creep Response Template
-
-When a client proposes features after blueprint approval:
-
-> "Great idea — I've added it to your v2 backlog doc. Everything in the approved blueprint is on track for Day 14. We can revisit this for the next phase."
-
-Send this every time, without exception. Makes scope discipline feel like a service, not a refusal.
-
-### Queue & Scheduling SOP
-
-Start dates are first-come-first-served upon payment. If two clients pay simultaneously, the first payment confirmed gets the earlier slot. The second client is informed of their start date immediately. Scarcity is communicated as a feature: "I run one Sprint at a time to give your project full attention."
+**Queue SOP:** Start dates first-come-first-served on payment confirmation. Simultaneous payments → first confirmed gets earlier slot. Scarcity framing: _"I run one Sprint at a time to give your project full attention."_
 
 ---
 
-## 12. Risks
+## 12. Risk Register
 
-| Risk                                                        | Mitigation                                                                                         |
-| ----------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| Scope creep                                                 | Blueprint sign-off is hard boundary; templated v2 backlog response for every post-approval request |
-| Client goes silent mid-build                                | 48hr pause, 14-day abandonment close, $350 restart fee                                             |
-| Client disputes scope post-delivery                         | Discovery summary doc + blueprint approval email = paper trail                                     |
-| Client shares code, third party breaks it, blames Launchpal | 7-day warranty clause in ToS; issues after third-party modification not covered                    |
-| TestFlight expires before client uses it                    | Expiry notice in handoff playbook; Caretaker upsell covers ongoing build maintenance               |
-| Two clients want same start date                            | Queue system — first payment confirmed gets first slot                                             |
-| Product is ethically or legally problematic                 | ToS termination clause; pro-rata refund for undelivered work                                       |
-| Client uncomfortable with code on Launchpal's machine       | Full code delivered Day 14 via GitHub repo or zip                                                  |
-| Client uncomfortable with app under 100K31D                 | Exit terms in writing — transfer available any time                                                |
-| Build overruns two weeks                                    | Conservative scope in discovery                                                                    |
-| Price signals cheap                                         | Lead with credentials and outcomes                                                                 |
-| Apple policy on managed accounts                            | Structured as studio service, not rental                                                           |
-| Poor delivery damages reputation                            | No overcommitment                                                                                  |
+| Risk                                      | Mitigation                                                         |
+| ----------------------------------------- | ------------------------------------------------------------------ |
+| Scope creep                               | Blueprint boundary + templated v2 backlog response                 |
+| Client silent mid-build                   | 48hr pause → 14-day close → $350 restart                           |
+| Scope disputed post-delivery              | Discovery doc + blueprint approval email = paper trail             |
+| Third party breaks code, blames Launchpal | 7-day warranty; post-modification issues excluded                  |
+| TestFlight expires before client uses it  | Expiry notice in handoff playbook; Caretaker covers ongoing builds |
+| Two clients want same start date          | Queue system, first payment wins                                   |
+| Ethically/legally problematic product     | ToS termination clause; pro-rata refund for undelivered work       |
+| Client uncomfortable with code location   | GitHub repo or zip delivered Day 14                                |
+| App under 100K31D concerns                | Transfer terms in writing, available any time                      |
+| Build overruns                            | Conservative scope in discovery                                    |
+| Price signals cheap                       | Lead with credentials and outcomes                                 |
+| Apple managed account policy              | Studio service framing, not account rental                         |
+| Poor delivery                             | No overcommitment, one client at a time                            |
 
 ---
 
@@ -241,4 +211,4 @@ Start dates are first-come-first-served upon payment. If two clients pay simulta
 
 Sander Bell — Technical Product Strategist, former Editorial Director at the largest national online education platform, React Native developer, MSc Psychology.
 
-Built products people use and love: Esse (10,000+ users, 7% paid conversion, no paid acquisition — most intuitive summarizer UX on the market), Burn Before Reading (viral, first-day sales, featured by Google), Rewords (1,500+ users, Google Featured). React Native developer at Ling (2M+ users). 15 years leading cross-functional teams across platforms with 20M+ users.
+Built products people use and love: Esse (10,000+ users, 7% paid conversion, no paid acquisition — most intuitive summarizer UX on the market), Burn Before Reading (viral, first-day sales, Google Featured), Rewords (1,500+ users, Google Featured). React Native at Ling (2M+ users). 15 years leading cross-functional teams across platforms with 20M+ users.
