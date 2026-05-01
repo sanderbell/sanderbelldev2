@@ -197,25 +197,43 @@ Five disqualifying signals — any two = decline:
 
 ## 11. Delivery
 
-- **Day 1 — Discovery:** 60–90 min structured conversation. Problem, user, scope, what's out of v1. Summary doc same day.
-- **Days 2–3 — Blueprint:** User flows, feature tiers, screen logic, technical approach in plain language. One feedback round.
-- **Days 3–7 — Build:** Blueprint sign-off is the contract. New ideas logged for v2, not incorporated.
-- **Days 8–10 — Feedback:** Client tests beta. One revision cycle.
-- **Days 11–14 — Handoff:** Final delivery, store submission, handoff playbook, 48hr Q&A, retainer offered naturally.
+- **Day 1 — Discovery:** 60–90 min structured conversation. Problem, user, scope, what's out of v1. **Pre-Flight Risk Assessment:** explicitly define "Done" as a TestFlight/APK beta, not a live App Store page, and flag high-rejection app categories. Discovery summary doc sent same day — this document confirms shared scope; client acknowledgement is required before build begins.
+- **Days 2–3 — Blueprint:** User flows, feature tiers, screen logic, technical approach in plain language. **Anti-Scope Matrix:** explicitly list what is excluded from v1 (e.g., social logins, push notifications). One feedback round. Blueprint approval triggers build start and closes the refund window.
+- **Days 3–7 — Build:** Blueprint sign-off is the contract. New ideas from client are acknowledged with a templated response ("Logged for v2 — added to your backlog doc") and never incorporated mid-build.
+- **Days 8–10 — Feedback:** Client tests beta. One revision cycle. **Timeline Freeze:** if client goes silent beyond 48hrs, clock pauses. If silence exceeds 14 days, project is abandoned per ToS — no refund, $350 restart fee.
+- **Days 11–14 — Handoff:** Final delivery, store submission, handoff playbook (includes **Infrastructure Reality Check** detailing third-party API dependencies and TestFlight 90-day expiry notice), 48hr Q&A, retainer offered naturally.
+
+### Scope Creep Response Template
+
+When a client proposes features after blueprint approval:
+
+> "Great idea — I've added it to your v2 backlog doc. Everything in the approved blueprint is on track for Day 14. We can revisit this for the next phase."
+
+Send this every time, without exception. Makes scope discipline feel like a service, not a refusal.
+
+### Queue & Scheduling SOP
+
+Start dates are first-come-first-served upon payment. If two clients pay simultaneously, the first payment confirmed gets the earlier slot. The second client is informed of their start date immediately. Scarcity is communicated as a feature: "I run one Sprint at a time to give your project full attention."
 
 ---
 
 ## 12. Risks
 
-| Risk                                                  | Mitigation                                          |
-| ----------------------------------------------------- | --------------------------------------------------- |
-| Scope creep                                           | Blueprint sign-off is hard boundary                 |
-| Client uncomfortable with code on Launchpal's machine | Full code delivered Day 14 via GitHub repo or zip   |
-| Client uncomfortable with app under 100K31D           | Exit terms in writing — transfer available any time |
-| Build overruns two weeks                              | Conservative scope in discovery                     |
-| Price signals cheap                                   | Lead with credentials and outcomes                  |
-| Apple policy on managed accounts                      | Structured as studio service, not rental            |
-| Poor delivery damages reputation                      | No overcommitment                                   |
+| Risk                                                        | Mitigation                                                                                         |
+| ----------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| Scope creep                                                 | Blueprint sign-off is hard boundary; templated v2 backlog response for every post-approval request |
+| Client goes silent mid-build                                | 48hr pause, 14-day abandonment close, $350 restart fee                                             |
+| Client disputes scope post-delivery                         | Discovery summary doc + blueprint approval email = paper trail                                     |
+| Client shares code, third party breaks it, blames Launchpal | 7-day warranty clause in ToS; issues after third-party modification not covered                    |
+| TestFlight expires before client uses it                    | Expiry notice in handoff playbook; Caretaker upsell covers ongoing build maintenance               |
+| Two clients want same start date                            | Queue system — first payment confirmed gets first slot                                             |
+| Product is ethically or legally problematic                 | ToS termination clause; pro-rata refund for undelivered work                                       |
+| Client uncomfortable with code on Launchpal's machine       | Full code delivered Day 14 via GitHub repo or zip                                                  |
+| Client uncomfortable with app under 100K31D                 | Exit terms in writing — transfer available any time                                                |
+| Build overruns two weeks                                    | Conservative scope in discovery                                                                    |
+| Price signals cheap                                         | Lead with credentials and outcomes                                                                 |
+| Apple policy on managed accounts                            | Structured as studio service, not rental                                                           |
+| Poor delivery damages reputation                            | No overcommitment                                                                                  |
 
 ---
 

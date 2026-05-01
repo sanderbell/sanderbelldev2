@@ -19,14 +19,14 @@ Specific deliverables are confirmed in writing at the start of each engagement.
 
 - The Sprint: $1,490, paid in full upfront. No installments.
 - Retainers: invoiced monthly in advance.
-- Payment is processed in USD via direct bank invoice from 100K31D D.O.O.
+- Payment is processed in USD via direct bank invoice from 100K31D D.O.O. or Gumroad checkout.
 - Refund window: A full refund is available within 24 hours of the discovery session and before the Client has approved the blueprint, if either party concludes the project is not viable.
 - After the Client approves the blueprint, the engagement is non-refundable. This reflects the substantive work already delivered and the schedule commitment made on the Client's behalf.
 - Retainer cancellations require 14 days written notice. No refunds for partial months.
 
 ## 3. Scope (Blueprint Rule)
 
-The approved blueprint is the complete and exhaustive description of work for The Sprint engagement. Approval is given by Client's written confirmation (email "Approve" or equivalent).
+The approved blueprint is the complete and exhaustive description of work for The Sprint engagement. Approval is given by Client's written confirmation (email "Approve" or equivalent). The discovery summary document sent after Day 1 confirms shared understanding of the product scope; blueprint approval constitutes agreement with that scope.
 
 Any features, ideas, or changes proposed after blueprint approval are documented as v2 backlog items and are not part of the current engagement. Additional scope can be addressed via a follow-up retainer or a new engagement.
 
@@ -50,6 +50,10 @@ Launchpal builds on third-party platforms (Apple App Store, Google Play, Firebas
 
 Launchpal warrants the quality of the code and the architectural decisions made during the engagement, not the policies of external providers.
 
+**Code Warranty:** Launchpal warrants delivered code for 7 days following the Day 14 handoff. Issues arising from third-party modifications, integrations, or deployments made after delivery are not covered under this warranty.
+
+**TestFlight Expiry Notice:** TestFlight builds expire 90 days after upload. The Client is responsible for maintaining a live testable build beyond this window. The Caretaker retainer covers ongoing build maintenance.
+
 ## 6. No Guarantee of Commercial Success
 
 Launchpal delivers a working digital product. Launchpal does not guarantee:
@@ -61,6 +65,8 @@ Launchpal delivers a working digital product. Launchpal does not guarantee:
 
 The product is a tool. Outcomes depend on the Client's market, distribution, pricing, and execution.
 
+**Ethical & Legal Termination:** Launchpal reserves the right to terminate any engagement if the product, in Launchpal's sole judgment, violates applicable law or poses harm to end users. In such cases, a pro-rata refund is issued for work not yet delivered.
+
 ## 7. Client Responsibilities
 
 The Client agrees to:
@@ -71,9 +77,9 @@ The Client agrees to:
 - Provide content, brand assets, or domain-specific input where required
 - Pay developer account fees ($99 Apple, $25 Google) and third-party service costs in their own name when applicable
 
-Engagement timeline pauses if Client communication exceeds 48-hour response time.
+**Timeline Freeze Policy:** The engagement timeline pauses if Client communication exceeds 48 hours. If the Client remains unresponsive for more than 14 consecutive days, the project is considered abandoned and formally closed. No refunds will be issued. Reopening an abandoned project requires a new engagement and a $350 rescheduling fee.
 
-If the Client remains unresponsive for more than 14 consecutive days, the project is considered abandoned and formally closed. No refunds will be issued. Reopening an abandoned project requires a new engagement and rescheduling fee.
+**Scheduling & Queue:** Sprint start dates are allocated first-come-first-served upon payment confirmation. Only one Sprint engagement runs at a time. If a Client's preferred start date is unavailable, they are added to the next available slot.
 
 ## 8. Confidentiality
 
