@@ -47,16 +47,17 @@ Not a startup founder. Doesn't know what "MVP" means and doesn't care.
 
 ### The Sprint — $1,490 · 2 Weeks
 
-| Step                 | Deliverable                        | Outcome                                    |
-| -------------------- | ---------------------------------- | ------------------------------------------ |
-| 1. Discovery         | Structured conversation            | Idea clarified, scope defined              |
-| 2. Blueprint         | Plain-English product document     | Features, flows, priorities                |
-| 3. Build             | Working beta                       | Real product to open, use, show            |
-| 4. Landing page      | Presentation for external audience | Easy to share with users/testers/investors |
-| 5. Testable link     | TestFlight link / Android APK      | Client shares the app with first users     |
-| 6. Handoff playbook  | Next-step guide                    | Clear path forward                         |
-| 7. Feedback revision | Updated beta                       | Closer to real expectations                |
-| 8. Async support     | Q&A throughout both weeks          | No blockages                               |
+| Step                 | Deliverable                                          | Emotional Outcome                                               |
+| -------------------- | ---------------------------------------------------- | --------------------------------------------------------------- |
+| 1. Discovery         | Structured conversation                              | The fog lifts — you know exactly what you're building and why   |
+| 2. Blueprint         | Plain-English product document                       | Your idea on paper, in language you actually understand         |
+| 3. Build             | Working beta                                         | Something real exists. Your idea is no longer just in your head |
+| 4. Repo              | Link with admin rights for a complete MVP repository | It's yours. Fully. Nobody can take it away or hold it hostage   |
+| 5. Landing page      | Presentation for external audience                   | You can show the world what you're building — today             |
+| 6. Testable link     | TestFlight link / Android APK                        | Your app. On your phone. That moment when it becomes real       |
+| 7. Handoff playbook  | Next-step guide                                      | You know exactly what to do tomorrow morning                    |
+| 8. Feedback revision | Updated beta                                         | It feels like yours now, not like a stranger built it           |
+| 9. Async support     | Q&A throughout both weeks                            | You're never stuck, never alone, never confused                 |
 
 Week 1: blueprint and build. Week 2: feedback, revision, handoff.
 
