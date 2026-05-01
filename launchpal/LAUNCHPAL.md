@@ -6,6 +6,8 @@
 
 One-person productized consulting practice. Turns non-technical professionals' product ideas into working digital products in two weeks, for $1,490 flat.
 
+**The Reality Check:** It is explicitly stated for non-technical clients that a $1,490, 14-day sprint does not yield a complete, scale-ready enterprise product. It delivers a _working sample_ to get things started — a functional beta existing to demo the core idea, test with first users, or pitch to investors.
+
 **Three revenue streams:** The Sprint (one-time) · The Caretaker (recurring) · The Co-Pilot (recurring).
 
 ---
@@ -140,6 +142,21 @@ $1,490 entry. Blueprint and judgment are the primary value; the build is proof o
 ---
 
 ## 10. Client Filtering
+
+### The Idea Boundary
+
+**No-Go:** Too complex for a 14-day sprint.
+
+- Uber/Airbnb for X — two-sided logistics or marketplaces
+- PayPal/Crypto — regulatory compliance, financial infrastructure
+- The next Instagram — useless without massive scale
+
+**Go:** Scoped, specific, clear user.
+
+- AI tracker customized for a specific framework
+- Scheduling or calculator tool for a specific team
+- Custom CRM or habit tracker for a specific methodology
+- Single-purpose utility apps
 
 ### Stage Zero (First 3–5 Clients)
 
