@@ -1,5 +1,43 @@
 @import "tailwindcss";
 
+/* ── Launchpal theme tokens ─────────────────────────── */
+:root {
+  --lp-bg:       #f7f6f3;
+  --lp-bg-alt:   #eeecea;
+  --lp-fg:       #111111;
+  --lp-fg-2:     #333333;
+  --lp-fg-3:     #555555;
+  --lp-fg-4:     #888888;
+  --lp-fg-5:     #bbbbbb;
+  --lp-border:   rgba(0, 0, 0, 0.10);
+  --lp-border-2: rgba(0, 0, 0, 0.18);
+  --lp-red:      #c01010;
+  --lp-green:    #107010;
+  --lp-btn-bg:   #111111;
+  --lp-btn-fg:   #f7f6f3;
+  --lp-btn-hover-bg: #f7f6f3;
+  --lp-btn-hover-fg: #111111;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --lp-bg:       #000000;
+    --lp-bg-alt:   #0d0d0d;
+    --lp-fg:       #ffffff;
+    --lp-fg-2:     #cccccc;
+    --lp-fg-3:     #888888;
+    --lp-fg-4:     #555555;
+    --lp-fg-5:     #2a2a2a;
+    --lp-border:   rgba(255, 255, 255, 0.09);
+    --lp-border-2: rgba(255, 255, 255, 0.18);
+    --lp-red:      #ff4444;
+    --lp-green:    #44cc44;
+    --lp-btn-bg:   #ffffff;
+    --lp-btn-fg:   #000000;
+    --lp-btn-hover-bg: #000000;
+    --lp-btn-hover-fg: #ffffff;
+  }
+}
 
 html {
   scroll-behavior: smooth;

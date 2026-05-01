@@ -4,7 +4,8 @@
       "Bash(npm install *)",
       "Bash(npm run *)",
       "Bash(curl -s http://localhost:5173/launchpal)",
-      "mcp__Claude_Preview__preview_start"
+      "mcp__Claude_Preview__preview_start",
+      "Bash(grep -E \"\\\\.\\(md|json|ts|tsx|js|jsx\\)$\")"
     ]
   }
 }
