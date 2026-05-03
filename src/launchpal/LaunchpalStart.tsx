@@ -231,27 +231,27 @@ const css = `
   }
 
   /* Layout */
-  .lp-form-wrap { max-width: 38rem; margin: 0 auto; padding: 4rem 1.5rem 6rem; }
+  .lp-form-wrap { max-width: 42rem; margin: 0 auto; padding: 4rem 1.5rem 6rem; }
 
   /* Header */
   .lp-form-header { margin-bottom: 3.5rem; animation: lpFadeIn 0.5s ease-out forwards; }
-  .lp-form-title  { font-size: 2rem; font-weight: 700; color: var(--lp-fg); margin: 0.75rem 0 0.5rem; }
+  .lp-form-title  { font-size: 2.25rem; font-weight: 700; color: var(--lp-fg); margin: 0.75rem 0 0.5rem; }
 
   /* Success screen */
   .lp-success {
-    max-width: 28rem; margin: 0 auto; padding: 6rem 1.5rem;
+    max-width: 32rem; margin: 0 auto; padding: 6rem 1.5rem;
     text-align: center;
     animation: lpFadeIn 0.5s ease-out forwards;
   }
   .lp-success-bar { width: 2px; height: 3rem; background: var(--lp-fg); margin: 0 auto 2.5rem; }
-  .lp-success-title { font-size: 1.6rem; font-weight: 700; color: var(--lp-fg); margin: 0 0 1rem; }
+  .lp-success-title { font-size: 1.8rem; font-weight: 700; color: var(--lp-fg); margin: 0 0 1rem; }
 
   /* Typography */
-  .lp-overline { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--lp-fg-4); }
-  .lp-body     { font-size: 14px; color: var(--lp-fg-3); line-height: 1.8; margin: 0; }
-  .lp-caption  { font-size: 12px; color: var(--lp-fg-4); }
-  .lp-error    { font-size: 12px; color: #e03030; margin-bottom: 0.75rem; }
-  .lp-back-link  { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--lp-fg-4); text-decoration: none; transition: color 0.15s; }
+  .lp-overline { font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--lp-fg-4); }
+  .lp-body     { font-size: 16px; color: var(--lp-fg-3); line-height: 1.8; margin: 0; }
+  .lp-caption  { font-size: 14px; color: var(--lp-fg-4); }
+  .lp-error    { font-size: 14px; color: #e03030; margin-bottom: 0.75rem; }
+  .lp-back-link  { font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--lp-fg-4); text-decoration: none; transition: color 0.15s; }
   .lp-back-link:hover { color: var(--lp-fg); }
   .lp-tos-link   { color: var(--lp-fg-2); text-decoration: underline; text-underline-offset: 3px; transition: color 0.15s; }
   .lp-tos-link:hover { color: var(--lp-fg); }
@@ -260,13 +260,13 @@ const css = `
   .lp-form { display: flex; flex-direction: column; gap: 3.5rem; }
   .lp-fieldset { border: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1.75rem; }
   .lp-legend {
-    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase;
     color: var(--lp-fg-4); width: 100%;
     border-bottom: 1px solid var(--lp-border); padding-bottom: 0.75rem;
     margin-bottom: 0.5rem;
   }
   .lp-field { display: flex; flex-direction: column; gap: 0.5rem; }
-  .lp-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--lp-fg-4); }
+  .lp-label { font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--lp-fg-4); }
 
   .lp-input {
     background: transparent;
@@ -274,8 +274,8 @@ const css = `
     border-bottom: 1px solid var(--lp-border-2);
     color: var(--lp-fg);
     font-family: inherit;
-    font-size: 15px;
-    padding: 0.6rem 0;
+    font-size: 17px;
+    padding: 0.7rem 0;
     outline: none;
     width: 100%;
     transition: border-color 0.2s;
@@ -288,9 +288,9 @@ const css = `
     border: 1px solid var(--lp-border);
     color: var(--lp-fg);
     font-family: inherit;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.8;
-    padding: 1rem;
+    padding: 1.125rem;
     outline: none;
     width: 100%;
     resize: vertical;
@@ -304,9 +304,9 @@ const css = `
   .lp-record-row { display: flex; align-items: center; gap: 1rem; }
   .lp-record-btn {
     display: inline-flex; align-items: center; gap: 0.6rem;
-    font-family: inherit; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
+    font-family: inherit; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase;
     border: 1px solid var(--lp-border-2); background: transparent;
-    color: var(--lp-fg-3); padding: 0.6rem 1rem; cursor: pointer;
+    color: var(--lp-fg-3); padding: 0.7rem 1.125rem; cursor: pointer;
     transition: border-color 0.15s, color 0.15s;
   }
   .lp-record-btn:hover:not(:disabled) { border-color: var(--lp-fg-3); color: var(--lp-fg); }
@@ -315,21 +315,21 @@ const css = `
     border-color: #e03030; color: #e03030;
     animation: lpPulse 1.4s ease-in-out infinite;
   }
-  .lp-record-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--lp-fg-4); flex-shrink: 0; }
+  .lp-record-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--lp-fg-4); flex-shrink: 0; }
   .lp-record-dot--active { background: #e03030; }
 
   /* Radio group */
   .lp-radio-group { display: flex; flex-direction: column; gap: 1rem; }
-  .lp-radio-label { display: flex; align-items: flex-start; gap: 0.875rem; cursor: pointer; }
+  .lp-radio-label { display: flex; align-items: flex-start; gap: 1rem; cursor: pointer; }
   .lp-radio-box {
-    margin-top: 3px; width: 14px; height: 14px; flex-shrink: 0;
+    margin-top: 3px; width: 16px; height: 16px; flex-shrink: 0;
     border: 1px solid var(--lp-border-2);
     display: flex; align-items: center; justify-content: center;
     transition: border-color 0.15s;
   }
   .lp-radio-label:hover .lp-radio-box { border-color: var(--lp-fg-3); }
   .lp-radio-box--checked { border-color: var(--lp-fg); }
-  .lp-radio-dot { width: 6px; height: 6px; background: var(--lp-fg); }
+  .lp-radio-dot { width: 7px; height: 7px; background: var(--lp-fg); }
   .lp-radio-text { transition: color 0.15s; }
   .lp-radio-text--checked { color: var(--lp-fg) !important; }
 
@@ -338,8 +338,8 @@ const css = `
   .lp-submit-btn {
     width: 100%; border: 1px solid var(--lp-btn-bg); background: var(--lp-btn-bg);
     color: var(--lp-btn-fg); font-family: inherit;
-    font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;
-    padding: 1rem; cursor: pointer; transition: background 0.18s, color 0.18s, border-color 0.18s;
+    font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase;
+    padding: 1.125rem; cursor: pointer; transition: background 0.18s, color 0.18s, border-color 0.18s;
   }
   .lp-submit-btn:hover:not(:disabled) {
     background: var(--lp-btn-hover-bg);

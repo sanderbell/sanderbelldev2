@@ -353,7 +353,7 @@ const css = `
 
   /* ── layout ─────────────────────────────────────── */
   .p-section { padding: 0; }
-  .p-wrap    { max-width: 44rem; margin: 0 auto; padding: 0 1.5rem; }
+  .p-wrap    { max-width: 48rem; margin: 0 auto; padding: 0 1.5rem; }
 
   /* ── hero ───────────────────────────────────────── */
   .p-hero {
@@ -376,21 +376,21 @@ const css = `
     position: absolute; top: 0; left: 0;
   }
   .p-photo-fallback {
-    font-size: 20px; font-weight: 700; color: var(--lp-fg-3);
+    font-size: 24px; font-weight: 700; color: var(--lp-fg-3);
     letter-spacing: 0.05em;
   }
 
   .p-overline {
-    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase;
     color: var(--lp-fg-4); margin-bottom: 0.75rem;
   }
   .p-name {
-    font-size: 3rem; font-weight: 700; color: var(--lp-fg);
+    font-size: 3.5rem; font-weight: 700; color: var(--lp-fg);
     letter-spacing: -0.02em; line-height: 1; margin: 0 0 1.25rem;
   }
   .p-bio {
-    font-size: 14px; color: var(--lp-fg-3); line-height: 1.8;
-    max-width: 30rem; margin: 0 auto 2.5rem;
+    font-size: 16px; color: var(--lp-fg-3); line-height: 1.8;
+    max-width: 32rem; margin: 0 auto 2.5rem;
   }
 
   .p-ctas { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; }
@@ -398,9 +398,9 @@ const css = `
     display: inline-flex; align-items: center; gap: 0.5rem;
     background: var(--lp-btn-bg); color: var(--lp-btn-fg);
     border: 1px solid var(--lp-btn-bg);
-    font-family: inherit; font-size: 12px; letter-spacing: 0.1em;
+    font-family: inherit; font-size: 13px; letter-spacing: 0.1em;
     text-transform: uppercase; text-decoration: none;
-    padding: 0.75rem 1.5rem; cursor: pointer;
+    padding: 0.875rem 1.75rem; cursor: pointer;
     transition: background 0.18s, color 0.18s, border-color 0.18s;
   }
   .p-btn-primary:hover {
@@ -411,9 +411,9 @@ const css = `
     display: inline-flex; align-items: center; gap: 0.5rem;
     background: transparent; color: var(--lp-fg-3);
     border: 1px solid var(--lp-border-2);
-    font-family: inherit; font-size: 12px; letter-spacing: 0.1em;
+    font-family: inherit; font-size: 13px; letter-spacing: 0.1em;
     text-transform: uppercase; text-decoration: none;
-    padding: 0.75rem 1.5rem; cursor: pointer;
+    padding: 0.875rem 1.75rem; cursor: pointer;
     transition: border-color 0.15s, color 0.15s;
   }
   .p-btn-secondary:hover { border-color: var(--lp-fg-3); color: var(--lp-fg); }
@@ -431,23 +431,23 @@ const css = `
     gap: 1.5rem; margin-bottom: 1.5rem;
   }
   .lp-label {
-    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase;
     color: var(--lp-bg-alt); opacity: 0.5;
     margin-bottom: 0.6rem;
   }
   .lp-title { font-size: 3rem; font-weight: 700; line-height: 1; letter-spacing: -0.02em; }
-  .lp-sub   { font-size: 13px; opacity: 0.5; margin-top: 0.4rem; }
+  .lp-sub   { font-size: 15px; opacity: 0.5; margin-top: 0.4rem; }
   .lp-price-col { text-align: right; flex-shrink: 0; }
   .lp-price { font-size: 3rem; font-weight: 700; line-height: 1; }
-  .lp-price-note { font-size: 12px; opacity: 0.5; margin-top: 0.4rem; }
+  .lp-price-note { font-size: 14px; opacity: 0.5; margin-top: 0.4rem; }
 
   .lp-desc {
-    font-size: 14px; line-height: 1.8; opacity: 0.7;
+    font-size: 16px; line-height: 1.8; opacity: 0.7;
     max-width: 36rem; margin-bottom: 1.5rem;
   }
   .lp-features {
     display: flex; flex-wrap: wrap; gap: 1.5rem;
-    font-size: 12px; opacity: 0.6;
+    font-size: 14px; opacity: 0.6;
     border-top: 1px solid rgba(255,255,255,0.12);
     padding-top: 1.25rem; margin-bottom: 1.75rem;
   }
@@ -459,9 +459,9 @@ const css = `
     display: inline-flex; align-items: center; gap: 0.5rem;
     background: var(--lp-bg); color: var(--lp-fg);
     border: 1px solid var(--lp-bg);
-    font-family: inherit; font-size: 12px; letter-spacing: 0.1em;
+    font-family: inherit; font-size: 13px; letter-spacing: 0.1em;
     text-transform: uppercase; text-decoration: none;
-    padding: 0.75rem 1.5rem;
+    padding: 0.875rem 1.75rem;
     transition: opacity 0.15s;
   }
   .lp-btn-primary:hover { opacity: 0.85; }
@@ -469,9 +469,9 @@ const css = `
     display: inline-flex; align-items: center; gap: 0.5rem;
     background: transparent; color: var(--lp-bg);
     border: 1px solid rgba(255,255,255,0.25);
-    font-family: inherit; font-size: 12px; letter-spacing: 0.1em;
+    font-family: inherit; font-size: 13px; letter-spacing: 0.1em;
     text-transform: uppercase; text-decoration: none;
-    padding: 0.75rem 1.5rem;
+    padding: 0.875rem 1.75rem;
     transition: border-color 0.15s;
   }
   .lp-btn-secondary:hover { border-color: rgba(255,255,255,0.7); }
@@ -484,7 +484,7 @@ const css = `
   }
   @media (max-width: 600px) { .p-stats { grid-template-columns: repeat(2, 1fr); } }
   .p-stat {
-    padding: 1.5rem 1rem; text-align: center;
+    padding: 1.75rem 1rem; text-align: center;
     border-right: 1px solid var(--lp-border);
   }
   .p-stat:last-child { border-right: none; }
@@ -492,13 +492,13 @@ const css = `
     .p-stat:nth-child(2) { border-right: none; }
     .p-stat:nth-child(3), .p-stat:nth-child(4) { border-top: 1px solid var(--lp-border); }
   }
-  .p-stat-value { font-size: 1.75rem; font-weight: 700; color: var(--lp-fg); }
-  .p-stat-label { font-size: 11px; color: var(--lp-fg-4); margin-top: 0.25rem; letter-spacing: 0.05em; }
+  .p-stat-value { font-size: 2rem; font-weight: 700; color: var(--lp-fg); }
+  .p-stat-label { font-size: 13px; color: var(--lp-fg-4); margin-top: 0.25rem; letter-spacing: 0.05em; }
 
   /* ── blocks ──────────────────────────────────────── */
   .p-block { margin-bottom: 3.5rem; }
   .p-section-label {
-    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase;
     color: var(--lp-fg-4); margin-bottom: 1.5rem;
     padding-bottom: 0.75rem; border-bottom: 1px solid var(--lp-border);
   }
@@ -506,29 +506,29 @@ const css = `
   /* ── cards ───────────────────────────────────────── */
   .p-cards { display: flex; flex-direction: column; gap: 1px; background: var(--lp-border); border: 1px solid var(--lp-border); }
   .p-card {
-    background: var(--lp-bg); padding: 1.5rem;
+    background: var(--lp-bg); padding: 1.75rem;
   }
   .p-card-head {
     display: flex; justify-content: space-between; align-items: flex-start;
-    gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap;
+    gap: 1rem; margin-bottom: 1.25rem; flex-wrap: wrap;
   }
-  .p-card-role    { font-size: 14px; font-weight: 600; color: var(--lp-fg); }
-  .p-card-company { font-size: 12px; color: var(--lp-fg-4); margin-top: 0.25rem; }
-  .p-card-body    { font-size: 13px; color: var(--lp-fg-3); line-height: 1.7; margin: 0; }
+  .p-card-role    { font-size: 16px; font-weight: 600; color: var(--lp-fg); }
+  .p-card-company { font-size: 13px; color: var(--lp-fg-4); margin-top: 0.3rem; }
+  .p-card-body    { font-size: 15px; color: var(--lp-fg-3); line-height: 1.75; margin: 0; }
 
   .p-tag {
-    font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+    font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
     color: var(--lp-fg-4); border: 1px solid var(--lp-border-2);
-    padding: 0.2rem 0.6rem; white-space: nowrap; flex-shrink: 0;
+    padding: 0.25rem 0.7rem; white-space: nowrap; flex-shrink: 0;
   }
 
   .p-card-list {
     list-style: none; padding: 0; margin: 0;
-    display: flex; flex-direction: column; gap: 0.6rem;
+    display: flex; flex-direction: column; gap: 0.75rem;
   }
   .p-card-list li {
-    font-size: 13px; color: var(--lp-fg-3); line-height: 1.7;
-    padding-left: 1.25rem; position: relative;
+    font-size: 15px; color: var(--lp-fg-3); line-height: 1.75;
+    padding-left: 1.5rem; position: relative;
   }
   .p-card-list li::before { content: '→'; position: absolute; left: 0; color: var(--lp-fg-5); }
   .p-card-list strong { color: var(--lp-fg-2); font-weight: 500; }
@@ -549,37 +549,37 @@ const css = `
     display: flex; flex-wrap: wrap; gap: 0.5rem;
   }
   .p-skill {
-    font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+    font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase;
     color: var(--lp-fg-3); border: 1px solid var(--lp-border);
-    padding: 0.35rem 0.75rem;
+    padding: 0.4rem 0.875rem;
     transition: border-color 0.15s, color 0.15s;
   }
   .p-skill:hover { border-color: var(--lp-border-2); color: var(--lp-fg); }
 
   /* ── quote ───────────────────────────────────────── */
   .p-quote {
-    font-size: 13px; color: var(--lp-fg-3); line-height: 1.7;
+    font-size: 15px; color: var(--lp-fg-3); line-height: 1.75;
     font-style: italic; margin: 0 0 0.75rem;
   }
-  .p-quote-context { font-size: 11px; color: var(--lp-fg-4); }
+  .p-quote-context { font-size: 13px; color: var(--lp-fg-4); }
 
   /* ── contact ─────────────────────────────────────── */
   .p-contact-block { padding-bottom: 1rem; }
-  .p-contact-note { font-size: 13px; color: var(--lp-fg-4); margin-bottom: 1.25rem; line-height: 1.6; }
+  .p-contact-note { font-size: 15px; color: var(--lp-fg-4); margin-bottom: 1.25rem; line-height: 1.7; }
   .p-inline-link { color: var(--lp-fg-2); text-decoration: underline; text-underline-offset: 3px; }
   .p-inline-link:hover { color: var(--lp-fg); }
   .p-contact-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
   .p-contact-link {
     display: inline-flex; align-items: center; gap: 0.5rem;
-    font-size: 12px; color: var(--lp-fg-3); text-decoration: none;
-    border: 1px solid var(--lp-border); padding: 0.5rem 1rem;
+    font-size: 14px; color: var(--lp-fg-3); text-decoration: none;
+    border: 1px solid var(--lp-border); padding: 0.6rem 1.25rem;
     transition: border-color 0.15s, color 0.15s;
   }
   .p-contact-link:hover { border-color: var(--lp-border-2); color: var(--lp-fg); }
 
   /* ── footer ──────────────────────────────────────── */
   .p-footer {
-    font-size: 11px; color: var(--lp-fg-5); padding: 2rem 0 4rem; letter-spacing: 0.05em;
+    font-size: 13px; color: var(--lp-fg-5); padding: 2rem 0 4rem; letter-spacing: 0.05em;
   }
 `;
 

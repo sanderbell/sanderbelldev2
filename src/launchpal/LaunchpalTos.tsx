@@ -166,10 +166,10 @@ const css = `
     color: var(--lp-fg);
     font-family: 'SF Mono', 'SFMono-Regular', ui-monospace, Menlo, Consolas, monospace;
   }
-  .lp-tos-wrap { max-width: 40rem; margin: 0 auto; padding: 3.5rem 1.5rem 6rem; }
+  .lp-tos-wrap { max-width: 44rem; margin: 0 auto; padding: 3.5rem 1.5rem 6rem; }
 
   .lp-back-link {
-    font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
+    font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase;
     color: var(--lp-fg-4); text-decoration: none; transition: color 0.15s;
   }
   .lp-back-link:hover { color: var(--lp-fg); }
@@ -179,30 +179,30 @@ const css = `
     padding-bottom: 2.5rem;
     border-bottom: 1px solid var(--lp-border);
   }
-  .lp-tos-title { font-size: 2rem; font-weight: 700; color: var(--lp-fg); margin: 0 0 0.5rem; }
+  .lp-tos-title { font-size: 2.25rem; font-weight: 700; color: var(--lp-fg); margin: 0 0 0.5rem; }
 
-  .lp-overline { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--lp-fg-4); }
-  .lp-body  { font-size: 14px; color: var(--lp-fg-3); line-height: 1.8; margin: 0; }
-  .lp-caption { font-size: 12px; color: var(--lp-fg-4); line-height: 1.6; }
+  .lp-overline { font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--lp-fg-4); }
+  .lp-body  { font-size: 16px; color: var(--lp-fg-3); line-height: 1.85; margin: 0; }
+  .lp-caption { font-size: 14px; color: var(--lp-fg-4); line-height: 1.6; }
 
   .lp-tos-body { display: flex; flex-direction: column; }
 
   .lp-section { padding: 2rem 0; border-bottom: 1px solid var(--lp-border); }
   .lp-section-title {
-    font-size: 13px; font-weight: 600; color: var(--lp-fg);
+    font-size: 14px; font-weight: 600; color: var(--lp-fg);
     letter-spacing: 0.06em; text-transform: uppercase;
     margin: 0 0 1.25rem;
   }
   .lp-section-n { color: var(--lp-fg-4); font-weight: 400; }
-  .lp-section-body { display: flex; flex-direction: column; gap: 0.75rem; }
+  .lp-section-body { display: flex; flex-direction: column; gap: 0.875rem; }
 
   .lp-ul {
     list-style: none; padding: 0; margin: 0.25rem 0;
-    display: flex; flex-direction: column; gap: 0.6rem;
+    display: flex; flex-direction: column; gap: 0.75rem;
   }
   .lp-ul li {
-    font-size: 14px; color: var(--lp-fg-3); line-height: 1.8;
-    padding-left: 1.5rem; position: relative;
+    font-size: 16px; color: var(--lp-fg-3); line-height: 1.85;
+    padding-left: 1.75rem; position: relative;
   }
   .lp-ul li::before { content: '—'; position: absolute; left: 0; color: var(--lp-fg-5); }
   .lp-ul strong { color: var(--lp-fg-2); font-weight: 500; }
