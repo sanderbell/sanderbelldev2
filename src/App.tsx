@@ -1,10 +1,8 @@
-import { Github, Linkedin, Mail, ExternalLink } from 'lucide-react';
-import React from 'react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 /* ── main ─────────────────────────────────────────── */
 function App() {
-
   const work = [
     {
       role: 'Founder & Product Architect',
@@ -13,22 +11,76 @@ function App() {
       tag: 'Independent',
       items: [
         <>
-          <span className="highlight">Comms</span> — B2B tool that converts high-stakes raw input into corporate communications, audited for cultural nuances, legal liabilities, and the live news cycle in seconds. One wrong word in a layoff notice, a vendor termination, or a media response can cost the company dearly. Comms is the layer between what you mean and what gets published.
+          <span className="highlight">Comms</span> — B2B tool that converts
+          high-stakes raw input into corporate communications, audited for
+          cultural nuances, legal liabilities, and the live news cycle in
+          seconds. One wrong word in a layoff notice, a vendor termination, or a
+          media response can cost the company dearly. Comms is the layer between
+          what you mean and what gets published.
         </>,
         <>
-          <a href="https://esse.today" target="_blank" rel="noopener noreferrer" className="app-link">Esse</a> — AI summarizer iOS app. 10,000+ organic users, 7% freemium conversion (industry avg: 2%). No paid acquisition. Behavioral onboarding designed from scratch.
+          <a
+            href="https://esse.today"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="app-link"
+          >
+            Esse
+          </a>{' '}
+          — AI summarizer iOS app. 10,000+ organic users, 7% freemium conversion
+          (industry avg: 2%). No paid acquisition. Behavioral onboarding
+          designed from scratch.
         </>,
         <>
-          <span className="highlight">Burn Before Reading</span> — Chrome extension for self-destructing notes. Went viral on first day, Google Featured on Chrome Web Store. First-day sales without a launch strategy.
+          <span className="highlight">Burn Before Reading</span> — Chrome
+          extension for self-destructing notes. Went viral on first day, Google
+          Featured on Chrome Web Store. First-day sales without a launch
+          strategy.
         </>,
         <>
-          <a href="https://launchpal.co" target="_blank" rel="noopener noreferrer" className="app-link">Launchpal</a> — productized sprint service turning non-technical ideas into working digital products in 14 days.
+          <a
+            href="https://launchpal.co"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="app-link"
+          >
+            Launchpal
+          </a>{' '}
+          — productized sprint service turning non-technical ideas into working
+          digital products in 14 days.
         </>,
         <>
-          <a href="https://rewords.app" target="_blank" rel="noopener noreferrer" className="app-link">Rewords</a> — Chrome vocabulary extension. 1,500+ users within months. Google Featured.
+          <a
+            href="https://rewords.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="app-link"
+          >
+            Rewords
+          </a>{' '}
+          — Chrome vocabulary extension. 1,500+ users within months. Google
+          Featured.
         </>,
         <>
-          <a href="https://somany.ch" target="_blank" rel="noopener noreferrer" className="app-link">So Many Characters</a>, <a href="https://should.today" target="_blank" rel="noopener noreferrer" className="app-link">Should Today</a> — client products in Vue.js and React. Idea → deployed in days, not months.
+          <a
+            href="https://somany.ch"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="app-link"
+          >
+            So Many Characters
+          </a>
+          ,{' '}
+          <a
+            href="https://should.today"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="app-link"
+          >
+            Should Today
+          </a>{' '}
+          — client products in Vue.js and React. Idea → deployed in days, not
+          months.
         </>,
       ],
     },
@@ -56,25 +108,63 @@ function App() {
   ];
 
   const principles = [
-    { title: 'Psychology is the product', body: "MSc in Psychology isn't decoration. I design habit loops from behavioral theory — reducing friction, improving onboarding, making UX that retains. The 7% conversion rate on Esse exists because of this." },
-    { title: 'I build what I spec', body: "I don't hand off to someone else. I write the blueprint and I write the code. That closes the gap between what was designed and what ships — permanently." },
-    { title: 'Scope kills more products than bugs', body: "The most valuable thing in a sprint isn't the code. It's the decision of what not to build. I've killed more bad features before they shipped than I can count." },
-    { title: 'Outcomes over output', body: "Tickets closed and lines of code are vanity metrics. I measure by conversion rates, retention curves, and whether the thing actually gets used." },
+    {
+      title: 'Psychology is the product',
+      body: "MSc in Psychology isn't decoration. I design habit loops from behavioral theory — reducing friction, improving onboarding, making UX that retains. The 7% conversion rate on Esse exists because of this.",
+    },
+    {
+      title: 'I build what I spec',
+      body: "I don't hand off to someone else. I write the blueprint and I write the code. That closes the gap between what was designed and what ships — permanently.",
+    },
+    {
+      title: 'Scope kills more products than bugs',
+      body: "The most valuable thing in a sprint isn't the code. It's the decision of what not to build. I've killed more bad features before they shipped than I can count.",
+    },
+    {
+      title: 'Outcomes over output',
+      body: 'Tickets closed and lines of code are vanity metrics. I measure by conversion rates, retention curves, and whether the thing actually gets used.',
+    },
   ];
 
   const testimonials = [
-    { quote: 'A high-impact builder. Consistently a top performer, he ships stable, thoughtful features and isn\'t afraid to flag when complexity outweighs value.', context: 'Piyawasin P., Senior Software Engineer, Ling' },
-    { quote: 'Showed traits not commonly found in developers. Practiced due diligence, asked clear questions to understand core issues, and was easy to communicate with.', context: 'Dennis B., Engineering Lead, Ling' },
-    { quote: 'User-centered approach — doesn\'t simply focus on what designs say, but on their purpose and intention. Made suggestions that were more elegant and user-friendly.', context: 'Product Manager, Ling' },
-    { quote: 'Kept teams aligned and effectively managed, presented a company-wide editorial policy that solidified our brand voice.', context: 'Anna Artukh, PR Director, Uchi' },
+    {
+      quote:
+        "A high-impact builder. Consistently a top performer, he ships stable, thoughtful features and isn't afraid to flag when complexity outweighs value.",
+      context: 'Piyawasin P., Senior Software Engineer, Ling',
+    },
+    {
+      quote:
+        'Showed traits not commonly found in developers. Practiced due diligence, asked clear questions to understand core issues, and was easy to communicate with.',
+      context: 'Dennis B., Engineering Lead, Ling',
+    },
+    {
+      quote:
+        "User-centered approach — doesn't simply focus on what designs say, but on their purpose and intention. Made suggestions that were more elegant and user-friendly.",
+      context: 'Product Manager, Ling',
+    },
+    {
+      quote:
+        'Kept teams aligned and effectively managed, presented a company-wide editorial policy that solidified our brand voice.',
+      context: 'Anna Artukh, PR Director, Uchi',
+    },
   ];
 
   const skills = [
-    'Product Architecture', 'Behavioral Psychology', 'React Native',
-    '0→1 Launches', 'System Design', 'Psychology-Backed UX',
-    'Unit Economics', 'GTM Strategy', 'A/B Testing',
-    'ASO', 'TypeScript', 'Mobile Architecture',
-    'Scope Discipline', 'Risk Modeling', 'AI Integration',
+    'Product Architecture',
+    'Behavioral Psychology',
+    'React Native',
+    '0→1 Launches',
+    'System Design',
+    'Psychology-Backed UX',
+    'Unit Economics',
+    'GTM Strategy',
+    'A/B Testing',
+    'ASO',
+    'TypeScript',
+    'Mobile Architecture',
+    'Scope Discipline',
+    'Risk Modeling',
+    'AI Integration',
   ];
 
   const stats = [
@@ -92,14 +182,15 @@ function App() {
       <div className="p-section">
         <div className="p-wrap">
           <div className="p-hero">
-
             {/* Photo */}
             <div className="p-photo-ring">
               <img
                 src="/new.jpeg"
                 alt="Sander Bell"
                 className="p-photo-img"
-                onError={e => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                onError={e => {
+                  (e.target as HTMLImageElement).style.display = 'none';
+                }}
               />
               <span className="p-photo-fallback">SB</span>
             </div>
@@ -108,14 +199,18 @@ function App() {
             <h1 className="p-name">Sander Bell</h1>
             <p className="p-bio">
               I design systems, build products, and ship things that get used.
-              MSc Psychology · React Native · 15 years across platforms with 20M+ users.
+              MSc Psychology · React Native · 15 years across platforms with
+              20M+ users.
             </p>
 
             <div className="p-ctas">
               <Link to="/launchpal" className="p-btn-primary">
-                Launchpal — hire me for a sprint
+                Launchpal — I'll build your product in 14 days
               </Link>
-              <a href="mailto:thesanderbell@gmail.com" className="p-btn-secondary">
+              <a
+                href="mailto:thesanderbell@gmail.com"
+                className="p-btn-secondary"
+              >
                 <Mail size={14} /> Say hello
               </a>
             </div>
@@ -123,48 +218,9 @@ function App() {
         </div>
       </div>
 
-      {/* ── LAUNCHPAL — full bleed ────────────────────── */}
-      <div className="lp-band">
-        <div className="p-wrap">
-          <div className="lp-band-inner">
-            <div>
-              <div className="lp-label">Currently accepting clients</div>
-              <div className="lp-title">Launchpal</div>
-              <div className="lp-sub">Productized sprint service</div>
-            </div>
-            <div className="lp-price-col">
-              <div className="lp-price">$1,490</div>
-              <div className="lp-price-note">flat · 2 weeks · one client at a time</div>
-            </div>
-          </div>
-
-          <p className="lp-desc">
-            I turn non-technical domain experts' ideas into working digital products.
-            Discovery, blueprint, build, handoff — 14 days.
-            No agency overhead, no junior handoff. You deal with one person the whole way through.
-          </p>
-
-          <div className="lp-features">
-            {['Working beta, not a mockup', 'Full codebase ownership', 'App Store ready', 'Handoff playbook included'].map(f => (
-              <span key={f} className="lp-feature"><span className="lp-check">✓</span> {f}</span>
-            ))}
-          </div>
-
-          <div className="lp-actions">
-            <Link to="/launchpal" className="lp-btn-primary">
-              See how it works <ExternalLink size={13} />
-            </Link>
-            <Link to="/launchpal/start" className="lp-btn-secondary">
-              Start a sprint →
-            </Link>
-          </div>
-        </div>
-      </div>
-
       {/* ── REST ─────────────────────────────────────── */}
       <div className="p-section">
         <div className="p-wrap">
-
           {/* Stats */}
           <div className="p-stats">
             {stats.map(({ value, label }) => (
@@ -184,7 +240,9 @@ function App() {
                   <div className="p-card-head">
                     <div>
                       <div className="p-card-role">{role}</div>
-                      <div className="p-card-company">{company} · {period}</div>
+                      <div className="p-card-company">
+                        {company} · {period}
+                      </div>
                     </div>
                     <span className="p-tag">{tag}</span>
                   </div>
@@ -202,7 +260,11 @@ function App() {
           <div className="p-block">
             <div className="p-section-label">Skills</div>
             <div className="p-skills">
-              {skills.map(s => <span key={s} className="p-skill">{s}</span>)}
+              {skills.map(s => (
+                <span key={s} className="p-skill">
+                  {s}
+                </span>
+              ))}
             </div>
           </div>
 
@@ -212,7 +274,12 @@ function App() {
             <div className="p-grid-2">
               {principles.map(({ title, body }) => (
                 <div key={title} className="p-card">
-                  <div className="p-card-role" style={{ marginBottom: '0.5rem' }}>{title}</div>
+                  <div
+                    className="p-card-role"
+                    style={{ marginBottom: '0.5rem' }}
+                  >
+                    {title}
+                  </div>
                   <p className="p-card-body">{body}</p>
                 </div>
               ))}
@@ -237,24 +304,38 @@ function App() {
             <div className="p-section-label">Contact</div>
             <p className="p-contact-note">
               For a sprint engagement, use{' '}
-              <Link to="/launchpal/start" className="p-inline-link">Launchpal</Link>.
-              For everything else — say hello.
+              <Link to="/launchpal/start" className="p-inline-link">
+                Launchpal
+              </Link>
+              . For everything else — say hello.
             </p>
             <div className="p-contact-links">
-              <a href="mailto:thesanderbell@gmail.com" className="p-contact-link">
+              <a
+                href="mailto:thesanderbell@gmail.com"
+                className="p-contact-link"
+              >
                 <Mail size={14} /> thesanderbell@gmail.com
               </a>
-              <a href="https://linkedin.com/in/sanderbell" target="_blank" rel="noopener noreferrer" className="p-contact-link">
+              <a
+                href="https://linkedin.com/in/sanderbell"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-contact-link"
+              >
                 <Linkedin size={14} /> LinkedIn
               </a>
-              <a href="https://github.com/sanderbell" target="_blank" rel="noopener noreferrer" className="p-contact-link">
+              <a
+                href="https://github.com/sanderbell"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-contact-link"
+              >
                 <Github size={14} /> GitHub
               </a>
             </div>
           </div>
 
           <div className="p-footer">© 2026 Sander Bell</div>
-
         </div>
       </div>
     </div>
@@ -278,12 +359,11 @@ const css = `
   .p-hero {
     display: flex; flex-direction: column; align-items: center;
     text-align: center;
-    padding: 5rem 0 4rem;
-    border-bottom: 1px solid var(--lp-border);
-  }
+    padding: 2rem 0 2rem;
+   }
 
   .p-photo-ring {
-    width: 200px; height: 200px; border-radius: 50%;
+    width: 180px; height: 180px; border-radius: 50%;
     border: 1px solid var(--lp-border-2);
     overflow: hidden; position: relative;
     background: var(--lp-bg-alt);
