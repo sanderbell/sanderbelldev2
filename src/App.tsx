@@ -11,8 +11,8 @@ function App() {
       tag: 'AI Translation',
       items: [
         'Led a remote mobile pod of 1 UX/UI designer and 2 React Native engineers building a native client for real-time B2B audio translation.',
-        'Mapped implementation details from ML backend to React Native frontend: WebRTC constraints, API contracts, WebSocket/Firebase sync, and edge-case flows for network drops.',
-        'Directed UX around layout stability, throttled rendering, and React Native Reanimated patterns to reduce cognitive load in live subtitles; shipped a functional staging MVP before the company pivoted resources back to web enterprise sales.',
+        'Scoped the mobile implementation across ML/backend handoff, API contracts, streaming-caption behavior, and edge cases for unstable network conditions.',
+        'Worked with design and engineering on layout stability, throttled rendering, and staging-readiness criteria; MVP reached internal staging before resources shifted back to web enterprise sales.',
       ],
     },
     {
