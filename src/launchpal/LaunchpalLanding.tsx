@@ -212,7 +212,7 @@ export default function LaunchpalLanding() {
           <p className="lp-body" style={{ maxWidth: '38rem' }}>
             15 years leading cross-functional teams across platforms with 20M+
             users. Built products people use without funding, without safety
-            nets. Former Editorial Director at the largest national online
+            nets. Former Comms Director at the largest national online
             education platform. Now building what I wish existed for domain
             experts with ideas stuck in their heads.
           </p>

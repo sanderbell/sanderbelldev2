@@ -59,7 +59,7 @@ No pressure. We decide that after you see what's possible.
 
 ## Why Me
 
-I'm Sander Bell — product builder, former editorial director, MSc Psychology.
+I'm Sander Bell — product builder, former Comms Director, MSc Psychology.
 
 I've built apps from scratch that reached thousands of paying users without a dollar in advertising. I've helped people translate messy, half-formed ideas into products that real audiences connect with — for 15 years, first in media, now in tech.
 

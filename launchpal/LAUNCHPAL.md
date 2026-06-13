@@ -226,6 +226,6 @@ Friend rates (10–20% off for public testimonial) · broader scope · looser in
 
 ## 13. Founder
 
-Sander Bell — Technical Product Strategist, former Editorial Director at the largest national online education platform, React Native developer, MSc Psychology.
+Sander Bell — Technical Product Strategist, former Comms Director at the largest national online education platform, React Native developer, MSc Psychology.
 
 Built products people use and love: Esse (10,000+ users, 7% paid conversion, no paid acquisition — most intuitive summarizer UX on the market), Burn Before Reading (viral, first-day sales, Google Featured), Rewords (1,500+ users, Google Featured). React Native at Ling (2M+ users). 15 years leading cross-functional teams across platforms with 20M+ users.

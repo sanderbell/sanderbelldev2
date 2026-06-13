@@ -11,12 +11,18 @@ function App() {
       tag: 'Independent',
       items: [
         <>
-          <span className="highlight">Comms</span> — B2B tool that converts
-          high-stakes raw input into corporate communications, audited for
-          cultural nuances, legal liabilities, and the live news cycle in
-          seconds. One wrong word in a layoff notice, a vendor termination, or a
-          media response can cost the company dearly. Comms is the layer between
-          what you mean and what gets published.
+          <a
+            href="https://comms.at"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="app-link"
+          >
+            Comms
+          </a>{' '}
+          — AI-powered pre-publication risk scanner for business communication.
+          Catches legal, cultural, factual, and reputational blind spots before
+          they become costly mistakes, tuned for local realities instead of
+          generic LLM output.
         </>,
         <>
           <a
@@ -32,10 +38,17 @@ function App() {
           designed from scratch.
         </>,
         <>
-          <span className="highlight">Burn Before Reading</span> — Chrome
-          extension for self-destructing notes. Went viral on first day, Google
-          Featured on Chrome Web Store. First-day sales without a launch
-          strategy.
+          <a
+            href="https://bbr.today"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="app-link"
+          >
+            Burn Before Reading
+          </a>{' '}
+          — Chrome extension for self-destructing notes. Went viral on first
+          day, Google Featured on Chrome Web Store. First-day sales without a
+          launch strategy.
         </>,
         <>
           <a
@@ -85,6 +98,17 @@ function App() {
       ],
     },
     {
+      role: 'Remote Technical Product Manager',
+      company: 'LiveTongue · Relativity GmbH',
+      period: 'Nov 2025 – Jun 2026',
+      tag: 'AI Translation',
+      items: [
+        'Led a remote mobile pod of 1 UX/UI designer and 2 React Native engineers building a native client for real-time B2B audio translation.',
+        'Mapped implementation details from ML backend to React Native frontend: WebRTC constraints, API contracts, WebSocket/Firebase sync, and edge-case flows for network drops.',
+        'Directed UX around layout stability, throttled rendering, and React Native Reanimated patterns to reduce cognitive load in live subtitles; shipped a functional staging MVP before the company pivoted resources back to web enterprise sales.',
+      ],
+    },
+    {
       role: 'Product Engineer — React Native',
       company: 'Ling App',
       period: 'Dec 2023 – Nov 2025',
@@ -96,12 +120,12 @@ function App() {
       ],
     },
     {
-      role: 'Editorial Director & Team Builder',
+      role: 'Comms Director & Team Builder',
       company: 'Media & Education',
       period: '2008 – 2022',
       tag: '15 yrs',
       items: [
-        'Led cross-functional teams of 15+ across editorial and product. Co-founded independent news outlets.',
+        'Led cross-functional teams of 15+ across communications and product. Co-founded independent news outlets.',
         'Built data-driven feedback loops: tracked reader retention, session depth, and distribution. Applied the same logic I now apply to product.',
       ],
     },
