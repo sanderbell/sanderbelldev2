@@ -26,24 +26,6 @@ const sprintRows = [
   },
 ];
 
-const problems = [
-  {
-    n: '01',
-    title: 'Blank page paralysis.',
-    body: 'No framework for where to start, what to cut, or how to scope v1.',
-  },
-  {
-    n: '02',
-    title: 'The vibe coding trap.',
-    body: "AI tools feel like magic for an hour. Within days: bugs, broken screens, code they can't fix. Structure failure, not discipline failure.",
-  },
-  {
-    n: '03',
-    title: 'The agency black box.',
-    body: 'Dev shop hired. Three months pass. Easiest interpretation of the brief delivered.',
-  },
-];
-
 const credStats = [
   {
     value: '10,000+',
@@ -185,7 +167,7 @@ export default function LaunchpalLanding() {
             <p className="lp-caption">14 days · $1,490 flat</p>
           </div>
           <div className="lp-sprint-horizontal">
-            {sprintRows.map(({ day, step, deliverable, outcome }, i) => (
+            {sprintRows.map(({ day, step, deliverable, outcome }) => (
               <div key={step} className="lp-sprint-col">
                 <p className="lp-caption lp-sprint-day">{day}</p>
                 <p
@@ -322,7 +304,6 @@ const css = `
     line-height: 1.6;
   }
   .lp-muted { color: var(--lp-fg-3); }
-  .lp-num { font-size: 13px; color: var(--lp-fg-5); width: 1.5rem; flex-shrink: 0; padding-top: 2px; }
 
   /* Button */
   .lp-btn {
@@ -344,13 +325,6 @@ const css = `
     border-color: var(--lp-btn-bg);
   }
 
-  /* Problem rows */
-  .lp-problem-row {
-    display: flex;
-    gap: 2rem;
-    padding: 1.75rem 0;
-  }
-  .lp-item-border { border-bottom: 1px solid var(--lp-border); }
   .lp-item-title {
     display: block;
     font-size: 16px;
