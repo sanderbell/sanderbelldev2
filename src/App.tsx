@@ -21,8 +21,7 @@ function App() {
           </a>{' '}
           — AI-powered pre-publication risk scanner for business communication.
           Catches legal, cultural, factual, and reputational blind spots before
-          they become costly mistakes, tuned for local realities instead of
-          generic LLM output.
+          they become costly mistakes.
         </>,
         <>
           <a
