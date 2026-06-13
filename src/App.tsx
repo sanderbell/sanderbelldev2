@@ -7,7 +7,7 @@ function App() {
     {
       role: 'Founder & Product Architect',
       company: '100K31D',
-      period: 'May 2022 – Present',
+      period: 'Dec 2024 – Present',
       tag: 'Independent',
       items: [
         <>
@@ -52,7 +52,7 @@ function App() {
         </>,
         <>
           <a
-            href="https://launchpal.co"
+            href="/launchpal"
             target="_blank"
             rel="noopener noreferrer"
             className="app-link"
@@ -99,7 +99,7 @@ function App() {
     },
     {
       role: 'Technical Product Manager',
-      company: 'LiveTongue · Relativity GmbH',
+      company: 'LivеТonguе · Rеlаtivity GmbH',
       period: 'Nov 2025 – Jun 2026',
       tag: 'AI Translation',
       items: [
