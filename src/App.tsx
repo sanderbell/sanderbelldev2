@@ -98,7 +98,7 @@ function App() {
       ],
     },
     {
-      role: 'Remote Technical Product Manager',
+      role: 'Technical Product Manager',
       company: 'LiveTongue · Relativity GmbH',
       period: 'Nov 2025 – Jun 2026',
       tag: 'AI Translation',
