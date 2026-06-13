@@ -170,6 +170,36 @@ function App() {
         'Kept teams aligned and effectively managed, presented a company-wide editorial policy that solidified our brand voice.',
       context: 'Anna Artukh, PR Director, Uchi',
     },
+    {
+      quote:
+        'Esse comes in extremely handy when long videos take too long to get to a simple point.',
+      context: 'Esse App Store review, -engago-',
+    },
+    {
+      quote:
+        'Esse works really well, seamless, and fast for getting the gist when time is short.',
+      context: 'Esse App Store review, Sharif El Komi',
+    },
+    {
+      quote:
+        'Burn Before Reading is easy to install and fun to use, turning on-screen annoyances into relief.',
+      context: 'Burn Before Reading Chrome Web Store review, Philip Gegan',
+    },
+    {
+      quote:
+        'Burn Before Reading feels simple, fun, and super satisfying after a day on the internet.',
+      context: 'Burn Before Reading Chrome Web Store review, Anna Kudinova',
+    },
+    {
+      quote:
+        'Rewords is clean, intuitive, and genuinely practical for taking control of what shows up online.',
+      context: 'Rewords Chrome Web Store review, Andrea Bassick',
+    },
+    {
+      quote:
+        'Rewords is the perfect extension for curating your web experience.',
+      context: 'Rewords Chrome Web Store review, Oleg Rosenfeld',
+    },
   ];
 
   const skills = [
