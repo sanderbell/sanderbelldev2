@@ -250,7 +250,7 @@ export default function LaunchpalLanding() {
 const css = `
   .lp-root {
     min-height: 100vh;
-    background: var(--lp-bg);
+    background: var(--lp-page-bg);
     color: var(--lp-fg);
     font-family: 'SF Mono', 'SFMono-Regular', ui-monospace, Menlo, Consolas, monospace;
   }
@@ -308,8 +308,8 @@ const css = `
   /* Button */
   .lp-btn {
     display: inline-block;
-    border: 1px solid var(--lp-btn-bg);
-    background: var(--lp-btn-bg);
+    border: 1px solid var(--lp-btn-border);
+    background: var(--lp-btn-gradient);
     color: var(--lp-btn-fg);
     font-family: inherit;
     font-size: 14px;
@@ -317,12 +317,14 @@ const css = `
     text-transform: uppercase;
     padding: 16px 36px;
     text-decoration: none;
-    transition: background 0.18s, color 0.18s, border-color 0.18s;
+    box-shadow: 0 14px 30px rgba(20, 86, 61, 0.14);
+    transition: background 0.18s, color 0.18s, border-color 0.18s, box-shadow 0.18s;
   }
   .lp-btn:hover {
-    background: var(--lp-btn-hover-bg);
+    background: var(--lp-btn-hover-gradient);
     color: var(--lp-btn-hover-fg);
-    border-color: var(--lp-btn-bg);
+    border-color: var(--lp-btn-border);
+    box-shadow: 0 16px 34px rgba(20, 86, 61, 0.20);
   }
 
   .lp-item-title {

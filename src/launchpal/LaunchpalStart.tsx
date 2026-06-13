@@ -216,7 +216,7 @@ export default function LaunchpalStart() {
 const css = `
   .lp-start {
     min-height: 100vh;
-    background: var(--lp-bg);
+    background: var(--lp-page-bg);
     color: var(--lp-fg);
     font-family: 'SF Mono', 'SFMono-Regular', ui-monospace, Menlo, Consolas, monospace;
   }
@@ -250,7 +250,7 @@ const css = `
   .lp-overline { font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--lp-fg-4); }
   .lp-body     { font-size: 16px; color: var(--lp-fg-3); line-height: 1.8; margin: 0; }
   .lp-caption  { font-size: 14px; color: var(--lp-fg-4); }
-  .lp-error    { font-size: 14px; color: #e03030; margin-bottom: 0.75rem; }
+  .lp-error    { font-size: 14px; color: var(--lp-red); margin-bottom: 0.75rem; }
   .lp-back-link  { font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--lp-fg-4); text-decoration: none; transition: color 0.15s; }
   .lp-back-link:hover { color: var(--lp-fg); }
   .lp-tos-link   { color: var(--lp-fg-2); text-decoration: underline; text-underline-offset: 3px; transition: color 0.15s; }
@@ -312,11 +312,11 @@ const css = `
   .lp-record-btn:hover:not(:disabled) { border-color: var(--lp-fg-3); color: var(--lp-fg); }
   .lp-record-btn:disabled { opacity: 0.4; cursor: not-allowed; }
   .lp-record-btn--active {
-    border-color: #e03030; color: #e03030;
+    border-color: var(--lp-red); color: var(--lp-red);
     animation: lpPulse 1.4s ease-in-out infinite;
   }
   .lp-record-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--lp-fg-4); flex-shrink: 0; }
-  .lp-record-dot--active { background: #e03030; }
+  .lp-record-dot--active { background: var(--lp-red); }
 
   /* Radio group */
   .lp-radio-group { display: flex; flex-direction: column; gap: 1rem; }
@@ -336,15 +336,17 @@ const css = `
   /* Submit */
   .lp-submit-area { border-top: 1px solid var(--lp-border); padding-top: 2rem; display: flex; flex-direction: column; }
   .lp-submit-btn {
-    width: 100%; border: 1px solid var(--lp-btn-bg); background: var(--lp-btn-bg);
+    width: 100%; border: 1px solid var(--lp-btn-border); background: var(--lp-btn-gradient);
     color: var(--lp-btn-fg); font-family: inherit;
     font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase;
-    padding: 1.125rem; cursor: pointer; transition: background 0.18s, color 0.18s, border-color 0.18s;
+    padding: 1.125rem; cursor: pointer; box-shadow: 0 14px 30px rgba(20, 86, 61, 0.14);
+    transition: background 0.18s, color 0.18s, border-color 0.18s, box-shadow 0.18s;
   }
   .lp-submit-btn:hover:not(:disabled) {
-    background: var(--lp-btn-hover-bg);
+    background: var(--lp-btn-hover-gradient);
     color: var(--lp-btn-hover-fg);
-    border-color: var(--lp-btn-bg);
+    border-color: var(--lp-btn-border);
+    box-shadow: 0 16px 34px rgba(20, 86, 61, 0.20);
   }
   .lp-submit-btn:disabled { opacity: 0.25; cursor: not-allowed; }
 `;

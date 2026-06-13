@@ -162,7 +162,7 @@ function Section({ n, title, children }: { n: string; title: string; children: R
 const css = `
   .lp-tos {
     min-height: 100vh;
-    background: var(--lp-bg);
+    background: var(--lp-page-bg);
     color: var(--lp-fg);
     font-family: 'SF Mono', 'SFMono-Regular', ui-monospace, Menlo, Consolas, monospace;
   }

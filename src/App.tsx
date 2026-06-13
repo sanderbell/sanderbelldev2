@@ -399,7 +399,7 @@ const css = `
   /* ── root ──────────────────────────────────────── */
   .portfolio-root {
     min-height: 100vh;
-    background: var(--lp-bg);
+    background: var(--lp-page-bg);
     color: var(--lp-fg);
     font-family: 'SF Mono', 'SFMono-Regular', ui-monospace, Menlo, Consolas, monospace;
   }
@@ -423,6 +423,17 @@ const css = `
     display: flex; align-items: center; justify-content: center;
     margin-bottom: 2rem;
     flex-shrink: 0;
+    box-shadow: inset 0 0 0 1px rgba(40, 122, 82, 0.10);
+  }
+  .p-photo-ring::after {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 34% 24%, rgba(248, 251, 243, 0.16), transparent 42%),
+      linear-gradient(135deg, rgba(8, 47, 34, 0.28), rgba(46, 134, 93, 0.34));
+    mix-blend-mode: color;
+    opacity: 0.42;
+    pointer-events: none;
   }
   .p-photo-img {
     width: 100%; height: 100%; object-fit: cover;
@@ -449,16 +460,18 @@ const css = `
   .p-ctas { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; }
   .p-btn-primary {
     display: inline-flex; align-items: center; gap: 0.5rem;
-    background: var(--lp-btn-bg); color: var(--lp-btn-fg);
-    border: 1px solid var(--lp-btn-bg);
+    background: var(--lp-btn-gradient); color: var(--lp-btn-fg);
+    border: 1px solid var(--lp-btn-border);
     font-family: inherit; font-size: 13px; letter-spacing: 0.1em;
     text-transform: uppercase; text-decoration: none;
     padding: 0.875rem 1.75rem; cursor: pointer;
-    transition: background 0.18s, color 0.18s, border-color 0.18s;
+    box-shadow: 0 14px 30px rgba(20, 86, 61, 0.14);
+    transition: background 0.18s, color 0.18s, border-color 0.18s, box-shadow 0.18s;
   }
   .p-btn-primary:hover {
-    background: var(--lp-btn-hover-bg); color: var(--lp-btn-hover-fg);
-    border-color: var(--lp-btn-bg);
+    background: var(--lp-btn-hover-gradient); color: var(--lp-btn-hover-fg);
+    border-color: var(--lp-btn-border);
+    box-shadow: 0 16px 34px rgba(20, 86, 61, 0.20);
   }
   .p-btn-secondary {
     display: inline-flex; align-items: center; gap: 0.5rem;
@@ -474,8 +487,8 @@ const css = `
   /* ── launchpal band ──────────────────────────────── */
   .lp-band {
     width: 100%;
-    background: var(--lp-fg);
-    color: var(--lp-bg);
+    background: var(--lp-inverse-bg);
+    color: var(--lp-inverse-fg);
     padding: 3.5rem 1.5rem;
   }
   .lp-band-inner {
@@ -485,7 +498,7 @@ const css = `
   }
   .lp-label {
     font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--lp-bg-alt); opacity: 0.5;
+    color: var(--lp-inverse-muted);
     margin-bottom: 0.6rem;
   }
   .lp-title { font-size: 3rem; font-weight: 700; line-height: 1; letter-spacing: -0.02em; }
@@ -500,8 +513,8 @@ const css = `
   }
   .lp-features {
     display: flex; flex-wrap: wrap; gap: 1.5rem;
-    font-size: 14px; opacity: 0.6;
-    border-top: 1px solid rgba(255,255,255,0.12);
+    font-size: 14px; opacity: 0.72;
+    border-top: 1px solid rgba(248,251,243,0.18);
     padding-top: 1.25rem; margin-bottom: 1.75rem;
   }
   .lp-feature { display: flex; align-items: center; gap: 0.5rem; }
@@ -510,8 +523,8 @@ const css = `
   .lp-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
   .lp-btn-primary {
     display: inline-flex; align-items: center; gap: 0.5rem;
-    background: var(--lp-bg); color: var(--lp-fg);
-    border: 1px solid var(--lp-bg);
+    background: var(--lp-inverse-fg); color: var(--lp-fg);
+    border: 1px solid var(--lp-inverse-fg);
     font-family: inherit; font-size: 13px; letter-spacing: 0.1em;
     text-transform: uppercase; text-decoration: none;
     padding: 0.875rem 1.75rem;
@@ -520,14 +533,14 @@ const css = `
   .lp-btn-primary:hover { opacity: 0.85; }
   .lp-btn-secondary {
     display: inline-flex; align-items: center; gap: 0.5rem;
-    background: transparent; color: var(--lp-bg);
-    border: 1px solid rgba(255,255,255,0.25);
+    background: transparent; color: var(--lp-inverse-fg);
+    border: 1px solid rgba(248,251,243,0.35);
     font-family: inherit; font-size: 13px; letter-spacing: 0.1em;
     text-transform: uppercase; text-decoration: none;
     padding: 0.875rem 1.75rem;
     transition: border-color 0.15s;
   }
-  .lp-btn-secondary:hover { border-color: rgba(255,255,255,0.7); }
+  .lp-btn-secondary:hover { border-color: rgba(248,251,243,0.78); }
 
   /* ── stats ───────────────────────────────────────── */
   .p-stats {
