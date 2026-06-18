@@ -5,17 +5,6 @@ import { Link } from 'react-router-dom';
 function App() {
   const work = [
     {
-      role: 'Technical Product Manager',
-      company: 'LivеТonguе · Rеlаtivity GmbH',
-      period: 'Nov 2025 – Jun 2026',
-      tag: 'AI Translation',
-      items: [
-        'Led a remote mobile pod of 1 UX/UI designer and 2 React Native engineers building a native client for real-time B2B audio translation.',
-        'Scoped the mobile implementation across ML/backend handoff, API contracts, streaming-caption behavior, and edge cases for unstable network conditions.',
-        'Worked with design and engineering on layout stability, throttled rendering, and staging-readiness criteria; MVP reached internal staging before resources shifted back to web enterprise sales.',
-      ],
-    },
-    {
       role: 'Founder & Product Architect',
       company: '100K31D',
       period: 'Dec 2024 – Present',
