@@ -70,7 +70,7 @@ function App() {
         </>,
         <>
           <a
-            href="https://rewords.app"
+            href="https://rewords.xyz"
             target="_blank"
             rel="noopener noreferrer"
             className="app-link"
@@ -79,27 +79,6 @@ function App() {
           </a>{' '}
           — Chrome vocabulary extension. 1,500+ users within months. Google
           Featured.
-        </>,
-        <>
-          <a
-            href="https://somany.ch"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="app-link"
-          >
-            So Many Characters
-          </a>
-          ,{' '}
-          <a
-            href="https://should.today"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="app-link"
-          >
-            Should Today
-          </a>{' '}
-          — client products in Vue.js and React. Idea → deployed in days, not
-          months.
         </>,
       ],
     },
