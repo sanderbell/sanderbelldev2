@@ -25,12 +25,6 @@ function App() {
           is sent.
         </>,
         <>
-          <span className="highlight">Sofa</span> — a hands-off GTM system that
-          scans public press-release feeds, verifies claims with a conservative
-          multi-model pipeline, and drafts outreach only when it finds a
-          confirmed hard error.
-        </>,
-        <>
           <a
             href="https://esse.today"
             target="_blank"
