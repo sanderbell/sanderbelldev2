@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom';
 function App() {
   const work = [
     {
-      role: 'Founder & Product Architect',
+      role: 'Co-Founder & Product Architect',
       company: '100K31D',
       period: 'Dec 2024 – Present',
-      tag: 'Independent',
+      tag: 'AI-native',
       items: [
         <>
           <a
@@ -20,8 +20,15 @@ function App() {
             Comms
           </a>{' '}
           — AI-powered pre-publication risk scanner for business communication.
-          Catches legal, cultural, factual, and reputational blind spots before
-          they become costly mistakes.
+          Four specialist AI reviewers — Legal Risk, Cultural Alignment, Live
+          Context, and Claim Verification — catch blind spots before a message
+          is sent.
+        </>,
+        <>
+          <span className="highlight">Sofa</span> — a hands-off GTM system that
+          scans public press-release feeds, verifies claims with a conservative
+          multi-model pipeline, and drafts outreach only when it finds a
+          confirmed hard error.
         </>,
         <>
           <a
@@ -102,19 +109,41 @@ function App() {
       period: 'Dec 2023 – Nov 2025',
       tag: '2M+ Users',
       items: [
-        'Owned architecture decisions and delivery for 40+ major features on a live app with 2M+ active users.',
-        'Translated business requirements into precise tech specs — reduced dev rework by ~15%.',
-        'Diagnosed drop-off points in the core user flow; implemented fixes that measurably improved session time and retention.',
+        'Shipped inside a 2M+ user language-learning app covering 60+ underserved languages — native-speaker audio, transliteration, pronunciation checks, streaks, and leaderboards.',
+        'Worked directly on rendering and data-fetching performance, balancing data freshness, caching, and perceived responsiveness across real-world devices and networks.',
+        'Took features end to end — pull requests, GitHub code review, release, and post-release monitoring in JIRA sprints; contributed in technical design as a peer engineer.',
       ],
     },
     {
-      role: 'Comms Director & Team Builder',
-      company: 'Media & Education',
-      period: '2008 – 2022',
-      tag: '15 yrs',
+      role: 'Product Manager — NLP Sentiment',
+      company: 'Critical Mention / Onclusive',
+      period: 'Jan 2021 – Nov 2023',
+      tag: 'B2B Media Intel',
       items: [
-        'Led cross-functional teams of 15+ across communications and product. Co-founded independent news outlets.',
-        'Built data-driven feedback loops: tracked reader retention, session depth, and distribution. Applied the same logic I now apply to product.',
+        'Recruited as a media/comms subject-matter expert, then took formal product ownership of the NLP sentiment module.',
+        'Ran structured interviews with communications pros to map crisis-response workflows; specified a domain-adapted sentiment lexicon, publication-influence scoring, and a coverage-velocity widget.',
+        'Shipped within the roadmap window — the module became an enterprise sales differentiator against Meltwater and Cision. Steered feature sunsetting and account retention through the STG/Onclusive acquisition.',
+      ],
+    },
+    {
+      role: 'Content Product Lead',
+      company: 'UCHI',
+      period: 'Feb 2018 – Jan 2021',
+      tag: 'Edtech',
+      items: [
+        'Led a cross-functional team of 10+ at Eastern Europe’s largest school-tech platform through the 2020 remote-learning surge.',
+        'Reframed content as a measurable product lever — A/B-tested copy, headlines, and push notifications for retention and conversion.',
+        'Found 65% of students dropped after the second screen; added interactive check-ins (+15% time-on-platform) and a drag-and-drop timeline that cut history-unit drop-off by 22%.',
+      ],
+    },
+    {
+      role: 'Media, Communications & Editorial',
+      company: 'Broadcast · Online · Civic',
+      period: '2008 – 2021',
+      tag: '13 yrs',
+      items: [
+        'Editor and anchor → co-founder and Editor-in-Chief of independent outlets; owned editorial standards, staffing, metrics, and the outlet’s survival.',
+        'Ran narrative and media strategy for civic campaigns under live attack — claim verification, crisis response, and reputational-risk judgment that later became product requirements.',
       ],
     },
   ];
@@ -192,21 +221,23 @@ function App() {
   ];
 
   const skills = [
+    'Technical Product Management',
     'Product Architecture',
+    'Multi-Agent AI Systems',
+    'LLM Workflow Design',
     'Behavioral Psychology',
     'React Native',
     '0→1 Launches',
     'System Design',
+    'Customer Discovery',
     'Psychology-Backed UX',
-    'Unit Economics',
+    'NLP / Media Intelligence',
     'GTM Strategy',
     'A/B Testing',
-    'ASO',
+    'API Contracts',
     'TypeScript',
-    'Mobile Architecture',
     'Scope Discipline',
     'Risk Modeling',
-    'AI Integration',
   ];
 
   const stats = [
@@ -237,12 +268,16 @@ function App() {
               <span className="p-photo-fallback">SB</span>
             </div>
 
-            <div className="p-overline">Product Architect</div>
+            <div className="p-overline">
+              Technical Product Manager · Product Architect
+            </div>
             <h1 className="p-name">Sander Bell</h1>
             <p className="p-bio">
-              I design systems, build products, and ship things that get used.
-              MSc Psychology · React Native · 15 years across platforms with
-              20M+ users.
+              A product person who deliberately became technical — I design and
+              ship products end to end, from architecture down to production
+              code. MSc Psychology · 15+ years from high-stakes media and B2B
+              media intelligence to a 2M+ user mobile app and AI-native
+              products.
             </p>
 
             <div className="p-ctas">
