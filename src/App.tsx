@@ -19,10 +19,9 @@ function App() {
           >
             Comms
           </a>{' '}
-          — AI-powered pre-publication risk scanner for business communication.
-          Four specialist AI reviewers — Legal Risk, Cultural Alignment, Live
-          Context, and Claim Verification — catch blind spots before a message
-          is sent.
+          — AI pre-publication risk scanner. Four reviewers — legal, cultural,
+          live-context, claim verification — catch blind spots before you hit
+          send.
         </>,
         <>
           <a
@@ -33,9 +32,8 @@ function App() {
           >
             Esse
           </a>{' '}
-          — AI summarizer iOS app. 10,000+ organic users, 7% freemium conversion
-          (industry avg: 2%). No paid acquisition. Behavioral onboarding
-          designed from scratch.
+          — AI summarizer iOS app. 10K+ organic users, 7% freemium conversion
+          (2% industry avg), zero paid acquisition.
         </>,
         <>
           <a
@@ -46,9 +44,8 @@ function App() {
           >
             Burn Before Reading
           </a>{' '}
-          — Chrome extension for self-destructing notes. Went viral on first
-          day, Google Featured on Chrome Web Store. First-day sales without a
-          launch strategy.
+          — Chrome extension for self-destructing notes. Viral on day one,
+          Google Featured.
         </>,
         <>
           <a
@@ -59,8 +56,7 @@ function App() {
           >
             Launchpal
           </a>{' '}
-          — productized sprint service turning non-technical ideas into working
-          digital products in 14 days.
+          — productized sprint: non-technical idea to working product in 14 days.
         </>,
         <>
           <a
@@ -71,8 +67,7 @@ function App() {
           >
             Rewords
           </a>{' '}
-          — Chrome vocabulary extension. 1,500+ users within months. Google
-          Featured.
+          — Chrome vocabulary extension. 1,500+ users, Google Featured.
         </>,
       ],
     },
@@ -82,9 +77,9 @@ function App() {
       period: 'Dec 2023 – Nov 2025',
       tag: '2M+ Users',
       items: [
-        'Shipped inside a 2M+ user language-learning app covering 60+ underserved languages — native-speaker audio, transliteration, pronunciation checks, streaks, and leaderboards.',
-        'Worked directly on rendering and data-fetching performance, balancing data freshness, caching, and perceived responsiveness across real-world devices and networks.',
-        'Took features end to end — pull requests, GitHub code review, release, and post-release monitoring in JIRA sprints; contributed in technical design as a peer engineer.',
+        'Shipped in a 2M+ user language app across 60+ languages — audio, transliteration, pronunciation, streaks, leaderboards.',
+        'Tuned rendering and data-fetching performance for real-world devices and networks.',
+        'Owned features end to end — PRs, code review, release, monitoring — as a peer engineer.',
       ],
     },
     {
@@ -93,9 +88,9 @@ function App() {
       period: 'Jan 2021 – Nov 2023',
       tag: 'B2B Media Intel',
       items: [
-        'Recruited as a media/comms subject-matter expert, then took formal product ownership of the NLP sentiment module.',
-        'Ran structured interviews with communications pros to map crisis-response workflows; specified a domain-adapted sentiment lexicon, publication-influence scoring, and a coverage-velocity widget.',
-        'Shipped within the roadmap window — the module became an enterprise sales differentiator against Meltwater and Cision. Steered feature sunsetting and account retention through the STG/Onclusive acquisition.',
+        'Joined as a media/comms SME, then owned the NLP sentiment module as PM.',
+        'Mapped crisis-response workflows in user interviews; specced a domain sentiment lexicon, publication-influence scoring, and a coverage-velocity widget.',
+        'Shipped on time — became a sales differentiator vs. Meltwater and Cision. Held accounts through the STG/Onclusive acquisition.',
       ],
     },
     {
@@ -104,9 +99,9 @@ function App() {
       period: 'Feb 2018 – Jan 2021',
       tag: 'Edtech',
       items: [
-        'Led a cross-functional team of 10+ at Eastern Europe’s largest school-tech platform through the 2020 remote-learning surge.',
-        'Reframed content as a measurable product lever — A/B-tested copy, headlines, and push notifications for retention and conversion.',
-        'Found 65% of students dropped after the second screen; added interactive check-ins (+15% time-on-platform) and a drag-and-drop timeline that cut history-unit drop-off by 22%.',
+        'Led a 10+ team at Eastern Europe’s largest school-tech platform through the 2020 remote-learning surge.',
+        'Turned content into a product lever — A/B-tested copy, headlines, and push for retention.',
+        'Lifted time-on-platform 15% with interactive check-ins; cut history-unit drop-off 22% with a drag-and-drop timeline.',
       ],
     },
     {
@@ -115,8 +110,8 @@ function App() {
       period: '2008 – 2021',
       tag: '13 yrs',
       items: [
-        'Editor and anchor → co-founder and Editor-in-Chief of independent outlets; owned editorial standards, staffing, metrics, and the outlet’s survival.',
-        'Ran narrative and media strategy for civic campaigns under live attack — claim verification, crisis response, and reputational-risk judgment that later became product requirements.',
+        'Editor and anchor → co-founder and Editor-in-Chief of independent outlets.',
+        'Ran narrative and crisis strategy for civic campaigns under live attack — the judgment that later became product requirements.',
       ],
     },
   ];
