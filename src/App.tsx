@@ -298,9 +298,7 @@ function App() {
               <span className="p-photo-fallback">SB</span>
             </div>
 
-            <div className="p-overline">
-              Technical Product Manager · Product Architect
-            </div>
+            <div className="p-overline">Product Builder</div>
             <h1 className="p-name">Sander Bell</h1>
             <p className="p-bio">
               A product person who deliberately became technical — I design
@@ -397,9 +395,7 @@ function App() {
           {/* Contact */}
           <div className="p-block p-contact-block">
             <div className="p-section-label">Contact</div>
-            <p className="p-contact-note">
-              Open to Technical PM and Product Architect roles.
-            </p>
+            <p className="p-contact-note">Open to Product Builder roles.</p>
             <div className="p-contact-links">
               <a
                 href="mailto:thesanderbell@gmail.com"
