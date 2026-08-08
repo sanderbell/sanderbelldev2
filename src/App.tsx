@@ -1,7 +1,17 @@
-import { Github, Linkedin, Mail } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Download, Github, Linkedin, Mail } from 'lucide-react';
 
 /* ── main ─────────────────────────────────────────── */
+function appLink(href: string, label: string, rest: string) {
+  return (
+    <>
+      <a href={href} target="_blank" rel="noopener noreferrer" className="app-link">
+        {label}
+      </a>{' '}
+      — {rest}
+    </>
+  );
+}
+
 function App() {
   const work = [
     {
@@ -10,65 +20,61 @@ function App() {
       period: 'Dec 2024 – Present',
       tag: 'AI-native',
       items: [
-        <>
-          <a
-            href="https://comms.at"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="app-link"
-          >
-            Comms
-          </a>{' '}
-          — AI pre-publication risk scanner. Four reviewers — legal, cultural,
-          live-context, claim verification — catch blind spots before you hit
-          send.
-        </>,
-        <>
-          <a
-            href="https://esse.today"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="app-link"
-          >
-            Esse
-          </a>{' '}
-          — AI summarizer iOS app. 10K+ organic users, 7% freemium conversion
-          (2% industry avg), zero paid acquisition.
-        </>,
-        <>
-          <a
-            href="https://bbr.today"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="app-link"
-          >
-            Burn Before Reading
-          </a>{' '}
-          — Chrome extension for self-destructing notes. Viral on day one,
-          Google Featured.
-        </>,
-        <>
-          <a
-            href="/launchpal"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="app-link"
-          >
-            Launchpal
-          </a>{' '}
-          — productized sprint: non-technical idea to working product in 14 days.
-        </>,
-        <>
-          <a
-            href="https://rewords.xyz"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="app-link"
-          >
-            Rewords
-          </a>{' '}
-          — Chrome vocabulary extension. 1,500+ users, Google Featured.
-        </>,
+        appLink(
+          'https://comms.at',
+          'Comms',
+          'AI pre-publication risk scanner. Four reviewers — legal, cultural, live-context, claim verification — catch blind spots before you hit send.',
+        ),
+        appLink(
+          'https://esse.today',
+          'Esse',
+          'AI summarizer iOS app. 10K+ organic users, 7% freemium conversion (2% industry avg), zero paid acquisition.',
+        ),
+        appLink(
+          'https://100k31d.co/orbforcodex/',
+          'Orb for Codex',
+          'macOS menu-bar object showing remaining Codex usage at a glance.',
+        ),
+        appLink(
+          'https://100k31d.co/bloomforclaude/',
+          'Bloom for Claude',
+          'The same quiet idea for Claude, as a flower above your windows.',
+        ),
+        appLink(
+          'https://100k31d.co/shift-rsvp/',
+          'Shift RSVP',
+          'Browser extension that speed-reads selected text one word at a time.',
+        ),
+        appLink(
+          'https://bbr.today',
+          'Burn Before Reading',
+          'Chrome extension for self-destructing notes. Viral on day one, Google Featured.',
+        ),
+        appLink(
+          'https://rewords.xyz',
+          'Rewords',
+          'Chrome vocabulary extension. 1,500+ users, Google Featured.',
+        ),
+        appLink(
+          'https://100k31d.co/oaat/',
+          'One at a Time',
+          'iOS app for reflective questions and deliberate typing practice.',
+        ),
+        appLink(
+          'https://100k31d.co/vpnstatus/',
+          'VPN Status',
+          'macOS menu-bar monitor that shows whether your VPN is on.',
+        ),
+        appLink(
+          'https://100k31d.co/mono/',
+          'mono',
+          'Browser extension for dark mode and grayscale on Google Docs and Sheets.',
+        ),
+        appLink(
+          'https://100k31d.co/numb/',
+          'Numb',
+          'macOS tool for calm, predictable pauses on keyboard and pointer input.',
+        ),
       ],
     },
     {
@@ -107,8 +113,8 @@ function App() {
     {
       role: 'Media, Communications & Editorial',
       company: 'Broadcast · Online · Civic',
-      period: '2008 – 2021',
-      tag: '13 yrs',
+      period: '2008 – 2018',
+      tag: '10 yrs',
       items: [
         'Editor and anchor → co-founder and Editor-in-Chief of independent outlets.',
         'Ran narrative and crisis strategy for civic campaigns under live attack — the judgment that later became product requirements.',
@@ -249,9 +255,13 @@ function App() {
             </p>
 
             <div className="p-ctas">
-              <Link to="/launchpal" className="p-btn-primary">
-                Launchpal — I'll build your product in 14 days
-              </Link>
+              <a
+                href="/Sander-Bell-CV.pdf"
+                download
+                className="p-btn-primary"
+              >
+                <Download size={14} /> Download CV
+              </a>
               <a
                 href="mailto:thesanderbell@gmail.com"
                 className="p-btn-secondary"
@@ -348,11 +358,8 @@ function App() {
           <div className="p-block p-contact-block">
             <div className="p-section-label">Contact</div>
             <p className="p-contact-note">
-              For a sprint engagement, use{' '}
-              <Link to="/launchpal/start" className="p-inline-link">
-                Launchpal
-              </Link>
-              . For everything else — say hello.
+              Open to Technical PM and Product Architect roles — say hello, or
+              grab the CV.
             </p>
             <div className="p-contact-links">
               <a
@@ -360,6 +367,13 @@ function App() {
                 className="p-contact-link"
               >
                 <Mail size={14} /> thesanderbell@gmail.com
+              </a>
+              <a
+                href="/Sander-Bell-CV.pdf"
+                download
+                className="p-contact-link"
+              >
+                <Download size={14} /> Download CV
               </a>
               <a
                 href="https://linkedin.com/in/sanderbell"
@@ -415,16 +429,16 @@ const css = `
     display: flex; align-items: center; justify-content: center;
     margin-bottom: 2rem;
     flex-shrink: 0;
-    box-shadow: inset 0 0 0 1px rgba(40, 122, 82, 0.10);
+    box-shadow: inset 0 0 0 1px rgba(60, 70, 62, 0.12);
   }
   .p-photo-ring::after {
     content: '';
     position: absolute; inset: 0;
     background:
-      radial-gradient(circle at 34% 24%, rgba(248, 251, 243, 0.16), transparent 42%),
-      linear-gradient(135deg, rgba(8, 47, 34, 0.28), rgba(46, 134, 93, 0.34));
+      radial-gradient(circle at 34% 24%, rgba(250, 250, 248, 0.16), transparent 42%),
+      linear-gradient(135deg, rgba(20, 22, 20, 0.24), rgba(60, 70, 62, 0.28));
     mix-blend-mode: color;
-    opacity: 0.42;
+    opacity: 0.32;
     pointer-events: none;
   }
   .p-photo-img {
@@ -457,13 +471,13 @@ const css = `
     font-family: inherit; font-size: 13px; letter-spacing: 0.1em;
     text-transform: uppercase; text-decoration: none;
     padding: 0.875rem 1.75rem; cursor: pointer;
-    box-shadow: 0 14px 30px rgba(20, 86, 61, 0.14);
+    box-shadow: 0 14px 30px rgba(20, 22, 20, 0.14);
     transition: background 0.18s, color 0.18s, border-color 0.18s, box-shadow 0.18s;
   }
   .p-btn-primary:hover {
     background: var(--lp-btn-hover-gradient); color: var(--lp-btn-hover-fg);
     border-color: var(--lp-btn-border);
-    box-shadow: 0 16px 34px rgba(20, 86, 61, 0.20);
+    box-shadow: 0 16px 34px rgba(20, 22, 20, 0.20);
   }
   .p-btn-secondary {
     display: inline-flex; align-items: center; gap: 0.5rem;
@@ -475,64 +489,6 @@ const css = `
     transition: border-color 0.15s, color 0.15s;
   }
   .p-btn-secondary:hover { border-color: var(--lp-fg-3); color: var(--lp-fg); }
-
-  /* ── launchpal band ──────────────────────────────── */
-  .lp-band {
-    width: 100%;
-    background: var(--lp-inverse-bg);
-    color: var(--lp-inverse-fg);
-    padding: 3.5rem 1.5rem;
-  }
-  .lp-band-inner {
-    display: flex; flex-wrap: wrap;
-    align-items: flex-start; justify-content: space-between;
-    gap: 1.5rem; margin-bottom: 1.5rem;
-  }
-  .lp-label {
-    font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--lp-inverse-muted);
-    margin-bottom: 0.6rem;
-  }
-  .lp-title { font-size: 3rem; font-weight: 700; line-height: 1; letter-spacing: -0.02em; }
-  .lp-sub   { font-size: 15px; opacity: 0.5; margin-top: 0.4rem; }
-  .lp-price-col { text-align: right; flex-shrink: 0; }
-  .lp-price { font-size: 3rem; font-weight: 700; line-height: 1; }
-  .lp-price-note { font-size: 14px; opacity: 0.5; margin-top: 0.4rem; }
-
-  .lp-desc {
-    font-size: 16px; line-height: 1.8; opacity: 0.7;
-    max-width: 36rem; margin-bottom: 1.5rem;
-  }
-  .lp-features {
-    display: flex; flex-wrap: wrap; gap: 1.5rem;
-    font-size: 14px; opacity: 0.72;
-    border-top: 1px solid rgba(248,251,243,0.18);
-    padding-top: 1.25rem; margin-bottom: 1.75rem;
-  }
-  .lp-feature { display: flex; align-items: center; gap: 0.5rem; }
-  .lp-check   { opacity: 1; }
-
-  .lp-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
-  .lp-btn-primary {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    background: var(--lp-inverse-fg); color: var(--lp-fg);
-    border: 1px solid var(--lp-inverse-fg);
-    font-family: inherit; font-size: 13px; letter-spacing: 0.1em;
-    text-transform: uppercase; text-decoration: none;
-    padding: 0.875rem 1.75rem;
-    transition: opacity 0.15s;
-  }
-  .lp-btn-primary:hover { opacity: 0.85; }
-  .lp-btn-secondary {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    background: transparent; color: var(--lp-inverse-fg);
-    border: 1px solid rgba(248,251,243,0.35);
-    font-family: inherit; font-size: 13px; letter-spacing: 0.1em;
-    text-transform: uppercase; text-decoration: none;
-    padding: 0.875rem 1.75rem;
-    transition: border-color 0.15s;
-  }
-  .lp-btn-secondary:hover { border-color: rgba(248,251,243,0.78); }
 
   /* ── stats ───────────────────────────────────────── */
   .p-stats {
