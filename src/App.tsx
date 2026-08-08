@@ -1,4 +1,5 @@
-import { Download, Github, Linkedin, Mail } from 'lucide-react';
+import { useState, type ReactNode } from 'react';
+import { ChevronDown, Download, Github, Linkedin, Mail } from 'lucide-react';
 
 /* ── main ─────────────────────────────────────────── */
 function appLink(href: string, label: string, rest: string) {
@@ -9,6 +10,55 @@ function appLink(href: string, label: string, rest: string) {
       </a>{' '}
       — {rest}
     </>
+  );
+}
+
+function WorkCard({
+  role,
+  company,
+  period,
+  tag,
+  items,
+  moreItems,
+}: {
+  role: string;
+  company: string;
+  period: string;
+  tag: string;
+  items: ReactNode[];
+  moreItems: ReactNode[];
+}) {
+  const [expanded, setExpanded] = useState(false);
+
+  return (
+    <div className="p-card">
+      <div className="p-card-head">
+        <div>
+          <div className="p-card-role">{role}</div>
+          <div className="p-card-company">
+            {company} · {period}
+          </div>
+        </div>
+        <span className="p-tag">{tag}</span>
+      </div>
+      <ul className="p-card-list">
+        {items.map((item, i) => (
+          <li key={i}>{item}</li>
+        ))}
+        {expanded && moreItems.map((item, i) => <li key={i}>{item}</li>)}
+      </ul>
+      {moreItems.length > 0 && (
+        <button
+          type="button"
+          className="p-card-toggle"
+          onClick={() => setExpanded(v => !v)}
+          aria-expanded={expanded}
+        >
+          <ChevronDown size={13} className={expanded ? 'p-chevron-up' : ''} />
+          {expanded ? 'Show fewer' : `${moreItems.length} more projects`}
+        </button>
+      )}
+    </div>
   );
 }
 
@@ -23,37 +73,39 @@ function App() {
         appLink(
           'https://comms.at',
           'Comms',
-          'AI pre-publication risk scanner. Four reviewers — legal, cultural, live-context, claim verification — catch blind spots before you hit send.',
+          'AI pre-publication risk scanner — legal, cultural, context, and claim checks before you hit send.',
         ),
         appLink(
           'https://esse.today',
           'Esse',
-          'AI summarizer iOS app. 10K+ organic users, 7% freemium conversion (2% industry avg), zero paid acquisition.',
+          'AI summarizer iOS app. 10K+ organic users, 7% freemium conversion, zero paid acquisition.',
         ),
+      ],
+      moreItems: [
         appLink(
           'https://100k31d.co/orbforcodex/',
           'Orb for Codex',
-          'macOS menu-bar object showing remaining Codex usage at a glance.',
+          'macOS menu-bar Codex usage at a glance.',
         ),
         appLink(
           'https://100k31d.co/bloomforclaude/',
           'Bloom for Claude',
-          'The same quiet idea for Claude, as a flower above your windows.',
+          'The same idea for Claude, as a flower above your windows.',
         ),
         appLink(
           'https://100k31d.co/shift-rsvp/',
           'Shift RSVP',
-          'Browser extension that speed-reads selected text one word at a time.',
+          'Speed-reads selected text, one word at a time.',
         ),
         appLink(
           'https://bbr.today',
           'Burn Before Reading',
-          'Chrome extension for self-destructing notes. Viral on day one, Google Featured.',
+          'Self-destructing notes. Viral on day one, Google Featured.',
         ),
         appLink(
           'https://rewords.xyz',
           'Rewords',
-          'Chrome vocabulary extension. 1,500+ users, Google Featured.',
+          'Vocabulary extension. 1,500+ users, Google Featured.',
         ),
         appLink(
           'https://100k31d.co/oaat/',
@@ -63,17 +115,17 @@ function App() {
         appLink(
           'https://100k31d.co/vpnstatus/',
           'VPN Status',
-          'macOS menu-bar monitor that shows whether your VPN is on.',
+          'macOS menu-bar VPN monitor.',
         ),
         appLink(
           'https://100k31d.co/mono/',
           'mono',
-          'Browser extension for dark mode and grayscale on Google Docs and Sheets.',
+          'Dark mode and grayscale for Google Docs and Sheets.',
         ),
         appLink(
           'https://100k31d.co/numb/',
           'Numb',
-          'macOS tool for calm, predictable pauses on keyboard and pointer input.',
+          'Calm, predictable pauses for keyboard and pointer input.',
         ),
       ],
     },
@@ -83,10 +135,11 @@ function App() {
       period: 'Dec 2023 – Nov 2025',
       tag: '2M+ Users',
       items: [
-        'Shipped in a 2M+ user language app across 60+ languages — audio, transliteration, pronunciation, streaks, leaderboards.',
-        'Tuned rendering and data-fetching performance for real-world devices and networks.',
+        'Shipped in a 2M+ user language app, 60+ languages — audio, transliteration, pronunciation, streaks.',
+        'Tuned rendering and data-fetching performance for real-world devices.',
         'Owned features end to end — PRs, code review, release, monitoring — as a peer engineer.',
       ],
+      moreItems: [],
     },
     {
       role: 'Product Manager — NLP Sentiment',
@@ -95,9 +148,10 @@ function App() {
       tag: 'B2B Media Intel',
       items: [
         'Joined as a media/comms SME, then owned the NLP sentiment module as PM.',
-        'Mapped crisis-response workflows in user interviews; specced a domain sentiment lexicon, publication-influence scoring, and a coverage-velocity widget.',
+        'Mapped crisis-response workflows in user interviews; specced a sentiment lexicon, influence scoring, and a coverage-velocity widget.',
         'Shipped on time — became a sales differentiator vs. Meltwater and Cision. Held accounts through the STG/Onclusive acquisition.',
       ],
+      moreItems: [],
     },
     {
       role: 'Content Product Lead',
@@ -109,6 +163,7 @@ function App() {
         'Turned content into a product lever — A/B-tested copy, headlines, and push for retention.',
         'Lifted time-on-platform 15% with interactive check-ins; cut history-unit drop-off 22% with a drag-and-drop timeline.',
       ],
+      moreItems: [],
     },
     {
       role: 'Media, Communications & Editorial',
@@ -119,25 +174,26 @@ function App() {
         'Editor and anchor → co-founder and Editor-in-Chief of independent outlets.',
         'Ran narrative and crisis strategy for civic campaigns under live attack — the judgment that later became product requirements.',
       ],
+      moreItems: [],
     },
   ];
 
   const principles = [
     {
       title: 'Psychology is the product',
-      body: "MSc in Psychology isn't decoration. I design habit loops from behavioral theory — reducing friction, improving onboarding, making UX that retains. The 7% conversion rate on Esse exists because of this.",
+      body: "MSc Psychology isn't decoration — I design habit loops from behavioral theory to cut friction and lift retention. It's why Esse converts at 7%.",
     },
     {
       title: 'I build what I spec',
-      body: "I don't hand off to someone else. I write the blueprint and I write the code. That closes the gap between what was designed and what ships — permanently.",
+      body: "I don't hand off. I write the blueprint and the code — closing the gap between what's designed and what ships.",
     },
     {
       title: 'Scope kills more products than bugs',
-      body: "The most valuable thing in a sprint isn't the code. It's the decision of what not to build. I've killed more bad features before they shipped than I can count.",
+      body: "The most valuable call in a sprint is what not to build. I've killed more bad features than I can count.",
     },
     {
       title: 'Outcomes over output',
-      body: 'Tickets closed and lines of code are vanity metrics. I measure by conversion rates, retention curves, and whether the thing actually gets used.',
+      body: 'Tickets closed and lines of code are vanity metrics. I measure conversion, retention, and whether it gets used.',
     },
   ];
 
@@ -247,11 +303,10 @@ function App() {
             </div>
             <h1 className="p-name">Sander Bell</h1>
             <p className="p-bio">
-              A product person who deliberately became technical — I design and
-              ship products end to end, from architecture down to production
-              code. MSc Psychology · 15+ years from high-stakes media and B2B
-              media intelligence to a 2M+ user mobile app and AI-native
-              products.
+              A product person who deliberately became technical — I design
+              and ship end to end, architecture to production code. MSc
+              Psychology · 15+ years, from media and B2B intelligence to a
+              2M+ user app and AI-native products.
             </p>
 
             <div className="p-ctas">
@@ -290,23 +345,8 @@ function App() {
           <div className="p-block">
             <div className="p-section-label">Work history</div>
             <div className="p-cards">
-              {work.map(({ role, company, period, tag, items }) => (
-                <div key={role} className="p-card">
-                  <div className="p-card-head">
-                    <div>
-                      <div className="p-card-role">{role}</div>
-                      <div className="p-card-company">
-                        {company} · {period}
-                      </div>
-                    </div>
-                    <span className="p-tag">{tag}</span>
-                  </div>
-                  <ul className="p-card-list">
-                    {items.map((item, i) => (
-                      <li key={i}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
+              {work.map(w => (
+                <WorkCard key={w.role} {...w} />
               ))}
             </div>
           </div>
@@ -358,8 +398,7 @@ function App() {
           <div className="p-block p-contact-block">
             <div className="p-section-label">Contact</div>
             <p className="p-contact-note">
-              Open to Technical PM and Product Architect roles — say hello, or
-              grab the CV.
+              Open to Technical PM and Product Architect roles.
             </p>
             <div className="p-contact-links">
               <a
@@ -546,6 +585,17 @@ const css = `
   }
   .p-card-list li::before { content: '→'; position: absolute; left: 0; color: var(--lp-fg-5); }
   .p-card-list strong { color: var(--lp-fg-2); font-weight: 500; }
+
+  .p-card-toggle {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    background: transparent; border: none; cursor: pointer;
+    font-family: inherit; font-size: 13px; color: var(--lp-fg-4);
+    padding: 0; margin-top: 1.25rem;
+    transition: color 0.15s;
+  }
+  .p-card-toggle:hover { color: var(--lp-fg-2); }
+  .p-card-toggle svg { transition: transform 0.15s; }
+  .p-card-toggle svg.p-chevron-up { transform: rotate(180deg); }
 
   .app-link { color: var(--lp-fg-2); text-decoration: underline; text-underline-offset: 3px; }
   .app-link:hover { color: var(--lp-fg); }
