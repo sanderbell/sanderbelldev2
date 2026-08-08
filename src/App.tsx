@@ -78,7 +78,7 @@ function App() {
         appLink(
           'https://esse.today',
           'Esse',
-          'AI summarizer iOS app. 10K+ organic users, 7% freemium conversion, zero paid acquisition.',
+          'AI summarizer app, iOS and Android. 10K+ organic users, 7% freemium conversion, zero paid acquisition.',
         ),
       ],
       moreItems: [
@@ -100,12 +100,12 @@ function App() {
         appLink(
           'https://bbr.today',
           'Burn Before Reading',
-          'Self-destructing notes. Viral on day one, Google Featured.',
+          'Shift-click anything on a page to burn it away. Chrome extension, viral on day one, Google Featured.',
         ),
         appLink(
           'https://rewords.xyz',
           'Rewords',
-          'Vocabulary extension. 1,500+ users, Google Featured.',
+          'Swaps words and phrases as pages load. Chrome extension, 1,500+ users, Google Featured.',
         ),
         appLink(
           'https://100k31d.co/oaat/',
