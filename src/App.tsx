@@ -763,6 +763,7 @@ const css = `
   .p-form-row { display: flex; flex-wrap: wrap; gap: 0.75rem; }
   .p-form-row .p-form-input { flex: 1 1 12rem; }
   .p-form-input {
+    box-sizing: border-box;
     font-family: inherit; font-size: 14px; color: var(--lp-fg);
     background: var(--lp-bg); border: 1px solid var(--lp-border-2);
     padding: 0.75rem 1rem; width: 100%;
