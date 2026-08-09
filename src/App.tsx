@@ -301,10 +301,17 @@ function App() {
             <div className="p-overline">Product Builder</div>
             <h1 className="p-name">Sander Bell</h1>
             <p className="p-bio">
-              A product person who deliberately became technical — I design
-              and ship end to end, architecture to production code. MSc
-              Psychology · 15+ years, from media and B2B intelligence to a
-              2M+ user app and AI-native products.
+              A product person gone technical — I run{' '}
+              <a
+                href="https://100k31d.co"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="app-link"
+              >
+                100k31d.co
+              </a>
+              , shipping end to end, architecture to code. MSc Psychology ·
+              15+ years, from media to a 2M+ user app to AI-native products.
             </p>
 
             <div className="p-ctas">
