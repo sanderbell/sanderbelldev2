@@ -79,7 +79,7 @@ function ContactForm() {
       <textarea
         placeholder="Message"
         required
-        rows={3}
+        rows={5}
         value={message}
         onChange={e => setMessage(e.target.value)}
         className="p-form-input p-form-textarea"
@@ -771,7 +771,7 @@ const css = `
   }
   .p-form-input::placeholder { color: var(--lp-fg-4); }
   .p-form-input:focus { outline: none; border-color: var(--lp-fg-3); }
-  .p-form-textarea { resize: vertical; min-height: 4.5rem; }
+  .p-form-textarea { resize: vertical; min-height: 7rem; }
   .p-form .p-btn-primary { align-self: flex-start; border: none; }
   .p-form .p-btn-primary:disabled { opacity: 0.6; cursor: default; }
   .p-hp-field { position: absolute; left: -9999px; top: -9999px; }
