@@ -791,14 +791,25 @@ const css = `
 
   /* ── contact modal ───────────────────────────────── */
   .p-modal-backdrop {
-    position: fixed; inset: 0; background: rgba(10, 10, 10, 0.55);
+    position: fixed; inset: 0; background: rgba(10, 10, 10, 0.4);
+    backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
     display: flex; align-items: center; justify-content: center;
     padding: 1.5rem; z-index: 50;
   }
   .p-modal {
-    position: relative; width: 100%; max-width: 26rem;
-    background: var(--lp-bg-alt); border: 1px solid var(--lp-border-2);
-    padding: 1.75rem; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    position: relative; width: 100%; max-width: 26rem; overflow: hidden;
+    background: var(--lp-glass-bg);
+    backdrop-filter: blur(28px) saturate(180%);
+    -webkit-backdrop-filter: blur(28px) saturate(180%);
+    border: 1px solid var(--lp-glass-border);
+    padding: 1.75rem;
+    box-shadow:
+      0 20px 60px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 var(--lp-glass-highlight);
+  }
+  .p-modal::before {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(140% 100% at 12% -10%, var(--lp-glass-sheen), transparent 55%);
   }
   .p-modal .p-form { max-width: none; margin-bottom: 0; gap: 0.6rem; }
   .p-modal-title { font-size: 18px; font-weight: 700; color: var(--lp-fg); margin-bottom: 1rem; }

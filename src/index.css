@@ -18,6 +18,10 @@
   --lp-btn-gradient: linear-gradient(135deg, #1a1b1a 0%, #262924 52%, #333a2f 100%);
   --lp-btn-hover-gradient: linear-gradient(135deg, #262723 0%, #33362c 54%, #454e3c 100%);
   --lp-btn-hover-fg: #fafaf8;
+  --lp-glass-bg: rgba(250, 250, 248, 0.72);
+  --lp-glass-border: rgba(20, 22, 20, 0.16);
+  --lp-glass-highlight: rgba(255, 255, 255, 0.85);
+  --lp-glass-sheen: rgba(255, 255, 255, 0.55);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -40,6 +44,10 @@
     --lp-btn-gradient: linear-gradient(135deg, #edefe6 0%, #d4d8c9 54%, #b7c0a9 100%);
     --lp-btn-hover-gradient: linear-gradient(135deg, #f7f8f2 0%, #dfe3d5 55%, #c4cdb6 100%);
     --lp-btn-hover-fg: #14150f;
+    --lp-glass-bg: rgba(28, 30, 28, 0.45);
+    --lp-glass-border: rgba(255, 255, 255, 0.14);
+    --lp-glass-highlight: rgba(255, 255, 255, 0.16);
+    --lp-glass-sheen: rgba(255, 255, 255, 0.08);
   }
 }
 
