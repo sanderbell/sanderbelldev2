@@ -79,7 +79,7 @@ function ContactForm() {
       <textarea
         placeholder="Message"
         required
-        rows={5}
+        rows={3}
         value={message}
         onChange={e => setMessage(e.target.value)}
         className="p-form-input p-form-textarea"
@@ -770,7 +770,7 @@ const css = `
   }
   .p-form-input::placeholder { color: var(--lp-fg-4); }
   .p-form-input:focus { outline: none; border-color: var(--lp-fg-3); }
-  .p-form-textarea { resize: vertical; min-height: 7rem; }
+  .p-form-textarea { resize: vertical; min-height: 4.5rem; }
   .p-form .p-btn-primary { align-self: flex-start; border: none; }
   .p-form .p-btn-primary:disabled { opacity: 0.6; cursor: default; }
   .p-hp-field { position: absolute; left: -9999px; top: -9999px; }
@@ -795,12 +795,12 @@ const css = `
     padding: 1.5rem; z-index: 50;
   }
   .p-modal {
-    position: relative; width: 100%; max-width: 28rem;
+    position: relative; width: 100%; max-width: 26rem;
     background: var(--lp-bg-alt); border: 1px solid var(--lp-border-2);
-    padding: 2rem; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    padding: 1.75rem; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   }
-  .p-modal .p-form { max-width: none; margin-bottom: 0; }
-  .p-modal-title { font-size: 20px; font-weight: 700; color: var(--lp-fg); margin-bottom: 1.25rem; }
+  .p-modal .p-form { max-width: none; margin-bottom: 0; gap: 0.6rem; }
+  .p-modal-title { font-size: 18px; font-weight: 700; color: var(--lp-fg); margin-bottom: 1rem; }
   .p-modal-close {
     position: absolute; top: 1rem; right: 1rem;
     display: inline-flex; background: transparent; border: none; cursor: pointer;
