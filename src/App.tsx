@@ -1,5 +1,5 @@
-import { useState, type ReactNode } from 'react';
-import { ChevronDown, Download, Github, Linkedin, Mail } from 'lucide-react';
+import { useEffect, useState, type FormEvent, type ReactNode } from 'react';
+import { ChevronDown, Download, Github, Linkedin, Mail, X } from 'lucide-react';
 
 /* ── main ─────────────────────────────────────────── */
 function appLink(href: string, label: string, rest: string) {
@@ -10,6 +10,120 @@ function appLink(href: string, label: string, rest: string) {
       </a>{' '}
       — {rest}
     </>
+  );
+}
+
+function encodeFormData(data: Record<string, string>) {
+  return Object.keys(data)
+    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+    .join('&');
+}
+
+function ContactForm() {
+  const [email, setEmail] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
+  const [botField, setBotField] = useState('');
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    if (botField) return;
+    setStatus('sending');
+    try {
+      const res = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encodeFormData({ 'form-name': 'contact', email, subject, message }),
+      });
+      if (!res.ok) throw new Error(String(res.status));
+      setStatus('sent');
+    } catch {
+      setStatus('error');
+    }
+  }
+
+  if (status === 'sent') {
+    return <p className="p-form-sent">Sent — I'll get back to you soon.</p>;
+  }
+
+  return (
+    <form name="contact" onSubmit={handleSubmit} className="p-form">
+      <label className="p-hp-field" aria-hidden="true">
+        Leave this field empty
+        <input
+          tabIndex={-1}
+          autoComplete="off"
+          value={botField}
+          onChange={e => setBotField(e.target.value)}
+        />
+      </label>
+      <div className="p-form-row">
+        <input
+          type="email"
+          placeholder="Your email"
+          required
+          value={email}
+          onChange={e => setEmail(e.target.value)}
+          className="p-form-input"
+        />
+        <input
+          type="text"
+          placeholder="Subject"
+          required
+          value={subject}
+          onChange={e => setSubject(e.target.value)}
+          className="p-form-input"
+        />
+      </div>
+      <textarea
+        placeholder="Message"
+        required
+        rows={5}
+        value={message}
+        onChange={e => setMessage(e.target.value)}
+        className="p-form-input p-form-textarea"
+      />
+      <button type="submit" className="p-btn-primary" disabled={status === 'sending'}>
+        {status === 'sending' ? 'Sending…' : 'Send message'}
+      </button>
+      {status === 'error' && (
+        <p className="p-form-error">
+          Something went wrong — email me directly instead.
+        </p>
+      )}
+    </form>
+  );
+}
+
+function ContactModal({ onClose }: { onClose: () => void }) {
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', onKey);
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', onKey);
+    };
+  }, [onClose]);
+
+  return (
+    <div className="p-modal-backdrop" onClick={onClose}>
+      <div className="p-modal" onClick={e => e.stopPropagation()}>
+        <button
+          type="button"
+          className="p-modal-close"
+          onClick={onClose}
+          aria-label="Close"
+        >
+          <X size={16} />
+        </button>
+        <div className="p-modal-title">Say hello</div>
+        <ContactForm />
+      </div>
+    </div>
   );
 }
 
@@ -277,9 +391,12 @@ function App() {
     { value: '4.9', label: 'App Store rating' },
   ];
 
+  const [contactOpen, setContactOpen] = useState(false);
+
   return (
     <div className="portfolio-root">
       <style>{css}</style>
+      {contactOpen && <ContactModal onClose={() => setContactOpen(false)} />}
 
       {/* ── HERO ─────────────────────────────────────── */}
       <div className="p-section">
@@ -322,12 +439,13 @@ function App() {
               >
                 <Download size={14} /> Download CV
               </a>
-              <a
-                href="mailto:thesanderbell@gmail.com"
+              <button
+                type="button"
+                onClick={() => setContactOpen(true)}
                 className="p-btn-secondary"
               >
                 <Mail size={14} /> Say hello
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -404,6 +522,13 @@ function App() {
             <div className="p-section-label">Contact</div>
             <p className="p-contact-note">Open to Product Builder roles.</p>
             <div className="p-contact-links">
+              <button
+                type="button"
+                onClick={() => setContactOpen(true)}
+                className="p-contact-link p-contact-link-btn"
+              >
+                <Mail size={14} /> Send a message
+              </button>
               <a
                 href="mailto:thesanderbell@gmail.com"
                 className="p-contact-link"
@@ -633,6 +758,24 @@ const css = `
   /* ── contact ─────────────────────────────────────── */
   .p-contact-block { padding-bottom: 1rem; }
   .p-contact-note { font-size: 15px; color: var(--lp-fg-4); margin-bottom: 1.25rem; line-height: 1.7; }
+
+  .p-form { display: flex; flex-direction: column; gap: 0.75rem; max-width: 32rem; margin-bottom: 1.75rem; }
+  .p-form-row { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+  .p-form-row .p-form-input { flex: 1 1 12rem; }
+  .p-form-input {
+    font-family: inherit; font-size: 14px; color: var(--lp-fg);
+    background: var(--lp-bg); border: 1px solid var(--lp-border-2);
+    padding: 0.75rem 1rem; width: 100%;
+    transition: border-color 0.15s;
+  }
+  .p-form-input::placeholder { color: var(--lp-fg-4); }
+  .p-form-input:focus { outline: none; border-color: var(--lp-fg-3); }
+  .p-form-textarea { resize: vertical; min-height: 7rem; }
+  .p-form .p-btn-primary { align-self: flex-start; border: none; }
+  .p-form .p-btn-primary:disabled { opacity: 0.6; cursor: default; }
+  .p-hp-field { position: absolute; left: -9999px; top: -9999px; }
+  .p-form-sent { font-size: 15px; color: var(--lp-fg-2); max-width: 32rem; margin-bottom: 1.75rem; }
+  .p-form-error { font-size: 13px; color: var(--lp-fg-4); margin: 0; }
   .p-inline-link { color: var(--lp-fg-2); text-decoration: underline; text-underline-offset: 3px; }
   .p-inline-link:hover { color: var(--lp-fg); }
   .p-contact-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
@@ -643,6 +786,28 @@ const css = `
     transition: border-color 0.15s, color 0.15s;
   }
   .p-contact-link:hover { border-color: var(--lp-border-2); color: var(--lp-fg); }
+  .p-contact-link-btn { background: transparent; font-family: inherit; cursor: pointer; }
+
+  /* ── contact modal ───────────────────────────────── */
+  .p-modal-backdrop {
+    position: fixed; inset: 0; background: rgba(10, 10, 10, 0.55);
+    display: flex; align-items: center; justify-content: center;
+    padding: 1.5rem; z-index: 50;
+  }
+  .p-modal {
+    position: relative; width: 100%; max-width: 28rem;
+    background: var(--lp-bg-alt); border: 1px solid var(--lp-border-2);
+    padding: 2rem; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  }
+  .p-modal .p-form { max-width: none; margin-bottom: 0; }
+  .p-modal-title { font-size: 20px; font-weight: 700; color: var(--lp-fg); margin-bottom: 1.25rem; }
+  .p-modal-close {
+    position: absolute; top: 1rem; right: 1rem;
+    display: inline-flex; background: transparent; border: none; cursor: pointer;
+    color: var(--lp-fg-4); padding: 0.25rem;
+    transition: color 0.15s;
+  }
+  .p-modal-close:hover { color: var(--lp-fg); }
 
   /* ── footer ──────────────────────────────────────── */
   .p-footer {

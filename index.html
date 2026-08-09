@@ -113,6 +113,14 @@
         style="display: none; visibility: hidden"
       ></iframe
     ></noscript>
+    <!-- Static form so Netlify's build-time bot can detect and register it.
+         The real, JS-rendered form in App.tsx posts to this same form-name. -->
+    <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="email" name="email" />
+      <input type="text" name="subject" />
+      <textarea name="message"></textarea>
+      <input type="text" name="bot-field" />
+    </form>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
