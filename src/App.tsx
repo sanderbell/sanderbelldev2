@@ -19,16 +19,24 @@ function encodeFormData(data: Record<string, string>) {
     .join('&');
 }
 
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 function ContactForm() {
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
   const [botField, setBotField] = useState('');
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+  const [emailError, setEmailError] = useState(false);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (botField) return;
+    if (!EMAIL_RE.test(email)) {
+      setEmailError(true);
+      return;
+    }
+    setEmailError(false);
     setStatus('sending');
     try {
       const res = await fetch('/', {
@@ -63,8 +71,12 @@ function ContactForm() {
           type="email"
           placeholder="Your email"
           required
+          pattern="[^\s@]+@[^\s@]+\.[^\s@]+"
           value={email}
-          onChange={e => setEmail(e.target.value)}
+          onChange={e => {
+            setEmail(e.target.value);
+            if (emailError) setEmailError(false);
+          }}
           className="p-form-input"
         />
         <input
@@ -76,6 +88,9 @@ function ContactForm() {
           className="p-form-input"
         />
       </div>
+      {emailError && (
+        <p className="p-form-error">Enter a real email address, like name@example.com.</p>
+      )}
       <textarea
         placeholder="Message"
         required
