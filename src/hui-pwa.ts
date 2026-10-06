@@ -1,4 +1,4 @@
-import {logout} from "@netlify/identity";
+import {getUser, logout} from "@netlify/identity";
 
 type InstallPrompt = Event & {prompt(): Promise<void>; userChoice: Promise<{outcome: string}>};
 let installPrompt: InstallPrompt | null = null;
@@ -53,3 +53,5 @@ if ("serviceWorker" in navigator && window.isSecureContext) {
   void navigator.serviceWorker.register("/hui/sw.js", {scope: "/hui/", updateViaCache: "none"}).catch(() => {});
 }
 renderInstall();
+// Rehydrate the SDK so its token renewal continues in the installed chat window.
+if (document.querySelector("#composer")) void getUser();
