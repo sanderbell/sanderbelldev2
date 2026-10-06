@@ -21,7 +21,14 @@ export default async (request: Request, context: Context) => {
   // Alternative Netlify origins/previews must never expose the private application.
   if (url.hostname !== "sanderbell.dev") return response("Not found", 404);
   if (url.pathname === "/hui") return response(null, 302, { Location: "/hui/" });
-  if (url.pathname === "/hui/login" || url.pathname === "/hui/login.js") return context.next();
+  if (url.pathname === "/hui/login" || url.pathname === "/hui/login.js") {
+    const result = await context.next();
+    const headers = new Headers(result.headers);
+    headers.set("Cache-Control", "no-store");
+    headers.set("X-Frame-Options", "DENY");
+    headers.set("Referrer-Policy", "no-referrer");
+    return new Response(result.body, { status: result.status, headers });
+  }
   if (!["GET", "POST"].includes(request.method)) return response("Method not allowed", 405);
   if (request.method === "POST" && request.headers.get("origin") !== url.origin) return response("Forbidden", 403);
   const token = cookie(request, "nf_jwt");
