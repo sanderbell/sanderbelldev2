@@ -5,10 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build && esbuild src/hui-login.ts --bundle --format=esm --outfile=dist/hui/login.js",
+    "build": "tsc -b && vite build && esbuild src/hui-login.ts --bundle --format=esm --outfile=dist/hui/login.js && esbuild src/hui-pwa.ts --bundle --format=esm --outfile=dist/hui/pwa.js",
     "lint": "eslint .",
     "preview": "vite preview",
-    "test:private": "node scripts/test-private-edge.mjs"
+    "test:private": "node scripts/test-private-edge.mjs && node scripts/test-hui-pwa.mjs"
   },
   "dependencies": {
     "@netlify/edge-functions": "^3.0.8",

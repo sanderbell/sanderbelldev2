@@ -31,11 +31,15 @@ export default async (request: Request, context: Context) => {
   if (url.hostname !== "sanderbell.dev") return response("Not found", 404);
   if (url.pathname === "/hui") return response(null, 302, { Location: "/hui/" });
   if (!["GET", "HEAD", "POST"].includes(request.method)) return response("Method not allowed", 405);
-  if (["/hui/login", "/hui/login.html", "/hui/login.js", "/hui/login.css"].includes(url.pathname)) {
+  // Only generic sign-in/install metadata is public; it contains no chat data or cloud credentials.
+  const publicFiles = new Set(["/hui/login", "/hui/login.html", "/hui/login.js", "/hui/login.css", "/hui/pwa.js", "/hui/pwa.css", "/hui/sw.js", "/hui/manifest.webmanifest", "/hui/icons/icon-192.png", "/hui/icons/icon-512.png", "/hui/icons/icon-maskable-512.png", "/hui/icons/apple-touch-icon.png"]);
+  if (publicFiles.has(url.pathname)) {
     if (request.method === "POST") return response("Method not allowed", 405);
     const result = await context.next();
     const headers = new Headers(result.headers);
     for (const [name, value] of Object.entries(privacyHeaders)) headers.set(name, value);
+    if (url.pathname === "/hui/manifest.webmanifest") headers.set("Content-Type", "application/manifest+json");
+    if (url.pathname === "/hui/sw.js") headers.set("Service-Worker-Allowed", "/hui/");
     return new Response(result.body, { status: result.status, headers });
   }
   if (request.method === "POST" && request.headers.get("origin") !== url.origin) return response("Forbidden", 403);

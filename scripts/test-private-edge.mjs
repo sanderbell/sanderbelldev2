@@ -24,13 +24,17 @@ try {
  assert.equal((await hui(request('/hui/api/health'),context)).status,401);
  assert.equal((await hui(request('/hui/api/chat',{method:'POST'}),context)).status,403);
  assert.equal((await hui(new Request('https://preview.netlify.app/hui/'),context)).status,404);
- for (const path of ['/hui/login','/hui/login.html','/hui/login.js','/hui/login.css']) {
+ for (const path of ['/hui/login','/hui/login.html','/hui/login.js','/hui/login.css','/hui/pwa.js','/hui/sw.js','/hui/manifest.webmanifest','/hui/icons/icon-192.png']) {
    const result=await hui(request(path),context);
    assert.equal(result.status,200);
    assert.match(result.headers.get('x-robots-tag'),/noindex/);
    assert.equal(result.headers.get('cache-control'),'no-store');
    assert.match(result.headers.get('content-security-policy'),/form-action 'self'/);
  }
+ assert.equal((await hui(request('/hui/sw.js'),context)).headers.get('service-worker-allowed'),'/hui/');
+ assert.equal((await hui(request('/hui/manifest.webmanifest'),context)).headers.get('content-type'),'application/manifest+json');
+ assert.equal((await hui(new Request('https://preview.netlify.app/hui/sw.js'),context)).status,404);
+ assert.equal((await hui(new Request('https://preview.netlify.app/hui/manifest.webmanifest'),context)).status,404);
  assert.equal((await hui(request('/hui/api/health',{headers:{Cookie:'nf_jwt=invalid'}}),context)).status,401);
  user={...user,email:'someone@example.test'};
  assert.equal((await hui(request('/hui/api/health',{headers:{Cookie:'nf_jwt=valid'}}),context)).status,401);
@@ -49,6 +53,8 @@ try {
  assert.equal(locked.status,200);assert.match(locked.headers.get('set-cookie'),/Max-Age=0/);
  assert.equal((await hui(request('/hui/lock',{method:'POST',headers:{Cookie:cookies,Origin:'https://evil.test'}}),context)).status,403);
  assert.equal((await hui(request('/hui/api/health',{headers:{Cookie:cookies.replace('hui_session=owner','hui_session=other')}}),context)).status,401);
+ assert.equal((await hui(request('/hui/api/health',{headers:{Cookie:cookies.replace(/hui_session=[^;]+/,'hui_session=owner-id.1.forged')}}),context)).status,401);
+ assert.equal((await hui(request('/hui/app.js',{method:'HEAD',headers:{Cookie:cookies}}),context)).status,200);
  assert.equal((await hui(request('/hui/secret.txt',{headers:{Cookie:cookies}}),context)).status,404);
  const staticResponse=await hui(request('/hui/app.js',{headers:{Cookie:cookies}}),context);
  assert.equal(staticResponse.status,200);assert.equal(staticResponse.headers.get('cache-control'),'no-store');

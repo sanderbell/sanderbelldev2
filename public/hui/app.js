@@ -957,6 +957,7 @@ async function generate(chat) {
 }
 
 function stop() { live?.controller.abort(); }
+document.addEventListener("hui:signout", stop);
 
 function send() {
   if (live) { stop(); return; }
@@ -1340,7 +1341,7 @@ async function checkHealth() {
   let next;
   try {
     const response = await fetch("/hui/api/health", { cache: "no-store" });
-    if (response.status === 401) { location.replace("/hui/login"); return; }
+    if (response.status === 401 || response.status === 403) { location.replace("/hui/login"); return; }
     const data = await response.json();
     if (data.ollama && data.model) next = { state: "ok", reason: "" };
     else next = { state: "down", reason: data.ollama ? "errModel" : "errOllama" };
@@ -1350,6 +1351,8 @@ async function checkHealth() {
   const changed = next.state !== health.state;
   health = next;
   renderStatus();
+  if (root.classList.contains("access-checking") && next.state !== "ok") { location.replace("/hui/"); return; }
+  root.classList.remove("access-checking");
   if (changed && thread.querySelector(".empty")) thread.querySelector(".empty").replaceWith(emptyEl());
 }
 
@@ -1430,6 +1433,15 @@ renderThread();
 resize();
 requestAnimationFrame(resize);
 window.addEventListener("resize", resize);
+function fitViewport() {
+  if (window.visualViewport?.scale === 1) root.style.setProperty("--app-height", `${window.visualViewport.height}px`);
+}
+window.visualViewport?.addEventListener("resize", fitViewport);
+fitViewport();
+window.addEventListener("pageshow", event => { if (event.persisted) { root.classList.add("access-checking"); checkHealth(); } });
+document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible") checkHealth(); });
+window.addEventListener("online", checkHealth);
+window.addEventListener("offline", checkHealth);
 updateSendState();
 if (hoverDevice) input.focus();
 checkHealth();

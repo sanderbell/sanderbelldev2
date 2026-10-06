@@ -1,17 +1,24 @@
 <!doctype html>
 <html lang="en" data-theme="dark" data-accent="lime">
   <head>
-    <meta name="robots" content="noindex,nofollow">
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#101013">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Huihui">
     <title>Huihui</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="/hui/manifest.webmanifest" crossorigin="use-credentials">
+    <link rel="apple-touch-icon" href="/hui/icons/apple-touch-icon.png">
     <script src="/hui/appearance.js"></script>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/hui/pwa.css">
   </head>
   <body>
-    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <svg width="0" height="0" class="icon-sprite" aria-hidden="true">
       <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
       <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></symbol>
       <symbol id="i-panel" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15" rx="3"/><path d="M9.5 4.5v15"/></symbol>
@@ -47,6 +54,7 @@
         </label>
         <nav class="chat-list" id="chat-list"></nav>
         <div class="sidebar-bottom">
+          <button class="side-btn" type="button" data-pwa-install><svg><use href="#i-export"/></svg><span>Install Huihui</span></button>
           <button class="side-btn" id="open-settings" type="button"><svg><use href="#i-gear"/></svg><span data-i18n="settings">Settings</span></button>
           <span class="status" id="status" data-state="checking"><i></i><span data-i18n="statusChecking">checking…</span></span>
         </div>
@@ -161,6 +169,7 @@
           <span class="label" data-i18n="data">Data</span>
           <p class="help" id="storage-info"></p>
           <button type="button" class="danger" id="wipe" data-i18n="wipe">Delete all chats</button>
+          <button type="button" class="btn ghost" data-pwa-signout>Sign out</button>
         </section>
       </form>
     </dialog>
@@ -168,5 +177,6 @@
     <dialog id="lightbox" class="lightbox"><img alt=""></dialog>
     <div class="toasts" id="toasts" aria-live="polite"></div>
     <script src="app.js"></script>
+    <script type="module" src="/hui/pwa.js"></script>
   </body>
 </html>

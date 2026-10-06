@@ -6,8 +6,14 @@
     <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
     <meta name="color-scheme" content="dark">
     <meta name="theme-color" content="#101013">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Huihui">
     <title>Sign in · Huihui</title>
     <link rel="stylesheet" href="/hui/login.css">
+    <link rel="stylesheet" href="/hui/pwa.css">
+    <link rel="manifest" href="/hui/manifest.webmanifest" crossorigin="use-credentials">
+    <link rel="apple-touch-icon" href="/hui/icons/apple-touch-icon.png">
   </head>
   <body>
     <main>
@@ -29,7 +35,9 @@
       </form>
       <p id="message" role="status" aria-live="polite"></p>
       <p class="footnote">Access is limited to the owner's verified account.</p>
+      <button class="secondary" type="button" data-pwa-install>Install Huihui</button>
     </main>
     <script type="module" src="/hui/login.js"></script>
+    <script type="module" src="/hui/pwa.js"></script>
   </body>
 </html>
