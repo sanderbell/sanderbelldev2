@@ -207,7 +207,8 @@ kbd {
 }
 .list-empty { padding: 24px 10px; color: var(--faint); font-size: 13px; text-align: center; }
 
-.sidebar-bottom { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding-top: 8px; border-top: 1px solid var(--line); }
+.sidebar-bottom { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding-top: 8px; border-top: 1px solid var(--line); }
+.sidebar-bottom [data-pwa-install] { flex-basis: 100%; }
 .side-btn { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 9px; color: var(--muted); font-size: 14px; transition: background .15s ease, color .15s ease; }
 .side-btn:hover { background: var(--hover); color: var(--ink); }
 .status { display: flex; align-items: center; gap: 7px; padding-right: 8px; font-size: 12px; color: var(--faint); }
