@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en" data-theme="dark" data-accent="lime">
+  <head>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="color-scheme" content="light dark">
+    <title>Huihui</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <script src="/hui/appearance.js"></script>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></symbol>
+      <symbol id="i-panel" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15" rx="3"/><path d="M9.5 4.5v15"/></symbol>
+      <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z"/></symbol>
+      <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+      <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
+      <symbol id="i-stop" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2" fill="currentColor" stroke="none"/></symbol>
+      <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8.5" y="8.5" width="11" height="11" rx="2.5"/><path d="M15.5 8.5V6a1.5 1.5 0 0 0-1.5-1.5H6A1.5 1.5 0 0 0 4.5 6v8A1.5 1.5 0 0 0 6 15.5h2.5"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+      <symbol id="i-retry" viewBox="0 0 24 24"><path d="M4.5 12a7.5 7.5 0 0 1 13-5.1L19.5 9M19.5 4.5V9H15M19.5 12a7.5 7.5 0 0 1-13 5.1L4.5 15M4.5 19.5V15H9"/></symbol>
+      <symbol id="i-edit" viewBox="0 0 24 24"><path d="M14.5 5.5l4 4M4.5 19.5l1-4.5L16 4.5a1.4 1.4 0 0 1 2 0l1.5 1.5a1.4 1.4 0 0 1 0 2L9 18.5Z"/></symbol>
+      <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4.5 7h15M10 11v6M14 11v6M6 7l1 12a1.5 1.5 0 0 0 1.5 1.5h7A1.5 1.5 0 0 0 17 19l1-12M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></symbol>
+      <symbol id="i-export" viewBox="0 0 24 24"><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M5 19.5h14"/></symbol>
+      <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.2h5c0-.9.4-1.7 1.1-2.2A6 6 0 0 0 12 3Z"/></symbol>
+      <symbol id="i-clip" viewBox="0 0 24 24"><path d="m20 11.5-8.1 8.1a5 5 0 0 1-7.1-7.1l8.5-8.5a3.3 3.3 0 0 1 4.7 4.7l-8.5 8.5a1.7 1.7 0 0 1-2.4-2.4l7.8-7.8"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol>
+    </svg>
+
+    <div class="app">
+      <aside class="sidebar" id="sidebar" data-i18n-aria="chats">
+        <div class="sidebar-top">
+          <div class="brand"><span class="orb" aria-hidden="true"></span><span>Huihui</span></div>
+          <button class="icon-btn" id="collapse" type="button" data-i18n-title="hideSidebar"><svg><use href="#i-panel"/></svg></button>
+        </div>
+        <button class="new-chat" id="new-chat" type="button">
+          <svg><use href="#i-plus"/></svg><span data-i18n="newChat">New chat</span><kbd>⌘⇧O</kbd>
+        </button>
+        <label class="search">
+          <svg><use href="#i-search"/></svg>
+          <input id="search" type="search" data-i18n-placeholder="searchChats" autocomplete="off" spellcheck="false">
+          <kbd>⌘K</kbd>
+        </label>
+        <nav class="chat-list" id="chat-list"></nav>
+        <div class="sidebar-bottom">
+          <button class="side-btn" id="open-settings" type="button"><svg><use href="#i-gear"/></svg><span data-i18n="settings">Settings</span></button>
+          <span class="status" id="status" data-state="checking"><i></i><span data-i18n="statusChecking">checking…</span></span>
+        </div>
+      </aside>
+      <div class="scrim" id="scrim"></div>
+
+      <main class="main">
+        <header class="topbar">
+          <button class="icon-btn expand" id="expand" type="button" data-i18n-title="showSidebar"><svg><use href="#i-panel"/></svg></button>
+          <h1 class="chat-title" id="chat-title">New chat</h1>
+          <div class="top-actions">
+            <button class="icon-btn" id="new-chat-top" type="button" data-i18n-title="newChatShortcut"><svg><use href="#i-plus"/></svg></button>
+            <button class="icon-btn" id="export" type="button" data-i18n-title="exportChat"><svg><use href="#i-export"/></svg></button>
+          </div>
+        </header>
+
+        <section class="scroller" id="scroller">
+          <div class="thread" id="thread"></div>
+        </section>
+
+        <footer class="composer-area">
+          <button class="to-bottom" id="to-bottom" type="button" data-i18n-aria="toBottom"><svg><use href="#i-down"/></svg></button>
+          <form class="composer" id="composer">
+            <div class="attachments" id="attachments"></div>
+            <textarea id="prompt" rows="1" data-i18n-placeholder="placeholder" data-i18n-aria="message"></textarea>
+            <div class="composer-row">
+              <button type="button" class="icon-btn" id="attach" data-i18n-title="attach"><svg><use href="#i-clip"/></svg></button>
+              <button type="button" class="chip" id="think" aria-pressed="false" data-i18n-title="thinkTitle">
+                <svg><use href="#i-bulb"/></svg><span data-i18n="think">Deeper</span>
+              </button>
+              <span class="spacer"></span>
+              <button type="submit" id="send" class="send">
+                <svg class="i-send"><use href="#i-up"/></svg>
+                <svg class="i-stop"><use href="#i-stop"/></svg>
+              </button>
+            </div>
+            <input id="file" type="file" accept="image/*" multiple hidden>
+          </form>
+          <p class="hint" data-i18n-html="hint"></p>
+        </footer>
+        <div class="drop-overlay" id="drop-overlay"><div data-i18n="dropHint">Drop to attach</div></div>
+      </main>
+    </div>
+
+    <dialog id="settings" class="sheet" aria-labelledby="settings-title">
+      <form method="dialog" class="sheet-inner">
+        <header class="sheet-head">
+          <h2 id="settings-title" data-i18n="settings">Settings</h2>
+          <button class="icon-btn" value="close" data-i18n-aria="close"><svg><use href="#i-x"/></svg></button>
+        </header>
+
+        <section class="field">
+          <span class="label">Language · Язык</span>
+          <div class="segmented two" id="lang-picker" role="radiogroup">
+            <button type="button" data-value="en" role="radio" lang="en">English</button>
+            <button type="button" data-value="ru" role="radio" lang="ru">Русский</button>
+          </div>
+        </section>
+
+        <section class="field">
+          <span class="label" data-i18n="theme">Theme</span>
+          <div class="segmented" id="theme-picker" role="radiogroup">
+            <button type="button" data-value="system" role="radio" data-i18n="themeSystem">System</button>
+            <button type="button" data-value="light" role="radio" data-i18n="themeLight">Light</button>
+            <button type="button" data-value="dark" role="radio" data-i18n="themeDark">Dark</button>
+          </div>
+        </section>
+
+        <section class="field">
+          <span class="label" data-i18n="accent">Accent</span>
+          <div class="swatches" id="accent-picker" role="radiogroup">
+            <button type="button" data-value="lime" style="--sw:#c6f35b" data-i18n-aria="accentLime" role="radio"></button>
+            <button type="button" data-value="sky" style="--sw:#7cc4ff" data-i18n-aria="accentSky" role="radio"></button>
+            <button type="button" data-value="violet" style="--sw:#b8a3ff" data-i18n-aria="accentViolet" role="radio"></button>
+            <button type="button" data-value="amber" style="--sw:#ffbf5e" data-i18n-aria="accentAmber" role="radio"></button>
+            <button type="button" data-value="rose" style="--sw:#ff8da7" data-i18n-aria="accentRose" role="radio"></button>
+          </div>
+        </section>
+
+        <section class="field">
+          <label class="toggle-row">
+            <span>
+              <span class="label" data-i18n="showReasoning">Show reasoning</span>
+              <span class="help" data-i18n="showReasoningHelp"></span>
+            </span>
+            <input type="checkbox" id="show-reasoning" role="switch">
+            <span class="switch" aria-hidden="true"></span>
+          </label>
+        </section>
+
+        <section class="field">
+          <label class="label" for="instructions" data-i18n="instructions">Instructions for the model</label>
+          <textarea id="instructions" rows="4" maxlength="4000" data-i18n-placeholder="instructionsPlaceholder"></textarea>
+          <span class="help" data-i18n="instructionsHelp"></span>
+        </section>
+
+        <section class="field">
+          <span class="label" data-i18n="shortcuts">Keyboard shortcuts</span>
+          <dl class="shortcuts">
+            <dt data-i18n="newChat">New chat</dt><dd><kbd>⌘</kbd><kbd>⇧</kbd><kbd>O</kbd></dd>
+            <dt data-i18n="searchChats">Search chats</dt><dd><kbd>⌘</kbd><kbd>K</kbd></dd>
+            <dt data-i18n="scSidebar">Toggle sidebar</dt><dd><kbd>⌘</kbd><kbd>B</kbd></dd>
+            <dt data-i18n="scThink">“Deeper” mode</dt><dd><kbd>⌘</kbd><kbd>⇧</kbd><kbd>D</kbd></dd>
+            <dt data-i18n="scStop">Stop answer</dt><dd><kbd>Esc</kbd></dd>
+            <dt data-i18n="scEdit">Edit last message</dt><dd><kbd>↑</kbd></dd>
+            <dt data-i18n="scFocus">Focus input</dt><dd><kbd>/</kbd></dd>
+            <dt data-i18n="settings">Settings</dt><dd><kbd>⌘</kbd><kbd>,</kbd></dd>
+          </dl>
+        </section>
+
+        <section class="field danger-zone">
+          <span class="label" data-i18n="data">Data</span>
+          <p class="help" id="storage-info"></p>
+          <button type="button" class="danger" id="wipe" data-i18n="wipe">Delete all chats</button>
+        </section>
+      </form>
+    </dialog>
+
+    <dialog id="lightbox" class="lightbox"><img alt=""></dialog>
+    <div class="toasts" id="toasts" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>

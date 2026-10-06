@@ -5,11 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && esbuild src/hui-login.ts --bundle --format=esm --outfile=dist/hui/login.js",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test:private": "node scripts/test-private-edge.mjs"
   },
   "dependencies": {
+    "@netlify/edge-functions": "^3.0.8",
+    "@netlify/identity": "^1.2.0",
     "lucide-react": "^0.514.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
@@ -21,6 +24,7 @@
     "@types/react": "^19.1.7",
     "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-react": "^4.5.2",
+    "esbuild": "^0.25.12",
     "eslint": "^9.25.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",
