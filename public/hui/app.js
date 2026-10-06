@@ -371,6 +371,8 @@ function applyTheme(animate = false) {
     setTimeout(() => root.classList.remove("theme-switching"), 350);
   }
   root.dataset.theme = theme;
+  document.querySelector('meta[name="theme-color"]')?.setAttribute("content", theme === "light" ? "#f8f8f6" : "#101013");
+  document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]')?.setAttribute("content", theme === "light" ? "default" : "black-translucent");
   root.dataset.accent = settings.accent;
 }
 prefersLight.addEventListener("change", () => settings.theme === "system" && applyTheme(true));
