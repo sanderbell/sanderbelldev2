@@ -16,19 +16,32 @@ window.addEventListener("appinstalled", () => {
 });
 standalone.addEventListener("change", renderInstall);
 function showGuide() {
+  const ru = document.documentElement.lang === "ru";
+  const copy = ru ? {
+    title: "Установить Huihui", ios: "Открой меню «Поделиться» и выбери «На экран Домой». Если доступно, оставь включённым «Открывать как веб-приложение».",
+    mac: "Нажми значок установки в браузере. В Safari выбери «Файл → Добавить в Dock».",
+    other: "Открой меню браузера и выбери «Установить приложение» или «Добавить на главный экран».",
+    detail: "Открывай Huihui через отдельную иконку. Для входа нужны подтверждённый аккаунт и PIN. Для облачных ответов нужен интернет.", close: "Понятно",
+  } : {
+    title: "Install Huihui", ios: "Open the Share menu, then choose Add to Home Screen. Keep Open as Web App enabled if offered.",
+    mac: "Use your browser's install icon. In Safari, choose File → Add to Dock.",
+    other: "Open your browser's menu, then choose Install app or Add to Home Screen.",
+    detail: "Open Huihui from its own icon. Your verified account and PIN are still required. An internet connection is needed for cloud replies.", close: "Got it",
+  };
   let guide = document.querySelector<HTMLDialogElement>("#pwa-guide");
   if (!guide) {
     guide = document.createElement("dialog"); guide.id = "pwa-guide"; guide.className = "pwa-guide";
     guide.setAttribute("aria-labelledby", "pwa-title");
-    const ios = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
-    const instructions = ios ? "Open the Share menu, then choose Add to Home Screen. Keep Open as Web App enabled if offered."
-      : /Mac/.test(navigator.platform) ? "Use your browser's install icon. In Safari, choose File → Add to Dock."
-      : "Open your browser's menu, then choose Install app or Add to Home Screen.";
-    guide.innerHTML = `<h2 id="pwa-title">Install Huihui</h2><p>${instructions}</p><p>Open Huihui from its own icon. Your verified account and PIN are still required. An internet connection is needed for cloud replies.</p><button type="button">Got it</button>`;
-    guide.querySelector("button")!.addEventListener("click", () => guide!.close());
-    guide.addEventListener("click", event => { if (event.target === guide) guide!.close(); });
     document.body.append(guide);
+    guide.addEventListener("click", event => {
+      const rect = guide!.getBoundingClientRect();
+      if (event.target === guide && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) guide!.close();
+    });
   }
+  const ios = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  const instructions = ios ? copy.ios : /Mac/.test(navigator.platform) ? copy.mac : copy.other;
+  guide.innerHTML = `<h2 id="pwa-title">${copy.title}</h2><p>${instructions}</p><p>${copy.detail}</p><button type="button" autofocus>${copy.close}</button>`;
+  guide.querySelector("button")!.addEventListener("click", () => guide!.close());
   guide.showModal();
 }
 document.querySelectorAll<HTMLButtonElement>("[data-pwa-install]").forEach(button => {
@@ -44,7 +57,7 @@ document.querySelectorAll<HTMLButtonElement>("[data-pwa-signout]").forEach(butto
     document.dispatchEvent(new Event("hui:signout"));
     document.documentElement.classList.add("access-checking");
     try {
-      await fetch("/hui/lock", {method: "POST", cache: "no-store"}).catch(() => {});
+      await fetch("/hui/lock", {method: "POST", cache: "no-store", signal: AbortSignal.timeout(10000)}).catch(() => {});
       await logout();
     } finally { location.replace("/hui/login"); }
   });

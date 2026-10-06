@@ -19,21 +19,24 @@
     <main>
       <div class="brand"><span class="orb" aria-hidden="true"></span><h1>Huihui</h1></div>
       <p class="intro">Your private cloud chat.</p>
-      <form>
+      <h2 id="step-label">Sign in to continue</h2>
+      <form id="login-form" aria-describedby="message" aria-busy="true">
         <div id="identity">
-          <label for="email">Owner email</label>
-          <input id="email" name="email" type="email" autocomplete="username" autocapitalize="none" spellcheck="false">
+          <div id="email-group"><label for="email">Owner email</label>
+          <input id="email" name="email" type="email" autocomplete="username" autocapitalize="none" spellcheck="false" required disabled></div>
           <label for="password">Account password</label>
-          <input id="password" name="password" type="password" autocomplete="current-password">
-          <button id="email-link" class="secondary" type="button">Email a sign-in link</button>
+          <div class="password-field"><input id="password" name="password" type="password" autocomplete="current-password" required disabled><button id="show-password" type="button" aria-label="Show password" aria-pressed="false">Show</button></div>
+          <button id="email-link" class="secondary" type="button" disabled>Forgot password?</button>
         </div>
         <div id="pin-group" hidden>
           <label for="pin">Huihui PIN</label>
-          <input id="pin" name="pin" type="password" inputmode="numeric" autocomplete="off">
+          <input id="pin" name="pin" type="password" inputmode="numeric" autocomplete="off" required disabled aria-describedby="pin-help">
+          <p id="pin-help" class="field-help">Your account is verified. Enter your private chat PIN.</p>
         </div>
-        <button id="submit" type="submit">Sign in</button>
+        <button id="submit" type="submit" disabled>Sign in</button>
+        <button id="switch-account" class="secondary" type="button" hidden>Use another account</button>
       </form>
-      <p id="message" role="status" aria-live="polite"></p>
+      <p id="message" role="status" aria-live="polite" aria-atomic="true">Checking account…</p>
       <p class="footnote">Access is limited to the owner's verified account.</p>
       <button class="secondary" type="button" data-pwa-install>Install Huihui</button>
     </main>
