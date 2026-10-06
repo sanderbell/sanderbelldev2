@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build && esbuild src/hui-login.ts --bundle --format=esm --outfile=dist/hui/login.js && esbuild src/hui-pwa.ts --bundle --format=esm --outfile=dist/hui/pwa.js",
     "lint": "eslint .",
     "preview": "vite preview",
-    "test:private": "node scripts/test-private-edge.mjs && node scripts/test-hui-pwa.mjs"
+    "test:private": "node scripts/test-private-edge.mjs && node scripts/test-hui-pwa.mjs",
+    "test:hui": "npm run build && playwright test"
   },
   "dependencies": {
     "@netlify/edge-functions": "^3.0.8",
@@ -20,6 +21,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
+    "@playwright/test": "^1.61.1",
     "@types/node": "^25.9.3",
     "@types/react": "^19.1.7",
     "@types/react-dom": "^19.1.6",

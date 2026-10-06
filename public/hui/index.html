@@ -42,19 +42,19 @@
       <aside class="sidebar" id="sidebar" data-i18n-aria="chats">
         <div class="sidebar-top">
           <div class="brand"><span class="orb" aria-hidden="true"></span><span>Huihui</span></div>
-          <button class="icon-btn" id="collapse" type="button" data-i18n-title="hideSidebar"><svg><use href="#i-panel"/></svg></button>
+          <button class="icon-btn" id="collapse" type="button" aria-controls="sidebar" data-i18n-title="hideSidebar"><svg><use href="#i-panel"/></svg></button>
         </div>
         <button class="new-chat" id="new-chat" type="button">
           <svg><use href="#i-plus"/></svg><span data-i18n="newChat">New chat</span><kbd>⌘⇧O</kbd>
         </button>
         <label class="search">
           <svg><use href="#i-search"/></svg>
-          <input id="search" type="search" data-i18n-placeholder="searchChats" autocomplete="off" spellcheck="false">
+          <input id="search" type="search" data-i18n-aria="searchChats" data-i18n-placeholder="searchChats" autocomplete="off" spellcheck="false">
           <kbd>⌘K</kbd>
         </label>
         <nav class="chat-list" id="chat-list"></nav>
         <div class="sidebar-bottom">
-          <button class="side-btn" type="button" data-pwa-install><svg><use href="#i-export"/></svg><span>Install Huihui</span></button>
+          <button class="side-btn" type="button" data-pwa-install><svg><use href="#i-export"/></svg><span data-i18n="install">Install Huihui</span></button>
           <button class="side-btn" id="open-settings" type="button"><svg><use href="#i-gear"/></svg><span data-i18n="settings">Settings</span></button>
           <span class="status" id="status" data-state="checking"><i></i><span data-i18n="statusChecking">checking…</span></span>
         </div>
@@ -63,15 +63,18 @@
 
       <main class="main">
         <header class="topbar">
-          <button class="icon-btn expand" id="expand" type="button" data-i18n-title="showSidebar"><svg><use href="#i-panel"/></svg></button>
+          <button class="icon-btn expand" id="expand" type="button" aria-controls="sidebar" data-i18n-title="showSidebar"><svg><use href="#i-panel"/></svg></button>
+          <span class="main-status" id="main-status" role="status"></span>
           <h1 class="chat-title" id="chat-title">New chat</h1>
           <div class="top-actions">
+            <button class="icon-btn" id="settings-top" type="button" data-i18n-title="settings"><svg><use href="#i-gear"/></svg></button>
             <button class="icon-btn" id="new-chat-top" type="button" data-i18n-title="newChatShortcut"><svg><use href="#i-plus"/></svg></button>
             <button class="icon-btn" id="export" type="button" data-i18n-title="exportChat"><svg><use href="#i-export"/></svg></button>
           </div>
         </header>
 
-        <section class="scroller" id="scroller">
+        <div class="connection" id="connection" role="status" hidden><span id="connection-text"></span><button type="button" id="reconnect" data-i18n="reconnect">Reconnect</button></div>
+        <section class="scroller" id="scroller" data-i18n-aria="chats" tabindex="0">
           <div class="thread" id="thread"></div>
         </section>
 
@@ -79,6 +82,7 @@
           <button class="to-bottom" id="to-bottom" type="button" data-i18n-aria="toBottom"><svg><use href="#i-down"/></svg></button>
           <form class="composer" id="composer">
             <div class="attachments" id="attachments"></div>
+            <p class="attachment-status" id="attachment-status" role="status"></p>
             <textarea id="prompt" rows="1" data-i18n-placeholder="placeholder" data-i18n-aria="message"></textarea>
             <div class="composer-row">
               <button type="button" class="icon-btn" id="attach" data-i18n-title="attach"><svg><use href="#i-clip"/></svg></button>
@@ -107,16 +111,16 @@
         </header>
 
         <section class="field">
-          <span class="label">Language · Язык</span>
-          <div class="segmented two" id="lang-picker" role="radiogroup">
+          <span class="label" id="language-label">Language · Язык</span>
+          <div class="segmented two" id="lang-picker" role="radiogroup" aria-labelledby="language-label">
             <button type="button" data-value="en" role="radio" lang="en">English</button>
             <button type="button" data-value="ru" role="radio" lang="ru">Русский</button>
           </div>
         </section>
 
         <section class="field">
-          <span class="label" data-i18n="theme">Theme</span>
-          <div class="segmented" id="theme-picker" role="radiogroup">
+          <span class="label" id="theme-label" data-i18n="theme">Theme</span>
+          <div class="segmented" id="theme-picker" role="radiogroup" aria-labelledby="theme-label">
             <button type="button" data-value="system" role="radio" data-i18n="themeSystem">System</button>
             <button type="button" data-value="light" role="radio" data-i18n="themeLight">Light</button>
             <button type="button" data-value="dark" role="radio" data-i18n="themeDark">Dark</button>
@@ -124,8 +128,8 @@
         </section>
 
         <section class="field">
-          <span class="label" data-i18n="accent">Accent</span>
-          <div class="swatches" id="accent-picker" role="radiogroup">
+          <span class="label" id="accent-label" data-i18n="accent">Accent</span>
+          <div class="swatches" id="accent-picker" role="radiogroup" aria-labelledby="accent-label">
             <button type="button" data-value="lime" style="--sw:#c6f35b" data-i18n-aria="accentLime" role="radio"></button>
             <button type="button" data-value="sky" style="--sw:#7cc4ff" data-i18n-aria="accentSky" role="radio"></button>
             <button type="button" data-value="violet" style="--sw:#b8a3ff" data-i18n-aria="accentViolet" role="radio"></button>
@@ -169,12 +173,13 @@
           <span class="label" data-i18n="data">Data</span>
           <p class="help" id="storage-info"></p>
           <button type="button" class="danger" id="wipe" data-i18n="wipe">Delete all chats</button>
-          <button type="button" class="btn ghost" data-pwa-signout>Sign out</button>
+          <button type="button" class="btn ghost" data-pwa-signout data-i18n="signOut">Sign out</button>
         </section>
       </form>
     </dialog>
 
-    <dialog id="lightbox" class="lightbox"><img alt=""></dialog>
+    <dialog id="lightbox" class="lightbox" data-i18n-aria="attachedImage"><button class="lightbox-close icon-btn" type="button" data-i18n-aria="close" autofocus><svg><use href="#i-x"/></svg></button><img alt=""></dialog>
+    <div class="sr-only" id="announcement" role="status" aria-live="polite"></div>
     <div class="toasts" id="toasts" aria-live="polite"></div>
     <script src="app.js"></script>
     <script type="module" src="/hui/pwa.js"></script>

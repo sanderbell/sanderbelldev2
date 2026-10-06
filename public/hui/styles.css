@@ -743,3 +743,17 @@ dialog[open]::backdrop { background: #00000059; backdrop-filter: blur(3px); }
   .chip, .side-btn, .new-chat { min-height: 44px; }
   input, textarea { font-size: 16px; }
 }
+
+/* Accessible feedback and navigation */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.main-status { width: 7px; height: 7px; border-radius: 50%; background: var(--faint); flex: none; margin-left: 6px; }
+.main-status[data-state="ok"] { background: var(--ok); }
+.main-status[data-state="down"] { background: var(--danger); }
+.connection { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 6px 16px; padding: 10px 20px; border-bottom: 1px solid var(--line); background: var(--surface); color: var(--muted); font-size: 13px; }
+.connection button { color: var(--accent-ink); font-weight: 600; padding: 6px; }
+.attachment-status { color: var(--muted); font-size: 13px; margin: 0; }
+.attachment-status:empty { display: none; }
+.image-notice { color: var(--muted); font-size: 12px; }
+.edit-warning { margin-top: 8px; }
+.lightbox-close { position: absolute; right: 8px; top: 8px; background: var(--surface); color: var(--ink); z-index: 1; }
+.sidebar-open .sidebar { height: var(--app-height, 100dvh); }

@@ -7,6 +7,8 @@ const icon = (name) => `<svg><use href="#i-${name}"/></svg>`;
 const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
 const hoverDevice = matchMedia("(hover: hover)").matches;
 const mobile = matchMedia("(max-width: 820px)");
+const touchInput = matchMedia("(pointer: coarse)");
+const modifier = /Mac|iPhone|iPad/.test(navigator.platform) ? "⌘" : "Ctrl";
 
 function el(tag, className, text) {
   const node = document.createElement(tag);
@@ -53,11 +55,14 @@ const lightbox = $("#lightbox");
 const sidebar = $("#sidebar");
 
 /* ---------- State ---------- */
-const KEYS = { chats: "huihui-chats-v2", settings: "huihui-settings", draft: "huihui-draft", active: "huihui-active", legacy: "huihui-chat-history-v1" };
+const KEYS = { chats: "huihui-chats-v2", settings: "huihui-settings", draft: "huihui-draft", active: "huihui-active", drafts: "huihui-drafts-v1", legacy: "huihui-chat-history-v1" };
 const DEFAULT_SETTINGS = { theme: "system", accent: "lime", lang: "en", think: false, showThinking: false, instructions: "", sidebar: true };
 const MAX_THINKING_CHARS = 40_000;
 
 let settings = { ...DEFAULT_SETTINGS, ...store.read(KEYS.settings, {}) };
+if (!["system", "light", "dark"].includes(settings.theme)) settings.theme = "system";
+if (!["lime", "sky", "violet", "amber", "rose"].includes(settings.accent)) settings.accent = "lime";
+if (typeof settings.instructions !== "string") settings.instructions = "";
 
 /* ---------- Language ---------- */
 const pluralRu = (n, one, few, many) => {
@@ -169,7 +174,7 @@ const STRINGS = {
     openFailed: (name) => `Couldn't open ${name || "the image"}`,
     storageFull: "Browser storage is full — older images were removed from history",
     saveFailed: "Couldn't save history: browser storage is full",
-    errServer: "The Huihui server isn't responding. Run `hui app` again.",
+    errServer: "Connection lost. Check your internet connection and try again.",
     errOllama: "Cloud is unavailable. Check the spending limit and try again.",
     errModel: "Cloud model weights are not ready.",
     errEmpty: "The model returned an empty answer.",
@@ -180,6 +185,14 @@ const STRINGS = {
     you: "You",
     imagesCount: (n) => `[images: ${n}]`,
     answerReady: "● Answer ready · Huihui",
+    install: "Install Huihui", signOut: "Sign out", connected: "Connected", reconnect: "Reconnect",
+    connectionDown: "Cloud replies are unavailable. Your draft is safe.",
+    processingImages: "Preparing images…", unsupportedFile: "Choose a JPG, PNG, WebP or another supported image.",
+    imagesDropped: "Images were removed to free browser storage.",
+    editWarning: "Sending this edit replaces the answers that follow it.",
+    interrupted: "connection interrupted", answerComplete: "Answer ready", stoppedAnswer: "Answer stopped",
+    mobileHint: "History stays in this browser", noResultsHelp: "Try another word or search message text.",
+    clearSearch: "Clear search",
   },
   ru: {
     chats: "Чаты",
@@ -281,7 +294,7 @@ const STRINGS = {
     openFailed: (name) => `Не удалось открыть ${name || "изображение"}`,
     storageFull: "Хранилище браузера заполнено — старые изображения убраны из истории",
     saveFailed: "Не удалось сохранить историю: хранилище браузера заполнено",
-    errServer: "Сервер Huihui не отвечает. Запусти `hui app` ещё раз.",
+    errServer: "Соединение потеряно. Проверь интернет и попробуй снова.",
     errOllama: "Облако недоступно. Проверь лимит расходов и попробуй снова.",
     errModel: "Веса облачной модели ещё не готовы.",
     errEmpty: "Модель вернула пустой ответ.",
@@ -292,6 +305,14 @@ const STRINGS = {
     you: "Я",
     imagesCount: (n) => `[изображений: ${n}]`,
     answerReady: "● Ответ готов · Huihui",
+    install: "Установить Huihui", signOut: "Выйти", connected: "На связи", reconnect: "Переподключить",
+    connectionDown: "Облачные ответы недоступны. Черновик сохранён.",
+    processingImages: "Подготавливаю изображения…", unsupportedFile: "Выбери JPG, PNG, WebP или другое поддерживаемое изображение.",
+    imagesDropped: "Изображения удалены, чтобы освободить место в браузере.",
+    editWarning: "Отправка правки заменит все ответы после этого сообщения.",
+    interrupted: "соединение прервано", answerComplete: "Ответ готов", stoppedAnswer: "Ответ остановлен",
+    mobileHint: "История хранится в этом браузере", noResultsHelp: "Попробуй другое слово или текст сообщения.",
+    clearSearch: "Очистить поиск",
   },
 };
 
@@ -304,15 +325,17 @@ function t(key, ...args) {
 
 function applyStaticText() {
   root.lang = lang;
+  document.dispatchEvent(new Event("hui:language"));
   document.querySelectorAll("[data-i18n]").forEach((node) => { node.textContent = t(node.dataset.i18n); });
   document.querySelectorAll("[data-i18n-html]").forEach((node) => { node.innerHTML = t(node.dataset.i18nHtml); });
   document.querySelectorAll("[data-i18n-placeholder]").forEach((node) => { node.placeholder = t(node.dataset.i18nPlaceholder); });
   document.querySelectorAll("[data-i18n-aria]").forEach((node) => node.setAttribute("aria-label", t(node.dataset.i18nAria)));
   document.querySelectorAll("[data-i18n-title]").forEach((node) => {
-    node.title = t(node.dataset.i18nTitle);
+    node.title = t(node.dataset.i18nTitle).replaceAll("⌘", modifier);
     // Icon-only buttons need a spoken name; drop the shortcut suffix from it.
     if (!node.textContent.trim()) node.setAttribute("aria-label", node.title.split(" · ")[0]);
   });
+  document.querySelectorAll("kbd").forEach(node => { node.textContent = node.textContent.replaceAll("⌘", modifier); });
 }
 
 let chats = loadChats();
@@ -321,12 +344,21 @@ if (!chats.some((chat) => chat.id === activeId)) activeId = null;
 let live = null; // the response currently being streamed
 let lastError = null;
 let attachments = [];
+const drafts = new Map();
+const savedDrafts = store.read(KEYS.drafts, {});
+if (savedDrafts && typeof savedDrafts === "object") {
+  for (const [id, text] of Object.entries(savedDrafts)) if (typeof text === "string") drafts.set(id, { text, attachments: [] });
+}
+const pendingImages = new Map();
+let imageQueue = Promise.resolve();
+const draftId = () => activeId || "new";
 let stick = true;
 let health = { state: "checking", reason: "" }; // reason is a string key
 
 function loadChats() {
   const saved = store.read(KEYS.chats, null);
-  if (Array.isArray(saved)) return saved;
+  if (Array.isArray(saved)) return saved.filter(chat => chat && typeof chat.id === "string" && typeof chat.title === "string"
+    && Array.isArray(chat.messages) && chat.messages.every(m => m && ["user", "assistant"].includes(m.role) && typeof m.content === "string"));
   const legacy = store.read(KEYS.legacy, []);
   if (!Array.isArray(legacy) || !legacy.length) return [];
   const firstUser = legacy.find((m) => m.role === "user");
@@ -529,12 +561,14 @@ function formatMeta(meta = {}, reasoningShown = false) {
   if (meta.thinkCapped) parts.push(t("metaThinkCapped"));
   if (meta.truncated) parts.push(t("metaTruncated"));
   if (meta.stopped) parts.push(t("metaStopped"));
+  if (meta.interrupted) parts.push(t("interrupted"));
   return parts.join(" · ");
 }
 
 function messageEl(message, index) {
   const article = el("article", `msg ${message.role}`);
   article.dataset.index = index;
+  article.setAttribute("aria-label", message.role === "user" ? t("you") : "Huihui");
   const actions = el("div", "actions");
   if (message.role === "user") {
     if (message.images?.length) {
@@ -544,10 +578,13 @@ function messageEl(message, index) {
         img.src = `data:image/jpeg;base64,${data}`;
         img.alt = t("attachedImage");
         img.dataset.zoom = "";
+        img.tabIndex = 0;
+        img.setAttribute("role", "button");
         images.append(img);
       }
       article.append(images);
     }
+    if (message.imagesDropped) article.append(el("p", "image-notice", t("imagesDropped")));
     if (message.content) article.append(el("div", "bubble", message.content));
     actions.append(iconButton("copy", "copy", t("copy")), iconButton("edit", "edit", t("edit")));
   } else {
@@ -573,6 +610,7 @@ function messageEl(message, index) {
 function errorEl(message) {
   const article = el("article", "msg error");
   const box = el("div", "error-box");
+  box.setAttribute("role", "alert");
   box.append(el("span", null, message));
   const retry = el("button", null, t("retry"));
   retry.type = "button";
@@ -651,7 +689,9 @@ function renderList() {
       || chat.messages.some((m) => m.content.toLowerCase().includes(query)));
   list.replaceChildren();
   if (!items.length) {
-    list.append(el("div", "list-empty", t(query ? "noResults" : "listEmpty")));
+    const empty = el("div", "list-empty", t(query ? "noResults" : "listEmpty"));
+    if (query) empty.append(el("p", null, t("noResultsHelp")));
+    list.append(empty);
     return;
   }
   let group = null;
@@ -664,6 +704,7 @@ function renderList() {
     const open = el("button", "open", chat.title);
     open.type = "button";
     open.title = chat.title;
+    if (chat.id === activeId) open.setAttribute("aria-current", "page");
     const actions = el("div", "item-actions");
     actions.append(iconButton("edit", "rename", t("rename")), iconButton("trash", "delete", t("delete")));
     item.append(open, actions);
@@ -674,7 +715,9 @@ function renderList() {
 function openChat(id) {
   setSidebarIfMobile(false);
   if (id === activeId) return;
+  persistDraft();
   activeId = id;
+  restoreDraft();
   renderThread();
   renderList();
   if (hoverDevice) input.focus();
@@ -683,7 +726,9 @@ function openChat(id) {
 function newChat() {
   setSidebarIfMobile(false);
   if (activeId !== null) {
+    persistDraft();
     activeId = null;
+    restoreDraft();
     renderThread();
     renderList();
   }
@@ -696,7 +741,7 @@ function deleteChat(id) {
   const [removed] = chats.splice(index, 1);
   if (live?.chatId === id) live.controller.abort();
   if (lastError?.chatId === id) lastError = null;
-  if (activeId === id) { activeId = null; renderThread(); }
+  if (activeId === id) { persistDraft(); activeId = null; restoreDraft(); renderThread(); }
   saveChats();
   renderList();
   toast(t("chatDeleted"), {
@@ -704,8 +749,9 @@ function deleteChat(id) {
     onAction: () => {
       chats.splice(Math.min(index, chats.length), 0, removed);
       saveChats();
-      renderList();
+      openChat(removed.id);
     },
+    duration: 8000,
   });
 }
 
@@ -769,12 +815,13 @@ function setBusy(busy) {
 }
 
 function updateSendState() {
-  sendButton.disabled = !live && !input.value.trim() && !attachments.length;
+  sendButton.disabled = !live && ((!input.value.trim() && !attachments.length) || Boolean(pendingImages.get(draftId())));
+  $("#attachment-status").textContent = pendingImages.get(draftId()) ? t("processingImages") : "";
 }
 
 function reasoningEl() {
   const block = el("div", "reasoning");
-  block.innerHTML = `<button type="button" class="reasoning-toggle">${icon("chevron")}<span class="r-label"></span>`
+  block.innerHTML = `<button type="button" class="reasoning-toggle" aria-expanded="false">${icon("chevron")}<span class="r-label"></span>`
     + `<span class="budget" hidden><i></i></span></button>`
     + `<div class="reasoning-wrap"><div class="reasoning-inner"><div class="reasoning-body md"></div></div></div>`;
   return block;
@@ -800,6 +847,7 @@ function updateLiveStatus() {
   block.hidden = !showReasoning;
   if (showReasoning) {
     if (!live.reasoningToggled) block.classList.toggle("open", thinkingNow);
+    block.querySelector(".reasoning-toggle").setAttribute("aria-expanded", String(block.classList.contains("open")));
     const label = block.querySelector(".r-label");
     const thinkSeconds = Math.round((live.thinkMs || performance.now() - live.thinkStart) / 1000);
     label.textContent = thinkingNow ? `${t("phaseThinking")} · ${t("seconds", thinkSeconds)}` : t("thoughtFor", thinkSeconds);
@@ -867,6 +915,7 @@ function handleEvent(event) {
 
 async function generate(chat) {
   const controller = new AbortController();
+  $("#announcement").textContent = "";
   live = {
     chatId: chat.id, content: "", phase: "waiting", started: performance.now(), controller, stats: null, el: liveEl(),
     thinkStart: 0, thinkMs: 0, thinkTokens: 0, thinkBudget: 0, thinking: "", reasoningToggled: false,
@@ -884,6 +933,7 @@ async function generate(chat) {
 
   let error = null;
   let stopped = false;
+  let accessExpired = false;
   try {
     const response = await fetch("/hui/api/chat", {
       method: "POST",
@@ -895,7 +945,10 @@ async function generate(chat) {
         instructions: settings.instructions,
       }),
     });
-    if (response.status === 401) { location.replace("/hui/login"); return; }
+    if (response.status === 401 || response.status === 403) {
+      accessExpired = true;
+      throw new Error("Access expired");
+    }
     if (!response.ok) {
       const data = await response.json().catch(() => ({}));
       throw new Error(data.code ? t(`err_${data.code}`) : data.error || t("errHttp", response.status));
@@ -911,10 +964,13 @@ async function generate(chat) {
       buffer = lines.pop();
       for (const line of lines) if (line.trim()) handleEvent(JSON.parse(line));
     }
+    buffer += decoder.decode();
+    if (buffer.trim()) handleEvent(JSON.parse(buffer));
   } catch (caught) {
     if (caught.name === "AbortError") stopped = true;
     else error = caught instanceof TypeError ? t("errServer") : caught.message;
   }
+  controller.abort();
   clearInterval(ticker);
 
   const { el: liveNode, stats, thinkMs } = live;
@@ -923,6 +979,7 @@ async function generate(chat) {
   live = null;
   setBusy(false);
 
+  if (accessExpired) { location.replace("/hui/login"); return; }
   const target = chats.find((c) => c.id === chat.id);
   if (!target) { renderList(); return; }
   if (content) {
@@ -932,6 +989,7 @@ async function generate(chat) {
     if (stats?.reason === "length") meta.truncated = true;
     if (stats?.thinkCapped) meta.thinkCapped = true;
     if (stopped) meta.stopped = true;
+    if (error) meta.interrupted = true;
     const message = { role: "assistant", content, meta };
     if (thinking) message.thinking = thinking;
     target.messages.push(message);
@@ -955,6 +1013,7 @@ async function generate(chat) {
     if (stick) scrollToEnd();
   }
   renderList();
+  $("#announcement").textContent = t(stopped ? "stoppedAnswer" : "answerComplete");
   if (document.hidden && content) document.title = t("answerReady");
 }
 
@@ -963,6 +1022,8 @@ document.addEventListener("hui:signout", stop);
 
 function send() {
   if (live) { stop(); return; }
+  if (pendingImages.get(draftId())) return;
+  const previousDraftId = draftId();
   const text = input.value.trim();
   if (!text && !attachments.length) return;
   let chat = activeChat();
@@ -977,11 +1038,12 @@ function send() {
   chat.messages.push(message);
   chat.updatedAt = Date.now();
   lastError = null;
+  drafts.delete(previousDraftId);
   input.value = "";
   attachments = [];
   renderAttachments();
   resize();
-  saveDraft();
+  persistDraft();
   saveChats();
   renderThread();
   renderList();
@@ -1015,7 +1077,7 @@ function startEdit(index) {
   const save = el("button", "btn primary", t("send"));
   cancel.type = save.type = "button";
   row.append(cancel, save);
-  box.append(field, row);
+  box.append(field, el("p", "help edit-warning", t("editWarning")), row);
   article.replaceChildren(box);
   const fit = () => { field.style.height = "auto"; field.style.height = `${Math.min(field.scrollHeight + 2, 360)}px`; };
   fit();
@@ -1037,7 +1099,7 @@ function startEdit(index) {
   };
   field.addEventListener("input", fit);
   field.addEventListener("keydown", (event) => {
-    if (event.key === "Enter" && !event.shiftKey && !event.isComposing) { event.preventDefault(); commit(); }
+    if (event.key === "Enter" && !event.shiftKey && !event.isComposing && (!touchInput.matches || event.ctrlKey || event.metaKey)) { event.preventDefault(); commit(); }
     if (event.key === "Escape") { event.stopPropagation(); renderThread(); input.focus(); }
   });
   cancel.addEventListener("click", () => { renderThread(); input.focus(); });
@@ -1063,6 +1125,7 @@ thread.addEventListener("click", (event) => {
     input.value = starter.dataset.prompt;
     resize();
     updateSendState();
+    persistDraft();
     input.focus();
     input.setSelectionRange(input.value.length, input.value.length);
     return;
@@ -1070,13 +1133,14 @@ thread.addEventListener("click", (event) => {
   const reasoningToggle = event.target.closest(".reasoning-toggle");
   if (reasoningToggle) {
     reasoningToggle.parentElement.classList.toggle("open");
+    reasoningToggle.setAttribute("aria-expanded", String(reasoningToggle.parentElement.classList.contains("open")));
     if (live && live.el.contains(reasoningToggle)) live.reasoningToggled = true;
     return;
   }
   const codeCopy = event.target.closest("[data-copy-code]");
   if (codeCopy) { copyText(codeCopy.closest(".code").querySelector("code").textContent, codeCopy); return; }
   const zoom = event.target.closest("img[data-zoom]");
-  if (zoom) { lightbox.querySelector("img").src = zoom.src; lightbox.showModal(); return; }
+  if (zoom) { lightbox.querySelector("img").src = zoom.src; lightbox.querySelector("img").alt = zoom.alt; lightbox.showModal(); return; }
 
   const action = event.target.closest("[data-act]");
   if (!action) return;
@@ -1085,6 +1149,9 @@ thread.addEventListener("click", (event) => {
   if (action.dataset.act === "copy" && message) copyText(message.content, action);
   else if (action.dataset.act === "edit") startEdit(index);
   else if (action.dataset.act === "retry") regenerate();
+});
+thread.addEventListener("keydown", event => {
+  if (event.target.matches("img[data-zoom]") && ["Enter", " "].includes(event.key)) { event.preventDefault(); event.target.click(); }
 });
 lightbox.addEventListener("click", () => lightbox.close());
 
@@ -1095,13 +1162,23 @@ function resize() {
   input.style.overflowY = input.scrollHeight > 240 ? "auto" : "hidden";
 }
 
-let draftTimer;
-function saveDraft() {
-  clearTimeout(draftTimer);
-  draftTimer = setTimeout(() => {
-    try { localStorage.setItem(KEYS.draft, input.value); } catch {}
-  }, 300);
+function persistDraft() {
+  drafts.set(draftId(), { text: input.value, attachments });
+  const textDrafts = Object.fromEntries([...drafts].filter(([, draft]) => draft.text).map(([id, draft]) => [id, draft.text]));
+  store.write(KEYS.drafts, textDrafts);
 }
+
+function restoreDraft() {
+  const draft = drafts.get(draftId()) || { text: "", attachments: [] };
+  input.value = draft.text;
+  attachments = draft.attachments;
+  renderAttachments();
+  resize();
+  updateSendState();
+}
+
+function saveDraft() { persistDraft(); }
+window.addEventListener("pagehide", persistDraft);
 
 function renderThink() {
   thinkButton.setAttribute("aria-pressed", String(settings.think));
@@ -1117,7 +1194,7 @@ function toggleThink() {
 form.addEventListener("submit", (event) => { event.preventDefault(); send(); });
 input.addEventListener("input", () => { resize(); updateSendState(); saveDraft(); });
 input.addEventListener("keydown", (event) => {
-  if (event.key === "Enter" && !event.shiftKey && !event.isComposing) {
+  if (event.key === "Enter" && !event.shiftKey && !event.isComposing && (!touchInput.matches || event.ctrlKey || event.metaKey)) {
     event.preventDefault();
     if (!live) send();
   } else if (event.key === "ArrowUp" && !input.value && !attachments.length) {
@@ -1146,20 +1223,27 @@ async function downscale(file, max = 1280) {
 }
 
 async function addFiles(files) {
-  const images = [...files].filter((file) => file.type.startsWith("image/"));
-  if (!images.length) return;
-  for (const file of images) {
-    if (attachments.length >= MAX_ATTACHMENTS) { toast(t("maxImages", MAX_ATTACHMENTS)); break; }
-    try {
-      const url = await downscale(file);
-      attachments.push({ url, data: url.slice(url.indexOf(",") + 1) });
-    } catch {
-      toast(t("openFailed", file.name));
-    }
-  }
-  renderAttachments();
+  const images = [...files].filter(file => file.type.startsWith("image/"));
+  if (!images.length) { toast(t("unsupportedFile")); return; }
+  const id = draftId();
+  const target = attachments;
+  persistDraft();
+  pendingImages.set(id, (pendingImages.get(id) || 0) + images.length);
   updateSendState();
-  input.focus();
+  // Serialize decoding to enforce the limit even during overlapping paste/drop events.
+  imageQueue = imageQueue.then(async () => {
+    for (const file of images) {
+      try {
+        if (target.length >= MAX_ATTACHMENTS) { toast(t("maxImages", MAX_ATTACHMENTS)); break; }
+        const url = await downscale(file);
+        target.push({ url, data: url.slice(url.indexOf(",") + 1) });
+      } catch { toast(t("openFailed", file.name)); }
+    }
+    const remaining = (pendingImages.get(id) || 0) - images.length;
+    if (remaining) pendingImages.set(id, remaining); else pendingImages.delete(id);
+    if (id === draftId()) { renderAttachments(); updateSendState(); }
+  });
+  await imageQueue;
 }
 
 function renderAttachments() {
@@ -1176,6 +1260,7 @@ function renderAttachments() {
       attachments.splice(index, 1);
       renderAttachments();
       updateSendState();
+      persistDraft();
       input.focus();
     });
     thumb.append(img, remove);
@@ -1219,23 +1304,35 @@ function sidebarIsOpen() {
 }
 
 function setSidebar(open) {
-  if (mobile.matches) {
-    root.classList.toggle("sidebar-open", open);
-  } else {
+  if (mobile.matches) root.classList.toggle("sidebar-open", open);
+  else {
     settings.sidebar = open;
     saveSettings();
     root.classList.toggle("sidebar-collapsed", !open);
   }
-  sidebar.inert = !open;
+  syncSidebar();
+  if (mobile.matches && open) $("#collapse").focus();
+  else if (!open && sidebar.contains(document.activeElement)) $("#expand").focus();
 }
 
 function setSidebarIfMobile(open) { if (mobile.matches) setSidebar(open); }
-function syncSidebar() { sidebar.inert = !sidebarIsOpen(); }
+function syncSidebar() {
+  const open = sidebarIsOpen();
+  sidebar.inert = !open;
+  $(".main").inert = mobile.matches && open;
+  $("#expand").setAttribute("aria-expanded", String(open));
+  $("#collapse").setAttribute("aria-expanded", String(open));
+  if (mobile.matches && open) { sidebar.setAttribute("role", "dialog"); sidebar.setAttribute("aria-modal", "true"); }
+  else { sidebar.removeAttribute("role"); sidebar.removeAttribute("aria-modal"); }
+}
 
 $("#collapse").addEventListener("click", () => setSidebar(false));
 $("#expand").addEventListener("click", () => setSidebar(true));
 $("#scrim").addEventListener("click", () => setSidebar(false));
-mobile.addEventListener("change", () => { root.classList.remove("sidebar-open"); syncSidebar(); });
+mobile.addEventListener("change", () => {
+  root.classList.remove("sidebar-open"); syncSidebar();
+  if (sidebar.inert && sidebar.contains(document.activeElement)) $("#expand").focus();
+});
 $("#new-chat").addEventListener("click", newChat);
 $("#new-chat-top").addEventListener("click", newChat);
 
@@ -1270,7 +1367,10 @@ function syncSettingsUI() {
   for (const button of themePicker.children) button.setAttribute("aria-checked", String(button.dataset.value === settings.theme));
   for (const button of accentPicker.children) button.setAttribute("aria-checked", String(button.dataset.value === settings.accent));
   instructions.value = settings.instructions;
-  const bytes = new Blob([localStorage.getItem(KEYS.chats) || ""]).size;
+  for (const picker of [langPicker, themePicker, accentPicker]) {
+    for (const button of picker.children) button.tabIndex = button.getAttribute("aria-checked") === "true" ? 0 : -1;
+  }
+  const bytes = new Blob([JSON.stringify(store.read(KEYS.chats, []))]).size;
   $("#storage-info").textContent = t("storageInfo", chats.length, bytes);
 }
 
@@ -1281,6 +1381,18 @@ function openSettings() {
 }
 
 $("#open-settings").addEventListener("click", openSettings);
+$("#settings-top").addEventListener("click", openSettings);
+for (const picker of [langPicker, themePicker, accentPicker]) {
+  picker.addEventListener("keydown", event => {
+    if (!["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", "Home", "End"].includes(event.key)) return;
+    event.preventDefault();
+    const buttons = [...picker.children];
+    const current = buttons.indexOf(document.activeElement);
+    const next = event.key === "Home" ? 0 : event.key === "End" ? buttons.length - 1
+      : (current + (["ArrowRight", "ArrowDown"].includes(event.key) ? 1 : -1) + buttons.length) % buttons.length;
+    buttons[next].click(); buttons[next].focus();
+  });
+}
 settingsDialog.addEventListener("click", (event) => { if (event.target === settingsDialog) settingsDialog.close(); });
 settingsDialog.addEventListener("close", () => {
   wipe.classList.remove("confirm");
@@ -1316,11 +1428,7 @@ accentPicker.addEventListener("click", (event) => {
   applyTheme(true);
   syncSettingsUI();
 });
-let instructionsTimer;
-instructions.addEventListener("input", () => {
-  clearTimeout(instructionsTimer);
-  instructionsTimer = setTimeout(() => { settings.instructions = instructions.value; saveSettings(); }, 300);
-});
+instructions.addEventListener("input", () => { settings.instructions = instructions.value; saveSettings(); });
 wipe.addEventListener("click", () => {
   if (!wipe.classList.contains("confirm")) {
     wipe.classList.add("confirm");
@@ -1329,7 +1437,11 @@ wipe.addEventListener("click", () => {
   }
   stop();
   chats = [];
+  drafts.clear();
   activeId = null;
+  restoreDraft();
+  persistDraft();
+  try { localStorage.removeItem(KEYS.legacy); localStorage.removeItem(KEYS.draft); } catch {}
   lastError = null;
   saveChats();
   renderThread();
@@ -1339,30 +1451,39 @@ wipe.addEventListener("click", () => {
 });
 
 /* ---------- Health ---------- */
+let healthChecking = false;
 async function checkHealth() {
+  if (healthChecking) return;
+  healthChecking = true;
   let next;
   try {
-    const response = await fetch("/hui/api/health", { cache: "no-store" });
+    const response = await fetch("/hui/api/health", { cache: "no-store", signal: AbortSignal.timeout(12000) });
     if (response.status === 401 || response.status === 403) { location.replace("/hui/login"); return; }
+    root.classList.remove("access-checking");
     const data = await response.json();
-    if (data.ollama && data.model) next = { state: "ok", reason: "" };
+    if (response.ok && data.ollama && data.model) next = { state: "ok", reason: "" };
     else next = { state: "down", reason: data.ollama ? "errModel" : "errOllama" };
   } catch {
     next = { state: "down", reason: "errServer" };
-  }
+  } finally { healthChecking = false; }
   const changed = next.state !== health.state;
   health = next;
   renderStatus();
-  if (root.classList.contains("access-checking") && next.state !== "ok") { location.replace("/hui/"); return; }
-  root.classList.remove("access-checking");
+
   if (changed && thread.querySelector(".empty")) thread.querySelector(".empty").replaceWith(emptyEl());
 }
 
 function renderStatus() {
   statusEl.dataset.state = health.state;
+  $("#connection").hidden = health.state !== "down";
+  $("#connection-text").textContent = t("connectionDown");
+  $("#main-status").dataset.state = health.state;
+  $("#main-status").setAttribute("aria-label", t(health.state === "ok" ? "connected" : health.state === "down" ? "statusDown" : "statusChecking"));
   statusEl.title = health.state === "ok" ? t("statusOkTitle") : health.state === "down" ? t(health.reason) : "";
   statusEl.querySelector("span").textContent = t({ ok: "statusOk", down: "statusDown", checking: "statusChecking" }[health.state]);
 }
+
+$("#reconnect").addEventListener("click", checkHealth);
 
 /* ---------- Toasts ---------- */
 function toast(text, { action, onAction, duration = 4000 } = {}) {
@@ -1390,6 +1511,14 @@ const isTyping = (target) => target.closest?.("input, textarea, [contenteditable
 
 document.addEventListener("keydown", (event) => {
   const mod = event.metaKey || event.ctrlKey;
+  if (document.querySelector("dialog[open]")) return;
+  if (event.key === "Tab" && mobile.matches && sidebarIsOpen()) {
+    const focusable = [...sidebar.querySelectorAll("button, input")].filter(node => !node.hidden && !node.disabled && node.getClientRects().length);
+    const first = focusable[0], last = focusable.at(-1);
+    if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+    else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    return;
+  }
   if (mod && event.shiftKey && event.code === "KeyO") { event.preventDefault(); newChat(); }
   else if (mod && !event.shiftKey && event.code === "KeyK") {
     event.preventDefault();
@@ -1400,8 +1529,8 @@ document.addEventListener("keydown", (event) => {
   else if (mod && event.shiftKey && event.code === "KeyD") { event.preventDefault(); toggleThink(); }
   else if (mod && event.key === ",") { event.preventDefault(); openSettings(); }
   else if (event.key === "Escape" && !document.querySelector("dialog[open]")) {
-    if (live) { event.preventDefault(); stop(); }
-    else if (mobile.matches && sidebarIsOpen()) setSidebar(false);
+    if (mobile.matches && sidebarIsOpen()) setSidebar(false);
+    else if (live) { event.preventDefault(); stop(); }
   } else if (!mod && !event.altKey && !isTyping(event.target) && !document.querySelector("dialog[open]")) {
     if (event.key === "/") { event.preventDefault(); input.focus(); }
     else if (event.key.length === 1) input.focus(); // start typing anywhere
@@ -1428,7 +1557,13 @@ applyStaticText();
 applyTheme();
 renderThink();
 syncSidebar();
-try { input.value = localStorage.getItem(KEYS.draft) || ""; } catch {}
+try {
+  const legacyDraft = localStorage.getItem(KEYS.draft);
+  if (legacyDraft && !drafts.has(draftId())) drafts.set(draftId(), { text: legacyDraft, attachments: [] });
+  localStorage.removeItem(KEYS.draft);
+} catch {}
+restoreDraft();
+syncSettingsUI();
 setBusy(false);
 renderList();
 renderThread();
@@ -1437,11 +1572,13 @@ requestAnimationFrame(resize);
 window.addEventListener("resize", resize);
 function fitViewport() {
   if (window.visualViewport?.scale === 1) root.style.setProperty("--app-height", `${window.visualViewport.height}px`);
+  resize();
+  if (stick) scrollToEnd();
 }
 window.visualViewport?.addEventListener("resize", fitViewport);
 fitViewport();
 window.addEventListener("pageshow", event => { if (event.persisted) { root.classList.add("access-checking"); checkHealth(); } });
-document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible") checkHealth(); });
+
 window.addEventListener("online", checkHealth);
 window.addEventListener("offline", checkHealth);
 updateSendState();
