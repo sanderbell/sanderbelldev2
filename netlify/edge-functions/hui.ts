@@ -1,7 +1,16 @@
 import type { Context, Config } from "@netlify/edge-functions";
 
+const privacyHeaders = {
+  "Cache-Control": "no-store", "CDN-Cache-Control": "no-store", "Netlify-CDN-Cache-Control": "no-store",
+  "X-Robots-Tag": "noindex, nofollow, noarchive, nosnippet, noimageindex",
+  "X-Content-Type-Options": "nosniff", "X-Frame-Options": "DENY", "Referrer-Policy": "no-referrer",
+  "Cross-Origin-Resource-Policy": "same-origin",
+  "Permissions-Policy": "camera=(), microphone=(), geolocation=(), payment=(), usb=()",
+  "Content-Security-Policy": "default-src 'self'; img-src 'self' data: blob:; connect-src 'self'; worker-src 'self'; manifest-src 'self'; frame-ancestors 'none'; form-action 'self'; object-src 'none'; base-uri 'self'",
+  "Vary": "Cookie",
+};
 function response(body: BodyInit | null, status = 200, headers: HeadersInit = {}) {
-  return new Response(body, { status, headers: { "Cache-Control": "no-store", "X-Content-Type-Options": "nosniff", "X-Frame-Options": "DENY", "Referrer-Policy": "no-referrer", ...headers } });
+  return new Response(body, { status, headers: { ...privacyHeaders, ...headers } });
 }
 function cookie(request: Request, name: string) {
   return (request.headers.get("cookie") || "").split(";").map(x => x.trim()).find(x => x.startsWith(name + "="))?.slice(name.length + 1) || "";
@@ -21,21 +30,22 @@ export default async (request: Request, context: Context) => {
   // Alternative Netlify origins/previews must never expose the private application.
   if (url.hostname !== "sanderbell.dev") return response("Not found", 404);
   if (url.pathname === "/hui") return response(null, 302, { Location: "/hui/" });
-  if (url.pathname === "/hui/login" || url.pathname === "/hui/login.js") {
+  if (!["GET", "HEAD", "POST"].includes(request.method)) return response("Method not allowed", 405);
+  if (["/hui/login", "/hui/login.html", "/hui/login.js", "/hui/login.css"].includes(url.pathname)) {
+    if (request.method === "POST") return response("Method not allowed", 405);
     const result = await context.next();
     const headers = new Headers(result.headers);
-    headers.set("Cache-Control", "no-store");
-    headers.set("X-Frame-Options", "DENY");
-    headers.set("Referrer-Policy", "no-referrer");
+    for (const [name, value] of Object.entries(privacyHeaders)) headers.set(name, value);
     return new Response(result.body, { status: result.status, headers });
   }
-  if (!["GET", "POST"].includes(request.method)) return response("Method not allowed", 405);
   if (request.method === "POST" && request.headers.get("origin") !== url.origin) return response("Forbidden", 403);
   const token = cookie(request, "nf_jwt");
   let user: { id: string; email: string; confirmed_at?: string } | null = null;
   if (token) {
-    const verified = await fetch(url.origin + "/.netlify/identity/user", { headers: { Authorization: "Bearer " + token } });
-    if (verified.ok) user = await verified.json();
+    try {
+      const verified = await fetch(url.origin + "/.netlify/identity/user", { headers: { Authorization: "Bearer " + token }, cache: "no-store" });
+      if (verified.ok) user = await verified.json();
+    } catch { return response("Sign-in is temporarily unavailable", 503); }
   }
   const owner = Netlify.env.get("HUI_OWNER_EMAIL");
   if (!user || !user.confirmed_at || user.email.toLowerCase() !== owner?.toLowerCase()) {
@@ -54,6 +64,10 @@ export default async (request: Request, context: Context) => {
     const value = `${user.id}.${expires}`;
     const signed = `${value}.${await sign(value, key)}`;
     return response("{}", 200, { "Content-Type": "application/json", "Set-Cookie": `hui_session=${signed}; Path=/hui; HttpOnly; Secure; SameSite=Strict; Max-Age=604800` });
+  }
+  if (url.pathname === "/hui/lock") {
+    if (request.method !== "POST") return response("Method not allowed", 405);
+    return response("{}", 200, { "Content-Type": "application/json", "Set-Cookie": "hui_session=; Path=/hui; HttpOnly; Secure; SameSite=Strict; Max-Age=0" });
   }
   const [subject, expiresText, signature] = cookie(request, "hui_session").split(".");
   const expires = Number(expiresText);
@@ -78,13 +92,10 @@ export default async (request: Request, context: Context) => {
   }
   const allowedFiles = new Set(["/hui/", "/hui/index.html", "/hui/app.js", "/hui/appearance.js", "/hui/styles.css", "/hui/favicon.svg"]);
   if (!allowedFiles.has(url.pathname)) return response("Not found", 404);
+  if (request.method === "POST") return response("Method not allowed", 405);
   const result = await context.next();
   const headers = new Headers(result.headers);
-  headers.set("Cache-Control", "no-store");
-  headers.set("X-Frame-Options", "DENY");
-  headers.set("X-Content-Type-Options", "nosniff");
-  headers.set("Referrer-Policy", "no-referrer");
-  headers.set("Content-Security-Policy", "default-src 'self'; img-src 'self' data: blob:; connect-src 'self'; frame-ancestors 'none'; object-src 'none'; base-uri 'self'");
+  for (const [name, value] of Object.entries(privacyHeaders)) headers.set(name, value);
   return new Response(result.body, { status: result.status, headers });
 };
 

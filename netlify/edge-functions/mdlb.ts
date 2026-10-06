@@ -1,7 +1,9 @@
 import type { Config } from "@netlify/edge-functions";
 
 export default async (request: Request) => {
-  const reply = (status: number, value: string) => new Response(value, { status, headers: { "Cache-Control": "no-store" } });
+  const reply = (status: number, value: string) => new Response(value, { status, headers: { "Cache-Control": "no-store", "CDN-Cache-Control": "no-store", "Netlify-CDN-Cache-Control": "no-store", "X-Robots-Tag": "noindex, nofollow, noarchive, nosnippet", "X-Content-Type-Options": "nosniff", "X-Frame-Options": "DENY", "Referrer-Policy": "no-referrer" } });
+  const url = new URL(request.url);
+  if (url.hostname !== "sanderbell.dev" || url.pathname !== "/mdlb/webhook") return reply(404, "Not found");
   if (request.method !== "POST") return reply(405, "Method not allowed");
   const expected = Netlify.env.get("MDLB_WEBHOOK_SECRET");
   if (!expected || request.headers.get("x-telegram-bot-api-secret-token") !== expected) return reply(403, "Forbidden");
@@ -20,4 +22,4 @@ export default async (request: Request) => {
   });
   return reply(upstream.ok ? 200 : 503, "{}");
 };
-export const config: Config = { path: "/mdlb/webhook" };
+export const config: Config = { path: ["/mdlb", "/mdlb/*"] };

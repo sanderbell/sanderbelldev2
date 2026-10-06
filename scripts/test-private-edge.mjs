@@ -24,6 +24,13 @@ try {
  assert.equal((await hui(request('/hui/api/health'),context)).status,401);
  assert.equal((await hui(request('/hui/api/chat',{method:'POST'}),context)).status,403);
  assert.equal((await hui(new Request('https://preview.netlify.app/hui/'),context)).status,404);
+ for (const path of ['/hui/login','/hui/login.html','/hui/login.js','/hui/login.css']) {
+   const result=await hui(request(path),context);
+   assert.equal(result.status,200);
+   assert.match(result.headers.get('x-robots-tag'),/noindex/);
+   assert.equal(result.headers.get('cache-control'),'no-store');
+   assert.match(result.headers.get('content-security-policy'),/form-action 'self'/);
+ }
  assert.equal((await hui(request('/hui/api/health',{headers:{Cookie:'nf_jwt=invalid'}}),context)).status,401);
  user={...user,email:'someone@example.test'};
  assert.equal((await hui(request('/hui/api/health',{headers:{Cookie:'nf_jwt=valid'}}),context)).status,401);
@@ -38,11 +45,18 @@ try {
  const cookies='nf_jwt=valid; '+session.split(';')[0];
  assert.equal((await hui(request('/hui/api/health',{headers:{Cookie:cookies}}),context)).status,200);
  assert.equal(upstreamCalls,1);
+ const locked=await hui(request('/hui/lock',{...unlockOptions,body:'{}'}),context);
+ assert.equal(locked.status,200);assert.match(locked.headers.get('set-cookie'),/Max-Age=0/);
+ assert.equal((await hui(request('/hui/lock',{method:'POST',headers:{Cookie:cookies,Origin:'https://evil.test'}}),context)).status,403);
  assert.equal((await hui(request('/hui/api/health',{headers:{Cookie:cookies.replace('hui_session=owner','hui_session=other')}}),context)).status,401);
  assert.equal((await hui(request('/hui/secret.txt',{headers:{Cookie:cookies}}),context)).status,404);
  const staticResponse=await hui(request('/hui/app.js',{headers:{Cookie:cookies}}),context);
  assert.equal(staticResponse.status,200);assert.equal(staticResponse.headers.get('cache-control'),'no-store');
  assert.match(staticResponse.headers.get('content-security-policy'),/frame-ancestors 'none'/);
+ assert.match(staticResponse.headers.get('x-robots-tag'),/noindex/);
+ assert.equal((await hui(request('/hui/app.js',{method:'POST',headers:{Cookie:cookies,Origin:'https://sanderbell.dev'}}),context)).status,405);
+ assert.equal((await mdlb(new Request('https://preview.netlify.app/mdlb/webhook',{method:'POST'}))).status,404);
+ assert.equal((await mdlb(request('/mdlb/unknown'))).status,404);
  assert.equal((await mdlb(request('/mdlb/webhook',{method:'POST',body:'{}'}))).status,403);
  const telegramHeaders={'X-Telegram-Bot-Api-Secret-Token':'telegram-secret'};
  const group={update_id:1,message:{from:{id:123},chat:{id:123,type:'group'}}};
