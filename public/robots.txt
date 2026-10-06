@@ -1,3 +1,4 @@
+# Private routes enforce owner authentication and send X-Robots-Tag: noindex.
+# Crawlers must be allowed to fetch those responses to observe noindex.
 User-agent: *
-Disallow: /hui
-Disallow: /mdlb
+Allow: /
