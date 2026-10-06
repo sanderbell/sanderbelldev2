@@ -6,8 +6,11 @@ export default defineConfig({
   use: {
     baseURL: 'http://127.0.0.1:4175',
     trace: 'retain-on-failure',
-    launchOptions: process.env.HUI_CHROME_PATH ? { executablePath: process.env.HUI_CHROME_PATH } : {},
   },
+  projects: [
+    {name: 'chromium', use: {browserName: 'chromium', launchOptions: process.env.HUI_CHROME_PATH ? {executablePath: process.env.HUI_CHROME_PATH} : {}}},
+    {name: 'webkit', use: {browserName: 'webkit'}},
+  ],
   webServer: {
     command: 'node scripts/serve-hui-test.mjs',
     url: 'http://127.0.0.1:4175/hui/',

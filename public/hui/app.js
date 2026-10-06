@@ -3,7 +3,7 @@
 /* ---------- Helpers ---------- */
 const $ = (selector) => document.querySelector(selector);
 const root = document.documentElement;
-const icon = (name) => `<svg><use href="#i-${name}"/></svg>`;
+const icon = (name) => `<svg aria-hidden="true" focusable="false"><use href="#i-${name}"/></svg>`;
 const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
 const hoverDevice = matchMedia("(hover: hover)").matches;
 const mobile = matchMedia("(max-width: 820px)");
@@ -192,7 +192,10 @@ const STRINGS = {
     editWarning: "Sending this edit replaces the answers that follow it.",
     interrupted: "connection interrupted", answerComplete: "Answer ready", stoppedAnswer: "Answer stopped",
     mobileHint: "History stays in this browser", noResultsHelp: "Try another word or search message text.",
-    clearSearch: "Clear search",
+    signingOut: "Signing out…",
+    clearSearch: "Clear search", deleteAllTitle: "Delete all chats?",
+    deleteAllHelp: "This removes every conversation and draft from this browser. This cannot be undone.",
+    verifyingAccess: "Verifying access…", verifyFailed: "Reconnect to verify access to your private chat.",
   },
   ru: {
     chats: "Чаты",
@@ -312,7 +315,10 @@ const STRINGS = {
     editWarning: "Отправка правки заменит все ответы после этого сообщения.",
     interrupted: "соединение прервано", answerComplete: "Ответ готов", stoppedAnswer: "Ответ остановлен",
     mobileHint: "История хранится в этом браузере", noResultsHelp: "Попробуй другое слово или текст сообщения.",
-    clearSearch: "Очистить поиск",
+    signingOut: "Выхожу…",
+    clearSearch: "Очистить поиск", deleteAllTitle: "Удалить все чаты?",
+    deleteAllHelp: "Все разговоры и черновики будут удалены из этого браузера. Отменить это действие нельзя.",
+    verifyingAccess: "Проверяю доступ…", verifyFailed: "Подключись к интернету, чтобы подтвердить доступ к личному чату.",
   },
 };
 
@@ -353,6 +359,7 @@ const pendingImages = new Map();
 let imageQueue = Promise.resolve();
 const draftId = () => activeId || "new";
 let stick = true;
+let signingOut = false;
 let health = { state: "checking", reason: "" }; // reason is a string key
 
 function loadChats() {
@@ -626,11 +633,13 @@ function emptyEl() {
   wrap.append(el("h2", null, t("emptyTitle")), el("p", null, t("emptySub")));
   if (health.state === "down") wrap.append(el("div", "notice", t(health.reason)));
   const starters = el("div", "starters");
-  for (const starter of t("starters")) {
+  for (const [index, starter] of t("starters").entries()) {
     const button = el("button");
     button.type = "button";
     button.dataset.prompt = starter.prompt;
-    button.append(el("strong", null, starter.title), el("span", null, starter.hint));
+    const starterIcon = el("div", "starter-icon");
+    starterIcon.innerHTML = icon(["bulb", "plus", "retry", "edit"][index]);
+    button.append(starterIcon, el("strong", null, starter.title), el("span", null, starter.hint));
     starters.append(button);
   }
   wrap.append(starters);
@@ -720,7 +729,7 @@ function openChat(id) {
   restoreDraft();
   renderThread();
   renderList();
-  if (hoverDevice) input.focus();
+  if (hoverDevice) input.focus({ preventScroll: true });
 }
 
 function newChat() {
@@ -732,7 +741,7 @@ function newChat() {
     renderThread();
     renderList();
   }
-  input.focus();
+  input.focus({ preventScroll: true });
 }
 
 function deleteChat(id) {
@@ -777,7 +786,7 @@ function startRename(id) {
     renderList();
   };
   field.addEventListener("keydown", (event) => {
-    if (event.key === "Enter") finish(true);
+    if (event.key === "Enter" && !event.isComposing) finish(true);
     if (event.key === "Escape") { event.stopPropagation(); finish(false); }
   });
   field.addEventListener("blur", () => finish(true));
@@ -797,7 +806,12 @@ list.addEventListener("dblclick", (event) => {
 });
 search.addEventListener("input", renderList);
 search.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") { event.stopPropagation(); search.value = ""; renderList(); input.focus(); }
+  if (event.key === "Escape") {
+    event.stopPropagation();
+    if (search.value) { search.value = ""; renderList(); }
+    else if (mobile.matches) setSidebar(false);
+    else input.focus({ preventScroll: true });
+  }
   if (event.key === "Enter") list.querySelector(".open")?.click();
 });
 titleEl.addEventListener("dblclick", () => {
@@ -913,7 +927,10 @@ function handleEvent(event) {
   }
 }
 
-async function generate(chat) {
+const requestMessages = (chat) => chat.messages.map(({ role, content, images }) =>
+  images ? { role, content, images: [...images] } : { role, content });
+
+async function generate(chat, messages = requestMessages(chat)) {
   const controller = new AbortController();
   $("#announcement").textContent = "";
   live = {
@@ -940,7 +957,7 @@ async function generate(chat) {
       headers: { "Content-Type": "application/json" },
       signal: controller.signal,
       body: JSON.stringify({
-        messages: chat.messages.map(({ role, content, images }) => (images ? { role, content, images } : { role, content })),
+        messages,
         think: settings.think,
         instructions: settings.instructions,
       }),
@@ -1013,12 +1030,18 @@ async function generate(chat) {
     if (stick) scrollToEnd();
   }
   renderList();
-  $("#announcement").textContent = t(stopped ? "stoppedAnswer" : "answerComplete");
+  $("#announcement").textContent = error ? "" : t(stopped ? "stoppedAnswer" : "answerComplete");
   if (document.hidden && content) document.title = t("answerReady");
 }
 
 function stop() { live?.controller.abort(); }
-document.addEventListener("hui:signout", stop);
+document.addEventListener("hui:signout", () => {
+  signingOut = true;
+  stop();
+  document.querySelectorAll("dialog[open]").forEach(dialog => dialog.close());
+  $("#access-message").textContent = t("signingOut");
+  $("#recheck-access").disabled = true;
+});
 
 function send() {
   if (live) { stop(); return; }
@@ -1044,10 +1067,11 @@ function send() {
   renderAttachments();
   resize();
   persistDraft();
+  const messages = requestMessages(chat);
   saveChats();
   renderThread();
   renderList();
-  generate(chat);
+  generate(chat, messages);
 }
 
 function regenerate() {
@@ -1056,9 +1080,10 @@ function regenerate() {
   if (chat.messages.at(-1)?.role === "assistant") chat.messages.pop();
   if (chat.messages.at(-1)?.role !== "user") return;
   lastError = null;
+  const messages = requestMessages(chat);
   saveChats();
   renderThread();
-  generate(chat);
+  generate(chat, messages);
 }
 
 function startEdit(index) {
@@ -1092,17 +1117,18 @@ function startEdit(index) {
     chat.updatedAt = Date.now();
     if (index === 0) chat.title = makeTitle(text);
     lastError = null;
+    const messages = requestMessages(chat);
     saveChats();
     renderThread();
     renderList();
-    generate(chat);
+    generate(chat, messages);
   };
   field.addEventListener("input", fit);
   field.addEventListener("keydown", (event) => {
     if (event.key === "Enter" && !event.shiftKey && !event.isComposing && (!touchInput.matches || event.ctrlKey || event.metaKey)) { event.preventDefault(); commit(); }
-    if (event.key === "Escape") { event.stopPropagation(); renderThread(); input.focus(); }
+    if (event.key === "Escape") { event.stopPropagation(); renderThread(); input.focus({ preventScroll: true }); }
   });
-  cancel.addEventListener("click", () => { renderThread(); input.focus(); });
+  cancel.addEventListener("click", () => { renderThread(); input.focus({ preventScroll: true }); });
   save.addEventListener("click", commit);
 }
 
@@ -1126,7 +1152,7 @@ thread.addEventListener("click", (event) => {
     resize();
     updateSendState();
     persistDraft();
-    input.focus();
+    input.focus({ preventScroll: true });
     input.setSelectionRange(input.value.length, input.value.length);
     return;
   }
@@ -1156,10 +1182,11 @@ thread.addEventListener("keydown", event => {
 lightbox.addEventListener("click", () => lightbox.close());
 
 /* ---------- Composer ---------- */
+const composerLimit = () => touchInput.matches ? 144 : 240;
 function resize() {
   input.style.height = "auto";
-  input.style.height = `${Math.min(input.scrollHeight, 240)}px`;
-  input.style.overflowY = input.scrollHeight > 240 ? "auto" : "hidden";
+  input.style.height = `${Math.min(input.scrollHeight, composerLimit())}px`;
+  input.style.overflowY = input.scrollHeight > composerLimit() ? "auto" : "hidden";
 }
 
 function persistDraft() {
@@ -1261,7 +1288,7 @@ function renderAttachments() {
       renderAttachments();
       updateSendState();
       persistDraft();
-      input.focus();
+      input.focus({ preventScroll: true });
     });
     thumb.append(img, remove);
     return thumb;
@@ -1395,9 +1422,7 @@ for (const picker of [langPicker, themePicker, accentPicker]) {
 }
 settingsDialog.addEventListener("click", (event) => { if (event.target === settingsDialog) settingsDialog.close(); });
 settingsDialog.addEventListener("close", () => {
-  wipe.classList.remove("confirm");
-  wipe.textContent = t("wipe");
-  if (hoverDevice) input.focus();
+  if (hoverDevice) input.focus({ preventScroll: true });
 });
 langPicker.addEventListener("click", (event) => {
   const value = event.target.closest("[data-value]")?.dataset.value;
@@ -1429,12 +1454,10 @@ accentPicker.addEventListener("click", (event) => {
   syncSettingsUI();
 });
 instructions.addEventListener("input", () => { settings.instructions = instructions.value; saveSettings(); });
-wipe.addEventListener("click", () => {
-  if (!wipe.classList.contains("confirm")) {
-    wipe.classList.add("confirm");
-    wipe.textContent = t("wipeConfirm");
-    return;
-  }
+const deleteDialog = $("#confirm-delete");
+wipe.addEventListener("click", () => deleteDialog.showModal());
+$("#cancel-delete").addEventListener("click", () => deleteDialog.close());
+$("#confirm-wipe").addEventListener("click", () => {
   stop();
   chats = [];
   drafts.clear();
@@ -1446,6 +1469,7 @@ wipe.addEventListener("click", () => {
   saveChats();
   renderThread();
   renderList();
+  deleteDialog.close();
   settingsDialog.close();
   toast(t("allDeleted"));
 });
@@ -1453,21 +1477,24 @@ wipe.addEventListener("click", () => {
 /* ---------- Health ---------- */
 let healthChecking = false;
 async function checkHealth() {
-  if (healthChecking) return;
+  if (healthChecking || signingOut) return;
   healthChecking = true;
+  $("#access-message").textContent = t("verifyingAccess");
+  $("#recheck-access").disabled = true;
   let next;
   try {
     const response = await fetch("/hui/api/health", { cache: "no-store", signal: AbortSignal.timeout(12000) });
     if (response.status === 401 || response.status === 403) { location.replace("/hui/login"); return; }
-    root.classList.remove("access-checking");
+    if (response.ok) root.classList.remove("access-checking");
     const data = await response.json();
     if (response.ok && data.ollama && data.model) next = { state: "ok", reason: "" };
     else next = { state: "down", reason: data.ollama ? "errModel" : "errOllama" };
   } catch {
     next = { state: "down", reason: "errServer" };
-  } finally { healthChecking = false; }
+  } finally { healthChecking = false; $("#recheck-access").disabled = false; }
   const changed = next.state !== health.state;
   health = next;
+  $("#access-message").textContent = t(next.state === "ok" ? "verifyingAccess" : "verifyFailed");
   renderStatus();
 
   if (changed && thread.querySelector(".empty")) thread.querySelector(".empty").replaceWith(emptyEl());
@@ -1484,6 +1511,7 @@ function renderStatus() {
 }
 
 $("#reconnect").addEventListener("click", checkHealth);
+$("#recheck-access").addEventListener("click", checkHealth);
 
 /* ---------- Toasts ---------- */
 function toast(text, { action, onAction, duration = 4000 } = {}) {
@@ -1532,8 +1560,8 @@ document.addEventListener("keydown", (event) => {
     if (mobile.matches && sidebarIsOpen()) setSidebar(false);
     else if (live) { event.preventDefault(); stop(); }
   } else if (!mod && !event.altKey && !isTyping(event.target) && !document.querySelector("dialog[open]")) {
-    if (event.key === "/") { event.preventDefault(); input.focus(); }
-    else if (event.key.length === 1) input.focus(); // start typing anywhere
+    if (event.key === "/") { event.preventDefault(); input.focus({ preventScroll: true }); }
+    else if (event.key.length === 1) input.focus({ preventScroll: true }); // start typing anywhere
   }
 });
 
@@ -1569,19 +1597,39 @@ renderList();
 renderThread();
 resize();
 requestAnimationFrame(resize);
-window.addEventListener("resize", resize);
+// Keep the app in the visible viewport without resizing the textarea on every
+// keyboard animation frame. Safari can pan that viewport independently of its height.
+let viewportFrame = 0;
+let layoutWidth = innerWidth;
 function fitViewport() {
-  if (window.visualViewport?.scale === 1) root.style.setProperty("--app-height", `${window.visualViewport.height}px`);
-  resize();
-  if (stick) scrollToEnd();
+  if (viewportFrame) return;
+  viewportFrame = requestAnimationFrame(() => {
+    viewportFrame = 0;
+    const viewport = window.visualViewport;
+    if (viewport && viewport.scale !== 1) return;
+    const height = viewport?.height || innerHeight;
+    const top = viewport?.offsetTop || 0;
+    root.style.setProperty("--app-height", `${height}px`);
+    root.style.setProperty("--viewport-top", `${top}px`);
+    const keyboard = touchInput.matches && height < document.documentElement.clientHeight - 120;
+    root.style.setProperty("--composer-safe-bottom", keyboard ? "0px" : "env(safe-area-inset-bottom)");
+    if (stick) scrollToEnd();
+  });
 }
+window.addEventListener("resize", () => {
+  if (innerWidth !== layoutWidth) { layoutWidth = innerWidth; resize(); }
+  fitViewport();
+});
 window.visualViewport?.addEventListener("resize", fitViewport);
+window.visualViewport?.addEventListener("scroll", fitViewport);
+input.addEventListener("focus", fitViewport);
+input.addEventListener("blur", fitViewport);
 fitViewport();
 window.addEventListener("pageshow", event => { if (event.persisted) { root.classList.add("access-checking"); checkHealth(); } });
 
 window.addEventListener("online", checkHealth);
 window.addEventListener("offline", checkHealth);
 updateSendState();
-if (hoverDevice) input.focus();
+if (hoverDevice) input.focus({ preventScroll: true });
 checkHealth();
 setInterval(checkHealth, 20000);

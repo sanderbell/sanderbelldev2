@@ -42,20 +42,20 @@
       <aside class="sidebar" id="sidebar" data-i18n-aria="chats">
         <div class="sidebar-top">
           <div class="brand"><span class="orb" aria-hidden="true"></span><span>Huihui</span></div>
-          <button class="icon-btn" id="collapse" type="button" aria-controls="sidebar" data-i18n-title="hideSidebar"><svg><use href="#i-panel"/></svg></button>
+          <button class="icon-btn" id="collapse" type="button" aria-controls="sidebar" data-i18n-title="hideSidebar"><svg aria-hidden="true" focusable="false"><use href="#i-panel"/></svg></button>
         </div>
         <button class="new-chat" id="new-chat" type="button">
-          <svg><use href="#i-plus"/></svg><span data-i18n="newChat">New chat</span><kbd>⌘⇧O</kbd>
+          <svg aria-hidden="true" focusable="false"><use href="#i-plus"/></svg><span data-i18n="newChat">New chat</span><kbd>⌘⇧O</kbd>
         </button>
         <label class="search">
-          <svg><use href="#i-search"/></svg>
+          <svg aria-hidden="true" focusable="false"><use href="#i-search"/></svg>
           <input id="search" type="search" data-i18n-aria="searchChats" data-i18n-placeholder="searchChats" autocomplete="off" spellcheck="false">
           <kbd>⌘K</kbd>
         </label>
         <nav class="chat-list" id="chat-list"></nav>
         <div class="sidebar-bottom">
-          <button class="side-btn" type="button" data-pwa-install><svg><use href="#i-export"/></svg><span data-i18n="install">Install Huihui</span></button>
-          <button class="side-btn" id="open-settings" type="button"><svg><use href="#i-gear"/></svg><span data-i18n="settings">Settings</span></button>
+          <button class="side-btn" type="button" data-pwa-install><svg aria-hidden="true" focusable="false"><use href="#i-export"/></svg><span data-i18n="install">Install Huihui</span></button>
+          <button class="side-btn" id="open-settings" type="button"><svg aria-hidden="true" focusable="false"><use href="#i-gear"/></svg><span data-i18n="settings">Settings</span></button>
           <span class="status" id="status" data-state="checking"><i></i><span data-i18n="statusChecking">checking…</span></span>
         </div>
       </aside>
@@ -63,13 +63,13 @@
 
       <main class="main">
         <header class="topbar">
-          <button class="icon-btn expand" id="expand" type="button" aria-controls="sidebar" data-i18n-title="showSidebar"><svg><use href="#i-panel"/></svg></button>
+          <button class="icon-btn expand" id="expand" type="button" aria-controls="sidebar" data-i18n-title="showSidebar"><svg aria-hidden="true" focusable="false"><use href="#i-panel"/></svg></button>
           <span class="main-status" id="main-status" role="status"></span>
           <h1 class="chat-title" id="chat-title">New chat</h1>
           <div class="top-actions">
-            <button class="icon-btn" id="settings-top" type="button" data-i18n-title="settings"><svg><use href="#i-gear"/></svg></button>
-            <button class="icon-btn" id="new-chat-top" type="button" data-i18n-title="newChatShortcut"><svg><use href="#i-plus"/></svg></button>
-            <button class="icon-btn" id="export" type="button" data-i18n-title="exportChat"><svg><use href="#i-export"/></svg></button>
+            <button class="icon-btn" id="settings-top" type="button" data-i18n-title="settings"><svg aria-hidden="true" focusable="false"><use href="#i-gear"/></svg></button>
+            <button class="icon-btn" id="new-chat-top" type="button" data-i18n-title="newChatShortcut"><svg aria-hidden="true" focusable="false"><use href="#i-plus"/></svg></button>
+            <button class="icon-btn" id="export" type="button" data-i18n-title="exportChat"><svg aria-hidden="true" focusable="false"><use href="#i-export"/></svg></button>
           </div>
         </header>
 
@@ -79,15 +79,15 @@
         </section>
 
         <footer class="composer-area">
-          <button class="to-bottom" id="to-bottom" type="button" data-i18n-aria="toBottom"><svg><use href="#i-down"/></svg></button>
+          <button class="to-bottom" id="to-bottom" type="button" data-i18n-aria="toBottom"><svg aria-hidden="true" focusable="false"><use href="#i-down"/></svg></button>
           <form class="composer" id="composer">
             <div class="attachments" id="attachments"></div>
             <p class="attachment-status" id="attachment-status" role="status"></p>
             <textarea id="prompt" rows="1" data-i18n-placeholder="placeholder" data-i18n-aria="message"></textarea>
             <div class="composer-row">
-              <button type="button" class="icon-btn" id="attach" data-i18n-title="attach"><svg><use href="#i-clip"/></svg></button>
+              <button type="button" class="icon-btn" id="attach" data-i18n-title="attach"><svg aria-hidden="true" focusable="false"><use href="#i-clip"/></svg></button>
               <button type="button" class="chip" id="think" aria-pressed="false" data-i18n-title="thinkTitle">
-                <svg><use href="#i-bulb"/></svg><span data-i18n="think">Deeper</span>
+                <svg aria-hidden="true" focusable="false"><use href="#i-bulb"/></svg><span data-i18n="think">Deeper</span>
               </button>
               <span class="spacer"></span>
               <button type="submit" id="send" class="send">
@@ -107,7 +107,7 @@
       <form method="dialog" class="sheet-inner">
         <header class="sheet-head">
           <h2 id="settings-title" data-i18n="settings">Settings</h2>
-          <button class="icon-btn" value="close" data-i18n-aria="close"><svg><use href="#i-x"/></svg></button>
+          <button class="icon-btn" value="close" data-i18n-aria="close"><svg aria-hidden="true" focusable="false"><use href="#i-x"/></svg></button>
         </header>
 
         <section class="field">
@@ -130,11 +130,11 @@
         <section class="field">
           <span class="label" id="accent-label" data-i18n="accent">Accent</span>
           <div class="swatches" id="accent-picker" role="radiogroup" aria-labelledby="accent-label">
-            <button type="button" data-value="lime" style="--sw:#c6f35b" data-i18n-aria="accentLime" role="radio"></button>
-            <button type="button" data-value="sky" style="--sw:#7cc4ff" data-i18n-aria="accentSky" role="radio"></button>
-            <button type="button" data-value="violet" style="--sw:#b8a3ff" data-i18n-aria="accentViolet" role="radio"></button>
-            <button type="button" data-value="amber" style="--sw:#ffbf5e" data-i18n-aria="accentAmber" role="radio"></button>
-            <button type="button" data-value="rose" style="--sw:#ff8da7" data-i18n-aria="accentRose" role="radio"></button>
+            <button type="button" data-value="lime" data-i18n-aria="accentLime" role="radio"></button>
+            <button type="button" data-value="sky" data-i18n-aria="accentSky" role="radio"></button>
+            <button type="button" data-value="violet" data-i18n-aria="accentViolet" role="radio"></button>
+            <button type="button" data-value="amber" data-i18n-aria="accentAmber" role="radio"></button>
+            <button type="button" data-value="rose" data-i18n-aria="accentRose" role="radio"></button>
           </div>
         </section>
 
@@ -155,7 +155,7 @@
           <span class="help" data-i18n="instructionsHelp"></span>
         </section>
 
-        <section class="field">
+        <section class="field shortcuts-field">
           <span class="label" data-i18n="shortcuts">Keyboard shortcuts</span>
           <dl class="shortcuts">
             <dt data-i18n="newChat">New chat</dt><dd><kbd>⌘</kbd><kbd>⇧</kbd><kbd>O</kbd></dd>
@@ -178,7 +178,18 @@
       </form>
     </dialog>
 
-    <dialog id="lightbox" class="lightbox" data-i18n-aria="attachedImage"><button class="lightbox-close icon-btn" type="button" data-i18n-aria="close" autofocus><svg><use href="#i-x"/></svg></button><img alt=""></dialog>
+    <dialog id="confirm-delete" class="sheet" aria-labelledby="delete-title" aria-describedby="delete-description">
+      <div class="confirm-inner">
+        <h2 id="delete-title" data-i18n="deleteAllTitle">Delete all chats?</h2>
+        <p id="delete-description" data-i18n="deleteAllHelp"></p>
+        <div class="confirm-actions">
+          <button class="btn ghost" id="cancel-delete" type="button" data-i18n="cancel" autofocus>Cancel</button>
+          <button class="danger" id="confirm-wipe" type="button" data-i18n="wipe">Delete all chats</button>
+        </div>
+      </div>
+    </dialog>
+    <div class="access-status" role="status"><span class="orb" aria-hidden="true"></span><p id="access-message" data-i18n="verifyingAccess"></p><button type="button" class="btn primary" id="recheck-access" data-i18n="reconnect">Reconnect</button></div>
+    <dialog id="lightbox" class="lightbox" data-i18n-aria="attachedImage"><button class="lightbox-close icon-btn" type="button" data-i18n-aria="close" autofocus><svg aria-hidden="true" focusable="false"><use href="#i-x"/></svg></button><img alt=""></dialog>
     <div class="sr-only" id="announcement" role="status" aria-live="polite"></div>
     <div class="toasts" id="toasts" aria-live="polite"></div>
     <script src="app.js"></script>
